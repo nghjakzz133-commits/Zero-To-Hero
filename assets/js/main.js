@@ -13,10 +13,10 @@ if (menuBtn && navDrawer) {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ================= I18N =================
+// ================= I18N – INDEX ONLY =================
 const i18n = {
   en: {
-    // ===== NAV =====
+    // NAV
     nav_home: "Home",
     nav_about: "About",
     nav_partnership: "Partnership",
@@ -25,9 +25,8 @@ const i18n = {
     nav_media: "Media",
     nav_contact: "Contact",
 
+    // HERO
     badge: "Corporate Partner Network",
-
-    // ===== HERO =====
     hero_title_1: "From",
     hero_title_2: "Zero",
     hero_title_3: "To",
@@ -35,7 +34,7 @@ const i18n = {
     hero_subtitle:
       "Building sustainable growth through global partnerships, disciplined execution, and professional operations.",
 
-    // ===== VALUES =====
+    // VALUES
     value_1_title: "Integrity",
     value_1_desc: "Transparency • Discipline • Trust",
     value_2_title: "Professionalism",
@@ -43,7 +42,7 @@ const i18n = {
     value_3_title: "Global Partnership",
     value_3_desc: "International collaboration • Growth",
 
-    // ===== OVERVIEW =====
+    // OVERVIEW
     overview_title: "Company Overview",
     overview_sub:
       "Zero To Hero is a corporate team focusing on building partner networks and long-term value.",
@@ -64,7 +63,7 @@ const i18n = {
     stat_2: "Partner Mindset",
     stat_3: "Sustainable Growth",
 
-    // ===== PARTNERSHIP =====
+    // PARTNERSHIP PREVIEW
     partner_title: "Strategic Partnership",
     partner_sub:
       "We collaborate with global partners to strengthen our ecosystem and operational standards.",
@@ -81,159 +80,11 @@ const i18n = {
     card_3_text:
       "We prioritize transparency, trust, and sustainable value over short-term performance.",
 
-    partner_core_title: "Partnership Principles",
-    partner_core_sub:
-      "We build partnerships based on integrity, professionalism, and sustainable collaboration.",
-
-    tick_pill_1: "Partner Collaboration",
-    tick_pill_2: "International Standard",
-    tick_pill_3: "Professional Ecosystem",
-
-    partner_process_title: "How We Work With Partners",
-    partner_process_sub:
-      "A clear, professional workflow designed for corporate-level operations and long-term collaboration.",
-
-    partner_step_1_title: "Step 01 — Alignment",
-    partner_step_1_text:
-      "We align expectations, standards, and collaboration principles before execution.",
-
-    partner_step_2_title: "Step 02 — Implementation",
-    partner_step_2_text:
-      "Structured workflow, consistent updates, and disciplined communication.",
-
-    partner_step_3_title: "Step 03 — Quality Control",
-    partner_step_3_text:
-      "We maintain quality through measurable standards and continuous optimization.",
-
-    partner_step_4_title: "Step 04 — Long-term Growth",
-    partner_step_4_text:
-      "Partnership is built for sustainability, trust, and long-term value.",
-
-    tick_title: "Tickmill Collaboration",
-    tick_text:
-      "Zero To Hero is currently collaborating with Tickmill in the direction of expanding our partner network and strengthening a professional ecosystem with international standards.",
-
-    // ===== ABOUT =====
-    about_kicker: "Company Profile",
-    about_title: "About Zero To Hero",
-    about_sub:
-      "A corporate team focusing on disciplined operations, partner networks, and long-term value.",
-
-    about_who_title: "Who We Are",
-    about_who_text:
-      "Zero To Hero is built with a corporate mindset. We focus on structured execution, professional communication, and a long-term operating model designed for sustainable growth.",
-
-    about_focus_title: "Our Focus",
-    about_focus_text:
-      "We develop internal standards, build operational frameworks, and maintain an ecosystem driven by integrity, professionalism, and transparent collaboration.",
-
-    about_focus_1: "Structured Operations",
-    about_focus_2: "Partner Growth",
-    about_focus_3: "Sustainable Value",
-
-    about_value_1: "Integrity",
-    about_value_1_text: "Transparency, discipline, and clear standards.",
-    about_value_2: "Professional Culture",
-    about_value_2_text: "Corporate mindset in every workflow and communication.",
-    about_value_3: "Long-term Vision",
-    about_value_3_text: "Sustainable growth through global collaboration.",
-
-    // ===== TEAM =====
-    team_kicker: "Leadership & Operations",
-    team_title: "Our Team",
-    team_sub:
-      "A professional corporate team built on discipline, structure, and long-term execution.",
-
-    team_1_name: "Managing Director",
-    team_1_role: "Strategy • Vision • Leadership",
-    team_2_name: "Operations Lead",
-    team_2_role: "Process • Execution • Standards",
-    team_3_name: "Business Development",
-    team_3_role: "Growth • Partnerships • Network",
-    team_4_name: "Partner Relations",
-    team_4_role: "Communication • Support • Quality",
-    team_5_name: "Research & Analysis",
-    team_5_role: "Data • Discipline • Insights",
-    team_6_name: "Compliance & Culture",
-    team_6_role: "Integrity • Standards • Long-term",
-
-    // ===== MARKET =====
-    market_kicker: "Live Monitoring",
-    market_title: "Online Market Movement",
-    market_sub:
-      "Realtime public market charts for monitoring general volatility.",
-    market_widget_title: "Live Market Chart",
-    market_widget_text:
-      "This section can be upgraded later with professional widgets (TradingView) or internal dashboards.",
-    market_placeholder: "Widget placeholder (Update later)",
-
-    // ===== MEDIA (FULL – CÁCH 3) =====
-    media_kicker: "Updates",
-    media_title: "Media & Activities",
-    media_sub:
-      "Corporate updates, internal activities, and ecosystem development highlights.",
-
-    media_section_1: "Corporate Updates",
-    media_section_1_sub:
-      "Official updates reflecting operational progress and strategic direction.",
-
-    media_item_1_title: "Operational Development",
-    media_item_1_text:
-      "Internal process optimization and system development activities.",
-
-    media_item_2_title: "Partner Collaboration",
-    media_item_2_text:
-      "Ongoing collaboration initiatives with strategic partners.",
-
-    media_item_3_title: "Ecosystem Expansion",
-    media_item_3_text:
-      "Gradual expansion of internal teams and partner networks.",
-
-    media_section_2: "Activities & Engagement",
-    media_section_2_sub:
-      "Highlights of internal coordination and ecosystem engagement.",
-
-    media_activity_1: "Internal Coordination",
-    media_activity_1_text:
-      "Structured internal meetings, training sessions, and workflow alignment.",
-
-    media_activity_2: "Strategic Planning",
-    media_activity_2_text:
-      "Strategic discussions focused on long-term sustainability and growth.",
-
-    // ===== CONTACT =====
-    contact_kicker: "Connect",
-    contact_title: "Contact",
-    contact_sub:
-      "This section can be updated later with official corporate channels.",
-
-    contact_info_title: "Contact Information",
-    contact_info_text:
-      "Placeholder content. Update later with email, phone, address, and business hours.",
-
-    contact_email: "Email",
-    contact_phone: "Phone",
-    contact_location: "Location",
-    contact_location_value: "Vietnam",
-
-    // ===== FOOTER =====
+    // FOOTER
     footer_tag: "Corporate Partner Network",
 
-    // ===== DISCLAIMER (OPTION 1) =====
-    disclaimer:
-      "This content is provided to present an overview of our ecosystem and operational direction.",
- about_core_title: "Core Values",
-about_core_sub: "Our operating principles guide every collaboration and decision.",
-
-about_stat_label_1: "Operating Model",
-about_stat_label_2: "Collaboration",
-about_stat_label_3: "Long-term Vision",
- about_stat_label_1: "Operating Model",
-about_stat_label_2: "Collaboration",
-about_stat_label_3: "Long-term Vision",
-
-about_core_title: "Core Values",
-about_core_sub: "Our operating principles guide every collaboration and decision.",
+    // DISCLAIMER
+    disclaimer: "This website is for company introduction purposes only.",
   },
 
   vi: {
@@ -246,7 +97,6 @@ about_core_sub: "Our operating principles guide every collaboration and decision
     nav_contact: "Liên hệ",
 
     badge: "Mạng lưới đối tác doanh nghiệp",
-
     hero_title_1: "Từ",
     hero_title_2: "Zero",
     hero_title_3: "đến",
@@ -292,101 +142,8 @@ about_core_sub: "Our operating principles guide every collaboration and decision
     card_3_title: "Ưu tiên chính trực",
     card_3_text: "Minh bạch và niềm tin là nền tảng.",
 
-    partner_core_title: "Nguyên tắc hợp tác",
-    partner_core_sub:
-      "Xây dựng hợp tác dựa trên chính trực và phát triển bền vững.",
-
-    tick_pill_1: "Hợp tác đối tác",
-    tick_pill_2: "Chuẩn quốc tế",
-    tick_pill_3: "Hệ sinh thái chuyên nghiệp",
-
-    partner_process_title: "Quy trình hợp tác",
-    partner_process_sub:
-      "Quy trình rõ ràng, phù hợp vận hành doanh nghiệp.",
-
-    partner_step_1_title: "Bước 01 — Đồng bộ",
-    partner_step_1_text:
-      "Đồng bộ kỳ vọng và tiêu chuẩn hợp tác.",
-    partner_step_2_title: "Bước 02 — Triển khai",
-    partner_step_2_text:
-      "Triển khai theo cấu trúc và kỷ luật.",
-    partner_step_3_title: "Bước 03 — Kiểm soát",
-    partner_step_3_text:
-      "Duy trì chất lượng và tối ưu.",
-    partner_step_4_title: "Bước 04 — Dài hạn",
-    partner_step_4_text:
-      "Hợp tác bền vững và lâu dài.",
-
-    tick_title: "Hợp tác cùng Tickmill",
-    tick_text:
-      "Zero To Hero hợp tác cùng Tickmill theo tiêu chuẩn quốc tế.",
-
-    // ===== MEDIA =====
-    media_kicker: "Cập nhật",
-    media_title: "Truyền thông & Hoạt động",
-    media_sub:
-      "Cập nhật doanh nghiệp, hoạt động nội bộ và phát triển hệ sinh thái.",
-
-    media_section_1: "Cập nhật doanh nghiệp",
-    media_section_1_sub:
-      "Phản ánh tiến độ vận hành và định hướng chiến lược.",
-
-    media_item_1_title: "Phát triển vận hành",
-    media_item_1_text:
-      "Tối ưu quy trình nội bộ và hệ thống.",
-
-    media_item_2_title: "Hợp tác đối tác",
-    media_item_2_text:
-      "Triển khai hợp tác cùng đối tác chiến lược.",
-
-    media_item_3_title: "Mở rộng hệ sinh thái",
-    media_item_3_text:
-      "Phát triển đội ngũ và mạng lưới.",
-
-    media_section_2: "Hoạt động & Kết nối",
-    media_section_2_sub:
-      "Điểm nhấn hoạt động nội bộ.",
-
-    media_activity_1: "Điều phối nội bộ",
-    media_activity_1_text:
-      "Họp nội bộ, đào tạo và đồng bộ.",
-
-    media_activity_2: "Hoạch định chiến lược",
-    media_activity_2_text:
-      "Lập kế hoạch tăng trưởng bền vững.",
-
-    // ===== CONTACT =====
-    contact_kicker: "Kết nối",
-    contact_title: "Liên hệ",
-    contact_sub:
-      "Có thể cập nhật sau với kênh chính thức.",
-
-    contact_info_title: "Thông tin liên hệ",
-    contact_info_text:
-      "Nội dung mẫu, cập nhật sau.",
-
-    contact_email: "Email",
-    contact_phone: "Số điện thoại",
-    contact_location: "Khu vực",
-    contact_location_value: "Việt Nam",
-
     footer_tag: "Mạng lưới đối tác doanh nghiệp",
-
-    // ===== DISCLAIMER =====
-    disclaimer:
-      "Nội dung được xây dựng nhằm cung cấp thông tin tổng quan về hệ sinh thái và định hướng hoạt động.",
-  about_core_title: "Giá trị cốt lõi",
-about_core_sub: "Nguyên tắc vận hành định hướng mọi hợp tác và quyết định.",
-
-about_stat_label_1: "Mô hình vận hành",
-about_stat_label_2: "Hợp tác",
-about_stat_label_3: "Tầm nhìn dài hạn",
- about_stat_label_1: "Mô hình vận hành",
-about_stat_label_2: "Hợp tác",
-about_stat_label_3: "Tầm nhìn dài hạn",
-
-about_core_title: "Giá trị cốt lõi",
-about_core_sub: "Nguyên tắc vận hành định hướng mọi hợp tác và quyết định.",
+    disclaimer: "Website chỉ dùng cho mục đích giới thiệu doanh nghiệp.",
   },
 };
 
@@ -400,8 +157,7 @@ function setLang(lang) {
   });
 
   ["btnEN", "btnVI", "btnEN2", "btnVI2"].forEach((id) => {
-    const btn = document.getElementById(id);
-    btn && btn.classList.remove("active");
+    document.getElementById(id)?.classList.remove("active");
   });
 
   if (lang === "en") {
