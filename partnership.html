@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Partnership | Zero To Hero</title>
   <meta name="description" content="Partnership - Zero To Hero corporate collaboration and partner network." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Zero To Hero Home">
@@ -30,7 +33,7 @@
       </nav>
 
       <div class="header-right">
-        <div class="lang-switch">
+        <div class="lang-switch" aria-label="Language Switch">
           <button class="lang-btn active" id="btnEN" type="button">EN</button>
           <button class="lang-btn" id="btnVI" type="button">VI</button>
         </div>
@@ -41,6 +44,7 @@
       </div>
     </div>
 
+    <!-- Mobile drawer -->
     <div class="nav-drawer" id="navDrawer">
       <div class="drawer-lang">
         <button class="lang-btn active" id="btnEN2" type="button">EN</button>
@@ -57,6 +61,7 @@
     </div>
   </header>
 
+  <!-- ================= PAGE HERO ================= -->
   <section class="page-hero">
     <div class="container">
       <div class="page-kicker" data-i18n="partner_kicker">Collaboration</div>
@@ -67,8 +72,17 @@
     </div>
   </section>
 
+  <!-- ================= CONTENT ================= -->
   <section class="section">
     <div class="container">
+      <!-- 3 CORE PILLARS -->
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="partner_core_title">Partnership Principles</h2>
+        <p class="section-sub" data-i18n="partner_core_sub">
+          We build partnerships based on integrity, professionalism, and sustainable collaboration.
+        </p>
+      </div>
+
       <div class="grid-3">
         <div class="card">
           <div class="card-top">
@@ -101,14 +115,60 @@
         </div>
       </div>
 
+      <!-- TICKMILL -->
       <div class="panel panel-gold" style="margin-top:16px;">
         <h3 class="panel-title" data-i18n="tick_title">Tickmill Collaboration</h3>
         <p class="panel-text" data-i18n="tick_text">
           Zero To Hero is currently collaborating with Tickmill in the direction of expanding our partner network
           and strengthening a professional ecosystem with international standards.
         </p>
+
+        <div class="pill-row" style="margin-top:14px;">
+          <span class="pill" data-i18n="tick_pill_1">Partner Collaboration</span>
+          <span class="pill" data-i18n="tick_pill_2">International Standard</span>
+          <span class="pill" data-i18n="tick_pill_3">Professional Ecosystem</span>
+        </div>
       </div>
 
+      <!-- PROCESS -->
+      <div class="section-head" style="margin-top:22px;">
+        <h2 class="section-title" data-i18n="partner_process_title">How We Work With Partners</h2>
+        <p class="section-sub" data-i18n="partner_process_sub">
+          A clear, professional workflow designed for corporate-level operations and long-term collaboration.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <h3 class="panel-title" data-i18n="partner_step_1_title">Step 01 — Alignment</h3>
+          <p class="panel-text" data-i18n="partner_step_1_text">
+            We align expectations, standards, and collaboration principles before execution.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title" data-i18n="partner_step_2_title">Step 02 — Implementation</h3>
+          <p class="panel-text" data-i18n="partner_step_2_text">
+            Structured workflow, consistent updates, and disciplined communication.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title" data-i18n="partner_step_3_title">Step 03 — Quality Control</h3>
+          <p class="panel-text" data-i18n="partner_step_3_text">
+            We maintain quality through measurable standards and continuous optimization.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title" data-i18n="partner_step_4_title">Step 04 — Long-term Growth</h3>
+          <p class="panel-text" data-i18n="partner_step_4_text">
+            Partnership is built for sustainability, trust, and long-term value.
+          </p>
+        </div>
+      </div>
+
+      <!-- DISCLAIMER -->
       <div class="note" style="margin-top:18px;">
         <div class="note-line"></div>
         <p class="note-text" data-i18n="disclaimer">
@@ -118,6 +178,7 @@
     </div>
   </section>
 
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-left">
