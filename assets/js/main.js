@@ -222,6 +222,12 @@ const i18n = {
     // ===== DISCLAIMER (OPTION 1) =====
     disclaimer:
       "This content is provided to present an overview of our ecosystem and operational direction.",
+ about_core_title: "Core Values",
+about_core_sub: "Our operating principles guide every collaboration and decision.",
+
+about_stat_label_1: "Operating Model",
+about_stat_label_2: "Collaboration",
+about_stat_label_3: "Long-term Vision",
   },
 
   vi: {
@@ -363,6 +369,12 @@ const i18n = {
     // ===== DISCLAIMER =====
     disclaimer:
       "Nội dung được xây dựng nhằm cung cấp thông tin tổng quan về hệ sinh thái và định hướng hoạt động.",
+  about_core_title: "Giá trị cốt lõi",
+about_core_sub: "Nguyên tắc vận hành định hướng mọi hợp tác và quyết định.",
+
+about_stat_label_1: "Mô hình vận hành",
+about_stat_label_2: "Hợp tác",
+about_stat_label_3: "Tầm nhìn dài hạn",
   },
 };
 
