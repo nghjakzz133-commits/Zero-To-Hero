@@ -764,3 +764,40 @@ img{max-width:100%;display:block}
 .tv-box.tv-big{height:520px}
 .tv{width:100%;height:100%}
 @media (max-width:980px){.charts-grid{grid-template-columns:1fr}.tv-box{height:420px}.tv-box.tv-big{height:520px}}
+.media-card{
+  border-radius:18px;
+  padding:16px;
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow: var(--shadow);
+}
+
+.media-thumb{
+  height:160px;
+  border-radius:14px;
+  margin-bottom:12px;
+  background:
+    radial-gradient(400px 160px at 30% 20%, rgba(212,179,90,.18), transparent 60%),
+    linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+}
+
+.media-title{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.media-text{
+  margin:0;
+  font-size:14px;
+  line-height:1.6;
+  color: rgba(243,243,247,.75);
+}
+
+.media-banner{
+  height:180px;
+  border-radius:14px;
+  margin-bottom:12px;
+  background:
+    radial-gradient(500px 200px at 20% 20%, rgba(212,179,90,.20), transparent 60%),
+    linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+}
