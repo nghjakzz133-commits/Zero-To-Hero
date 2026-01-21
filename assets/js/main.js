@@ -81,6 +81,117 @@ const i18n = {
 
     disclaimer: "This website is for company introduction purposes only.",
     footer_tag: "Corporate Partner Network",
+
+    // ===== ABOUT PAGE =====
+    about_kicker: "Company Profile",
+    about_title: "About Zero To Hero",
+    about_sub:
+      "A corporate team focusing on disciplined operations, partner networks, and long-term value.",
+
+    about_who_title: "Who We Are",
+    about_who_text:
+      "Zero To Hero is built with a corporate mindset. We focus on structured execution, professional communication, and a long-term operating model designed for sustainable growth.",
+
+    about_focus_title: "Our Focus",
+    about_focus_text:
+      "We develop internal standards, build operational frameworks, and maintain an ecosystem driven by integrity, professionalism, and transparent collaboration.",
+
+    about_focus_1: "Structured Operations",
+    about_focus_2: "Partner Growth",
+    about_focus_3: "Sustainable Value",
+
+    about_value_1: "Integrity",
+    about_value_1_text: "Transparency, discipline, and clear standards.",
+
+    about_value_2: "Professional Culture",
+    about_value_2_text: "Corporate mindset in every workflow and communication.",
+
+    about_value_3: "Long-term Vision",
+    about_value_3_text: "Sustainable growth through global collaboration.",
+
+    // ===== PARTNERSHIP PAGE =====
+    partner_kicker: "Collaboration",
+    partner_page_title: "Strategic Partnership",
+    partner_page_sub:
+      "We collaborate with global partners to strengthen standards, systems, and long-term growth.",
+
+    partner_block_1: "Partner Network",
+    partner_block_1_text:
+      "Building long-term collaboration with global partners and high-quality networks.",
+
+    partner_block_2: "Operational Standard",
+    partner_block_2_text:
+      "Clear workflow, disciplined execution, and professional communication.",
+
+    partner_block_3: "Integrity",
+    partner_block_3_text:
+      "Transparency and trust are always prioritized in every collaboration.",
+
+    tick_title: "Tickmill Collaboration",
+    tick_text:
+      "Zero To Hero is currently collaborating with Tickmill in the direction of expanding our partner network and strengthening a professional ecosystem with international standards.",
+
+    // ===== TEAM PAGE =====
+    team_kicker: "Leadership & Operations",
+    team_title: "Our Team",
+    team_sub:
+      "A professional corporate team built on discipline, structure, and long-term execution.",
+
+    team_1_name: "Managing Director",
+    team_1_role: "Strategy • Vision • Leadership",
+
+    team_2_name: "Operations Lead",
+    team_2_role: "Process • Execution • Standards",
+
+    team_3_name: "Business Development",
+    team_3_role: "Growth • Partnerships • Network",
+
+    team_4_name: "Partner Relations",
+    team_4_role: "Communication • Support • Quality",
+
+    team_5_name: "Research & Analysis",
+    team_5_role: "Data • Discipline • Insights",
+
+    team_6_name: "Compliance & Culture",
+    team_6_role: "Integrity • Standards • Long-term",
+
+    // ===== MARKET PAGE =====
+    market_kicker: "Live Monitoring",
+    market_title: "Online Market Movement",
+    market_sub: "Realtime public market charts for monitoring general volatility.",
+    market_widget_title: "Live Market Chart",
+    market_widget_text:
+      "This section can be upgraded later with professional widgets (TradingView) or internal dashboards.",
+    market_placeholder: "Widget placeholder (Update later)",
+
+    // ===== MEDIA PAGE =====
+    media_kicker: "Updates",
+    media_title: "Media & Activities",
+    media_sub:
+      "Corporate updates, events, and internal activities will be published here.",
+
+    media_1_title: "Company Update",
+    media_1_text: "Placeholder for corporate announcements and milestones.",
+
+    media_2_title: "Community Activity",
+    media_2_text: "Placeholder for events, training schedules, and internal highlights.",
+
+    media_3_title: "Press & Branding",
+    media_3_text: "Placeholder for branding materials, photos, and references.",
+
+    // ===== CONTACT PAGE =====
+    contact_kicker: "Connect",
+    contact_title: "Contact",
+    contact_sub: "This section can be updated later with official corporate channels.",
+
+    contact_info_title: "Contact Information",
+    contact_info_text:
+      "Placeholder content. Update later with email, phone, address, and business hours.",
+
+    contact_email: "Email",
+    contact_phone: "Phone",
+    contact_location: "Location",
+    contact_location_value: "Vietnam",
   },
 
   vi: {
@@ -149,6 +260,117 @@ const i18n = {
 
     disclaimer: "Website này chỉ phục vụ mục đích giới thiệu doanh nghiệp.",
     footer_tag: "Mạng lưới đối tác doanh nghiệp",
+
+    // ===== ABOUT PAGE =====
+    about_kicker: "Hồ sơ doanh nghiệp",
+    about_title: "Giới thiệu Zero To Hero",
+    about_sub:
+      "Đội ngũ doanh nghiệp tập trung vận hành kỷ luật, phát triển mạng lưới đối tác và giá trị dài hạn.",
+
+    about_who_title: "Chúng tôi là ai",
+    about_who_text:
+      "Zero To Hero được xây dựng theo tư duy doanh nghiệp. Chúng tôi tập trung thực thi theo cấu trúc, giao tiếp chuyên nghiệp và mô hình vận hành dài hạn hướng đến tăng trưởng bền vững.",
+
+    about_focus_title: "Trọng tâm phát triển",
+    about_focus_text:
+      "Chúng tôi xây dựng tiêu chuẩn nội bộ, phát triển khung vận hành và duy trì hệ sinh thái dựa trên chính trực, chuyên nghiệp và hợp tác minh bạch.",
+
+    about_focus_1: "Vận hành có cấu trúc",
+    about_focus_2: "Phát triển đối tác",
+    about_focus_3: "Giá trị bền vững",
+
+    about_value_1: "Chính trực",
+    about_value_1_text: "Minh bạch, kỷ luật và tiêu chuẩn rõ ràng.",
+
+    about_value_2: "Văn hoá chuyên nghiệp",
+    about_value_2_text: "Tư duy doanh nghiệp trong mọi quy trình và giao tiếp.",
+
+    about_value_3: "Tầm nhìn dài hạn",
+    about_value_3_text: "Tăng trưởng bền vững thông qua hợp tác quốc tế.",
+
+    // ===== PARTNERSHIP PAGE =====
+    partner_kicker: "Hợp tác",
+    partner_page_title: "Hợp tác chiến lược",
+    partner_page_sub:
+      "Chúng tôi hợp tác cùng đối tác quốc tế để củng cố tiêu chuẩn, hệ thống và tăng trưởng dài hạn.",
+
+    partner_block_1: "Mạng lưới đối tác",
+    partner_block_1_text:
+      "Xây dựng hợp tác dài hạn với đối tác quốc tế và mạng lưới chất lượng cao.",
+
+    partner_block_2: "Chuẩn vận hành",
+    partner_block_2_text:
+      "Quy trình rõ ràng, thực thi kỷ luật và giao tiếp chuyên nghiệp.",
+
+    partner_block_3: "Chính trực",
+    partner_block_3_text:
+      "Luôn ưu tiên minh bạch và niềm tin trong mọi hợp tác.",
+
+    tick_title: "Hợp tác cùng Tickmill",
+    tick_text:
+      "Zero To Hero hiện đang hợp tác cùng Tickmill theo định hướng mở rộng mạng lưới đối tác và củng cố hệ sinh thái chuyên nghiệp theo tiêu chuẩn quốc tế.",
+
+    // ===== TEAM PAGE =====
+    team_kicker: "Điều hành & Vận hành",
+    team_title: "Đội ngũ",
+    team_sub:
+      "Đội ngũ doanh nghiệp vận hành chuyên nghiệp dựa trên kỷ luật, cấu trúc và thực thi dài hạn.",
+
+    team_1_name: "Giám đốc điều hành",
+    team_1_role: "Chiến lược • Tầm nhìn • Lãnh đạo",
+
+    team_2_name: "Trưởng vận hành",
+    team_2_role: "Quy trình • Thực thi • Tiêu chuẩn",
+
+    team_3_name: "Phát triển kinh doanh",
+    team_3_role: "Tăng trưởng • Hợp tác • Mạng lưới",
+
+    team_4_name: "Đối tác & Quan hệ",
+    team_4_role: "Giao tiếp • Hỗ trợ • Chất lượng",
+
+    team_5_name: "Nghiên cứu & Phân tích",
+    team_5_role: "Dữ liệu • Kỷ luật • Góc nhìn",
+
+    team_6_name: "Tuân thủ & Văn hoá",
+    team_6_role: "Chính trực • Tiêu chuẩn • Dài hạn",
+
+    // ===== MARKET PAGE =====
+    market_kicker: "Theo dõi trực tuyến",
+    market_title: "Biến động thị trường",
+    market_sub: "Biểu đồ thị trường công khai theo thời gian thực để theo dõi biến động.",
+    market_widget_title: "Biểu đồ trực tuyến",
+    market_widget_text:
+      "Khu vực này có thể nâng cấp sau bằng widget chuyên nghiệp (TradingView) hoặc dashboard nội bộ.",
+    market_placeholder: "Khu vực widget (Cập nhật sau)",
+
+    // ===== MEDIA PAGE =====
+    media_kicker: "Cập nhật",
+    media_title: "Truyền thông & Hoạt động",
+    media_sub:
+      "Các cập nhật doanh nghiệp, sự kiện và hoạt động nội bộ sẽ được đăng tại đây.",
+
+    media_1_title: "Cập nhật doanh nghiệp",
+    media_1_text: "Nơi đăng thông báo, cột mốc và tin tức nội bộ.",
+
+    media_2_title: "Hoạt động cộng đồng",
+    media_2_text: "Nơi đăng sự kiện, lịch đào tạo và điểm nhấn hoạt động.",
+
+    media_3_title: "Hình ảnh & Thương hiệu",
+    media_3_text: "Nơi đăng tài liệu branding, hình ảnh và tư liệu tham khảo.",
+
+    // ===== CONTACT PAGE =====
+    contact_kicker: "Kết nối",
+    contact_title: "Liên hệ",
+    contact_sub: "Mục này có thể cập nhật sau với kênh chính thức của doanh nghiệp.",
+
+    contact_info_title: "Thông tin liên hệ",
+    contact_info_text:
+      "Nội dung mẫu. Cập nhật sau với email, số điện thoại, địa chỉ và thời gian làm việc.",
+
+    contact_email: "Email",
+    contact_phone: "Số điện thoại",
+    contact_location: "Khu vực",
+    contact_location_value: "Việt Nam",
   },
 };
 
