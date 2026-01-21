@@ -1,12 +1,122 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zero To Hero</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Market | Zero To Hero</title>
+  <meta name="description" content="Market updates - Zero To Hero." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body style="font-family: Arial; padding: 40px;">
-  <h1>Zero To Hero</h1>
-  <p>Corporate Profile • Partnership Network</p>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Zero To Hero Home">
+        <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
+        <span class="brand-name">Zero To Hero</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html" data-i18n="nav_home">Home</a>
+        <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
+        <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+        <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
+        <a class="nav-link active" href="market.html" data-i18n="nav_market">Market</a>
+        <a class="nav-link" href="media.html" data-i18n="nav_media">Media</a>
+        <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="lang-switch">
+          <button class="lang-btn active" id="btnEN" type="button">EN</button>
+          <button class="lang-btn" id="btnVI" type="button">VI</button>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-drawer" id="navDrawer">
+      <div class="drawer-lang">
+        <button class="lang-btn active" id="btnEN2" type="button">EN</button>
+        <button class="lang-btn" id="btnVI2" type="button">VI</button>
+      </div>
+
+      <a class="drawer-link" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
+      <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+      <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
+      <a class="drawer-link active" href="market.html" data-i18n="nav_market">Market</a>
+      <a class="drawer-link" href="media.html" data-i18n="nav_media">Media</a>
+      <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-kicker" data-i18n="market_kicker">Live Monitoring</div>
+      <h1 class="page-title" data-i18n="market_title">Online Market Movement</h1>
+      <p class="page-sub" data-i18n="market_sub">
+        Realtime public market charts for monitoring general volatility.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="panel">
+        <h3 class="panel-title" data-i18n="market_widget_title">Live Market Chart</h3>
+        <p class="panel-text" data-i18n="market_widget_text">
+          This section can be upgraded later with professional widgets (TradingView) or internal dashboards.
+        </p>
+
+        <div class="market-placeholder">
+          <div class="market-line"></div>
+          <div class="market-text" data-i18n="market_placeholder">
+            Widget placeholder (Update later)
+          </div>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top:18px;">
+        <div class="note-line"></div>
+        <p class="note-text" data-i18n="disclaimer">
+          This website is for company introduction purposes only.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="Zero To Hero" class="footer-logo">
+          <div>
+            <div class="footer-name">Zero To Hero</div>
+            <div class="footer-small" data-i18n="footer_tag">Corporate Partner Network</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="about.html" data-i18n="nav_about">About</a>
+          <a href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+          <a href="team.html" data-i18n="nav_team">Team</a>
+          <a href="market.html" data-i18n="nav_market">Market</a>
+          <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="footer-copy">© <span id="year"></span> Zero To Hero. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
