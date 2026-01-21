@@ -500,3 +500,41 @@ img{max-width:100%;display:block}
   .grid-3{grid-template-columns:1fr}
   .footer-copy{text-align:left}
 }
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.lang-switch{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+}
+
+.lang-btn{
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(7,7,10,.35);
+  color: rgba(243,243,247,.78);
+  padding:8px 10px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.lang-btn.active{
+  border-color: rgba(212,179,90,.30);
+  background: rgba(212,179,90,.14);
+  color: var(--text);
+}
+
+.drawer-lang{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom: 12px;
+}
