@@ -81,7 +81,34 @@ const i18n = {
 
     disclaimer: "This website is for company introduction purposes only.",
     footer_tag: "Corporate Partner Network",
+// ===== PARTNERSHIP (EXTRA) =====
+partner_core_title: "Partnership Principles",
+partner_core_sub:
+  "We build partnerships based on integrity, professionalism, and sustainable collaboration.",
 
+tick_pill_1: "Partner Collaboration",
+tick_pill_2: "International Standard",
+tick_pill_3: "Professional Ecosystem",
+
+partner_process_title: "How We Work With Partners",
+partner_process_sub:
+  "A clear, professional workflow designed for corporate-level operations and long-term collaboration.",
+
+partner_step_1_title: "Step 01 — Alignment",
+partner_step_1_text:
+  "We align expectations, standards, and collaboration principles before execution.",
+
+partner_step_2_title: "Step 02 — Implementation",
+partner_step_2_text:
+  "Structured workflow, consistent updates, and disciplined communication.",
+
+partner_step_3_title: "Step 03 — Quality Control",
+partner_step_3_text:
+  "We maintain quality through measurable standards and continuous optimization.",
+
+partner_step_4_title: "Step 04 — Long-term Growth",
+partner_step_4_text:
+  "Partnership is built for sustainability, trust, and long-term value.",
     // ===== ABOUT PAGE =====
     about_kicker: "Company Profile",
     about_title: "About Zero To Hero",
