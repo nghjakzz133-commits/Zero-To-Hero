@@ -672,3 +672,95 @@ img{max-width:100%;display:block}
   color: rgba(243,243,247,.88);
   font-size:13px;
 }
+.tv-box{
+  margin-top: 14px;
+  height: 460px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(7,7,10,.35);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tradingview-widget-container,
+#tv_chart{
+  width: 100%;
+  height: 100%;
+}
+.market-tabs{
+  display:flex;
+  gap:10px;
+  margin-top: 14px;
+  flex-wrap:wrap;
+}
+
+.tab-btn{
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(7,7,10,.30);
+  color: rgba(243,243,247,.80);
+  padding:10px 12px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+
+.tab-btn.active{
+  border-color: rgba(212,179,90,.35);
+  background: rgba(212,179,90,.14);
+  color: var(--text);
+}
+
+.tab-panel{
+  display:none;
+  margin-top: 14px;
+}
+.tab-panel.show{
+  display:block;
+}
+
+.charts-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:14px;
+}
+
+.tv-box{
+  height: 360px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(7,7,10,.35);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+}
+
+.tv-box.tv-big{
+  height: 520px;
+}
+
+.tv{
+  width:100%;
+  height:100%;
+}
+
+@media (max-width: 980px){
+  .charts-grid{
+    grid-template-columns: 1fr;
+  }
+  .tv-box{
+    height: 420px;
+  }
+  .tv-box.tv-big{
+    height: 520px;
+  }
+}
+.market-tabs{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.tab-btn{border:1px solid rgba(255,255,255,.10);background:rgba(7,7,10,.30);color:rgba(243,243,247,.80);padding:10px 12px;border-radius:12px;font-size:12px;font-weight:700;letter-spacing:.3px}
+.tab-btn.active{border-color:rgba(212,179,90,.35);background:rgba(212,179,90,.14);color:var(--text)}
+.tab-panel{display:none;margin-top:14px}
+.tab-panel.show{display:block}
+.charts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.tv-box{height:360px;border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(7,7,10,.35);overflow:hidden;box-shadow:var(--shadow)}
+.tv-box.tv-big{height:520px}
+.tv{width:100%;height:100%}
+@media (max-width:980px){.charts-grid{grid-template-columns:1fr}.tv-box{height:420px}.tv-box.tv-big{height:520px}}
