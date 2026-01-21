@@ -14,167 +14,155 @@
 </head>
 
 <body>
-  <!-- ================= HEADER ================= -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
-        <span class="brand-name">Zero To Hero</span>
-      </a>
 
-      <nav class="nav">
-        <a class="nav-link" href="index.html" data-i18n="nav_home">Home</a>
-        <a class="nav-link active" href="about.html" data-i18n="nav_about">About</a>
-        <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-        <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
-        <a class="nav-link" href="market.html" data-i18n="nav_market">Market</a>
-        <a class="nav-link" href="media.html" data-i18n="nav_media">Media</a>
-        <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-      </nav>
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
+      <span class="brand-name">Zero To Hero</span>
+    </a>
 
-      <div class="header-right">
-        <div class="lang-switch">
-          <button class="lang-btn active" id="btnEN">EN</button>
-          <button class="lang-btn" id="btnVI">VI</button>
+    <nav class="nav">
+      <a class="nav-link" href="index.html" data-i18n="nav_home"></a>
+      <a class="nav-link active" href="about.html" data-i18n="nav_about"></a>
+      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership"></a>
+      <a class="nav-link" href="team.html" data-i18n="nav_team"></a>
+      <a class="nav-link" href="market.html" data-i18n="nav_market"></a>
+      <a class="nav-link" href="media.html" data-i18n="nav_media"></a>
+      <a class="nav-link" href="contact.html" data-i18n="nav_contact"></a>
+    </nav>
+
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btnEN">EN</button>
+        <button class="lang-btn" id="btnVI">VI</button>
+      </div>
+      <button class="menu-btn" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="drawer-lang">
+      <button class="lang-btn active" id="btnEN2">EN</button>
+      <button class="lang-btn" id="btnVI2">VI</button>
+    </div>
+    <a class="drawer-link" href="index.html" data-i18n="nav_home"></a>
+    <a class="drawer-link active" href="about.html" data-i18n="nav_about"></a>
+    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership"></a>
+    <a class="drawer-link" href="team.html" data-i18n="nav_team"></a>
+    <a class="drawer-link" href="market.html" data-i18n="nav_market"></a>
+    <a class="drawer-link" href="media.html" data-i18n="nav_media"></a>
+    <a class="drawer-link" href="contact.html" data-i18n="nav_contact"></a>
+  </div>
+</header>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-kicker" data-i18n="about_kicker"></div>
+    <h1 class="page-title" data-i18n="about_title"></h1>
+    <p class="page-sub" data-i18n="about_sub"></p>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="section">
+  <div class="container">
+
+    <div class="grid-2">
+
+      <!-- WHO WE ARE -->
+      <div class="panel panel-gold">
+        <h3 class="panel-title" data-i18n="about_who_title"></h3>
+        <p class="panel-text" data-i18n="about_who_text"></p>
+
+        <div class="pill-row">
+          <span class="pill" data-i18n="about_focus_1"></span>
+          <span class="pill" data-i18n="about_focus_2"></span>
+          <span class="pill" data-i18n="about_focus_3"></span>
         </div>
-        <button class="menu-btn" id="menuBtn">
-          <span></span><span></span><span></span>
-        </button>
       </div>
-    </div>
 
-    <div class="nav-drawer" id="navDrawer">
-      <div class="drawer-lang">
-        <button class="lang-btn active" id="btnEN2">EN</button>
-        <button class="lang-btn" id="btnVI2">VI</button>
-      </div>
-      <a class="drawer-link" href="index.html" data-i18n="nav_home">Home</a>
-      <a class="drawer-link active" href="about.html" data-i18n="nav_about">About</a>
-      <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-      <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
-      <a class="drawer-link" href="market.html" data-i18n="nav_market">Market</a>
-      <a class="drawer-link" href="media.html" data-i18n="nav_media">Media</a>
-      <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-    </div>
-  </header>
+      <!-- OUR FOCUS -->
+      <div class="panel">
+        <h3 class="panel-title" data-i18n="about_focus_title"></h3>
+        <p class="panel-text" data-i18n="about_focus_text"></p>
 
-  <!-- ================= PAGE HERO ================= -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-kicker" data-i18n="about_kicker">Company Profile</div>
-      <h1 class="page-title" data-i18n="about_title">About Zero To Hero</h1>
-      <p class="page-sub" data-i18n="about_sub">
-        A corporate team focusing on disciplined operations, partner networks, and long-term value.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= CONTENT ================= -->
-  <section class="section">
-    <div class="container">
-
-      <div class="grid-2">
-        <!-- WHO WE ARE -->
-        <div class="panel panel-gold">
-          <h3 class="panel-title" data-i18n="about_who_title">Who We Are</h3>
-          <p class="panel-text" data-i18n="about_who_text">
-            Zero To Hero is built with a corporate mindset and structured execution.
-          </p>
-
-          <div class="pill-row">
-            <span class="pill" data-i18n="about_focus_1">Structured Operations</span>
-            <span class="pill" data-i18n="about_focus_2">Partner Growth</span>
-            <span class="pill" data-i18n="about_focus_3">Sustainable Value</span>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number" data-i18n="stat_1"></div>
+            <div class="stat-label" data-i18n="about_stat_label_1"></div>
           </div>
-        </div>
-
-        <!-- FOCUS -->
-        <div class="panel">
-          <h3 class="panel-title" data-i18n="about_focus_title">Our Focus</h3>
-          <p class="panel-text" data-i18n="about_focus_text">
-            We develop internal standards and long-term operational frameworks.
-          </p>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-number" data-i18n="stat_1">Corporate Standard</div>
-              <div class="stat-label">Operating Model</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number" data-i18n="stat_2">Partner Mindset</div>
-              <div class="stat-label">Collaboration</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number" data-i18n="stat_3">Sustainable Growth</div>
-              <div class="stat-label">Long-term Vision</div>
-            </div>
+          <div class="stat">
+            <div class="stat-number" data-i18n="stat_2"></div>
+            <div class="stat-label" data-i18n="about_stat_label_2"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-number" data-i18n="stat_3"></div>
+            <div class="stat-label" data-i18n="about_stat_label_3"></div>
           </div>
         </div>
       </div>
-
-      <!-- VALUES -->
-      <div class="section-head" style="margin-top:34px;">
-        <h2 class="section-title">Core Values</h2>
-        <p class="section-sub">
-          Our operating principles guide every collaboration and decision.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3 class="card-title" data-i18n="about_value_1">Integrity</h3>
-          <p class="card-text" data-i18n="about_value_1_text"></p>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title" data-i18n="about_value_2">Professional Culture</h3>
-          <p class="card-text" data-i18n="about_value_2_text"></p>
-        </div>
-
-        <div class="card">
-          <h3 class="card-title" data-i18n="about_value_3">Long-term Vision</h3>
-          <p class="card-text" data-i18n="about_value_3_text"></p>
-        </div>
-      </div>
-
-      <!-- NOTE -->
-      <div class="note" style="margin-top:28px;">
-        <div class="note-line"></div>
-        <p class="note-text" data-i18n="disclaimer">
-          This content is provided to present an overview of our ecosystem and operational direction.
-        </p>
-      </div>
-
     </div>
-  </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <img src="assets/img/logo.png" class="footer-logo" alt="Zero To Hero">
-          <div>
-            <div class="footer-name">Zero To Hero</div>
-            <div class="footer-small" data-i18n="footer_tag">Corporate Partner Network</div>
-          </div>
-        </div>
+    <!-- CORE VALUES -->
+    <div class="section-head" style="margin-top:34px;">
+      <h2 class="section-title" data-i18n="about_core_title"></h2>
+      <p class="section-sub" data-i18n="about_core_sub"></p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3 class="card-title" data-i18n="about_value_1"></h3>
+        <p class="card-text" data-i18n="about_value_1_text"></p>
       </div>
 
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-          <a href="team.html" data-i18n="nav_team">Team</a>
-          <a href="media.html" data-i18n="nav_media">Media</a>
-          <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        </div>
-        <div class="footer-copy">
-          © <span id="year"></span> Zero To Hero. All rights reserved.
-        </div>
+      <div class="card">
+        <h3 class="card-title" data-i18n="about_value_2"></h3>
+        <p class="card-text" data-i18n="about_value_2_text"></p>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title" data-i18n="about_value_3"></h3>
+        <p class="card-text" data-i18n="about_value_3_text"></p>
       </div>
     </div>
-  </footer>
 
-  <script src="assets/js/main.js"></script>
+    <!-- NOTE -->
+    <div class="note" style="margin-top:28px;">
+      <div class="note-line"></div>
+      <p class="note-text" data-i18n="disclaimer"></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/logo.png" class="footer-logo" alt="Zero To Hero">
+      <div>
+        <div class="footer-name">Zero To Hero</div>
+        <div class="footer-small" data-i18n="footer_tag"></div>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="partnership.html" data-i18n="nav_partnership"></a>
+        <a href="team.html" data-i18n="nav_team"></a>
+        <a href="media.html" data-i18n="nav_media"></a>
+        <a href="contact.html" data-i18n="nav_contact"></a>
+      </div>
+      <div class="footer-copy">© <span id="year"></span> Zero To Hero</div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
