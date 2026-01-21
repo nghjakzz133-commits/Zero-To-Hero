@@ -336,7 +336,34 @@ partner_step_4_text:
     tick_title: "Hợp tác cùng Tickmill",
     tick_text:
       "Zero To Hero hiện đang hợp tác cùng Tickmill theo định hướng mở rộng mạng lưới đối tác và củng cố hệ sinh thái chuyên nghiệp theo tiêu chuẩn quốc tế.",
+// ===== HỢP TÁC (BỔ SUNG) =====
+partner_core_title: "Nguyên tắc hợp tác",
+partner_core_sub:
+  "Chúng tôi xây dựng hợp tác dựa trên chính trực, chuyên nghiệp và phát triển bền vững.",
 
+tick_pill_1: "Hợp tác đối tác",
+tick_pill_2: "Chuẩn quốc tế",
+tick_pill_3: "Hệ sinh thái chuyên nghiệp",
+
+partner_process_title: "Quy trình hợp tác",
+partner_process_sub:
+  "Quy trình rõ ràng, chuyên nghiệp, phù hợp vận hành doanh nghiệp và hợp tác dài hạn.",
+
+partner_step_1_title: "Bước 01 — Đồng bộ",
+partner_step_1_text:
+  "Đồng bộ kỳ vọng, tiêu chuẩn và nguyên tắc hợp tác trước khi triển khai.",
+
+partner_step_2_title: "Bước 02 — Triển khai",
+partner_step_2_text:
+  "Thực thi theo cấu trúc, cập nhật nhất quán và giao tiếp kỷ luật.",
+
+partner_step_3_title: "Bước 03 — Kiểm soát chất lượng",
+partner_step_3_text:
+  "Duy trì chất lượng bằng tiêu chuẩn đo lường rõ ràng và tối ưu liên tục.",
+
+partner_step_4_title: "Bước 04 — Tăng trưởng dài hạn",
+partner_step_4_text:
+  "Hợp tác hướng đến bền vững, niềm tin và giá trị dài hạn.",
     // ===== TEAM PAGE =====
     team_kicker: "Điều hành & Vận hành",
     team_title: "Đội ngũ",
