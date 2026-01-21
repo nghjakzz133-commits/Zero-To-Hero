@@ -228,6 +228,12 @@ about_core_sub: "Our operating principles guide every collaboration and decision
 about_stat_label_1: "Operating Model",
 about_stat_label_2: "Collaboration",
 about_stat_label_3: "Long-term Vision",
+ about_stat_label_1: "Operating Model",
+about_stat_label_2: "Collaboration",
+about_stat_label_3: "Long-term Vision",
+
+about_core_title: "Core Values",
+about_core_sub: "Our operating principles guide every collaboration and decision.",
   },
 
   vi: {
@@ -375,6 +381,12 @@ about_core_sub: "Nguyên tắc vận hành định hướng mọi hợp tác và
 about_stat_label_1: "Mô hình vận hành",
 about_stat_label_2: "Hợp tác",
 about_stat_label_3: "Tầm nhìn dài hạn",
+ about_stat_label_1: "Mô hình vận hành",
+about_stat_label_2: "Hợp tác",
+about_stat_label_3: "Tầm nhìn dài hạn",
+
+about_core_title: "Giá trị cốt lõi",
+about_core_sub: "Nguyên tắc vận hành định hướng mọi hợp tác và quyết định.",
   },
 };
 
