@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Market | Zero To Hero</title>
   <meta name="description" content="Market updates - Zero To Hero." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Zero To Hero Home">
@@ -30,7 +33,8 @@
       </nav>
 
       <div class="header-right">
-        <div class="lang-switch">
+        <!-- Language Switch -->
+        <div class="lang-switch" aria-label="Language Switch">
           <button class="lang-btn active" id="btnEN" type="button">EN</button>
           <button class="lang-btn" id="btnVI" type="button">VI</button>
         </div>
@@ -41,6 +45,7 @@
       </div>
     </div>
 
+    <!-- Mobile drawer -->
     <div class="nav-drawer" id="navDrawer">
       <div class="drawer-lang">
         <button class="lang-btn active" id="btnEN2" type="button">EN</button>
@@ -57,6 +62,7 @@
     </div>
   </header>
 
+  <!-- ================= PAGE HERO ================= -->
   <section class="page-hero">
     <div class="container">
       <div class="page-kicker" data-i18n="market_kicker">Live Monitoring</div>
@@ -67,6 +73,7 @@
     </div>
   </section>
 
+  <!-- ================= CONTENT ================= -->
   <section class="section">
     <div class="container">
       <div class="panel">
@@ -75,10 +82,45 @@
           This section can be upgraded later with professional widgets (TradingView) or internal dashboards.
         </p>
 
-        <div class="market-placeholder">
-          <div class="market-line"></div>
-          <div class="market-text" data-i18n="market_placeholder">
-            Widget placeholder (Update later)
+        <!-- Tabs -->
+        <div class="market-tabs">
+          <button class="tab-btn active" data-tab="fx">FX</button>
+          <button class="tab-btn" data-tab="gold">GOLD</button>
+          <button class="tab-btn" data-tab="crypto">CRYPTO</button>
+        </div>
+
+        <!-- FX -->
+        <div class="tab-panel show" id="tab-fx">
+          <div class="charts-grid">
+            <div class="tv-box"><div class="tv" id="tv_eurusd"></div></div>
+            <div class="tv-box"><div class="tv" id="tv_gbpusd"></div></div>
+
+            <div class="tv-box"><div class="tv" id="tv_usdjpy"></div></div>
+            <div class="tv-box"><div class="tv" id="tv_audusd"></div></div>
+
+            <div class="tv-box"><div class="tv" id="tv_usdcad"></div></div>
+            <div class="tv-box"><div class="tv" id="tv_usdchf"></div></div>
+
+            <div class="tv-box"><div class="tv" id="tv_eurgbp"></div></div>
+            <div class="tv-box"><div class="tv" id="tv_eurjpy"></div></div>
+
+            <div class="tv-box"><div class="tv" id="tv_gbpaud"></div></div>
+            <div class="tv-box"><div class="tv" id="tv_gbpjpy"></div></div>
+          </div>
+        </div>
+
+        <!-- GOLD -->
+        <div class="tab-panel" id="tab-gold">
+          <div class="charts-grid">
+            <div class="tv-box tv-big"><div class="tv" id="tv_xauusd"></div></div>
+          </div>
+        </div>
+
+        <!-- CRYPTO -->
+        <div class="tab-panel" id="tab-crypto">
+          <div class="charts-grid">
+            <div class="tv-box"><div class="tv" id="tv_btcusd"></div></div>
+            <div class="tv-box"><div class="tv" id="tv_ethusd"></div></div>
           </div>
         </div>
       </div>
@@ -92,6 +134,7 @@
     </div>
   </section>
 
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-left">
@@ -117,6 +160,68 @@
     </div>
   </footer>
 
+  <!-- ✅ TradingView -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
+  <script>
+    // Tabs
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const panels = {
+      fx: document.getElementById("tab-fx"),
+      gold: document.getElementById("tab-gold"),
+      crypto: document.getElementById("tab-crypto"),
+    };
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        Object.values(panels).forEach(p => p.classList.remove("show"));
+        panels[btn.dataset.tab].classList.add("show");
+      });
+    });
+
+    // Create chart helper
+    function createTV(id, symbol, interval="60") {
+      if (!document.getElementById(id)) return;
+      new TradingView.widget({
+        autosize: true,
+        symbol: symbol,
+        interval: interval,
+        timezone: "Etc/UTC",
+        theme: "dark",
+        style: "1",
+        locale: "en",
+        toolbar_bg: "#0b0b10",
+        enable_publishing: false,
+        hide_top_toolbar: false,
+        hide_legend: false,
+        container_id: id
+      });
+    }
+
+    // FX
+    createTV("tv_audusd", "OANDA:AUDUSD");
+    createTV("tv_eurgbp", "OANDA:EURGBP");
+    createTV("tv_eurjpy", "OANDA:EURJPY");
+    createTV("tv_eurusd", "OANDA:EURUSD");
+    createTV("tv_gbpaud", "OANDA:GBPAUD");
+    createTV("tv_gbpjpy", "OANDA:GBPJPY");
+    createTV("tv_gbpusd", "OANDA:GBPUSD");
+    createTV("tv_usdcad", "OANDA:USDCAD");
+    createTV("tv_usdchf", "OANDA:USDCHF");
+    createTV("tv_usdjpy", "OANDA:USDJPY");
+
+    // GOLD
+    createTV("tv_xauusd", "OANDA:XAUUSD", "30");
+
+    // CRYPTO
+    createTV("tv_btcusd", "BITSTAMP:BTCUSD");
+    createTV("tv_ethusd", "BITSTAMP:ETHUSD");
+  </script>
+
+  <!-- ✅ Main JS (menu + year + language) -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
