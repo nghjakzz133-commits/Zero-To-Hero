@@ -4,241 +4,105 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zero To Hero | Corporate Partner Network</title>
-  <meta name="description" content="Zero To Hero - Corporate Partner Network. Building sustainable growth through global partnerships and professional execution." />
+  <meta name="description" content="Zero To Hero - Corporate Partner Network." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- CORE + INDEX -->
+  <link rel="stylesheet" href="assets/css/core.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 
 <body>
-  <!-- ================= HEADER ================= -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Zero To Hero Home">
-        <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
-        <span class="brand-name">Zero To Hero</span>
-      </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="nav-link active" href="index.html" data-i18n="nav_home">Home</a>
-        <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
-        <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-        <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
-        <a class="nav-link" href="market.html" data-i18n="nav_market">Market</a>
-        <a class="nav-link" href="media.html" data-i18n="nav_media">Media</a>
-        <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-      </nav>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.png" class="brand-logo" alt="Zero To Hero">
+      <span class="brand-name">Zero To Hero</span>
+    </a>
 
-      <div class="header-right">
-        <!-- Language Switch -->
-        <div class="lang-switch" aria-label="Language Switch">
-          <button class="lang-btn active" id="btnEN" type="button">EN</button>
-          <button class="lang-btn" id="btnVI" type="button">VI</button>
-        </div>
+    <nav class="nav">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="partnership.html">Partnership</a>
+      <a class="nav-link" href="team.html">Team</a>
+      <a class="nav-link" href="market.html">Market</a>
+      <a class="nav-link" href="media.html">Media</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btnEN">EN</button>
+        <button class="lang-btn" id="btnVI">VI</button>
       </div>
+      <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="nav-drawer" id="navDrawer">
+    <a class="drawer-link active" href="index.html">Home</a>
+    <a class="drawer-link" href="about.html">About</a>
+    <a class="drawer-link" href="partnership.html">Partnership</a>
+    <a class="drawer-link" href="team.html">Team</a>
+    <a class="drawer-link" href="market.html">Market</a>
+    <a class="drawer-link" href="media.html">Media</a>
+    <a class="drawer-link" href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-index">
+  <div class="container">
+    <span class="hero-badge">Corporate Partner Network</span>
+    <h1 class="hero-title">
+      From <span class="gold">Zero</span> To <span class="gold">Hero</span>
+    </h1>
+    <p class="hero-sub">
+      Building sustainable growth through global partnerships and professional execution.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>Global</strong><span>Orientation</span></div>
+      <div class="hero-stat"><strong>Corporate</strong><span>Standard</span></div>
+      <div class="hero-stat"><strong>Long-term</strong><span>Vision</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET PREVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Market Snapshot</h2>
+      <p class="section-sub">Live market awareness for strategic orientation.</p>
     </div>
 
-    <!-- Mobile drawer -->
-    <div class="nav-drawer" id="navDrawer">
-      <div class="drawer-lang">
-        <button class="lang-btn active" id="btnEN2" type="button">EN</button>
-        <button class="lang-btn" id="btnVI2" type="button">VI</button>
-      </div>
-
-      <a class="drawer-link active" href="index.html" data-i18n="nav_home">Home</a>
-      <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
-      <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-      <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
-      <a class="drawer-link" href="market.html" data-i18n="nav_market">Market</a>
-      <a class="drawer-link" href="media.html" data-i18n="nav_media">Media</a>
-      <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+    <div class="market-preview">
+      <div class="market-card">EURUSD</div>
+      <div class="market-card">GBPUSD</div>
+      <div class="market-card">XAUUSD</div>
+      <div class="market-card">BTCUSD</div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="assets/img/hero.jpg" alt="Zero To Hero Corporate Hero Background" />
-      <div class="hero-overlay"></div>
-      <div class="hero-glow"></div>
-    </div>
-
-    <div class="container hero-content">
-      <div class="badge" data-i18n="badge">Corporate Partner Network</div>
-
-      <h1 class="hero-title">
-        <span data-i18n="hero_title_1">From</span>
-        <span class="gold" data-i18n="hero_title_2">Zero</span>
-        <span data-i18n="hero_title_3">To</span>
-        <span class="gold" data-i18n="hero_title_4">Hero</span>
-      </h1>
-
-      <p class="hero-subtitle" data-i18n="hero_subtitle">
-        Building sustainable growth through global partnerships, disciplined execution,
-        and professional operations.
-      </p>
-
-      <div class="hero-cards">
-        <div class="mini-card">
-          <div class="mini-top">
-            <span class="mini-dot"></span>
-            <span class="mini-title" data-i18n="value_1_title">Integrity</span>
-          </div>
-          <div class="mini-desc" data-i18n="value_1_desc">Transparency • Discipline • Trust</div>
-        </div>
-
-        <div class="mini-card">
-          <div class="mini-top">
-            <span class="mini-dot"></span>
-            <span class="mini-title" data-i18n="value_2_title">Professionalism</span>
-          </div>
-          <div class="mini-desc" data-i18n="value_2_desc">Corporate mindset • Clear process</div>
-        </div>
-
-        <div class="mini-card">
-          <div class="mini-top">
-            <span class="mini-dot"></span>
-            <span class="mini-title" data-i18n="value_3_title">Global Partnership</span>
-          </div>
-          <div class="mini-desc" data-i18n="value_3_desc">International collaboration • Growth</div>
-        </div>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/logo.png" class="footer-logo" alt="">
+      <div>
+        <div class="footer-name">Zero To Hero</div>
+        <div class="footer-small">Corporate Partner Network</div>
       </div>
     </div>
-  </section>
+    <div class="footer-copy">© <span id="year"></span> Zero To Hero</div>
+  </div>
+</footer>
 
-  <!-- ================= ABOUT PREVIEW ================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="overview_title">Company Overview</h2>
-        <p class="section-sub" data-i18n="overview_sub">
-          Zero To Hero is a corporate team focusing on building partner networks and long-term value.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="panel">
-          <h3 class="panel-title" data-i18n="who_title">Who We Are</h3>
-          <p class="panel-text" data-i18n="who_text">
-            Zero To Hero is built with a corporate mindset and a disciplined operating culture.
-            We focus on sustainable development, structured execution, and international collaboration.
-          </p>
-          <div class="pill-row">
-            <span class="pill" data-i18n="pill_1">Corporate Profile</span>
-            <span class="pill" data-i18n="pill_2">Partner Network</span>
-            <span class="pill" data-i18n="pill_3">Long-term Vision</span>
-          </div>
-        </div>
-
-        <div class="panel panel-gold">
-          <h3 class="panel-title" data-i18n="mission_title">Our Mission</h3>
-          <p class="panel-text" data-i18n="mission_text">
-            To create a professional ecosystem with measurable standards, transparent operations,
-            and high-integrity collaboration.
-          </p>
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-number">01</div>
-              <div class="stat-label" data-i18n="stat_1">Corporate Standard</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">02</div>
-              <div class="stat-label" data-i18n="stat_2">Partner Mindset</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">03</div>
-              <div class="stat-label" data-i18n="stat_3">Sustainable Growth</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PARTNERSHIP PREVIEW ================= -->
-  <section class="section section-soft">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="partner_title">Strategic Partnership</h2>
-        <p class="section-sub" data-i18n="partner_sub">
-          We collaborate with global partners to strengthen our ecosystem and operational standards.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-top">
-            <span class="card-icon">✦</span>
-            <h3 class="card-title" data-i18n="card_1_title">International Collaboration</h3>
-          </div>
-          <p class="card-text" data-i18n="card_1_text">
-            A partnership-driven approach that focuses on long-term quality and sustainability.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <span class="card-icon">✦</span>
-            <h3 class="card-title" data-i18n="card_2_title">Professional Execution</h3>
-          </div>
-          <p class="card-text" data-i18n="card_2_text">
-            Clear workflow, structured operations, and disciplined communication standards.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <span class="card-icon">✦</span>
-            <h3 class="card-title" data-i18n="card_3_title">Integrity First</h3>
-          </div>
-          <p class="card-text" data-i18n="card_3_text">
-            We prioritize transparency, trust, and sustainable value over short-term performance.
-          </p>
-        </div>
-      </div>
-
-      <div class="note">
-        <div class="note-line"></div>
-        <p class="note-text" data-i18n="disclaimer">
-          This website is for company introduction purposes only.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <img src="assets/img/logo.png" alt="Zero To Hero" class="footer-logo">
-          <div>
-            <div class="footer-name">Zero To Hero</div>
-            <div class="footer-small" data-i18n="footer_tag">Corporate Partner Network</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="about.html" data-i18n="nav_about">About</a>
-          <a href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-          <a href="team.html" data-i18n="nav_team">Team</a>
-          <a href="market.html" data-i18n="nav_market">Market</a>
-          <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        </div>
-        <div class="footer-copy">© <span id="year"></span> Zero To Hero. All rights reserved.</div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/index.js"></script>
 </body>
 </html>
