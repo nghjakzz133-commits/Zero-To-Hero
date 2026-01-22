@@ -1,0 +1,69 @@
+/* ================= TEAM PAGE ================= */
+
+/* Team grid spacing */
+.team-grid{
+  margin-top: 14px;
+}
+
+/* Team card */
+.team-card{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.team-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(0,0,0,.6);
+}
+
+/* Avatar */
+.avatar{
+  position:relative;
+  overflow:hidden;
+}
+
+.avatar::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(120px 60px at 30% 20%, rgba(212,179,90,.35), transparent 60%);
+  pointer-events:none;
+}
+
+/* Name & role */
+.team-name{
+  font-size:15px;
+  letter-spacing:.2px;
+}
+
+.team-role{
+  margin-top:2px;
+}
+
+/* Subtle glow on hover */
+.team-card:hover .avatar{
+  box-shadow: 0 0 0 6px rgba(212,179,90,.10);
+}
+
+/* Animation */
+.team-card{
+  animation: fadeUp .35s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform: translateY(6px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* Mobile safety */
+@media (max-width:980px){
+  .team-card:hover{
+    transform:none;
+  }
+}
