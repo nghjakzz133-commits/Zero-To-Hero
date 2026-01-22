@@ -17,7 +17,7 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
@@ -26,54 +26,62 @@
     </a>
 
     <nav class="nav">
-      <a class="nav-link active" href="index.html">Home</a>
-      <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link" href="partnership.html">Partnership</a>
-      <a class="nav-link" href="team.html">Team</a>
-      <a class="nav-link" href="market.html">Market</a>
-      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="nav-link active" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
+      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+      <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
+      <a class="nav-link" href="market.html" data-i18n="nav_market">Market</a>
+      <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
     </nav>
 
     <div class="header-right">
       <div class="lang-switch">
-        <button class="lang-btn active">EN</button>
-        <button class="lang-btn">VI</button>
+        <button class="lang-btn active" id="btnEN">EN</button>
+        <button class="lang-btn" id="btnVI">VI</button>
       </div>
-      <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+      <button class="menu-btn" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 
   <div class="nav-drawer" id="navDrawer">
-    <a class="drawer-link active" href="index.html">Home</a>
-    <a class="drawer-link" href="about.html">About</a>
-    <a class="drawer-link" href="partnership.html">Partnership</a>
-    <a class="drawer-link" href="team.html">Team</a>
-    <a class="drawer-link" href="market.html">Market</a>
-    <a class="drawer-link" href="contact.html">Contact</a>
+    <a class="drawer-link active" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
+    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+    <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
+    <a class="drawer-link" href="market.html" data-i18n="nav_market">Market</a>
+    <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
   <div class="container hero-inner">
-    <div class="badge">Corporate Partner Network</div>
-    <h1 class="hero-title">
+    <div class="badge" data-i18n="badge">Corporate Partner Network</div>
+
+    <h1 class="hero-title" data-i18n="hero_title">
       From <span class="gold">Zero</span> To <span class="gold">Hero</span>
     </h1>
-    <p class="hero-sub">
+
+    <p class="hero-sub" data-i18n="hero_sub">
       Building sustainable growth through global partnerships and professional execution.
     </p>
   </div>
 </section>
 
-<!-- MARKET -->
+<!-- ================= MARKET SNAPSHOT ================= -->
 <section class="section section-soft">
   <div class="container">
+
     <div class="section-head">
-      <h2 class="section-title">Market Snapshot</h2>
-      <p class="section-sub">Live public market overview for general monitoring.</p>
+      <h2 class="section-title" data-i18n="market_title">Market Snapshot</h2>
+      <p class="section-sub" data-i18n="market_sub">
+        Live public market overview for general monitoring.
+      </p>
     </div>
 
+    <!-- TABS -->
     <div class="market-tabs">
       <button class="tab-btn active" data-tab="gold">GOLD</button>
       <button class="tab-btn" data-tab="fx">FX</button>
@@ -85,17 +93,17 @@
       <!-- GOLD -->
       <div class="tab-panel show" id="tab-gold">
         <div class="tv-box tv-big">
-          <div class="tv" id="tv_xauusd"></div>
+          <div class="tv" id="tv_index_xauusd"></div>
         </div>
 
         <div class="index-mini-markets">
           <div class="mini-market">
             <div class="mini-title">EUR / USD</div>
-            <div class="tv mini-tv" id="tv_eurusd"></div>
+            <div class="tv mini-tv" id="tv_index_eurusd"></div>
           </div>
           <div class="mini-market">
             <div class="mini-title">BTC / USD</div>
-            <div class="tv mini-tv" id="tv_btcusd"></div>
+            <div class="tv mini-tv" id="tv_index_btcusd"></div>
           </div>
         </div>
       </div>
@@ -132,22 +140,24 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
       <img src="assets/img/logo.png" class="footer-logo" alt="">
       <div>
         <div class="footer-name">Zero To Hero</div>
-        <div class="footer-small">Corporate Partner Network</div>
+        <div class="footer-small" data-i18n="footer_tag">Corporate Partner Network</div>
       </div>
     </div>
+
     <div class="footer-copy">
       © <span id="year"></span> Zero To Hero
     </div>
   </div>
 </footer>
 
+<!-- TradingView -->
 <script src="https://s3.tradingview.com/tv.js"></script>
 <script src="assets/js/index.js"></script>
 </body>
