@@ -4,14 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Team | Zero To Hero</title>
-  <meta name="description" content="Team & Corporate Structure - Zero To Hero." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/core.css" />
-  <link rel="stylesheet" href="assets/css/team.css" />
+  <link rel="stylesheet" href="assets/css/core.css">
+  <link rel="stylesheet" href="assets/css/team.css">
 </head>
 
 <body>
@@ -19,7 +18,7 @@
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
+      <img src="assets/img/logo.png" class="brand-logo" alt="">
       <span class="brand-name">Zero To Hero</span>
     </a>
 
@@ -66,36 +65,24 @@
 </section>
 
 <section class="section">
-  <div class="container">
+  <div class="container team-grid">
 
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="team_section_title"></h2>
-      <p class="section-sub" data-i18n="team_section_sub"></p>
+    <div class="team-card">
+      <div class="avatar"></div>
+      <div class="team-name" data-i18n="team_1_name"></div>
+      <div class="team-role" data-i18n="team_1_role"></div>
     </div>
 
-    <div class="team-grid grid-3">
-      <div class="team-card">
-        <div class="avatar"></div>
-        <div class="team-name" data-i18n="team_name_1"></div>
-        <div class="team-role" data-i18n="team_role_1"></div>
-      </div>
-
-      <div class="team-card">
-        <div class="avatar"></div>
-        <div class="team-name" data-i18n="team_name_2"></div>
-        <div class="team-role" data-i18n="team_role_2"></div>
-      </div>
-
-      <div class="team-card">
-        <div class="avatar"></div>
-        <div class="team-name" data-i18n="team_name_3"></div>
-        <div class="team-role" data-i18n="team_role_3"></div>
-      </div>
+    <div class="team-card">
+      <div class="avatar"></div>
+      <div class="team-name" data-i18n="team_2_name"></div>
+      <div class="team-role" data-i18n="team_2_role"></div>
     </div>
 
-    <div class="note" style="margin-top:26px;">
-      <div class="note-line"></div>
-      <p class="note-text" data-i18n="disclaimer"></p>
+    <div class="team-card">
+      <div class="avatar"></div>
+      <div class="team-name" data-i18n="team_3_name"></div>
+      <div class="team-role" data-i18n="team_3_role"></div>
     </div>
 
   </div>
@@ -104,22 +91,13 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <img src="assets/img/logo.png" class="footer-logo" alt="Zero To Hero">
+      <img src="assets/img/logo.png" class="footer-logo" alt="">
       <div>
         <div class="footer-name">Zero To Hero</div>
         <div class="footer-small" data-i18n="footer_tag"></div>
       </div>
     </div>
-
-    <div class="footer-right">
-      <div class="footer-links">
-        <a href="about.html" data-i18n="nav_about"></a>
-        <a href="partnership.html" data-i18n="nav_partnership"></a>
-        <a href="market.html" data-i18n="nav_market"></a>
-        <a href="contact.html" data-i18n="nav_contact"></a>
-      </div>
-      <div class="footer-copy">© <span id="year"></span> Zero To Hero</div>
-    </div>
+    <div class="footer-copy">© <span id="year"></span> Zero To Hero</div>
   </div>
 </footer>
 
