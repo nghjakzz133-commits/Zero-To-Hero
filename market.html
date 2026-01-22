@@ -6,223 +6,167 @@
   <title>Market | Zero To Hero</title>
   <meta name="description" content="Market updates - Zero To Hero." />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
- <link rel="stylesheet" href="assets/css/core.css" />
-<link rel="stylesheet" href="assets/css/market.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/core.css" />
+  <link rel="stylesheet" href="assets/css/market.css" />
 </head>
 
 <body>
-  <!-- ================= HEADER ================= -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Zero To Hero Home">
-        <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
-        <span class="brand-name">Zero To Hero</span>
-      </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html" data-i18n="nav_home">Home</a>
-        <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
-        <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-        <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
-        <a class="nav-link active" href="market.html" data-i18n="nav_market">Market</a>
-        <a class="nav-link" href="media.html" data-i18n="nav_media">Media</a>
-        <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-      </nav>
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
+      <span class="brand-name">Zero To Hero</span>
+    </a>
 
-      <div class="header-right">
-        <!-- Language Switch -->
-        <div class="lang-switch" aria-label="Language Switch">
-          <button class="lang-btn active" id="btnEN" type="button">EN</button>
-          <button class="lang-btn" id="btnVI" type="button">VI</button>
+    <nav class="nav">
+      <a class="nav-link" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
+      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+      <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
+      <a class="nav-link active" href="market.html" data-i18n="nav_market">Market</a>
+      <a class="nav-link" href="media.html" data-i18n="nav_media">Media</a>
+      <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btnEN">EN</button>
+        <button class="lang-btn" id="btnVI">VI</button>
+      </div>
+      <button class="menu-btn" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" id="navDrawer">
+    <div class="drawer-lang">
+      <button class="lang-btn active" id="btnEN2">EN</button>
+      <button class="lang-btn" id="btnVI2">VI</button>
+    </div>
+
+    <a class="drawer-link" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
+    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+    <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
+    <a class="drawer-link active" href="market.html" data-i18n="nav_market">Market</a>
+    <a class="drawer-link" href="media.html" data-i18n="nav_media">Media</a>
+    <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+  </div>
+</header>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-kicker" data-i18n="market_kicker">Live Monitoring</div>
+    <h1 class="page-title" data-i18n="market_title">Online Market Movement</h1>
+    <p class="page-sub" data-i18n="market_sub">
+      Realtime public market charts for monitoring general volatility.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="section">
+  <div class="container">
+
+    <div class="panel">
+      <h3 class="panel-title" data-i18n="market_widget_title">Live Market Chart</h3>
+      <p class="panel-text" data-i18n="market_widget_text">
+        This section can be upgraded later with professional widgets or internal dashboards.
+      </p>
+
+      <!-- Tabs -->
+      <div class="market-tabs">
+        <button class="tab-btn active" data-tab="fx">FX</button>
+        <button class="tab-btn" data-tab="gold">GOLD</button>
+        <button class="tab-btn" data-tab="crypto">CRYPTO</button>
+      </div>
+
+      <!-- FX -->
+      <div class="tab-panel show" id="tab-fx">
+        <div class="charts-grid">
+          <div class="tv-box"><div class="tv" id="tv_eurusd"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_gbpusd"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_usdjpy"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_audusd"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_usdcad"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_usdchf"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_eurgbp"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_eurjpy"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_gbpaud"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_gbpjpy"></div></div>
         </div>
+      </div>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+      <!-- GOLD -->
+      <div class="tab-panel" id="tab-gold">
+        <div class="charts-grid">
+          <div class="tv-box tv-big">
+            <div class="tv" id="tv_xauusd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRYPTO -->
+      <div class="tab-panel" id="tab-crypto">
+        <div class="charts-grid">
+          <div class="tv-box"><div class="tv" id="tv_btcusd"></div></div>
+          <div class="tv-box"><div class="tv" id="tv_ethusd"></div></div>
+        </div>
       </div>
     </div>
 
-    <!-- Mobile drawer -->
-    <div class="nav-drawer" id="navDrawer">
-      <div class="drawer-lang">
-        <button class="lang-btn active" id="btnEN2" type="button">EN</button>
-        <button class="lang-btn" id="btnVI2" type="button">VI</button>
-      </div>
-
-      <a class="drawer-link" href="index.html" data-i18n="nav_home">Home</a>
-      <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
-      <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-      <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
-      <a class="drawer-link active" href="market.html" data-i18n="nav_market">Market</a>
-      <a class="drawer-link" href="media.html" data-i18n="nav_media">Media</a>
-      <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-    </div>
-  </header>
-
-  <!-- ================= PAGE HERO ================= -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-kicker" data-i18n="market_kicker">Live Monitoring</div>
-      <h1 class="page-title" data-i18n="market_title">Online Market Movement</h1>
-      <p class="page-sub" data-i18n="market_sub">
-        Realtime public market charts for monitoring general volatility.
+    <div class="note" style="margin-top:18px;">
+      <div class="note-line"></div>
+      <p class="note-text" data-i18n="disclaimer">
+        This website is for company introduction purposes only.
       </p>
     </div>
-  </section>
 
-  <!-- ================= CONTENT ================= -->
-  <section class="section">
-    <div class="container">
-      <div class="panel">
-        <h3 class="panel-title" data-i18n="market_widget_title">Live Market Chart</h3>
-        <p class="panel-text" data-i18n="market_widget_text">
-          This section can be upgraded later with professional widgets (TradingView) or internal dashboards.
-        </p>
+  </div>
+</section>
 
-        <!-- Tabs -->
-        <div class="market-tabs">
-          <button class="tab-btn active" data-tab="fx">FX</button>
-          <button class="tab-btn" data-tab="gold">GOLD</button>
-          <button class="tab-btn" data-tab="crypto">CRYPTO</button>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" class="footer-logo" alt="Zero To Hero">
+        <div>
+          <div class="footer-name">Zero To Hero</div>
+          <div class="footer-small" data-i18n="footer_tag">Corporate Partner Network</div>
         </div>
-
-        <!-- FX -->
-        <div class="tab-panel show" id="tab-fx">
-          <div class="charts-grid">
-            <div class="tv-box"><div class="tv" id="tv_eurusd"></div></div>
-            <div class="tv-box"><div class="tv" id="tv_gbpusd"></div></div>
-
-            <div class="tv-box"><div class="tv" id="tv_usdjpy"></div></div>
-            <div class="tv-box"><div class="tv" id="tv_audusd"></div></div>
-
-            <div class="tv-box"><div class="tv" id="tv_usdcad"></div></div>
-            <div class="tv-box"><div class="tv" id="tv_usdchf"></div></div>
-
-            <div class="tv-box"><div class="tv" id="tv_eurgbp"></div></div>
-            <div class="tv-box"><div class="tv" id="tv_eurjpy"></div></div>
-
-            <div class="tv-box"><div class="tv" id="tv_gbpaud"></div></div>
-            <div class="tv-box"><div class="tv" id="tv_gbpjpy"></div></div>
-          </div>
-        </div>
-
-        <!-- GOLD -->
-        <div class="tab-panel" id="tab-gold">
-          <div class="charts-grid">
-            <div class="tv-box tv-big"><div class="tv" id="tv_xauusd"></div></div>
-          </div>
-        </div>
-
-        <!-- CRYPTO -->
-        <div class="tab-panel" id="tab-crypto">
-          <div class="charts-grid">
-            <div class="tv-box"><div class="tv" id="tv_btcusd"></div></div>
-            <div class="tv-box"><div class="tv" id="tv_ethusd"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="note" style="margin-top:18px;">
-        <div class="note-line"></div>
-        <p class="note-text" data-i18n="disclaimer">
-          This website is for company introduction purposes only.
-        </p>
       </div>
     </div>
-  </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <img src="assets/img/logo.png" alt="Zero To Hero" class="footer-logo">
-          <div>
-            <div class="footer-name">Zero To Hero</div>
-            <div class="footer-small" data-i18n="footer_tag">Corporate Partner Network</div>
-          </div>
-        </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+        <a href="team.html" data-i18n="nav_team">Team</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </div>
-
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="about.html" data-i18n="nav_about">About</a>
-          <a href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-          <a href="team.html" data-i18n="nav_team">Team</a>
-          <a href="market.html" data-i18n="nav_market">Market</a>
-          <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        </div>
-        <div class="footer-copy">© <span id="year"></span> Zero To Hero. All rights reserved.</div>
+      <div class="footer-copy">
+        © <span id="year"></span> Zero To Hero. All rights reserved.
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- ✅ TradingView -->
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<!-- TradingView -->
+<script src="https://s3.tradingview.com/tv.js"></script>
 
-  <script>
-    // Tabs
-    const tabBtns = document.querySelectorAll(".tab-btn");
-    const panels = {
-      fx: document.getElementById("tab-fx"),
-      gold: document.getElementById("tab-gold"),
-      crypto: document.getElementById("tab-crypto"),
-    };
-
-    tabBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tabBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        Object.values(panels).forEach(p => p.classList.remove("show"));
-        panels[btn.dataset.tab].classList.add("show");
-      });
-    });
-
-    // Create chart helper
-    function createTV(id, symbol, interval="60") {
-      if (!document.getElementById(id)) return;
-      new TradingView.widget({
-        autosize: true,
-        symbol: symbol,
-        interval: interval,
-        timezone: "Etc/UTC",
-        theme: "dark",
-        style: "1",
-        locale: "en",
-        toolbar_bg: "#0b0b10",
-        enable_publishing: false,
-        hide_top_toolbar: false,
-        hide_legend: false,
-        container_id: id
-      });
-    }
-
-    // FX
-    createTV("tv_audusd", "OANDA:AUDUSD");
-    createTV("tv_eurgbp", "OANDA:EURGBP");
-    createTV("tv_eurjpy", "OANDA:EURJPY");
-    createTV("tv_eurusd", "OANDA:EURUSD");
-    createTV("tv_gbpaud", "OANDA:GBPAUD");
-    createTV("tv_gbpjpy", "OANDA:GBPJPY");
-    createTV("tv_gbpusd", "OANDA:GBPUSD");
-    createTV("tv_usdcad", "OANDA:USDCAD");
-    createTV("tv_usdchf", "OANDA:USDCHF");
-    createTV("tv_usdjpy", "OANDA:USDJPY");
-
-    // GOLD
-    createTV("tv_xauusd", "OANDA:XAUUSD", "30");
-
-    // CRYPTO
-    createTV("tv_btcusd", "BITSTAMP:BTCUSD");
-    createTV("tv_ethusd", "BITSTAMP:ETHUSD");
-  </script>
-
-  <!-- ✅ Main JS (menu + year + language) -->
-  <script src="assets/js/market.js"></script>
+<!-- Page JS -->
+<script src="assets/js/market.js"></script>
 </body>
 </html>
