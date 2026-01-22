@@ -4,8 +4,7 @@ const navDrawer = document.getElementById("navDrawer");
 
 if (menuBtn && navDrawer) {
   menuBtn.addEventListener("click", () => {
-    const isOpen = navDrawer.classList.toggle("show");
-    menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    navDrawer.classList.toggle("show");
   });
 }
 
@@ -13,7 +12,7 @@ if (menuBtn && navDrawer) {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ================= I18N (CONTACT ONLY) =================
+// ================= I18N =================
 const i18n = {
   en: {
     nav_home: "Home",
@@ -26,8 +25,7 @@ const i18n = {
 
     contact_kicker: "Connect",
     contact_title: "Contact & Corporate Presence",
-    contact_sub:
-      "Corporate-level communication and international business orientation.",
+    contact_sub: "Corporate-level communication and international business orientation.",
 
     contact_info_title: "Business Communication",
     contact_info_text:
@@ -35,7 +33,7 @@ const i18n = {
 
     contact_global_title: "Global Orientation",
     contact_global_text:
-      "Zero To Hero maintains an international operational perspective, supporting cross-border collaboration, partner networks, and long-term ecosystem development.",
+      "Zero To Hero maintains an international operational perspective, supporting cross-border collaboration and long-term ecosystem development.",
 
     stat_1: "Global",
     stat_label_1: "Operating Scope",
@@ -45,9 +43,7 @@ const i18n = {
     stat_label_3: "Strategic Focus",
 
     footer_tag: "Corporate Partner Network",
-
-    disclaimer:
-      "This content is provided to present an overview of our ecosystem and operational direction.",
+    disclaimer: "This content is provided to present an overview of our ecosystem and operational direction."
   },
 
   vi: {
@@ -61,16 +57,15 @@ const i18n = {
 
     contact_kicker: "Kết nối",
     contact_title: "Liên hệ & Hiện diện doanh nghiệp",
-    contact_sub:
-      "Giao tiếp cấp doanh nghiệp và định hướng kinh doanh quốc tế.",
+    contact_sub: "Giao tiếp cấp doanh nghiệp và định hướng kinh doanh quốc tế.",
 
     contact_info_title: "Giao tiếp doanh nghiệp",
     contact_info_text:
-      "Zero To Hero vận hành theo tư duy giao tiếp doanh nghiệp. Các kênh liên hệ chính thức sẽ được cập nhật phù hợp nhằm đảm bảo tính rõ ràng, bảo mật và chuyên nghiệp.",
+      "Zero To Hero vận hành theo tư duy giao tiếp doanh nghiệp. Các kênh liên hệ chính thức sẽ được cập nhật phù hợp.",
 
     contact_global_title: "Định hướng toàn cầu",
     contact_global_text:
-      "Zero To Hero duy trì góc nhìn vận hành quốc tế, hỗ trợ hợp tác xuyên biên giới, phát triển đối tác và hệ sinh thái dài hạn.",
+      "Zero To Hero duy trì góc nhìn vận hành quốc tế, hỗ trợ hợp tác xuyên biên giới và phát triển hệ sinh thái dài hạn.",
 
     stat_1: "Toàn cầu",
     stat_label_1: "Phạm vi hoạt động",
@@ -80,44 +75,29 @@ const i18n = {
     stat_label_3: "Chiến lược phát triển",
 
     footer_tag: "Mạng lưới đối tác doanh nghiệp",
-
-    disclaimer:
-      "Nội dung nhằm cung cấp thông tin tổng quan về hệ sinh thái và định hướng vận hành.",
-  },
+    disclaimer: "Nội dung nhằm cung cấp thông tin tổng quan về hệ sinh thái và định hướng vận hành."
+  }
 };
 
-// ================= I18N FUNCTIONS =================
 function setLang(lang) {
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (i18n[lang] && i18n[lang][key]) {
-      el.textContent = i18n[lang][key];
-    }
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (i18n[lang][key]) el.textContent = i18n[lang][key];
   });
 
-  ["btnEN", "btnVI", "btnEN2", "btnVI2"].forEach((id) => {
-    const btn = document.getElementById(id);
-    btn && btn.classList.remove("active");
+  ["btnEN","btnVI","btnEN2","btnVI2"].forEach(id=>{
+    document.getElementById(id)?.classList.remove("active");
   });
 
-  if (lang === "en") {
-    document.getElementById("btnEN")?.classList.add("active");
-    document.getElementById("btnEN2")?.classList.add("active");
-  } else {
-    document.getElementById("btnVI")?.classList.add("active");
-    document.getElementById("btnVI2")?.classList.add("active");
-  }
+  document.getElementById(lang === "en" ? "btnEN" : "btnVI")?.classList.add("active");
+  document.getElementById(lang === "en" ? "btnEN2" : "btnVI2")?.classList.add("active");
 
   localStorage.setItem("zth_lang", lang);
 }
 
-function initLang() {
-  setLang(localStorage.getItem("zth_lang") || "en");
-}
+document.getElementById("btnEN")?.onclick = () => setLang("en");
+document.getElementById("btnVI")?.onclick = () => setLang("vi");
+document.getElementById("btnEN2")?.onclick = () => setLang("en");
+document.getElementById("btnVI2")?.onclick = () => setLang("vi");
 
-document.getElementById("btnEN")?.addEventListener("click", () => setLang("en"));
-document.getElementById("btnVI")?.addEventListener("click", () => setLang("vi"));
-document.getElementById("btnEN2")?.addEventListener("click", () => setLang("en"));
-document.getElementById("btnVI2")?.addEventListener("click", () => setLang("vi"));
-
-initLang();
+setLang(localStorage.getItem("zth_lang") || "en");
