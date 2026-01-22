@@ -11,12 +11,13 @@
 
   <!-- CORE -->
   <link rel="stylesheet" href="assets/css/core.css" />
-  <!-- INDEX ONLY -->
+  <!-- INDEX -->
   <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
@@ -35,8 +36,8 @@
 
     <div class="header-right">
       <div class="lang-switch">
-        <button class="lang-btn active" id="btnEN">EN</button>
-        <button class="lang-btn" id="btnVI">VI</button>
+        <button class="lang-btn active">EN</button>
+        <button class="lang-btn">VI</button>
       </div>
       <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
     </div>
@@ -64,63 +65,8 @@
     </p>
   </div>
 </section>
-<!-- MARKET TABS -->
-<div class="market-tabs">
-  <button class="tab-btn active" data-tab="gold">GOLD</button>
-  <button class="tab-btn" data-tab="fx">FX</button>
-  <button class="tab-btn" data-tab="crypto">CRYPTO</button>
-</div>
 
-<div class="panel">
-
-  <!-- GOLD -->
-  <div class="tab-panel show" id="tab-gold">
-    <div class="tv-box tv-big">
-      <div class="tv" id="tv_index_xauusd"></div>
-    </div>
-
-    <div class="index-mini-markets">
-      <div class="mini-market">
-        <div class="mini-title">EUR / USD</div>
-        <div class="tv mini-tv" id="tv_index_eurusd"></div>
-      </div>
-      <div class="mini-market">
-        <div class="mini-title">BTC / USD</div>
-        <div class="tv mini-tv" id="tv_index_btcusd"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FX -->
-  <div class="tab-panel" id="tab-fx">
-    <div class="index-mini-markets">
-      <div class="mini-market">
-        <div class="mini-title">EUR / USD</div>
-        <div class="tv mini-tv" id="tv_fx_eurusd"></div>
-      </div>
-      <div class="mini-market">
-        <div class="mini-title">GBP / USD</div>
-        <div class="tv mini-tv" id="tv_fx_gbpusd"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CRYPTO -->
-  <div class="tab-panel" id="tab-crypto">
-    <div class="index-mini-markets">
-      <div class="mini-market">
-        <div class="mini-title">BTC / USD</div>
-        <div class="tv mini-tv" id="tv_crypto_btc"></div>
-      </div>
-      <div class="mini-market">
-        <div class="mini-title">ETH / USD</div>
-        <div class="tv mini-tv" id="tv_crypto_eth"></div>
-      </div>
-    </div>
-  </div>
-
-</div>
-<!-- MARKET SNAPSHOT -->
+<!-- MARKET -->
 <section class="section section-soft">
   <div class="container">
     <div class="section-head">
@@ -128,25 +74,61 @@
       <p class="section-sub">Live public market overview for general monitoring.</p>
     </div>
 
-   <div class="panel">
-  <!-- MAIN XAU -->
-  <div class="tv-box tv-big">
-    <div class="tv" id="tv_index_xauusd"></div>
-  </div>
-
-  <!-- MINI MARKETS -->
-  <div class="index-mini-markets">
-    <div class="mini-market">
-      <div class="mini-title">EUR / USD</div>
-      <div class="tv mini-tv" id="tv_index_eurusd"></div>
+    <div class="market-tabs">
+      <button class="tab-btn active" data-tab="gold">GOLD</button>
+      <button class="tab-btn" data-tab="fx">FX</button>
+      <button class="tab-btn" data-tab="crypto">CRYPTO</button>
     </div>
 
-    <div class="mini-market">
-      <div class="mini-title">BTC / USD</div>
-      <div class="tv mini-tv" id="tv_index_btcusd"></div>
+    <div class="panel">
+
+      <!-- GOLD -->
+      <div class="tab-panel show" id="tab-gold">
+        <div class="tv-box tv-big">
+          <div class="tv" id="tv_xauusd"></div>
+        </div>
+
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">EUR / USD</div>
+            <div class="tv mini-tv" id="tv_eurusd"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">BTC / USD</div>
+            <div class="tv mini-tv" id="tv_btcusd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FX -->
+      <div class="tab-panel" id="tab-fx">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">EUR / USD</div>
+            <div class="tv mini-tv" id="tv_fx_eurusd"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">GBP / USD</div>
+            <div class="tv mini-tv" id="tv_fx_gbpusd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRYPTO -->
+      <div class="tab-panel" id="tab-crypto">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">BTC / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_btc"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">ETH / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_eth"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</div>
   </div>
 </section>
 
@@ -160,14 +142,12 @@
         <div class="footer-small">Corporate Partner Network</div>
       </div>
     </div>
-
     <div class="footer-copy">
       © <span id="year"></span> Zero To Hero
     </div>
   </div>
 </footer>
 
-<!-- TradingView -->
 <script src="https://s3.tradingview.com/tv.js"></script>
 <script src="assets/js/index.js"></script>
 </body>
