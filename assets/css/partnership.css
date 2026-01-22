@@ -1,0 +1,80 @@
+/* ================= PARTNERSHIP PAGE ================= */
+
+/* Page hero */
+.page-hero{
+  background:
+    radial-gradient(900px 260px at 20% 20%, rgba(212,179,90,.14), transparent 60%),
+    rgba(255,255,255,.02);
+}
+
+/* Core cards */
+.card{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0,0,0,.6);
+}
+
+/* Gold highlight panel */
+.panel-gold{
+  box-shadow:
+    0 26px 70px rgba(0,0,0,.65),
+    inset 0 0 0 1px rgba(212,179,90,.18);
+}
+
+/* Pills emphasis */
+.pill{
+  transition: .25s ease;
+}
+
+.pill:hover{
+  background: rgba(212,179,90,.18);
+  border-color: rgba(212,179,90,.35);
+  color: #fff;
+}
+
+/* Process steps */
+.grid-2 .panel{
+  position:relative;
+  overflow:hidden;
+}
+
+.grid-2 .panel::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(400px 160px at 90% 10%, rgba(212,179,90,.10), transparent 60%);
+  pointer-events:none;
+}
+
+/* Section head spacing */
+.section-head{
+  margin-top: 6px;
+}
+
+/* Subtle animation */
+.panel,
+.card{
+  animation: fadeUp .35s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform: translateY(6px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* Responsive fine-tune */
+@media (max-width:980px){
+  .card:hover{
+    transform:none;
+  }
+}
