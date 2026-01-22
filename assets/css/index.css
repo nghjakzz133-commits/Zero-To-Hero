@@ -66,3 +66,28 @@
   }
   .mini-tv{height:200px}
 }
+.market-tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.tab-btn{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+  color:rgba(243,243,247,.7);
+  cursor:pointer;
+}
+
+.tab-btn.active{
+  background:rgba(212,179,90,.18);
+  border-color:rgba(212,179,90,.35);
+  color:#fff;
+}
+
+.tab-panel{display:none}
+.tab-panel.show{display:block}
