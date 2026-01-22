@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zero To Hero | Corporate Partner Network</title>
-  <meta name="description" content="Zero To Hero - Corporate Partner Network." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CORE + INDEX -->
+  <!-- CORE -->
   <link rel="stylesheet" href="assets/css/core.css" />
+  <!-- INDEX ONLY -->
   <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 
@@ -20,7 +20,7 @@
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" class="brand-logo" alt="Zero To Hero">
+      <img src="assets/img/logo.png" class="brand-logo" alt="">
       <span class="brand-name">Zero To Hero</span>
     </a>
 
@@ -30,7 +30,6 @@
       <a class="nav-link" href="partnership.html">Partnership</a>
       <a class="nav-link" href="team.html">Team</a>
       <a class="nav-link" href="market.html">Market</a>
-      <a class="nav-link" href="media.html">Media</a>
       <a class="nav-link" href="contact.html">Contact</a>
     </nav>
 
@@ -49,54 +48,29 @@
     <a class="drawer-link" href="partnership.html">Partnership</a>
     <a class="drawer-link" href="team.html">Team</a>
     <a class="drawer-link" href="market.html">Market</a>
-    <a class="drawer-link" href="media.html">Media</a>
     <a class="drawer-link" href="contact.html">Contact</a>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero-index">
-  <div class="container">
-    <span class="hero-badge">Corporate Partner Network</span>
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="badge">Corporate Partner Network</div>
     <h1 class="hero-title">
       From <span class="gold">Zero</span> To <span class="gold">Hero</span>
     </h1>
     <p class="hero-sub">
       Building sustainable growth through global partnerships and professional execution.
     </p>
-
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>Global</strong><span>Orientation</span></div>
-      <div class="hero-stat"><strong>Corporate</strong><span>Standard</span></div>
-      <div class="hero-stat"><strong>Long-term</strong><span>Vision</span></div>
-    </div>
   </div>
 </section>
 
-<!-- MARKET PREVIEW -->
-<section class="section">
+<!-- MARKET SNAPSHOT -->
+<section class="section section-soft">
   <div class="container">
     <div class="section-head">
       <h2 class="section-title">Market Snapshot</h2>
-      <p class="section-sub">Live market awareness for strategic orientation.</p>
-    </div>
-
-    <div class="market-preview">
-      <div class="market-card">EURUSD</div>
-      <div class="market-card">GBPUSD</div>
-      <div class="market-card">XAUUSD</div>
-      <div class="market-card">BTCUSD</div>
-    </div>
-  </div>
-</section>
-<!-- ================= MARKET PREVIEW ================= -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title">Market Snapshot</h2>
-      <p class="section-sub">
-        Live public market overview for general monitoring.
-      </p>
+      <p class="section-sub">Live public market overview for general monitoring.</p>
     </div>
 
     <div class="panel">
@@ -106,6 +80,8 @@
     </div>
   </div>
 </section>
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
@@ -115,9 +91,14 @@
         <div class="footer-small">Corporate Partner Network</div>
       </div>
     </div>
-    <div class="footer-copy">© <span id="year"></span> Zero To Hero</div>
+
+    <div class="footer-copy">
+      © <span id="year"></span> Zero To Hero
+    </div>
   </div>
 </footer>
+
+<!-- TradingView -->
 <script src="https://s3.tradingview.com/tv.js"></script>
 <script src="assets/js/index.js"></script>
 </body>
