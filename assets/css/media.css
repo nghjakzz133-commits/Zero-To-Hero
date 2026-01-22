@@ -1,0 +1,45 @@
+/* ================= MEDIA PAGE ================= */
+
+.media-visual{
+  height:180px;
+  border-radius:16px;
+  margin-bottom:12px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,.55);
+}
+
+.media-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+}
+
+/* Variations – tạo cảm giác ảnh khác nhau */
+.media-visual.v1{
+  background:
+    radial-gradient(420px 180px at 20% 30%, rgba(212,179,90,.30), transparent 60%),
+    linear-gradient(135deg, #0b0b12, #151522);
+}
+.media-visual.v2{
+  background:
+    radial-gradient(420px 180px at 80% 20%, rgba(212,179,90,.24), transparent 60%),
+    linear-gradient(135deg, #0c0c14, #1a1a26);
+}
+.media-visual.v3{
+  background:
+    radial-gradient(420px 180px at 40% 60%, rgba(212,179,90,.22), transparent 60%),
+    linear-gradient(135deg, #0a0a10, #141420);
+}
+.media-visual.v4{
+  background:
+    radial-gradient(420px 180px at 30% 40%, rgba(212,179,90,.26), transparent 60%),
+    linear-gradient(135deg, #0b0b12, #181824);
+}
+.media-visual.v5{
+  background:
+    radial-gradient(420px 180px at 70% 50%, rgba(212,179,90,.20), transparent 60%),
+    linear-gradient(135deg, #0b0b12, #161622);
+}
