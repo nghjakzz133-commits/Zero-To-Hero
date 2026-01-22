@@ -1,0 +1,21 @@
+/* ================= ABOUT PAGE ================= */
+
+/* Core values spacing */
+.about-core {
+  margin-top: 34px;
+}
+
+/* About pills (nếu muốn tinh chỉnh riêng) */
+.about-pills .pill {
+  font-size: 12px;
+}
+
+/* About stats */
+.about-stats .stat-number {
+  font-size: 18px;
+}
+
+/* About disclaimer spacing */
+.about-note {
+  margin-top: 28px;
+}
