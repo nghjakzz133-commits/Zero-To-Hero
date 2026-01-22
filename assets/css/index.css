@@ -87,3 +87,40 @@
   .index-mini-markets{grid-template-columns:1fr}
   .mini-tv{height:200px}
 }
+/* ================= SKELETON ================= */
+.tv-skeleton{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(255,255,255,.04) 40%,
+      rgba(255,255,255,.08) 50%,
+      rgba(255,255,255,.04) 60%
+    );
+  background-size:200% 100%;
+  animation:skeleton 1.2s ease-in-out infinite;
+  z-index:2;
+}
+
+@keyframes skeleton{
+  from{background-position:200% 0}
+  to{background-position:-200% 0}
+}
+
+.tv-box,
+.mini-tv{
+  position:relative;
+}
+.tab-panel{
+  display:none;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .25s ease, transform .25s ease;
+}
+
+.tab-panel.show{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+}
