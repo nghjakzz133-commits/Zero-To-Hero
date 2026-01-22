@@ -29,3 +29,6 @@ function createTV(id, symbol, interval="60"){
 }
 
 createTV("tv_index_xauusd","OANDA:XAUUSD","30");
+// MINI MARKETS
+createTV("tv_index_eurusd","OANDA:EURUSD","60");
+createTV("tv_index_btcusd","BITSTAMP:BTCUSD","60");
