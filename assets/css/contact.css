@@ -1,31 +1,9 @@
-/* ================= CONTACT ================= */
-.contact-box{
-  margin-top: 12px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(7,7,10,.30);
-  padding: 14px;
+/* CONTACT ONLY */
+
+.section .panel{
+  min-height: 200px;
 }
 
-.contact-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-  padding: 12px 10px;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.contact-row:last-child{
-  border-bottom:none;
-}
-
-.contact-label{
-  color: rgba(243,243,247,.62);
-  font-size:13px;
-}
-
-.contact-value{
-  color: rgba(243,243,247,.88);
-  font-size:13px;
+.panel-text{
+  font-size:14px;
 }
