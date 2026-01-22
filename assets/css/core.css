@@ -1,0 +1,29 @@
+:root { ... }
+
+* , html, body, body
+a, img, .container
+
+/* HEADER + NAV + LANG */
+.header, .header-inner, .brand, .nav, .nav-link
+.menu-btn, .nav-drawer, .drawer-link
+.header-right, .lang-switch, .lang-btn, .drawer-lang
+
+/* SECTION / GRID / PANEL / CARD */
+.section, .section-soft
+.section-head, .section-title, .section-sub
+.grid-2, .grid-3
+.panel, .panel-gold
+.pill-row, .pill
+.stats, .stat
+.card, .card-title, .card-text
+.note, .note-line
+
+/* PAGE HERO */
+.page-hero, .page-kicker, .page-title, .page-sub
+
+/* FOOTER */
+.footer, .footer-inner, .footer-brand
+.footer-links, .footer-copy
+
+/* RESPONSIVE CHUNG */
+@media (max-width:980px) { ... }
