@@ -34,9 +34,7 @@ const i18n = {
       "This section can be upgraded later with professional widgets or internal dashboards.",
 
     footer_tag: "Corporate Partner Network",
-
-    disclaimer:
-      "This website is for company introduction purposes only.",
+    disclaimer: "This website is for company introduction purposes only.",
   },
 
   vi: {
@@ -58,9 +56,7 @@ const i18n = {
       "Khu vực này có thể nâng cấp sau với hệ thống phân tích chuyên nghiệp.",
 
     footer_tag: "Mạng lưới đối tác doanh nghiệp",
-
-    disclaimer:
-      "Website dùng cho mục đích giới thiệu doanh nghiệp.",
+    disclaimer: "Website dùng cho mục đích giới thiệu doanh nghiệp.",
   },
 };
 
@@ -75,7 +71,7 @@ function setLang(lang) {
 
   ["btnEN", "btnVI", "btnEN2", "btnVI2"].forEach((id) => {
     const btn = document.getElementById(id);
-    btn && btn.classList.remove("active");
+    if (btn) btn.classList.remove("active");
   });
 
   if (lang === "en") {
@@ -108,19 +104,22 @@ const panels = {
   crypto: document.getElementById("tab-crypto"),
 };
 
-tabBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    tabBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
+if (tabBtns.length) {
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
 
-    Object.values(panels).forEach((p) => p.classList.remove("show"));
-    panels[btn.dataset.tab]?.classList.add("show");
+      Object.values(panels).forEach((p) => p && p.classList.remove("show"));
+      panels[btn.dataset.tab]?.classList.add("show");
+    });
   });
-});
+}
 
 // ================= TRADINGVIEW =================
 function createTV(id, symbol, interval = "60") {
-  if (!document.getElementById(id) || typeof TradingView === "undefined") return;
+  if (!document.getElementById(id)) return;
+  if (typeof TradingView === "undefined") return;
 
   new TradingView.widget({
     autosize: true,
@@ -150,7 +149,7 @@ function createTV(id, symbol, interval = "60") {
   ["tv_eurjpy", "OANDA:EURJPY"],
   ["tv_gbpaud", "OANDA:GBPAUD"],
   ["tv_gbpjpy", "OANDA:GBPJPY"],
-].forEach(([id, sym]) => createTV(id, sym));
+].forEach(([id, symbol]) => createTV(id, symbol));
 
 // GOLD
 createTV("tv_xauusd", "OANDA:XAUUSD", "30");
