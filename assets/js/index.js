@@ -72,8 +72,10 @@ tabBtns.forEach(btn=>{
 });
 
 // ================= TRADINGVIEW =================
-function createTV(id,symbol,interval="60"){
-  if(!document.getElementById(id)||typeof TradingView==="undefined")return;
+function createTV(id, symbol, interval="60"){
+  const el = document.getElementById(id);
+  if(!el || typeof TradingView==="undefined") return;
+
   new TradingView.widget({
     autosize:true,
     symbol,
@@ -85,7 +87,12 @@ function createTV(id,symbol,interval="60"){
     hide_top_toolbar:true,
     hide_legend:true,
     enable_publishing:false,
-    container_id:id
+    container_id:id,
+    onChartReady:()=>{
+      const skeleton = el.parentElement.querySelector(".tv-skeleton");
+      skeleton && (skeleton.style.opacity="0");
+      setTimeout(()=>skeleton?.remove(),300);
+    }
   });
 }
 
