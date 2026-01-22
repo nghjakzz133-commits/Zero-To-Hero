@@ -84,3 +84,26 @@
   .tv-box{height:320px}
   .mini-tv{height:200px}
 }
+/* ===== INDEX MARKET FIX ===== */
+.section-soft{
+  padding-top:40px;
+}
+
+.section-soft .panel{
+  margin-top:18px;
+}
+
+/* FIX MOBILE EMPTY LOOK */
+@media (max-width:768px){
+  .section-head{
+    margin-bottom:14px;
+  }
+
+  .tv-box{
+    min-height:300px;
+  }
+
+  .panel{
+    padding:14px;
+  }
+}
