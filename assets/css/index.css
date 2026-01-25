@@ -181,6 +181,42 @@
   .index-mini-markets {
     grid-template-columns: 1fr;
   }
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 88vh;
+    align-items: flex-end;
+  }
+
+  .hero::before {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.25)
+    );
+  }
+
+  .hero-inner {
+    padding: 140px 0 48px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
 
   .mini-tv {
     height: 200px;
