@@ -108,3 +108,13 @@ createTV("tv_fx_gbpusd","OANDA:GBPUSD");
 // CRYPTO
 createTV("tv_crypto_btc","BITSTAMP:BTCUSD");
 createTV("tv_crypto_eth","BITSTAMP:ETHUSD");
+/* HERO MOBILE PARALLAX */
+if (window.innerWidth <= 768) {
+  const hero = document.querySelector(".hero");
+
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY;
+    hero.style.backgroundPosition =
+      `center ${35 + scrolled * 0.04}%`;
+  });
+}
