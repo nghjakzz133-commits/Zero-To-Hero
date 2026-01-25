@@ -31,7 +31,8 @@ const i18n = {
     nav_team:"Đội ngũ",
     nav_market:"Thị trường",
     nav_contact:"Liên hệ",
-    badge:"Mạng lưới đối tác doanh nghiệp",
+    badge:"
+Bắt đầu hành trình chinh phục thị trường",
     hero_title:"Từ Zero đến Hero",
     hero_sub:"Xây dựng tăng trưởng bền vững thông qua hợp tác toàn cầu và vận hành chuyên nghiệp.",
     market_title:"Tổng quan thị trường",
