@@ -18,7 +18,7 @@ const i18n = {
     nav_market:"Market",
     nav_contact:"Contact",
     badge:"Embark on a journey to conquer the market",
-    hero_title:"From Zero To Hero",
+    hero_title:" Zero To Hero",
     hero_sub:"Building sustainable growth through global partnerships and professional execution.",
     market_title:"Market Snapshot",
     market_sub:"Live public market overview for general monitoring.",
@@ -33,7 +33,7 @@ const i18n = {
     nav_contact:"Liên hệ",
     badge:"
 Bắt đầu hành trình chinh phục thị trường",
-    hero_title:"Từ Zero đến Hero",
+    hero_title:" Zero đến Hero",
     hero_sub:"Xây dựng tăng trưởng bền vững thông qua hợp tác toàn cầu và vận hành chuyên nghiệp.",
     market_title:"Tổng quan thị trường",
     market_sub:"Theo dõi biến động thị trường công khai.",
