@@ -1,12 +1,14 @@
 // ================= MENU =================
 const menuBtn = document.getElementById("menuBtn");
 const navDrawer = document.getElementById("navDrawer");
+
 menuBtn?.addEventListener("click", () => {
   navDrawer.classList.toggle("show");
 });
 
 // ================= YEAR =================
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
 // ================= I18N =================
 const i18n = {
@@ -18,7 +20,6 @@ const i18n = {
     nav_market:"Market",
     nav_contact:"Contact",
     badge:"Embark on a journey to conquer the market",
-    hero_title:" Zero To Hero",
     hero_sub:"Building sustainable growth through global partnerships and professional execution.",
     market_title:"Market Snapshot",
     market_sub:"Live public market overview for general monitoring.",
@@ -31,8 +32,7 @@ const i18n = {
     nav_team:"Đội ngũ",
     nav_market:"Thị trường",
     nav_contact:"Liên hệ",
-badge:"Bắt đầu hành trình chinh phục thị trường",
-   hero_title:"Zero đến Hero",
+    badge:"Bắt đầu hành trình chinh phục thị trường",
     hero_sub:"Xây dựng tăng trưởng bền vững thông qua hợp tác toàn cầu và vận hành chuyên nghiệp.",
     market_title:"Tổng quan thị trường",
     market_sub:"Theo dõi biến động thị trường công khai.",
@@ -73,48 +73,32 @@ tabBtns.forEach(btn=>{
 
 // ================= TRADINGVIEW =================
 function createTV(id, symbol, interval="60"){
-  const el = document.getElementById(id);
-  if(!el || typeof TradingView==="undefined") return;
-
+  if(typeof TradingView==="undefined") return;
   new TradingView.widget({
     autosize:true,
     symbol,
     interval,
     timezone:"Etc/UTC",
     theme:"dark",
-    style:"1",
-    locale:"en",
     hide_top_toolbar:true,
     hide_legend:true,
-    enable_publishing:false,
-    container_id:id,
-    onChartReady:()=>{
-      const skeleton = el.parentElement.querySelector(".tv-skeleton");
-      skeleton && (skeleton.style.opacity="0");
-      setTimeout(()=>skeleton?.remove(),300);
-    }
+    container_id:id
   });
 }
 
-// GOLD
 createTV("tv_index_xauusd","OANDA:XAUUSD","30");
 createTV("tv_index_eurusd","OANDA:EURUSD");
 createTV("tv_index_btcusd","BITSTAMP:BTCUSD");
-
-// FX
 createTV("tv_fx_eurusd","OANDA:EURUSD");
 createTV("tv_fx_gbpusd","OANDA:GBPUSD");
-
-// CRYPTO
 createTV("tv_crypto_btc","BITSTAMP:BTCUSD");
 createTV("tv_crypto_eth","BITSTAMP:ETHUSD");
-/* HERO MOBILE PARALLAX */
+
+// ================= HERO MOBILE PARALLAX =================
 if (window.innerWidth <= 768) {
   const hero = document.querySelector(".hero");
-
   window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY;
     hero.style.backgroundPosition =
-      `center ${35 + scrolled * 0.04}%`;
+      `center ${35 + window.scrollY * 0.04}%`;
   });
 }
