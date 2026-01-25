@@ -297,3 +297,43 @@
   font-size: 14px;
   opacity: 0.5;
 }
+/* ================= HERO MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 88vh; /* giảm chiều cao cho đỡ trống */
+    padding: 0;
+    align-items: flex-end; /* kéo content xuống nhưng có kiểm soát */
+  }
+
+  .hero::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,.35),
+      rgba(0,0,0,.85)
+    );
+  }
+
+  .hero-inner {
+    padding: 0 20px 48px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 100%;
+    opacity: .85;
+  }
+}
