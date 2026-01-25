@@ -17,7 +17,7 @@ const i18n = {
     nav_team:"Team",
     nav_market:"Market",
     nav_contact:"Contact",
-    badge:"Corporate Partner Network",
+    badge:"Embark on a journey to conquer the market",
     hero_title:"From Zero To Hero",
     hero_sub:"Building sustainable growth through global partnerships and professional execution.",
     market_title:"Market Snapshot",
