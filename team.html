@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Team | Zero To Hero</title>
+  <title>Zero To Hero | Corporate Partner Network</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/core.css">
-  <link rel="stylesheet" href="assets/css/team.css">
+  <!-- CORE -->
+  <link rel="stylesheet" href="assets/css/core.css" />
+  <!-- INDEX -->
+  <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
@@ -23,13 +26,12 @@
     </a>
 
     <nav class="nav">
-      <a class="nav-link" href="index.html" data-i18n="nav_home"></a>
-      <a class="nav-link" href="about.html" data-i18n="nav_about"></a>
-      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership"></a>
-      <a class="nav-link active" href="team.html" data-i18n="nav_team"></a>
-      <a class="nav-link" href="market.html" data-i18n="nav_market"></a>
-      <a class="nav-link" href="media.html" data-i18n="nav_media"></a>
-      <a class="nav-link" href="contact.html" data-i18n="nav_contact"></a>
+      <a class="nav-link active" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
+      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+      <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
+      <a class="nav-link" href="market.html" data-i18n="nav_market">Market</a>
+      <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
     </nav>
 
     <div class="header-right">
@@ -37,7 +39,9 @@
         <button class="lang-btn active" id="btnEN">EN</button>
         <button class="lang-btn" id="btnVI">VI</button>
       </div>
-      <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+      <button class="menu-btn" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 
@@ -46,61 +50,126 @@
       <button class="lang-btn active" id="btnEN2">EN</button>
       <button class="lang-btn" id="btnVI2">VI</button>
     </div>
-    <a class="drawer-link" href="index.html" data-i18n="nav_home"></a>
-    <a class="drawer-link" href="about.html" data-i18n="nav_about"></a>
-    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership"></a>
-    <a class="drawer-link active" href="team.html" data-i18n="nav_team"></a>
-    <a class="drawer-link" href="market.html" data-i18n="nav_market"></a>
-    <a class="drawer-link" href="media.html" data-i18n="nav_media"></a>
-    <a class="drawer-link" href="contact.html" data-i18n="nav_contact"></a>
+    <a class="drawer-link active" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
+    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+    <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
+    <a class="drawer-link" href="market.html" data-i18n="nav_market">Market</a>
+    <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
   </div>
 </header>
 
-<section class="page-hero">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="badge" data-i18n="badge">
+      Embark on a journey to conquer the market.
+    </div>
+    <h1 class="hero-title">
+      <span class="gold" data-i18n="hero_zero">Zero</span>
+      <span data-i18n="hero_to">To</span>
+      <span class="gold" data-i18n="hero_hero">Hero</span>
+    </h1>
+    <p class="hero-sub" data-i18n="hero_sub">
+      Building sustainable growth through global partnerships and professional execution.
+    </p>
+  </div>
+</section>
+
+<!-- ================= MARKET SNAPSHOT ================= -->
+<section class="section section-soft">
   <div class="container">
-    <div class="page-kicker" data-i18n="team_kicker"></div>
-    <h1 class="page-title" data-i18n="team_title"></h1>
-    <p class="page-sub" data-i18n="team_sub"></p>
+    <div class="section-head">
+      <h2 class="section-title" data-i18n="market_title">Market Snapshot</h2>
+      <p class="section-sub" data-i18n="market_sub">
+        Live public market overview for general monitoring.
+      </p>
+    </div>
+
+    <!-- TABS -->
+    <div class="market-tabs">
+      <button class="tab-btn active" data-tab="gold">GOLD</button>
+      <button class="tab-btn" data-tab="fx">FX</button>
+      <button class="tab-btn" data-tab="crypto">CRYPTO</button>
+    </div>
+
+    <div class="panel">
+
+      <!-- GOLD -->
+      <div class="tab-panel show" id="tab-gold">
+        <div class="tv-box tv-big">
+          <div class="tv" id="tv_index_xauusd"></div>
+        </div>
+
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title" data-i18n="pair_eurusd">EUR / USD</div>
+            <div class="tv mini-tv" id="tv_index_eurusd"></div>
+          </div>
+
+          <div class="mini-market">
+            <div class="mini-title">BTC / USD</div>
+            <div class="tv mini-tv" id="tv_index_btcusd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FX -->
+      <div class="tab-panel" id="tab-fx">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">EUR / USD</div>
+            <div class="tv mini-tv" id="tv_fx_eurusd"></div>
+          </div>
+
+          <div class="mini-market">
+            <div class="mini-title">GBP / USD</div>
+            <div class="tv mini-tv" id="tv_fx_gbpusd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRYPTO -->
+      <div class="tab-panel" id="tab-crypto">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">BTC / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_btc"></div>
+          </div>
+
+          <div class="mini-market">
+            <div class="mini-title">ETH / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_eth"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container team-grid">
-
-    <div class="team-card">
-      <div class="avatar"></div>
-      <div class="team-name" data-i18n="team_1_name"></div>
-      <div class="team-role" data-i18n="team_1_role"></div>
-    </div>
-
-    <div class="team-card">
-      <div class="avatar"></div>
-      <div class="team-name" data-i18n="team_2_name"></div>
-      <div class="team-role" data-i18n="team_2_role"></div>
-    </div>
-
-    <div class="team-card">
-      <div class="avatar"></div>
-      <div class="team-name" data-i18n="team_3_name"></div>
-      <div class="team-role" data-i18n="team_3_role"></div>
-    </div>
-
-  </div>
-</section>
-
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
       <img src="assets/img/logo.png" class="footer-logo" alt="">
       <div>
         <div class="footer-name">Zero To Hero</div>
-        <div class="footer-small" data-i18n="footer_tag"></div>
+        <div class="footer-small" data-i18n="footer_tag">
+          Corporate Partner Network
+        </div>
       </div>
     </div>
-    <div class="footer-copy">© <span id="year"></span> Zero To Hero</div>
+
+    <div class="footer-copy">
+      © <span id="year"></span> Zero To Hero
+    </div>
   </div>
 </footer>
 
-<script src="assets/js/team.js"></script>
+<!-- TradingView -->
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script src="assets/js/index.js"></script>
+
 </body>
 </html>
