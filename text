@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zero To Hero | Corporate Partner Network</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CORE -->
+  <link rel="stylesheet" href="assets/css/stylee.css" />
+ 
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.png" class="brand-logo" alt="Zero To Hero Logo">
+      <span class="brand-name">Zero To Hero</span>
+    </a>
+
+    <nav class="nav">
+      <a class="nav-link active" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
+      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+      <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
+      <a class="nav-link" href="market.html" data-i18n="nav_market">Market</a>
+      <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btnEN">EN</button>
+        <button class="lang-btn" id="btnVI">VI</button>
+      </div>
+      <button class="menu-btn" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-drawer" id="navDrawer">
+    <div class="drawer-lang">
+      <button class="lang-btn active" id="btnEN2">EN</button>
+      <button class="lang-btn" id="btnVI2">VI</button>
+    </div>
+    <a class="drawer-link active" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
+    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
+    <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
+    <a class="drawer-link" href="market.html" data-i18n="nav_market">Market</a>
+    <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="badge" data-i18n="badge">Embark on a journey to conquer the market.</div>
+
+    <h1 class="hero-title">
+      <span class="gold" data-i18n="hero_zero">Zero</span>
+      <span data-i18n="hero_to">To</span>
+      <span class="gold" data-i18n="hero_hero">Hero</span>
+    </h1>
+
+    <p class="hero-sub" data-i18n="hero_sub">
+      Building sustainable growth through global partnerships and professional execution.
+    </p>
+
+    <div class="hero-actions">
+      <a href="partnership.html" class="btn btn-primary" data-i18n="hero_btn_partner">Become a Partner</a>
+      <a href="market.html" class="btn btn-secondary" data-i18n="hero_btn_explore">Explore Markets</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-i18n="stat_partners_num">150+</div>
+          <div class="stat-label" data-i18n="stat_partners_label">Global Partners</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-i18n="stat_countries_num">45+</div>
+          <div class="stat-label" data-i18n="stat_countries_label">Countries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-i18n="stat_volume_num">$2.5B+</div>
+          <div class="stat-label" data-i18n="stat_volume_label">Trading Volume</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-i18n="stat_experience_num">15+</div>
+          <div class="stat-label" data-i18n="stat_experience_label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARKET SNAPSHOT ================= -->
+<section class="section section-soft">
+  <div class="container">
+
+    <div class="section-head">
+      <h2 class="section-title" data-i18n="market_title">Market Snapshot</h2>
+      <p class="section-sub" data-i18n="market_sub">
+        Live public market overview for general monitoring. Real-time data from global exchanges.
+      </p>
+    </div>
+
+    <!-- TABS -->
+    <div class="market-tabs">
+      <button class="tab-btn active" data-tab="gold" data-i18n="tab_gold">GOLD</button>
+      <button class="tab-btn" data-tab="fx" data-i18n="tab_fx">FX</button>
+      <button class="tab-btn" data-tab="crypto" data-i18n="tab_crypto">CRYPTO</button>
+      <button class="tab-btn" data-tab="indices" data-i18n="tab_indices">INDICES</button>
+      <button class="tab-btn" data-tab="commodities" data-i18n="tab_commodities">COMMODITIES</button>
+    </div>
+
+    <div class="panel">
+
+      <!-- GOLD -->
+      <div class="tab-panel show" id="tab-gold">
+        <div class="tv-box tv-big">
+          <div class="tv" id="tv_index_xauusd"></div>
+        </div>
+
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title" data-i18n="pair_eurusd">EUR / USD</div>
+            <div class="tv mini-tv" id="tv_index_eurusd"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">BTC / USD</div>
+            <div class="tv mini-tv" id="tv_index_btcusd"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">XAG / USD</div>
+            <div class="tv mini-tv" id="tv_index_xagusd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FX -->
+      <div class="tab-panel" id="tab-fx">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">EUR / USD</div>
+            <div class="tv mini-tv" id="tv_fx_eurusd"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">GBP / USD</div>
+            <div class="tv mini-tv" id="tv_fx_gbpusd"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">USD / JPY</div>
+            <div class="tv mini-tv" id="tv_fx_usdjpy"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">AUD / USD</div>
+            <div class="tv mini-tv" id="tv_fx_audusd"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRYPTO -->
+      <div class="tab-panel" id="tab-crypto">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">BTC / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_btc"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">ETH / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_eth"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">BNB / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_bnb"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">XRP / USD</div>
+            <div class="tv mini-tv" id="tv_crypto_xrp"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INDICES -->
+      <div class="tab-panel" id="tab-indices">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">S&P 500</div>
+            <div class="tv mini-tv" id="tv_indices_spx"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">NASDAQ</div>
+            <div class="tv mini-tv" id="tv_indices_ndx"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">DOW JONES</div>
+            <div class="tv mini-tv" id="tv_indices_dji"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">DAX</div>
+            <div class="tv mini-tv" id="tv_indices_dax"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMODITIES -->
+      <div class="tab-panel" id="tab-commodities">
+        <div class="index-mini-markets">
+          <div class="mini-market">
+            <div class="mini-title">CRUDE OIL</div>
+            <div class="tv mini-tv" id="tv_commodities_oil"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">NATURAL GAS</div>
+            <div class="tv mini-tv" id="tv_commodities_gas"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">SILVER</div>
+            <div class="tv mini-tv" id="tv_commodities_silver"></div>
+          </div>
+          <div class="mini-market">
+            <div class="mini-title">COPPER</div>
+            <div class="tv mini-tv" id="tv_commodities_copper"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT US ================= -->
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-image">
+        <img src="assets/img/about-home.jpg" alt="About Zero To Hero" class="img-cover">
+      </div>
+      <div class="content-text">
+        <div class="section-label" data-i18n="about_label">Who We Are</div>
+        <h2 class="section-title" data-i18n="about_title">Leading the Future of Global Financial Markets</h2>
+        <p class="section-desc" data-i18n="about_desc_1">
+          Zero To Hero is a premier corporate partner network connecting investors, traders, and financial institutions across the globe. With over 15 years of experience in international markets, we provide cutting-edge solutions for forex, commodities, cryptocurrencies, and equity trading.
+        </p>
+        <p class="section-desc" data-i18n="about_desc_2">
+          Our mission is to empower our partners with professional tools, market insights, and strategic guidance to achieve sustainable growth in today's dynamic financial landscape.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <img src="assets/img/icon-security.svg" alt="Security">
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title" data-i18n="feature_security_title">Bank-Level Security</h4>
+              <p class="feature-desc" data-i18n="feature_security_desc">Advanced encryption and multi-layer protection for all transactions</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <img src="assets/img/icon-support.svg" alt="Support">
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title" data-i18n="feature_support_title">24/7 Expert Support</h4>
+              <p class="feature-desc" data-i18n="feature_support_desc">Dedicated multilingual team available around the clock</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <img src="assets/img/icon-global.svg" alt="Global">
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title" data-i18n="feature_global_title">Global Reach</h4>
+              <p class="feature-desc" data-i18n="feature_global_desc">Operating in 45+ countries with local expertise</p>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="btn btn-primary" data-i18n="about_btn">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-label" data-i18n="services_label">Our Services</div>
+      <h2 class="section-title" data-i18n="services_title">Comprehensive Trading Solutions</h2>
+      <p class="section-sub" data-i18n="services_sub">
+        Professional services designed to meet the needs of modern traders and investors
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="assets/img/service-forex.svg" alt="Forex Trading">
+        </div>
+        <h3 class="service-title" data-i18n="service_forex_title">Forex Trading</h3>
+        <p class="service-desc" data-i18n="service_forex_desc">
+          Access to 50+ currency pairs with tight spreads and instant execution. Trade major, minor, and exotic pairs on institutional-grade platforms.
+        </p>
+        <div class="service-features">
+          <div class="service-feature" data-i18n="service_forex_feat1">• Leverage up to 1:500</div>
+          <div class="service-feature" data-i18n="service_forex_feat2">• 0.0 pip spreads available</div>
+          <div class="service-feature" data-i18n="service_forex_feat3">• Advanced charting tools</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="assets/img/service-commodities.svg" alt="Commodities">
+        </div>
+        <h3 class="service-title" data-i18n="service_commodities_title">Commodities Trading</h3>
+        <p class="service-desc" data-i18n="service_commodities_desc">
+          Trade gold, silver, oil, and other commodities with competitive pricing. Diversify your portfolio with precious metals and energy products.
+        </p>
+        <div class="service-features">
+          <div class="service-feature" data-i18n="service_commodities_feat1">• Gold & Silver CFDs</div>
+          <div class="service-feature" data-i18n="service_commodities_feat2">• Energy commodities</div>
+          <div class="service-feature" data-i18n="service_commodities_feat3">• Agricultural products</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="assets/img/service-crypto.svg" alt="Cryptocurrency">
+        </div>
+        <h3 class="service-title" data-i18n="service_crypto_title">Cryptocurrency</h3>
+        <p class="service-desc" data-i18n="service_crypto_desc">
+          Trade Bitcoin, Ethereum, and 30+ digital assets 24/7. Capitalize on crypto market volatility with advanced trading tools.
+        </p>
+        <div class="service-features">
+          <div class="service-feature" data-i18n="service_crypto_feat1">• 30+ crypto pairs</div>
+          <div class="service-feature" data-i18n="service_crypto_feat2">• 24/7 trading</div>
+          <div class="service-feature" data-i18n="service_crypto_feat3">• Secure cold storage</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="assets/img/service-indices.svg" alt="Indices">
+        </div>
+        <h3 class="service-title" data-i18n="service_indices_title">Stock Indices</h3>
+        <p class="service-desc" data-i18n="service_indices_desc">
+          Trade major global indices including S&P 500, NASDAQ, DAX, and more. Gain exposure to entire markets with single positions.
+        </p>
+        <div class="service-features">
+          <div class="service-feature" data-i18n="service_indices_feat1">• 20+ global indices</div>
+          <div class="service-feature" data-i18n="service_indices_feat2">• Low margin requirements</div>
+          <div class="service-feature" data-i18n="service_indices_feat3">• Extended trading hours</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="assets/img/service-education.svg" alt="Education">
+        </div>
+        <h3 class="service-title" data-i18n="service_education_title">Trading Education</h3>
+        <p class="service-desc" data-i18n="service_education_desc">
+          Comprehensive educational resources from beginner to advanced levels. Webinars, video tutorials, and market analysis from industry experts.
+        </p>
+        <div class="service-features">
+          <div class="service-feature" data-i18n="service_education_feat1">• Free webinars weekly</div>
+          <div class="service-feature" data-i18n="service_education_feat2">• Video course library</div>
+          <div class="service-feature" data-i18n="service_education_feat3">• 1-on-1 coaching</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <img src="assets/img/service-analytics.svg" alt="Analytics">
+        </div>
+        <h3 class="service-title" data-i18n="service_analytics_title">Market Analytics</h3>
+        <p class="service-desc" data-i18n="service_analytics_desc">
+          Daily market analysis, economic calendars, and real-time news feeds. Make informed decisions with professional-grade research tools.
+        </p>
+        <div class="service-features">
+          <div class="service-feature" data-i18n="service_analytics_feat1">• Daily market reports</div>
+          <div class="service-feature" data-i18n="service_analytics_feat2">• Economic calendar</div>
+          <div class="service-feature" data-i18n="service_analytics_feat3">• Trading signals</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-label" data-i18n="why_label">Why Choose Us</div>
+      <h2 class="section-title" data-i18n="why_title">Your Success is Our Priority</h2>
+      <p class="section-sub" data-i18n="why_sub">
+        Join thousands of successful traders and investors worldwide
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-number">01</div>
+        <h3 class="why-title" data-i18n="why_card1_title">Regulatory Compliance</h3>
+        <p class="why-desc" data-i18n="why_card1_desc">
+          Fully licensed and regulated by international financial authorities. Your funds are segregated and protected by investor compensation schemes.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">02</div>
+        <h3 class="why-title" data-i18n="why_card2_title">Advanced Technology</h3>
+        <p class="why-desc" data-i18n="why_card2_desc">
+          State-of-the-art trading platforms with lightning-fast execution. MetaTrader 4/5, cTrader, and proprietary mobile apps available.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">03</div>
+        <h3 class="why-title" data-i18n="why_card3_title">Competitive Pricing</h3>
+        <p class="why-desc" data-i18n="why_card3_desc">
+          Industry-leading spreads and commission structures. No hidden fees, transparent pricing on all instruments and services.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">04</div>
+        <h3 class="why-title" data-i18n="why_card4_title">Professional Support</h3>
+        <p class="why-desc" data-i18n="why_card4_desc">
+          Dedicated account managers and multilingual support team. Get expert assistance whenever you need it, in your preferred language.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">05</div>
+        <h3 class="why-title" data-i18n="why_card5_title">Partnership Programs</h3>
+        <p class="why-desc" data-i18n="why_card5_desc">
+          Lucrative IB and affiliate programs with competitive commission structures. Grow your business with our comprehensive partner support.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">06</div>
+        <h3 class="why-title" data-i18n="why_card6_title">Risk Management</h3>
+        <p class="why-desc" data-i18n="why_card6_desc">
+          Advanced risk management tools including negative balance protection, stop-loss orders, and position monitoring systems.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARKET NEWS ================= -->
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="news_label">Market Insights</div>
+      <h2 class="section-title" data-i18n="news_title">Latest Market News & Analysis</h2>
+      <p class="section-sub" data-i18n="news_sub">
+        Stay informed with real-time market updates and expert commentary
+      </p>
+    </div>
+
+    <div class="news-grid">
+      <div class="news-card featured">
+        <div class="news-image">
+          <img src="assets/img/news-1.jpg" alt="Market Analysis" class="img-cover">
+          <div class="news-badge" data-i18n="news_badge_analysis">Analysis</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">January 28, 2026</span>
+            <span class="news-author">By Sarah Johnson</span>
+          </div>
+          <h3 class="news-title" data-i18n="news1_title">
+            Global Markets Rally on Federal Reserve Rate Decision
+          </h3>
+          <p class="news-excerpt" data-i18n="news1_excerpt">
+            Major indices surge as the Federal Reserve signals a potential pause in interest rate hikes. Analysis of market implications and trading opportunities in the current environment.
+          </p>
+          <a href="#" class="news-link" data-i18n="news_read_more">Read Full Analysis →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-image">
+          <img src="assets/img/news-2.jpg" alt="Crypto Markets" class="img-cover">
+          <div class="news-badge crypto" data-i18n="news_badge_crypto">Crypto</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">January 27, 2026</span>
+          </div>
+          <h3 class="news-title" data-i18n="news2_title">
+            Bitcoin Breaks $100K Barrier Amid Institutional Adoption
+          </h3>
+          <p class="news-excerpt" data-i18n="news2_excerpt">
+            Cryptocurrency markets reach new milestones as major institutions continue to increase digital asset allocations.
+          </p>
+          <a href="#" class="news-link" data-i18n="news_read_more">Read Full Analysis →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-image">
+          <img src="assets/img/news-3.jpg" alt="Gold Trading" class="img-cover">
+          <div class="news-badge commodities" data-i18n="news_badge_commodities">Commodities</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">January 26, 2026</span>
+          </div>
+          <h3 class="news-title" data-i18n="news3_title">
+            Gold Prices Surge to Record Highs on Safe-Haven Demand
+          </h3>
+          <p class="news-excerpt" data-i18n="news3_excerpt">
+            Precious metals continue their upward trajectory as investors seek protection against economic uncertainty.
+          </p>
+          <a href="#" class="news-link" data-i18n="news_read_more">Read Full Analysis →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-image">
+          <img src="assets/img/news-4.jpg" alt="Forex Update" class="img-cover">
+          <div class="news-badge forex" data-i18n="news_badge_forex">Forex</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">January 25, 2026</span>
+          </div>
+          <h3 class="news-title" data-i18n="news4_title">
+            EUR/USD Volatility Expected Ahead of ECB Meeting
+          </h3>
+          <p class="news-excerpt" data-i18n="news4_excerpt">
+            Currency markets brace for potential policy shifts as European Central Bank prepares key announcement.
+          </p>
+          <a href="#" class="news-link" data-i18n="news_read_more">Read Full Analysis →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-action">
+      <a href="market.html" class="btn btn-outline" data-i18n="news_view_all">View All Market News</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLATFORMS ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-label" data-i18n="platforms_label">Trading Platforms</div>
+      <h2 class="section-title" data-i18n="platforms_title">Professional Trading Tools</h2>
+      <p class="section-sub" data-i18n="platforms_sub">
+        Industry-leading platforms for every trading style
+      </p>
+    </div>
+
+    <div class="platforms-grid">
+      <div class="platform-card">
+        <div class="platform-image">
+          <img src="assets/img/platform-mt4.png" alt="MetaTrader 4" class="img-contain">
+        </div>
+        <h3 class="platform-title">MetaTrader 4</h3>
+        <p class="platform-desc" data-i18n="platform_mt4_desc">
+          The world's most popular trading platform with advanced charting, automated trading, and extensive technical indicators.
+        </p>
+        <div class="platform-features">
+          <div class="platform-feature" data-i18n="platform_mt4_feat1">✓ Expert Advisors (EAs)</div>
+          <div class="platform-feature" data-i18n="platform_mt4_feat2">✓ Custom indicators</div>
+          <div class="platform-feature" data-i18n="platform_mt4_feat3">✓ Mobile & desktop</div>
+        </div>
+        <a href="#" class="btn btn-sm btn-outline" data-i18n="platform_download">Download</a>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-image">
+          <img src="assets/img/platform-mt5.png" alt="MetaTrader 5" class="img-contain">
+        </div>
+        <h3 class="platform-title">MetaTrader 5</h3>
+        <p class="platform-desc" data-i18n="platform_mt5_desc">
+          Next-generation multi-asset platform with advanced features, enhanced charting, and broader market access.
+        </p>
+        <div class="platform-features">
+          <div class="platform-feature" data-i18n="platform_mt5_feat1">✓ Multi-asset trading</div>
+          <div class="platform-feature" data-i18n="platform_mt5_feat2">✓ 21 timeframes</div>
+          <div class="platform-feature" data-i18n="platform_mt5_feat3">✓ Economic calendar</div>
+        </div>
+        <a href="#" class="btn btn-sm btn-outline" data-i18n="platform_download">Download</a>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-image">
+          <img src="assets/img/platform-ctrader.png" alt="cTrader" class="img-contain">
+        </div>
+        <h3 class="platform-title">cTrader</h3>
+        <p class="platform-desc" data-i18n="platform_ctrader_desc">
+          Intuitive platform with advanced order types, depth of market, and lightning-fast execution for serious traders.
+        </p>
+        <div class="platform-features">
+          <div class="platform-feature" data-i18n="platform_ctrader_feat1">✓ Level II pricing</div>
+          <div class="platform-feature" data-i18n="platform_ctrader_feat2">✓ cAlgo automation</div>
+          <div class="platform-feature" data-i18n="platform_ctrader_feat3">✓ Copy trading</div>
+        </div>
+        <a href="#" class="btn btn-sm btn-outline" data-i18n="platform_download">Download</a>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-image">
+          <img src="assets/img/platform-web.png" alt="WebTrader" class="img-contain">
+        </div>
+        <h3 class="platform-title">WebTrader</h3>
+        <p class="platform-desc" data-i18n="platform_web_desc">
+          Access your account from any browser, no download required. Full trading functionality on desktop or mobile web.
+        </p>
+        <div class="platform-features">
+          <div class="platform-feature" data-i18n="platform_web_feat1">✓ No installation</div>
+          <div class="platform-feature" data-i18n="platform_web_feat2">✓ Cross-platform</div>
+          <div class="platform-feature" data-i18n="platform_web_feat3">✓ Real-time data</div>
+        </div>
+        <a href="#" class="btn btn-sm btn-outline" data-i18n="platform_launch">Launch WebTrader</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-label" data-i18n="testimonials_label">Testimonials</div>
+      <h2 class="section-title" data-i18n="testimonials_title">What Our Partners Say</h2>
+      <p class="section-sub" data-i18n="testimonials_sub">
+        Real success stories from our global community
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-i18n="testimonial1_text">
+          "Working with Zero To Hero has transformed my trading career. Their platform is reliable, the execution is fast, and the support team is always there when I need them. The educational resources helped me develop a profitable strategy."
+        </p>
+        <div class="testimonial-author">
+          <img src="assets/img/avatar-1.jpg" alt="Michael Chen" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <div class="testimonial-name">Michael Chen</div>
+            <div class="testimonial-role" data-i18n="testimonial1_role">Professional Trader, Singapore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-i18n="testimonial2_text">
+          "As an IB partner, I've seen exceptional results. The commission structure is competitive, and my clients are consistently satisfied with the service quality. Zero To Hero truly values their partners."
+        </p>
+        <div class="testimonial-author">
+          <img src="assets/img/avatar-2.jpg" alt="Sarah Williams" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <div class="testimonial-name">Sarah Williams</div>
+            <div class="testimonial-role" data-i18n="testimonial2_role">IB Partner, United Kingdom</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-i18n="testimonial3_text">
+          "The market analysis and daily insights are incredibly valuable. I've improved my trading performance significantly since joining. The platform is user-friendly and perfect for both beginners and experienced traders."
+        </p>
+        <div class="testimonial-author">
+          <img src="assets/img/avatar-3.jpg" alt="David Rodriguez" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <div class="testimonial-name">David Rodriguez</div>
+            <div class="testimonial-role" data-i18n="testimonial3_role">Investor, United States</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-i18n="testimonial4_text">
+          "Tôi đã giao dịch với nhiều sàn khác nhưng Zero To Hero là tốt nhất. Hỗ trợ tiếng Việt xuất sắc, nạp rút nhanh chóng, và spread cạnh tranh. Đội ngũ hỗ trợ rất chuyên nghiệp."
+        </p>
+        <div class="testimonial-author">
+          <img src="assets/img/avatar-4.jpg" alt="Nguyễn Văn A" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <div class="testimonial-name">Nguyễn Văn An</div>
+            <div class="testimonial-role" data-i18n="testimonial4_role">Trader, Việt Nam</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <h2 class="cta-title" data-i18n="cta_title">Ready to Start Your Trading Journey?</h2>
+        <p class="cta-desc" data-i18n="cta_desc">
+          Join thousands of successful traders worldwide. Open your account today and get access to professional trading tools, educational resources, and 24/7 support.
+        </p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="cta_btn_start">Open Live Account</a>
+          <a href="#" class="btn btn-outline btn-lg" data-i18n="cta_btn_demo">Try Demo Account</a>
+        </div>
+      </div>
+      <div class="cta-features">
+        <div class="cta-feature">
+          <span class="cta-feature-icon">✓</span>
+          <span class="cta-feature-text" data-i18n="cta_feat1">Account opening in 5 minutes</span>
+        </div>
+        <div class="cta-feature">
+          <span class="cta-feature-icon">✓</span>
+          <span class="cta-feature-text" data-i18n="cta_feat2">$100 minimum deposit</span>
+        </div>
+        <div class="cta-feature">
+          <span class="cta-feature-icon">✓</span>
+          <span class="cta-feature-text" data-i18n="cta_feat3">No hidden fees</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-col footer-about">
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" class="footer-logo" alt="Zero To Hero">
+          <div>
+            <div class="footer-name">Zero To Hero</div>
+            <div class="footer-tagline" data-i18n="footer_tag">Corporate Partner Network</div>
+          </div>
+        </div>
+        <p class="footer-desc" data-i18n="footer_desc">
+          A leading global financial services provider connecting traders and investors with international markets since 2010.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <img src="assets/img/icon-facebook.svg" alt="Facebook">
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <img src="assets/img/icon-twitter.svg" alt="Twitter">
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <img src="assets/img/icon-linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <img src="assets/img/icon-instagram.svg" alt="Instagram">
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <img src="assets/img/icon-youtube.svg" alt="YouTube">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title" data-i18n="footer_products">Products</h4>
+        <a href="#" class="footer-link" data-i18n="footer_link_forex">Forex Trading</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_commodities">Commodities</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_crypto">Cryptocurrency</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_indices">Stock Indices</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_shares">Shares</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title" data-i18n="footer_platforms">Platforms</h4>
+        <a href="#" class="footer-link">MetaTrader 4</a>
+        <a href="#" class="footer-link">MetaTrader 5</a>
+        <a href="#" class="footer-link">cTrader</a>
+        <a href="#" class="footer-link">WebTrader</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_mobile">Mobile Apps</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title" data-i18n="footer_company">Company</h4>
+        <a href="about.html" class="footer-link" data-i18n="nav_about">About Us</a>
+        <a href="team.html" class="footer-link" data-i18n="nav_team">Our Team</a>
+        <a href="partnership.html" class="footer-link" data-i18n="nav_partnership">Partnership</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_careers">Careers</a>
+        <a href="contact.html" class="footer-link" data-i18n="nav_contact">Contact Us</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title" data-i18n="footer_support">Support</h4>
+        <a href="#" class="footer-link" data-i18n="footer_link_help">Help Center</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_faq">FAQ</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_education">Education</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_webinar">Webinars</a>
+        <a href="#" class="footer-link" data-i18n="footer_link_calculator">Calculators</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="#" class="footer-legal-link" data-i18n="footer_terms">Terms & Conditions</a>
+        <a href="#" class="footer-legal-link" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" class="footer-legal-link" data-i18n="footer_risk">Risk Disclosure</a>
+        <a href="#" class="footer-legal-link" data-i18n="footer_aml">AML Policy</a>
+      </div>
+      <div class="footer-copy">
+        © <span id="year"></span> Zero To Hero. <span data-i18n="footer_rights">All rights reserved.</span>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      <p data-i18n="footer_disclaimer">
+        <strong>Risk Warning:</strong> Trading foreign exchange, commodities, and other leveraged products carries a high level of risk and may not be suitable for all investors. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. There is a possibility that you may sustain a loss of some or all of your investment. You should not invest money that you cannot afford to lose.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- TradingView -->
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script src="assets/js/tradingview.js"></script>
+<script src="assets/mainn.js"></script>
+
+<script>
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
