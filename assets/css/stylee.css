@@ -1478,3 +1478,12 @@ input, textarea, select {
 .mt-2 { margin-top: 20px; }
 .mt-3 { margin-top: 30px; }
 .mt-4 { margin-top: 40px; }
+
+
+.hero::before {
+  pointer-events: none;
+}
+.header,
+.header * {
+  pointer-events: auto;
+}
