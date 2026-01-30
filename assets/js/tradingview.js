@@ -1,59 +1,92 @@
 /* =====================================================
-   TRADINGVIEW INIT – ZERO TO HERO
-   Purpose: Embed all TradingView charts
-   Stable / Static site friendly
+   TRADINGVIEW.JS – ZERO TO HERO
+   Purpose: Embed TradingView charts only
+   Rule: Init ONCE – No DOM rewrite – No i18n conflict
 ===================================================== */
 
-function createTV(id, symbol, interval = "60") {
-  if (!document.getElementById(id)) return;
+(function () {
 
-  new TradingView.widget({
-    autosize: true,
-    symbol: symbol,
-    interval: interval,
-    timezone: "Etc/UTC",
-    theme: "dark",
-    style: "1",
-    locale: "en",
-    toolbar_bg: "#0b0f14",
-    enable_publishing: false,
-    hide_top_toolbar: true,
-    hide_legend: true,
-    allow_symbol_change: false,
-    container_id: id
-  });
-}
+  // Prevent double init
+  let tvInitialized = false;
 
-document.addEventListener("DOMContentLoaded", () => {
+  function createWidget(config) {
+    if (!document.getElementById(config.container_id)) return;
 
-  /* ===== GOLD TAB ===== */
-  createTV("tv_index_xauusd", "OANDA:XAUUSD", "60");
-  createTV("tv_index_eurusd", "OANDA:EURUSD", "60");
-  createTV("tv_index_btcusd", "BINANCE:BTCUSDT", "60");
-  createTV("tv_index_xagusd", "OANDA:XAGUSD", "60");
+    new TradingView.widget({
+      autosize: true,
+      symbol: config.symbol,
+      interval: "60",
+      timezone: "[node]UTC[/node]",
+      theme: "dark",
+      style: "1",
+      locale: "en",
+      toolbar_bg: "#0b0f14",
+      enable_publishing: false,
+      hide_top_toolbar: true,
+      hide_legend: true,
+      allow_symbol_change: false,
+      container_id: config.container_id
+    });
+  }
 
-  /* ===== FX TAB ===== */
-  createTV("tv_fx_eurusd", "OANDA:EURUSD", "60");
-  createTV("tv_fx_gbpusd", "OANDA:GBPUSD", "60");
-  createTV("tv_fx_usdjpy", "OANDA:USDJPY", "60");
-  createTV("tv_fx_audusd", "OANDA:AUDUSD", "60");
+  function createMini(config) {
+    if (!document.getElementById(config.container_id)) return;
 
-  /* ===== CRYPTO TAB ===== */
-  createTV("tv_crypto_btc", "BINANCE:BTCUSDT", "60");
-  createTV("tv_crypto_eth", "BINANCE:ETHUSDT", "60");
-  createTV("tv_crypto_bnb", "BINANCE:BNBUSDT", "60");
-  createTV("tv_crypto_xrp", "BINANCE:XRPUSDT", "60");
+    new TradingView.MiniChart({
+      autosize: true,
+      symbol: config.symbol,
+      interval: "60",
+      timezone: "UTC",
+      theme: "dark",
+      locale: "en",
+      container_id: config.container_id
+    });
+  }
 
-  /* ===== INDICES TAB ===== */
-  createTV("tv_indices_spx", "SP:SPX", "60");
-  createTV("tv_indices_ndx", "NASDAQ:NDX", "60");
-  createTV("tv_indices_dji", "DJ:DJI", "60");
-  createTV("tv_indices_dax", "XETR:DAX", "60");
+  function initTradingView() {
+    if (tvInitialized) return;
+    if (typeof TradingView === "undefined") return;
 
-  /* ===== COMMODITIES TAB ===== */
-  createTV("tv_commodities_oil", "TVC:USOIL", "60");
-  createTV("tv_commodities_gas", "TVC:NATGAS", "60");
-  createTV("tv_commodities_silver", "OANDA:XAGUSD", "60");
-  createTV("tv_commodities_copper", "COMEX:HG1!", "60");
+    tvInitialized = true;
 
-});
+    /* ===== GOLD ===== */
+    createWidget({ container_id: "tv_index_xauusd", symbol: "OANDA:XAUUSD" });
+    createMini({ container_id: "tv_index_eurusd", symbol: "OANDA:EURUSD" });
+    createMini({ container_id: "tv_index_btcusd", symbol: "BINANCE:BTCUSDT" });
+    createMini({ container_id: "tv_index_xagusd", symbol: "OANDA:XAGUSD" });
+
+    /* ===== FX ===== */
+    createMini({ container_id: "tv_fx_eurusd", symbol: "OANDA:EURUSD" });
+    createMini({ container_id: "tv_fx_gbpusd", symbol: "OANDA:GBPUSD" });
+    createMini({ container_id: "tv_fx_usdjpy", symbol: "OANDA:USDJPY" });
+    createMini({ container_id: "tv_fx_audusd", symbol: "OANDA:AUDUSD" });
+
+    /* ===== CRYPTO ===== */
+    createMini({ container_id: "tv_crypto_btc", symbol: "BINANCE:BTCUSDT" });
+    createMini({ container_id: "tv_crypto_eth", symbol: "BINANCE:ETHUSDT" });
+    createMini({ container_id: "tv_crypto_bnb", symbol: "BINANCE:BNBUSDT" });
+    createMini({ container_id: "tv_crypto_xrp", symbol: "BINANCE:XRPUSDT" });
+
+    /* ===== INDICES ===== */
+    createMini({ container_id: "tv_indices_spx", symbol: "SP:SPX" });
+    createMini({ container_id: "tv_indices_ndx", symbol: "NASDAQ:NDX" });
+    createMini({ container_id: "tv_indices_dji", symbol: "DJ:DJI" });
+    createMini({ container_id: "tv_indices_dax", symbol: "XETR:DAX" });
+
+    /* ===== COMMODITIES ===== */
+    createMini({ container_id: "tv_commodities_oil", symbol: "TVC:USOIL" });
+    createMini({ container_id: "tv_commodities_gas", symbol: "NYMEX:NG1!" });
+    createMini({ container_id: "tv_commodities_silver", symbol: "OANDA:XAGUSD" });
+    createMini({ container_id: "tv_commodities_copper", symbol: "COMEX:HG1!" });
+
+    console.log("TradingView initialized once ✔");
+  }
+
+  // Init when DOM ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTradingView);
+  } else {
+    initTradingView();
+  }
+
+})();
