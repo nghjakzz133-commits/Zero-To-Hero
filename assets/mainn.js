@@ -4,7 +4,45 @@
    =============================================== */
 
 /* ================= i18n ================= */
+window.translations = {
+  en: {
+    nav_home: "Home",
+    nav_about: "About",
+    nav_partnership: "Partnership",
+    nav_team: "Team",
+    nav_market: "Market",
+    nav_contact: "Contact",
 
+    badge: "Embark on a journey to conquer the market.",
+    hero_zero: "Zero",
+    hero_to: "To",
+    hero_hero: "Hero",
+    hero_sub: "Building sustainable growth through global partnerships and professional execution.",
+    hero_btn_partner: "Become a Partner",
+    hero_btn_explore: "Explore Markets",
+
+    footer_rights: "All rights reserved."
+  },
+
+  vi: {
+    nav_home: "Trang Chủ",
+    nav_about: "Giới Thiệu",
+    nav_partnership: "Đối Tác",
+    nav_team: "Đội Ngũ",
+    nav_market: "Thị Trường",
+    nav_contact: "Liên Hệ",
+
+    badge: "Bắt đầu hành trình chinh phục thị trường.",
+    hero_zero: "Từ Số",
+    hero_to: "Đến",
+    hero_hero: "Anh Hùng",
+    hero_sub: "Xây dựng tăng trưởng bền vững thông qua đối tác toàn cầu và thực thi chuyên nghiệp.",
+    hero_btn_partner: "Trở Thành Đối Tác",
+    hero_btn_explore: "Khám Phá Thị Trường",
+
+    footer_rights: "Đã đăng ký bản quyền."
+  }
+};
 let currentLang = 'en';
 
 function initI18n() {
