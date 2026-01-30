@@ -1049,11 +1049,29 @@ function init() {
   const btnEN2 = document.getElementById('btnEN2');
   const btnVI2 = document.getElementById('btnVI2');
   
-  btnEN?.addEventListener('click', () => switchLanguage('en'));
-  btnVI?.addEventListener('click', () => switchLanguage('vi'));
-  btnEN2?.addEventListener('click', () => switchLanguage('en'));
-  btnVI2?.addEventListener('click', () => switchLanguage('vi'));
-  
+ btnEN?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  switchLanguage('en');
+});
+
+btnVI?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  switchLanguage('vi');
+});
+
+btnEN2?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  switchLanguage('en');
+});
+
+btnVI2?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  switchLanguage('vi');
+});
   // Set current year in footer
   const yearElement = document.getElementById('year');
   if (yearElement) {
