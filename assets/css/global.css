@@ -186,10 +186,10 @@
     display: none;
   }
 
-  .nav-menu.active{
-    display: flex;
-    animation: slideDown .25s ease;
-  }
+  .nav-menu.open{
+  display: flex;
+  animation: slideDown .25s ease;
+}
 
   .nav-actions{
     width: 100%;
