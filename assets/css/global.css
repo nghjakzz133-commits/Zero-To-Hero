@@ -1,85 +1,171 @@
 /* =========================================================
-   GLOBAL.CSS
-   Foundation styles – Enterprise grade
+   CORE.CSS
+   Layout & Components
 ========================================================= */
 
-/* ===== RESET & NORMALIZE ===== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* ===== HEADER / NAV ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
 }
 
-html {
-  scroll-behavior: smooth;
+header nav {
+  padding: 16px 8%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Inter, Helvetica, Arial, sans-serif;
+header nav strong {
   font-size: 16px;
-  line-height: 1.6;
-  color: #111111;
-  background-color: #ffffff;
 }
 
-/* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 16px 0;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #0a0a0a;
+header nav img {
+  height: 32px;
 }
 
-h1 { font-size: 56px; }
-h2 { font-size: 32px; }
-h3 { font-size: 22px; }
-
-p {
-  margin: 0 0 14px 0;
-  color: #444;
-}
-
-strong {
-  font-weight: 600;
-}
-
-/* ===== LINKS ===== */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-/* ===== MEDIA ===== */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ===== FORM ELEMENTS ===== */
-button,
-select {
-  font-family: inherit;
+/* Menu links */
+header nav a {
   font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
+  font-weight: 500;
+  color: #222;
 }
 
-button {
-  cursor: pointer;
+/* Language buttons */
+header nav button {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+}
+
+header nav button:hover {
+  background: #eee;
+}
+
+/* ===== HERO ===== */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Overlay đã có inline – giữ tương thích */
+
+/* Hero content */
+#hero > div {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+#hero h1 {
+  color: #ffffff;
+}
+
+#hero p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== MAIN SECTIONS ===== */
+main section {
+  padding: 80px 8%;
+}
+
+main section header {
+  margin-bottom: 32px;
+}
+
+/* ===== OFFERINGS ===== */
+#offerings h2 {
+  margin-bottom: 12px;
+}
+
+#offerings h3 {
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+#offerings p {
+  max-width: 720px;
+}
+
+/* ===== LIVE MARKET ===== */
+#live-market {
+  background: #fafafa;
+}
+
+#live-market select,
+#live-market button {
+  padding: 10px 12px;
+  min-width: 160px;
+}
+
+#live-market iframe {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+/* ===== CONTACT ===== */
+#contact {
+  background: #ffffff;
+}
+
+#contact p a {
   font-weight: 500;
 }
 
-/* ===== UTILITY ===== */
-hr {
-  border: none;
-  border-top: 1px solid #e5e5e5;
-  margin: 0;
+/* ===== FOOTER ===== */
+footer {
+  background: #0f0f0f;
+  color: #b5b5b5;
+  font-size: 14px;
+}
+
+footer section {
+  padding: 32px 8%;
+}
+
+footer strong {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+footer a {
+  color: #b5b5b5;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer hr {
+  border-top: 1px solid #222;
+}
+
+/* ===== COPYRIGHT ===== */
+footer > p {
+  text-align: center;
+  padding: 16px 8%;
+  font-size: 13px;
+  color: #777;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  main section {
+    padding: 60px 6%;
+  }
+
+  header nav {
+    gap: 8px;
+  }
 }
