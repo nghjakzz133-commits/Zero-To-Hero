@@ -4,47 +4,149 @@
 ========================================================= */
 
 /* ===== HEADER / NAV ===== */
+
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+
   background: #ffffff;
   border-bottom: 1px solid #eaeaea;
+
+  /* cảm giác chắc + sang */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+/* ===== NAV WRAPPER ===== */
 header nav {
-  padding: 16px 8%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  padding: 14px 8%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   flex-wrap: wrap;
+}
+
+/* ===== LOGO + BRAND ===== */
+header nav a:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+header nav img {
+  height: 34px;
+  width: auto;
 }
 
 header nav strong {
   font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 0.2px;
 }
 
-header nav img {
-  height: 32px;
-}
-
-/* Menu links */
+/* ===== MENU LINKS ===== */
 header nav a {
   font-size: 14px;
   font-weight: 500;
   color: #222;
+  text-decoration: none;
+  padding: 6px 0;
+  position: relative;
 }
 
-/* Language buttons */
+/* hover underline tinh tế */
+header nav a:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #000;
+  transition: width 0.25s ease;
+}
+
+header nav a:not(:first-child):hover::after {
+  width: 100%;
+}
+
+/* ===== SEPARATORS "|" ===== */
+header nav {
+  column-gap: 12px;
+}
+
+header nav a + span,
+header nav a + a {
+  margin-left: 4px;
+}
+
+/* ===== LANGUAGE SWITCH ===== */
 header nav button {
-  padding: 6px 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+
   border: 1px solid #ddd;
-  background: #f8f8f8;
+  border-radius: 6px;
+
+  background: #fafafa;
+  color: #111;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 header nav button:hover {
-  background: #eee;
+  background: #111;
+  color: #fff;
+  border-color: #111;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header nav {
+    padding: 12px 6%;
+    gap: 14px;
+  }
+
+  header nav strong {
+    font-size: 15px;
+  }
+
+  header nav a {
+    font-size: 13px;
+  }
+}
+/* ===== MOBILE HEADER OPTIMIZATION ===== */
+@media (max-width: 768px) {
+
+  header nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  header nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  header nav a {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  header nav button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
 
 /* ===== HERO ===== */
 #hero {
