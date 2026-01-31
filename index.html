@@ -69,88 +69,31 @@
 <!-- ===== MAIN ===== -->
 <main id="home">
 
-  <!-- HERO -->
-  <!-- ===== HERO FULL SCREEN WITH VIDEO ===== -->
-<section id="hero"
-  style="
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  ">
+<!-- ===== HERO ===== -->
+<section id="hero">
 
-  <!-- Video background -->
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    style="
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-    ">
+  <video autoplay muted loop playsinline class="hero-video">
     <source src="assets/video/hero.mp4" type="video/mp4">
   </video>
 
-  <!-- Overlay -->
-  <div
-    style="
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    ">
-  </div>
+  <div class="hero-overlay"></div>
 
-  <!-- Hero content -->
-  <div
-    style="
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding: 0 8%;
-      color: #fff;
-    ">
+  <div class="hero-content">
+    <div class="hero-inner">
 
-    <div style="max-width: 640px;">
-
-      <h1
-        data-vi="Hero To Zero"
-        data-en="Hero To Zero"
-        style="
-          font-size: 56px;
-          line-height: 1.1;
-          margin-bottom: 16px;
-        ">
+      <h1 data-vi="Hero To Zero" data-en="Hero To Zero">
         Hero To Zero
       </h1>
 
-      <p
+      <p class="hero-desc"
         data-vi="Định hình chiến lược, xây dựng hệ thống và mở rộng năng lực vận hành cho doanh nghiệp."
-        data-en="Shaping strategy, building systems, and expanding operational capabilities for businesses."
-        style="
-          font-size: 18px;
-          line-height: 1.6;
-          margin-bottom: 20px;
-        ">
+        data-en="Shaping strategy, building systems, and expanding operational capabilities for businesses.">
         Định hình chiến lược, xây dựng hệ thống và mở rộng năng lực vận hành cho doanh nghiệp.
       </p>
 
-      <!-- Direction line -->
-      <p
+      <p class="hero-sub"
         data-vi="Bắt đầu hành trình chinh phục thị trường"
-        data-en="Begin the journey to conquer the market"
-        style="
-          font-size: 16px;
-          font-weight: 500;
-          opacity: 0.9;
-        ">
+        data-en="Begin the journey to conquer the market">
         Bắt đầu hành trình chinh phục thị trường
       </p>
 
@@ -159,8 +102,7 @@
 
 </section>
 
-<hr>
-
+ <hr>
 
   
  <!-- ===== PRODUCTS & SERVICES ===== -->
