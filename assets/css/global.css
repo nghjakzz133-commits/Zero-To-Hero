@@ -97,29 +97,6 @@ header {
   }
 }
 
-/* ===== HERO ===== */
-#hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Overlay đã có inline – giữ tương thích */
-
-/* Hero content */
-#hero > div {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-#hero h1 {
-  color: #ffffff;
-}
-
-#hero p {
-  color: rgba(255, 255, 255, 0.9);
-}
 
 /* ===== MAIN SECTIONS ===== */
 main section {
