@@ -173,21 +173,28 @@
   <hr>
  
 <!-- ===== LIVE MARKET ADVANCED ===== -->
-<section id="live-market" style="padding: 80px 8%;">
+<section
+  id="live-market"
+  style="
+    padding: 80px 8%;
+    background:#0b0e11;
+    color:#fff;
+  "
+>
 
   <!-- Header -->
   <header style="max-width: 720px; margin-bottom: 24px;">
     <h2
       data-vi="Thị trường trực tuyến"
       data-en="Live Market"
-      style="font-size: 32px; margin-bottom: 12px;">
+      style="font-size: 32px; margin-bottom: 12px; color:#fff;">
       Thị trường trực tuyến
     </h2>
 
     <p
       data-vi="Công cụ theo dõi thị trường phục vụ cho phân tích tài chính và chiến lược kinh doanh."
       data-en="A live market tool supporting financial analysis and strategic planning."
-      style="color:#555; line-height:1.6;">
+      style="color:#aaa; line-height:1.6;">
       Công cụ theo dõi thị trường phục vụ cho phân tích tài chính và chiến lược kinh doanh.
     </p>
   </header>
@@ -196,7 +203,9 @@
   <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px;">
 
     <!-- Market dropdown -->
-    <select id="marketSelect" style="padding:10px;">
+    <select
+      id="marketSelect"
+      style="padding:10px; background:#111; color:#fff; border:1px solid #333;">
       <option value="BINANCE:BTCUSDT">Bitcoin (BTC)</option>
       <option value="BINANCE:ETHUSDT">Ethereum (ETH)</option>
       <option value="FX:EURUSD">EUR / USD</option>
@@ -205,25 +214,43 @@
     </select>
 
     <!-- Service dropdown -->
-    <select id="serviceSelect" style="padding:10px;">
+    <select
+      id="serviceSelect"
+      style="padding:10px; background:#111; color:#fff; border:1px solid #333;">
       <option value="finance">Dịch vụ tài chính</option>
       <option value="strategy">Chiến lược thị trường</option>
     </select>
 
     <!-- Theme toggle -->
-    <button id="themeToggle" style="padding:10px 16px; cursor:pointer;">
-      Dark mode
+    <button
+      id="themeToggle"
+      style="
+        padding:10px 16px;
+        cursor:pointer;
+        background:#111;
+        color:#fff;
+        border:1px solid #333;
+      ">
+      Light mode
     </button>
 
   </div>
 
-  <!-- Chart -->
-  <iframe
-    id="tvChart"
-    src=""
-    style="width:100%; height:600px; border:none;"
-    allowfullscreen>
-  </iframe>
+  <!-- Chart wrapper -->
+  <div
+    style="
+      background:#0b0e11;
+      border-radius:8px;
+      overflow:hidden;
+    "
+  >
+    <iframe
+      id="tvChart"
+      src=""
+      style="width:100%; height:600px; border:none;"
+      allowfullscreen>
+    </iframe>
+  </div>
 
 </section>
 
@@ -233,14 +260,15 @@
   const serviceSelect = document.getElementById("serviceSelect");
   const themeToggle = document.getElementById("themeToggle");
 
-  let theme = "light";
+  // Mặc định DARK
+  let theme = "dark";
 
   function loadChart() {
     const symbol = marketSelect.value;
     const service = serviceSelect.value;
-
-    // Interval theo dịch vụ
     const interval = service === "finance" ? "15" : "D";
+
+    const toolbarBg = theme === "dark" ? "0b0e11" : "ffffff";
 
     chart.src =
       "https://www.tradingview.com/widgetembed/?" +
@@ -249,7 +277,9 @@
       "&theme=" + theme +
       "&timezone=Asia/Ho_Chi_Minh" +
       "&locale=vi" +
-      "&toolbarbg=ffffff" +
+      "&toolbarbg=" + toolbarBg +
+      "&backgroundColor=" + (theme === "dark" ? "0b0e11" : "ffffff") +
+      "&gridColor=" + (theme === "dark" ? "2A2E39" : "E6E6E6") +
       "&hidesidetoolbar=0" +
       "&saveimage=1" +
       "&symboledit=1";
@@ -259,14 +289,19 @@
   serviceSelect.addEventListener("change", loadChart);
 
   themeToggle.addEventListener("click", () => {
-    theme = theme === "light" ? "dark" : "light";
-    themeToggle.textContent = theme === "light" ? "Dark mode" : "Light mode";
+    theme = theme === "dark" ? "light" : "dark";
+    themeToggle.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+
+    document.getElementById("live-market").style.background =
+      theme === "dark" ? "#0b0e11" : "#fff";
+
     loadChart();
   });
 
   // Init
   loadChart();
 </script>
+
 
   <!-- ===== CONTACT ===== -->
   <section id="contact">
