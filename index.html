@@ -6,28 +6,61 @@
 
   <title>Zero To Hero | Products & Services</title>
   <meta name="description" content="Zero To Hero cung cấp sản phẩm và dịch vụ giúp doanh nghiệp tăng trưởng bền vững." />
+
+  <!-- Language -->
+  <meta http-equiv="content-language" content="vi,en">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zero To Hero | Products & Services">
+  <meta property="og:description" content="Giải pháp và dịch vụ hỗ trợ doanh nghiệp tăng trưởng bền vững.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#000000">
 </head>
+
 
 <body>
 
 <!-- ===== HEADER / MENU ===== -->
 <header>
-  <nav>
-    <strong>Zero To Hero</strong> |
+  <nav style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+
+    <!-- Logo + Brand -->
+    <a href="#home" style="display:flex; align-items:center; gap:8px; text-decoration:none;">
+      <img 
+        src="assets/img/logo.png" 
+        alt="Zero To Hero Logo"
+        style="height:32px; width:auto;">
+      <strong>Zero To Hero</strong>
+    </a>
+
+    &nbsp;&nbsp;
+
+    <!-- Menu -->
     <a href="#home" data-vi="Trang chủ" data-en="Home">Trang chủ</a> |
     <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a> |
     <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Products & Services">Sản phẩm & Dịch vụ</a> |
-   <a href="#partners" data-vi="Hợp tác" data-en="Partners">Hợp tác</a> |
-<a href="#live-market" data-vi="Thị trường" data-en="Markets">Thị trường</a>
+    <a href="#partners" data-vi="Hợp tác" data-en="Partners">Hợp tác</a> |
+    <a href="#live-market" data-vi="Thị trường" data-en="Markets">Thị trường</a> |
     <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
 
     &nbsp;&nbsp;
+
+    <!-- Language -->
     <button onclick="setLang('vi')">VI</button>
     <button onclick="setLang('en')">EN</button>
+
   </nav>
 </header>
 
 <hr>
+
+
 
 <!-- ===== MAIN ===== -->
 <main id="home">
