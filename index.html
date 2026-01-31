@@ -30,7 +30,7 @@
 <body>
 
 <!-- ===== HEADER / MENU ===== -->
-<header>
+<header class="site-header">
   <nav class="nav">
 
     <!-- Brand -->
@@ -42,25 +42,32 @@
     </div>
 
     <!-- Hamburger -->
-    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 
     <!-- Menu -->
     <div class="nav-menu" id="navMenu">
-      <a href="#home" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
-      <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
-      <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Products & Services">Sản phẩm & Dịch vụ</a>
-      <a href="#partners" data-vi="Hợp tác" data-en="Partners">Hợp tác</a>
-      <a href="#live-market" data-vi="Thị trường" data-en="Markets">Thị trường</a>
-      <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+      <a href="#home" class="nav-link">Trang chủ</a>
+      <a href="#about" class="nav-link">Giới thiệu</a>
+      <a href="#offerings" class="nav-link">Sản phẩm & Dịch vụ</a>
+      <a href="#partners" class="nav-link">Hợp tác</a>
+      <a href="#live-market" class="nav-link">Thị trường</a>
+      <a href="#contact" class="nav-link">Liên hệ</a>
 
-      <div class="lang">
-        <button onclick="setLang('vi')">VI</button>
-        <button onclick="setLang('en')">EN</button>
+      <div class="nav-actions">
+        <div class="lang">
+          <button class="active" onclick="setLang('vi')">VI</button>
+          <button onclick="setLang('en')">EN</button>
+        </div>
+
+        <a href="#contact" class="cta-btn">Bắt đầu</a>
       </div>
     </div>
 
   </nav>
 </header>
+
 
 <hr>
 
