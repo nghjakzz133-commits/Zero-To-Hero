@@ -31,32 +31,33 @@
 
 <!-- ===== HEADER / MENU ===== -->
 <header>
-  <nav style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+  <nav class="nav">
 
-    <!-- Logo + Brand -->
-    <a href="#home" style="display:flex; align-items:center; gap:8px; text-decoration:none;">
-      <img 
-        src="assets/img/logo.png" 
-        alt="Zero To Hero Logo"
-        style="height:32px; width:auto;">
-      <strong>Zero To Hero</strong>
-    </a>
+    <!-- Brand -->
+    <div class="nav-left">
+      <a href="#home" class="brand">
+        <img src="assets/img/logo.png" alt="Zero To Hero Logo">
+        <strong>Zero To Hero</strong>
+      </a>
+    </div>
 
-    &nbsp;&nbsp;
+    <!-- Hamburger -->
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
 
     <!-- Menu -->
-    <a href="#home" data-vi="Trang chủ" data-en="Home">Trang chủ</a> |
-    <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a> |
-    <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Products & Services">Sản phẩm & Dịch vụ</a> |
-    <a href="#partners" data-vi="Hợp tác" data-en="Partners">Hợp tác</a> |
-    <a href="#live-market" data-vi="Thị trường" data-en="Markets">Thị trường</a> |
-    <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+    <div class="nav-menu" id="navMenu">
+      <a href="#home" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
+      <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Products & Services">Sản phẩm & Dịch vụ</a>
+      <a href="#partners" data-vi="Hợp tác" data-en="Partners">Hợp tác</a>
+      <a href="#live-market" data-vi="Thị trường" data-en="Markets">Thị trường</a>
+      <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
 
-    &nbsp;&nbsp;
-
-    <!-- Language -->
-    <button onclick="setLang('vi')">VI</button>
-    <button onclick="setLang('en')">EN</button>
+      <div class="lang">
+        <button onclick="setLang('vi')">VI</button>
+        <button onclick="setLang('en')">EN</button>
+      </div>
+    </div>
 
   </nav>
 </header>
