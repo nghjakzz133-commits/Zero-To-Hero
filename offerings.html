@@ -1,175 +1,221 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zero To Hero | Corporate Partner Network</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Zero To Hero | Sản phẩm & Hệ thống giao dịch</title>
+  <meta name="description" content="Hệ thống bot giao dịch tự động đã vận hành thực tế trên thị trường với hiệu suất ổn định và kỷ luật rủi ro." />
 
-  <!-- CORE -->
-  <link rel="stylesheet" href="assets/css/core.css" />
-  <!-- INDEX -->
-  <link rel="stylesheet" href="assets/css/index.css" />
+  <meta http-equiv="content-language" content="vi,en">
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <meta name="theme-color" content="#000000">
+
+  <link rel="stylesheet" href="assets/css/core.css">
+  <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" class="brand-logo" alt="">
-      <span class="brand-name">Zero To Hero</span>
-    </a>
+<!-- ===== HEADER (GIỮ NGUYÊN 100%) ===== -->
+<header class="site-header">
+  <nav class="nav">
 
-    <nav class="nav">
-      <a class="nav-link active" href="index.html" data-i18n="nav_home">Home</a>
-      <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
-      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-      <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
-      <a class="nav-link" href="market.html" data-i18n="nav_market">Market</a>
-      <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-    </nav>
+    <div class="nav-left">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="Zero To Hero Logo">
+        <strong>Zero To Hero</strong>
+      </a>
+    </div>
 
-    <div class="header-right">
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btnEN">EN</button>
-        <button class="lang-btn" id="btnVI">VI</button>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html" class="nav-link">Trang chủ</a>
+      <a href="about.html" class="nav-link">Giới thiệu</a>
+      <a href="offerings.html" class="nav-link active">Sản phẩm & Dịch vụ</a>
+      <a href="partnership.html" class="nav-link">Hợp tác</a>
+      <a href="market.html" class="nav-link">Thị trường</a>
+      <a href="contact.html" class="nav-link">Liên hệ</a>
+
+      <div class="nav-actions">
+        <div class="lang">
+          <button class="active" onclick="setLang('vi')">VI</button>
+          <button onclick="setLang('en')">EN</button>
+        </div>
+        <a href="contact.html" class="cta-btn">Bắt đầu</a>
       </div>
-      <button class="menu-btn" id="menuBtn">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </div>
 
-  <div class="nav-drawer" id="navDrawer">
-    <div class="drawer-lang">
-      <button class="lang-btn active" id="btnEN2">EN</button>
-      <button class="lang-btn" id="btnVI2">VI</button>
-    </div>
-    <a class="drawer-link active" href="index.html" data-i18n="nav_home">Home</a>
-    <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
-    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-    <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
-    <a class="drawer-link" href="market.html" data-i18n="nav_market">Market</a>
-    <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-  </div>
+  </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="badge" data-i18n="badge">
-      Embark on a journey to conquer the market.
-    </div>
-    <h1 class="hero-title">
-      <span class="gold" data-i18n="hero_zero">Zero</span>
-      <span data-i18n="hero_to">To</span>
-      <span class="gold" data-i18n="hero_hero">Hero</span>
-    </h1>
-    <p class="hero-sub" data-i18n="hero_sub">
-      Building sustainable growth through global partnerships and professional execution.
-    </p>
-  </div>
+<hr>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+<!-- ===== HERO OFFERINGS ===== -->
+<section
+  style="
+    padding:100px 8%;
+    background:#0b0e11;
+    color:#fff;
+  "
+>
+  <h1 style="font-size:38px; max-width:820px;">
+    Hệ thống bot giao dịch<br>
+    <span style="color:#4da3ff;">đã vận hành thực tế & có kỷ luật</span>
+  </h1>
+
+  <p style="margin-top:20px; max-width:760px; color:#aaa; line-height:1.7;">
+    Zero To Hero phát triển và vận hành các hệ thống giao dịch tự động (trading bot)
+    đã chạy ổn định trên thị trường trong thời gian dài, tập trung vào quản trị rủi ro,
+    kỷ luật vốn và hiệu suất bền vững.
+  </p>
 </section>
 
-<!-- ================= MARKET SNAPSHOT ================= -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="market_title">Market Snapshot</h2>
-      <p class="section-sub" data-i18n="market_sub">
-        Live public market overview for general monitoring.
+<hr>
+
+<!-- ===== WHY OUR BOTS ===== -->
+<section style="padding:80px 8%; background:#000;">
+  <h2 style="margin-bottom:40px;">Vì sao hệ thống của chúng tôi khác biệt</h2>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:32px;">
+
+    <div>
+      <h3>📊 Đã chạy thực tế</h3>
+      <p>
+        Không phải bot thử nghiệm hay backtest.
+        Tất cả hệ thống đều đã vận hành trên tài khoản thật
+        tối thiểu 6 tháng trước khi giới thiệu.
       </p>
     </div>
 
-    <!-- TABS -->
-    <div class="market-tabs">
-      <button class="tab-btn active" data-tab="gold">GOLD</button>
-      <button class="tab-btn" data-tab="fx">FX</button>
-      <button class="tab-btn" data-tab="crypto">CRYPTO</button>
+    <div>
+      <h3>🛡️ Quản trị rủi ro</h3>
+      <p>
+        Mỗi bot đều có giới hạn drawdown, kiểm soát khối lượng
+        và cơ chế bảo toàn vốn khi thị trường biến động mạnh.
+      </p>
     </div>
 
-    <div class="panel">
-
-      <!-- GOLD -->
-      <div class="tab-panel show" id="tab-gold">
-        <div class="tv-box tv-big">
-          <div class="tv" id="tv_index_xauusd"></div>
-        </div>
-
-        <div class="index-mini-markets">
-          <div class="mini-market">
-            <div class="mini-title" data-i18n="pair_eurusd">EUR / USD</div>
-            <div class="tv mini-tv" id="tv_index_eurusd"></div>
-          </div>
-
-          <div class="mini-market">
-            <div class="mini-title">BTC / USD</div>
-            <div class="tv mini-tv" id="tv_index_btcusd"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- FX -->
-      <div class="tab-panel" id="tab-fx">
-        <div class="index-mini-markets">
-          <div class="mini-market">
-            <div class="mini-title">EUR / USD</div>
-            <div class="tv mini-tv" id="tv_fx_eurusd"></div>
-          </div>
-
-          <div class="mini-market">
-            <div class="mini-title">GBP / USD</div>
-            <div class="tv mini-tv" id="tv_fx_gbpusd"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CRYPTO -->
-      <div class="tab-panel" id="tab-crypto">
-        <div class="index-mini-markets">
-          <div class="mini-market">
-            <div class="mini-title">BTC / USD</div>
-            <div class="tv mini-tv" id="tv_crypto_btc"></div>
-          </div>
-
-          <div class="mini-market">
-            <div class="mini-title">ETH / USD</div>
-            <div class="tv mini-tv" id="tv_crypto_eth"></div>
-          </div>
-        </div>
-      </div>
-
+    <div>
+      <h3>⚙️ Hệ thống hoá</h3>
+      <p>
+        Chiến lược được chuẩn hoá, loại bỏ cảm xúc con người,
+        tuân thủ nghiêm ngặt logic đã thiết kế.
+      </p>
     </div>
+
+    <div>
+      <h3>📈 Hiệu suất ổn định</h3>
+      <p>
+        Mục tiêu hiệu suất trung bình khoảng <strong>~1%/ngày</strong>,
+        tập trung vào sự đều đặn thay vì lợi nhuận đột biến.
+      </p>
+    </div>
+
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="assets/img/logo.png" class="footer-logo" alt="">
-      <div>
-        <div class="footer-name">Zero To Hero</div>
-        <div class="footer-small" data-i18n="footer_tag">
-          Corporate Partner Network
-        </div>
-      </div>
-    </div>
+<hr>
 
-    <div class="footer-copy">
-      © <span id="year"></span> Zero To Hero
+<!-- ===== BOT PRODUCTS ===== -->
+<section style="padding:80px 8%; background:#0b0e11; color:#fff;">
+  <h2 style="margin-bottom:40px;">Danh mục hệ thống giao dịch</h2>
+
+  <!-- BOT 1 -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:80px;">
+    <div>
+      <img src="assets/img/bot-trend.jpg" alt="Trend Bot" style="width:100%; border-radius:8px;">
+    </div>
+    <div>
+      <h3>Trend Following Bot</h3>
+      <p style="color:#aaa; line-height:1.7;">
+        Bot giao dịch theo xu hướng trung hạn, ưu tiên thị trường
+        có cấu trúc rõ ràng. Phù hợp với crypto và chỉ số.
+      </p>
+      <ul style="color:#ccc; line-height:1.8;">
+        <li>✔️ Timeframe: H1 – H4</li>
+        <li>✔️ Tỷ lệ thắng ổn định</li>
+        <li>✔️ Drawdown được kiểm soát</li>
+      </ul>
     </div>
   </div>
+
+  <!-- BOT 2 -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:80px;">
+    <div>
+      <h3>Mean Reversion Bot</h3>
+      <p style="color:#aaa; line-height:1.7;">
+        Bot khai thác các vùng quá mua / quá bán,
+        hoạt động hiệu quả trong thị trường sideway.
+      </p>
+      <ul style="color:#ccc; line-height:1.8;">
+        <li>✔️ Tần suất giao dịch cao</li>
+        <li>✔️ Lợi nhuận đều</li>
+        <li>✔️ Stop-loss động</li>
+      </ul>
+    </div>
+    <div>
+      <img src="assets/img/bot-mean.jpg" alt="Mean Reversion Bot" style="width:100%; border-radius:8px;">
+    </div>
+  </div>
+
+  <!-- BOT 3 -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+    <div>
+      <img src="assets/img/bot-scalping.jpg" alt="Scalping Bot" style="width:100%; border-radius:8px;">
+    </div>
+    <div>
+      <h3>Scalping System</h3>
+      <p style="color:#aaa; line-height:1.7;">
+        Hệ thống giao dịch ngắn hạn, tận dụng biến động nhỏ
+        với cơ chế bảo vệ vốn nghiêm ngặt.
+      </p>
+      <ul style="color:#ccc; line-height:1.8;">
+        <li>✔️ Phù hợp tài khoản lớn</li>
+        <li>✔️ Tối ưu spread & latency</li>
+        <li>✔️ Giám sát rủi ro theo phiên</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<hr>
+
+<!-- ===== DISCLAIMER ===== -->
+<section style="padding:60px 8%; background:#000; color:#aaa; font-size:14px;">
+  <p>
+    ⚠️ Lưu ý: Giao dịch tài chính luôn tồn tại rủi ro.
+    Hiệu suất trong quá khứ không đảm bảo lợi nhuận trong tương lai.
+    Các hệ thống được thiết kế nhằm tối ưu xác suất và quản trị rủi ro,
+    không phải công cụ làm giàu nhanh.
+  </p>
+</section>
+
+<!-- ===== CTA ===== -->
+<section style="padding:80px 20px; background:#0b0e11; text-align:center;">
+  <h2>Bạn muốn tìm hiểu hệ thống phù hợp?</h2>
+  <p style="color:#aaa; margin:20px auto; max-width:600px;">
+    Liên hệ với chúng tôi để trao đổi chi tiết về mục tiêu,
+    khẩu vị rủi ro và giải pháp phù hợp.
+  </p>
+  <a href="contact.html" class="cta-btn">Liên hệ tư vấn</a>
+</section>
+
+</main>
+
+<footer>
+  <hr>
+  <p style="text-align:center;">© 2026 Zero To Hero. All rights reserved.</p>
 </footer>
 
-<!-- TradingView -->
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script src="assets/js/index.js"></script>
-
+<script src="assets/js/main.js"></script>
 </body>
 </html>
