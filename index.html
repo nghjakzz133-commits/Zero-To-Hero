@@ -33,19 +33,110 @@
 <main id="home">
 
   <!-- HERO -->
-  <h1
-    data-vi="Từ số 0 đến tăng trưởng bền vững"
-    data-en="From Zero to Sustainable Growth">
-    Từ số 0 đến tăng trưởng bền vững
-  </h1>
+  <!-- ===== HERO FULL SCREEN WITH VIDEO ===== -->
+<section id="hero"
+  style="
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  ">
 
-  <p
-    data-vi="Zero To Hero đồng hành cùng doanh nghiệp trong hành trình xây dựng và mở rộng quy mô."
-    data-en="Zero To Hero partners with businesses on their journey of building and scaling.">
-    Zero To Hero đồng hành cùng doanh nghiệp trong hành trình xây dựng và mở rộng quy mô.
-  </p>
+  <!-- Video background -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    ">
+    <source src="assets/video/hero.mp4" type="video/mp4">
+  </video>
 
-  <hr>
+  <!-- Overlay -->
+  <div
+    style="
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    ">
+  </div>
+
+  <!-- Hero content -->
+  <div
+    style="
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: #fff;
+    ">
+
+    <div style="max-width: 640px;">
+
+      <h1
+        data-vi="Hero To Zero"
+        data-en="Hero To Zero"
+        style="
+          font-size: 56px;
+          line-height: 1.1;
+          margin-bottom: 16px;
+        ">
+        Hero To Zero
+      </h1>
+
+      <p
+        data-vi="Zero To Hero đồng hành cùng doanh nghiệp trong hành trình xây dựng và mở rộng quy mô."
+        data-en="Zero To Hero partners with businesses on their journey of building and scaling."
+        style="
+          font-size: 18px;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        ">
+        Zero To Hero đồng hành cùng doanh nghiệp trong hành trình xây dựng và mở rộng quy mô.
+      </p>
+
+      <!-- Action line -->
+      <p
+        data-vi="Bắt đầu hành trình chinh phục thị trường"
+        data-en="Begin the journey to conquer the market"
+        style="
+          font-size: 16px;
+          font-weight: 500;
+          margin-bottom: 32px;
+          opacity: 0.9;
+        ">
+        Bắt đầu hành trình chinh phục thị trường
+      </p>
+
+      <!-- CTA -->
+      <a href="#contact"
+        style="
+          display: inline-block;
+          padding: 14px 28px;
+          background: #ffffff;
+          color: #000000;
+          text-decoration: none;
+          font-weight: 600;
+          border-radius: 4px;
+        ">
+        Liên hệ ngay
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
 
   <!-- ===== ABOUT ===== -->
   <section id="about">
