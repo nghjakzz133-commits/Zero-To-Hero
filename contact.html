@@ -1,109 +1,88 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact | Zero To Hero</title>
-  <meta name="description" content="Corporate contact & global business presence - Zero To Hero." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Zero To Hero | Liên hệ</title>
+  <meta name="description" content="Liên hệ Zero To Hero để tư vấn và hợp tác." />
 
-  <link rel="stylesheet" href="assets/css/core.css" />
-  <link rel="stylesheet" href="assets/css/contact.css" />
+  <meta http-equiv="content-language" content="vi,en">
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <meta name="theme-color" content="#000000">
+
+  <link rel="stylesheet" href="assets/css/core.css">
+  <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" class="brand-logo" alt="Zero To Hero">
-      <span class="brand-name">Zero To Hero</span>
-    </a>
+<!-- ===== HEADER (GIỮ NGUYÊN) ===== -->
+<header class="site-header">
+  <nav class="nav">
 
-    <nav class="nav">
-      <a class="nav-link" href="index.html" data-i18n="nav_home"></a>
-      <a class="nav-link" href="about.html" data-i18n="nav_about"></a>
-      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership"></a>
-      <a class="nav-link" href="team.html" data-i18n="nav_team"></a>
-      <a class="nav-link" href="market.html" data-i18n="nav_market"></a>
-      <a class="nav-link" href="media.html" data-i18n="nav_media"></a>
-      <a class="nav-link active" href="contact.html" data-i18n="nav_contact"></a>
-    </nav>
+    <div class="nav-left">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="Zero To Hero Logo">
+        <strong>Zero To Hero</strong>
+      </a>
+    </div>
 
-    <div class="header-right">
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btnEN">EN</button>
-        <button class="lang-btn" id="btnVI">VI</button>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html" class="nav-link">Trang chủ</a>
+      <a href="about.html" class="nav-link">Giới thiệu</a>
+      <a href="offerings.html" class="nav-link">Sản phẩm & Dịch vụ</a>
+      <a href="partnership.html" class="nav-link">Hợp tác</a>
+      <a href="market.html" class="nav-link">Thị trường</a>
+      <a href="contact.html" class="nav-link active">Liên hệ</a>
+
+      <div class="nav-actions">
+        <div class="lang">
+          <button class="active" onclick="setLang('vi')">VI</button>
+          <button onclick="setLang('en')">EN</button>
+        </div>
+        <a href="contact.html" class="cta-btn">Bắt đầu</a>
       </div>
-      <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
     </div>
-  </div>
 
-  <div class="nav-drawer" id="navDrawer">
-    <div class="drawer-lang">
-      <button class="lang-btn active" id="btnEN2">EN</button>
-      <button class="lang-btn" id="btnVI2">VI</button>
-    </div>
-    <a class="drawer-link" href="index.html" data-i18n="nav_home"></a>
-    <a class="drawer-link" href="about.html" data-i18n="nav_about"></a>
-    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership"></a>
-    <a class="drawer-link" href="team.html" data-i18n="nav_team"></a>
-    <a class="drawer-link" href="market.html" data-i18n="nav_market"></a>
-    <a class="drawer-link" href="media.html" data-i18n="nav_media"></a>
-    <a class="drawer-link active" href="contact.html" data-i18n="nav_contact"></a>
-  </div>
+  </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="page-kicker" data-i18n="contact_kicker"></div>
-    <h1 class="page-title" data-i18n="contact_title"></h1>
-    <p class="page-sub" data-i18n="contact_sub"></p>
-  </div>
+<hr>
+
+<main>
+
+<section
+  style="padding:100px 20px; background:#0b0b0b; color:#fff; text-align:center;"
+>
+  <h1 style="margin-bottom:24px;">Liên hệ Zero To Hero</h1>
+
+  <p style="max-width:640px; margin:0 auto 24px; color:#ccc;">
+    Chúng tôi sẵn sàng trao đổi chiến lược, dữ liệu và giải pháp phù hợp với doanh nghiệp của bạn.
+  </p>
+
+  <p style="font-size:18px; margin-bottom:12px;">
+    📞 Hotline / Zalo:
+    <a href="tel:0899996977" style="color:#4da3ff; text-decoration:none;">
+      0899 996 977
+    </a>
+  </p>
+
+  <p>Email: contact@zerotohero.vn</p>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="grid-2">
+</main>
 
-      <div class="panel panel-gold">
-        <h3 class="panel-title" data-i18n="contact_info_title"></h3>
-        <p class="panel-text" data-i18n="contact_info_text"></p>
-      </div>
-
-      <div class="panel">
-        <h3 class="panel-title" data-i18n="contact_global_title"></h3>
-        <p class="panel-text" data-i18n="contact_global_text"></p>
-      </div>
-
-    </div>
-
-    <div class="note" style="margin-top:28px">
-      <div class="note-line"></div>
-      <p class="note-text" data-i18n="disclaimer"></p>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="assets/img/logo.png" class="footer-logo">
-      <div>
-        <div class="footer-name">Zero To Hero</div>
-        <div class="footer-small" data-i18n="footer_tag"></div>
-      </div>
-    </div>
-
-    <div class="footer-copy">
-      © <span id="year"></span> Zero To Hero
-    </div>
-  </div>
+<footer>
+  <hr>
+  <p style="text-align:center;">© 2026 Zero To Hero. All rights reserved.</p>
 </footer>
 
-<script src="assets/js/contact.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
