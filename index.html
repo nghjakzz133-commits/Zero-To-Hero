@@ -1,185 +1,166 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zero To Hero | Corporate Partner Network</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- CORE -->
-  <link rel="stylesheet" href="assets/css/core.css" />
-  <!-- INDEX -->
-  <link rel="stylesheet" href="assets/css/index.css" />
+  <title>Zero To Hero | Products & Services</title>
+  <meta name="description" content="Zero To Hero cung cấp sản phẩm và dịch vụ giúp doanh nghiệp tăng trưởng bền vững." />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" class="brand-logo" alt="">
-      <span class="brand-name">Zero To Hero</span>
-    </a>
+<!-- ===== HEADER / MENU ===== -->
+<header>
+  <nav>
+    <strong>Zero To Hero</strong> |
+    <a href="#home" data-vi="Trang chủ" data-en="Home">Trang chủ</a> |
+    <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a> |
+    <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Products & Services">Sản phẩm & Dịch vụ</a> |
+    <a href="#partners" data-vi="Hợp tác" data-en="Partners">Hợp tác</a> |
+    <a href="#markets" data-vi="Thị trường" data-en="Markets">Thị trường</a> |
+    <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
 
-    <nav class="nav">
-      <a class="nav-link active" href="index.html" data-i18n="nav_home">Home</a>
-      <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
-      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-      <a class="nav-link" href="team.html" data-i18n="nav_team">Team</a>
-      <a class="nav-link" href="market.html" data-i18n="nav_market">Market</a>
-      <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-    </nav>
-
-    <div class="header-right">
-    <div class="lang-switch">
-  <button class="lang-btn active" id="btnEN">EN</button>
-  <button class="lang-btn" id="btnVI">VI</button>
-</div>
-      <button class="menu-btn" id="menuBtn">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nav-drawer" id="navDrawer">
-    <div class="drawer-lang">
-  <button class="lang-btn active" id="btnEN2">EN</button>
-  <button class="lang-btn" id="btnVI2">VI</button>
-</div>
-    <a class="drawer-link active" href="index.html" data-i18n="nav_home">Home</a>
-    <a class="drawer-link" href="about.html" data-i18n="nav_about">About</a>
-    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership">Partnership</a>
-    <a class="drawer-link" href="team.html" data-i18n="nav_team">Team</a>
-    <a class="drawer-link" href="market.html" data-i18n="nav_market">Market</a>
-    <a class="drawer-link" href="contact.html" data-i18n="nav_contact">Contact</a>
-  </div>
+    &nbsp;&nbsp;
+    <button onclick="setLang('vi')">VI</button>
+    <button onclick="setLang('en')">EN</button>
+  </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero hero-video">
-  <video
-    class="hero-bg-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-  >
-    <source src="assets/video/hero-nightlife.mp4" type="video/mp4">
-  </video>
+<hr>
 
-  <div class="hero-overlay"></div>
+<!-- ===== MAIN ===== -->
+<main id="home">
 
-  <div class="container hero-inner">
-    <div class="badge" data-i18n="badge">
-      Embark on a journey to conquer the market.
-    </div>
+  <!-- HERO -->
+  <h1
+    data-vi="Từ số 0 đến tăng trưởng bền vững"
+    data-en="From Zero to Sustainable Growth">
+    Từ số 0 đến tăng trưởng bền vững
+  </h1>
 
-    <h1 class="hero-title">
-      <span class="gold" data-i18n="hero_zero">Zero</span>
-      <span data-i18n="hero_to">To</span>
-      <span class="gold" data-i18n="hero_hero">Hero</span>
-    </h1>
+  <p
+    data-vi="Zero To Hero đồng hành cùng doanh nghiệp trong hành trình xây dựng và mở rộng quy mô."
+    data-en="Zero To Hero partners with businesses on their journey of building and scaling.">
+    Zero To Hero đồng hành cùng doanh nghiệp trong hành trình xây dựng và mở rộng quy mô.
+  </p>
 
-    <p class="hero-sub" data-i18n="hero_sub">
-      Building sustainable growth through global partnerships and professional execution.
+  <hr>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+
+    <h2
+      data-vi="Giới thiệu"
+      data-en="About Us">
+      Giới thiệu
+    </h2>
+
+    <p
+      data-vi="Zero To Hero là mạng lưới hợp tác doanh nghiệp, cung cấp sản phẩm và dịch vụ giúp doanh nghiệp tăng trưởng bền vững."
+      data-en="Zero To Hero is a corporate partner network providing products and services to help businesses achieve sustainable growth.">
+      Zero To Hero là mạng lưới hợp tác doanh nghiệp, cung cấp sản phẩm và dịch vụ giúp doanh nghiệp tăng trưởng bền vững.
     </p>
-  </div>
-</section>
 
-<!-- ================= MARKET SNAPSHOT ================= -->
-<section class="section section-soft">
-  <div class="container">
+    <p
+      data-vi="Chúng tôi tập trung vào chiến lược, vận hành và mở rộng thị trường thông qua hợp tác trong nước và quốc tế."
+      data-en="We focus on strategy, operations, and market expansion through local and international partnerships.">
+      Chúng tôi tập trung vào chiến lược, vận hành và mở rộng thị trường thông qua hợp tác trong nước và quốc tế.
+    </p>
 
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="market_title">Market Snapshot</h2>
-      <p class="section-sub" data-i18n="market_sub">
-        Live public market overview for general monitoring.
-      </p>
-    </div>
+  </section>
 
-    <!-- TABS -->
-    <div class="market-tabs">
-      <button class="tab-btn active" data-tab="gold">GOLD</button>
-      <button class="tab-btn" data-tab="fx">FX</button>
-      <button class="tab-btn" data-tab="crypto">CRYPTO</button>
-    </div>
+  <hr>
 
-    <div class="panel">
+  <!-- ===== PRODUCTS & SERVICES ===== -->
+  <section id="offerings">
 
-      <!-- GOLD -->
-      <div class="tab-panel show" id="tab-gold">
-        <div class="tv-box tv-big">
-          <div class="tv" id="tv_index_xauusd"></div>
-        </div>
+    <h2
+      data-vi="Sản phẩm & Dịch vụ"
+      data-en="Products & Services">
+      Sản phẩm & Dịch vụ
+    </h2>
 
-        <div class="index-mini-markets">
-          <div class="mini-market">
-            <div class="mini-title" data-i18n="pair_eurusd">EUR / USD</div>
-            <div class="tv mini-tv" id="tv_index_eurusd"></div>
-          </div>
-          <div class="mini-market">
-            <div class="mini-title">BTC / USD</div>
-            <div class="tv mini-tv" id="tv_index_btcusd"></div>
-          </div>
-        </div>
-      </div>
+    <p
+      data-vi="Giải pháp toàn diện cho doanh nghiệp trong hành trình tăng trưởng và mở rộng toàn cầu."
+      data-en="Comprehensive solutions for businesses on their growth and global expansion journey.">
+      Giải pháp toàn diện cho doanh nghiệp trong hành trình tăng trưởng và mở rộng toàn cầu.
+    </p>
 
-      <!-- FX -->
-      <div class="tab-panel" id="tab-fx">
-        <div class="index-mini-markets">
-          <div class="mini-market">
-            <div class="mini-title">EUR / USD</div>
-            <div class="tv mini-tv" id="tv_fx_eurusd"></div>
-          </div>
-          <div class="mini-market">
-            <div class="mini-title">GBP / USD</div>
-            <div class="tv mini-tv" id="tv_fx_gbpusd"></div>
-          </div>
-        </div>
-      </div>
+    <h3
+      data-vi="Giải pháp tăng trưởng doanh nghiệp"
+      data-en="Business Growth Solutions">
+      Giải pháp tăng trưởng doanh nghiệp
+    </h3>
+    <p
+      data-vi="Các sản phẩm và mô hình giúp doanh nghiệp mở rộng quy mô và tối ưu hiệu suất."
+      data-en="Products and frameworks that help businesses scale and improve performance.">
+      Các sản phẩm và mô hình giúp doanh nghiệp mở rộng quy mô và tối ưu hiệu suất.
+    </p>
 
-      <!-- CRYPTO -->
-      <div class="tab-panel" id="tab-crypto">
-        <div class="index-mini-markets">
-          <div class="mini-market">
-            <div class="mini-title">BTC / USD</div>
-            <div class="tv mini-tv" id="tv_crypto_btc"></div>
-          </div>
-          <div class="mini-market">
-            <div class="mini-title">ETH / USD</div>
-            <div class="tv mini-tv" id="tv_crypto_eth"></div>
-          </div>
-        </div>
-      </div>
+    <h3
+      data-vi="Tư vấn & triển khai"
+      data-en="Consulting & Implementation">
+      Tư vấn & triển khai
+    </h3>
+    <p
+      data-vi="Đồng hành từ chiến lược đến thực thi, phù hợp với từng giai đoạn doanh nghiệp."
+      data-en="From strategy to execution, tailored to each stage of the business.">
+      Đồng hành từ chiến lược đến thực thi, phù hợp với từng giai đoạn doanh nghiệp.
+    </p>
 
-    </div>
-  </div>
-</section>
+    <h3
+      data-vi="Hợp tác & phát triển thị trường"
+      data-en="Partnership & Market Expansion">
+      Hợp tác & phát triển thị trường
+    </h3>
+    <p
+      data-vi="Kết nối doanh nghiệp với mạng lưới đối tác trong và ngoài nước."
+      data-en="Connecting businesses with local and global partner networks.">
+      Kết nối doanh nghiệp với mạng lưới đối tác trong và ngoài nước.
+    </p>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="assets/img/logo.png" class="footer-logo" alt="">
-      <div>
-        <div class="footer-name">Zero To Hero</div>
-        <div class="footer-small" data-i18n="footer_tag">Corporate Partner Network</div>
-      </div>
-    </div>
+  </section>
 
-    <div class="footer-copy">
-      © <span id="year"></span> Zero To Hero
-    </div>
-  </div>
+  <hr>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+
+    <h2
+      data-vi="Liên hệ"
+      data-en="Contact">
+      Liên hệ
+    </h2>
+
+    <p
+      data-vi="Liên hệ với chúng tôi để trao đổi về cơ hội hợp tác."
+      data-en="Contact us to discuss partnership opportunities.">
+      Liên hệ với chúng tôi để trao đổi về cơ hội hợp tác.
+    </p>
+
+    <p>Email: contact@zerotohero.vn</p>
+
+  </section>
+
+</main>
+
+<hr>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2026 Zero To Hero</p>
 </footer>
 
-<!-- TradingView -->
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script src="assets/js/index.js"></script>
+<!-- ===== LANGUAGE SCRIPT ===== -->
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-vi]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+  }
+</script>
+
 </body>
 </html>
