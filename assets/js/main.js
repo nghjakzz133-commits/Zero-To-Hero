@@ -1,183 +1,131 @@
-// ================= MOBILE MENU =================
-const menuBtn = document.getElementById("menuBtn");
-const navDrawer = document.getElementById("navDrawer");
+/* ======================================================
+   main.js — Core Frontend Logic
+   Zero To Hero
+   ====================================================== */
 
-if (menuBtn && navDrawer) {
-  menuBtn.addEventListener("click", () => {
-    const isOpen = navDrawer.classList.toggle("show");
-    menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-}
+(function () {
+  "use strict";
 
-// ================= FOOTER YEAR =================
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+  /* ------------------------------------------------------
+     UTILS
+  ------------------------------------------------------ */
+  const $ = (selector, scope = document) => scope.querySelector(selector);
+  const $$ = (selector, scope = document) =>
+    Array.from(scope.querySelectorAll(selector));
 
-// ================= I18N – INDEX ONLY =================
-const i18n = {
-  en: {
-    // NAV
-    nav_home: "Home",
-    nav_about: "About",
-    nav_partnership: "Partnership",
-    nav_team: "Team",
-    nav_market: "Market",
-    nav_media: "Media",
-    nav_contact: "Contact",
+  /* ------------------------------------------------------
+     APP STATE
+  ------------------------------------------------------ */
+  const AppState = {
+    lang: localStorage.getItem("lang") || "vi",
+  };
 
-    // HERO
-    badge: "Corporate Partner Network",
-    hero_title_1: "From",
-    hero_title_2: "Zero",
-    hero_title_3: "To",
-    hero_title_4: "Hero",
-    hero_subtitle:
-      "Building sustainable growth through global partnerships, disciplined execution, and professional operations.",
+  /* ------------------------------------------------------
+     LANGUAGE SYSTEM
+  ------------------------------------------------------ */
+  function applyLanguage(lang) {
+    document.documentElement.lang = lang;
 
-    // VALUES
-    value_1_title: "Integrity",
-    value_1_desc: "Transparency • Discipline • Trust",
-    value_2_title: "Professionalism",
-    value_2_desc: "Corporate mindset • Clear process",
-    value_3_title: "Global Partnership",
-    value_3_desc: "International collaboration • Growth",
+    $$("[data-vi]").forEach(el => {
+      const value = el.getAttribute("data-" + lang);
+      if (value !== null) {
+        el.textContent = value;
+      }
+    });
 
-    // OVERVIEW
-    overview_title: "Company Overview",
-    overview_sub:
-      "Zero To Hero is a corporate team focusing on building partner networks and long-term value.",
-
-    who_title: "Who We Are",
-    who_text:
-      "Zero To Hero is built with a corporate mindset and a disciplined operating culture. We focus on sustainable development, structured execution, and international collaboration.",
-
-    pill_1: "Corporate Profile",
-    pill_2: "Partner Network",
-    pill_3: "Long-term Vision",
-
-    mission_title: "Our Mission",
-    mission_text:
-      "To create a professional ecosystem with measurable standards, transparent operations, and high-integrity collaboration.",
-
-    stat_1: "Corporate Standard",
-    stat_2: "Partner Mindset",
-    stat_3: "Sustainable Growth",
-
-    // PARTNERSHIP PREVIEW
-    partner_title: "Strategic Partnership",
-    partner_sub:
-      "We collaborate with global partners to strengthen our ecosystem and operational standards.",
-
-    card_1_title: "International Collaboration",
-    card_1_text:
-      "A partnership-driven approach that focuses on long-term quality and sustainability.",
-
-    card_2_title: "Professional Execution",
-    card_2_text:
-      "Clear workflow, structured operations, and disciplined communication standards.",
-
-    card_3_title: "Integrity First",
-    card_3_text:
-      "We prioritize transparency, trust, and sustainable value over short-term performance.",
-
-    // FOOTER
-    footer_tag: "Corporate Partner Network",
-
-    // DISCLAIMER
-    disclaimer: "This website is for company introduction purposes only.",
-  },
-
-  vi: {
-    nav_home: "Trang chủ",
-    nav_about: "Giới thiệu",
-    nav_partnership: "Hợp tác",
-    nav_team: "Đội ngũ",
-    nav_market: "Thị trường",
-    nav_media: "Truyền thông",
-    nav_contact: "Liên hệ",
-
-    badge: "Mạng lưới đối tác doanh nghiệp",
-    hero_title_1: "Từ",
-    hero_title_2: "Zero",
-    hero_title_3: "đến",
-    hero_title_4: "Hero",
-    hero_subtitle:
-      "Phát triển bền vững thông qua hợp tác quốc tế, kỷ luật vận hành và tiêu chuẩn thực thi chuyên nghiệp.",
-
-    value_1_title: "Chính trực",
-    value_1_desc: "Minh bạch • Kỷ luật • Niềm tin",
-    value_2_title: "Chuyên nghiệp",
-    value_2_desc: "Tư duy doanh nghiệp • Quy trình rõ ràng",
-    value_3_title: "Hợp tác toàn cầu",
-    value_3_desc: "Kết nối quốc tế • Tăng trưởng bền vững",
-
-    overview_title: "Tổng quan doanh nghiệp",
-    overview_sub:
-      "Zero To Hero là đội ngũ doanh nghiệp tập trung xây dựng mạng lưới đối tác và giá trị dài hạn.",
-
-    who_title: "Chúng tôi là ai",
-    who_text:
-      "Zero To Hero được xây dựng với tư duy doanh nghiệp và văn hoá vận hành kỷ luật.",
-
-    pill_1: "Hồ sơ doanh nghiệp",
-    pill_2: "Mạng lưới đối tác",
-    pill_3: "Tầm nhìn dài hạn",
-
-    mission_title: "Sứ mệnh",
-    mission_text:
-      "Xây dựng hệ sinh thái chuyên nghiệp với tiêu chuẩn rõ ràng và hợp tác minh bạch.",
-
-    stat_1: "Chuẩn doanh nghiệp",
-    stat_2: "Tư duy đối tác",
-    stat_3: "Phát triển bền vững",
-
-    partner_title: "Hợp tác chiến lược",
-    partner_sub:
-      "Hợp tác cùng đối tác quốc tế để củng cố hệ sinh thái.",
-
-    card_1_title: "Kết nối quốc tế",
-    card_1_text: "Hợp tác dài hạn theo tiêu chuẩn quốc tế.",
-    card_2_title: "Thực thi chuyên nghiệp",
-    card_2_text: "Vận hành có cấu trúc và kỷ luật.",
-    card_3_title: "Ưu tiên chính trực",
-    card_3_text: "Minh bạch và niềm tin là nền tảng.",
-
-    footer_tag: "Mạng lưới đối tác doanh nghiệp",
-    disclaimer: "Website chỉ dùng cho mục đích giới thiệu doanh nghiệp.",
-  },
-};
-
-// ================= I18N FUNCTIONS =================
-function setLang(lang) {
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (i18n[lang] && i18n[lang][key]) {
-      el.textContent = i18n[lang][key];
-    }
-  });
-
-  ["btnEN", "btnVI", "btnEN2", "btnVI2"].forEach((id) => {
-    document.getElementById(id)?.classList.remove("active");
-  });
-
-  if (lang === "en") {
-    document.getElementById("btnEN")?.classList.add("active");
-    document.getElementById("btnEN2")?.classList.add("active");
-  } else {
-    document.getElementById("btnVI")?.classList.add("active");
-    document.getElementById("btnVI2")?.classList.add("active");
+    AppState.lang = lang;
+    localStorage.setItem("lang", lang);
   }
 
-  localStorage.setItem("zth_lang", lang);
-}
+  // Expose for inline buttons
+  window.setLang = applyLanguage;
 
-function initLang() {
-  setLang(localStorage.getItem("zth_lang") || "en");
-}
+  /* ------------------------------------------------------
+     SMOOTH SCROLL (SAFE)
+  ------------------------------------------------------ */
+  function initSmoothScroll() {
+    $$('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", e => {
+        const targetId = link.getAttribute("href");
+        if (targetId.length <= 1) return;
 
-document.getElementById("btnEN")?.addEventListener("click", () => setLang("en"));
-document.getElementById("btnVI")?.addEventListener("click", () => setLang("vi"));
-document.getElementById("btnEN2")?.addEventListener("click", () => setLang("en"));
-document.getElementById("btnVI2")?.addEventListener("click", () => setLang("vi"));
+        const target = $(targetId);
+        if (!target) return;
 
-initLang();
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  }
+
+  /* ------------------------------------------------------
+     ACTIVE NAV HIGHLIGHT (OPTIONAL BUT PRO)
+  ------------------------------------------------------ */
+  function initActiveNav() {
+    const sections = $$("main section[id]");
+    const navLinks = $$("header nav a[href^='#']");
+
+    if (!sections.length || !navLinks.length) return;
+
+    function onScroll() {
+      const scrollY = window.scrollY + 120;
+
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute("id");
+
+        if (scrollY >= top && scrollY < top + height) {
+          navLinks.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === `#${id}`
+            );
+          });
+        }
+      });
+    }
+
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+  }
+
+  /* ------------------------------------------------------
+     HERO VIDEO FALLBACK
+  ------------------------------------------------------ */
+  function initHeroVideoFallback() {
+    const video = $("#hero video");
+    if (!video) return;
+
+    video.addEventListener("error", () => {
+      video.style.display = "none";
+      document.body.classList.add("hero-video-fallback");
+    });
+  }
+
+  /* ------------------------------------------------------
+     FOOTER YEAR AUTO UPDATE
+  ------------------------------------------------------ */
+  function updateFooterYear() {
+    const footer = $("footer");
+    if (!footer) return;
+
+    const year = new Date().getFullYear();
+    footer.innerHTML = footer.innerHTML.replace(
+      /©\s?\d{4}/g,
+      `© ${year}`
+    );
+  }
+
+  /* ------------------------------------------------------
+     INIT
+  ------------------------------------------------------ */
+  document.addEventListener("DOMContentLoaded", () => {
+    applyLanguage(AppState.lang);
+    initSmoothScroll();
+    initActiveNav();
+    initHeroVideoFallback();
+    updateFooterYear();
+  });
+
+})();
