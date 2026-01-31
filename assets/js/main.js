@@ -41,6 +41,27 @@
   window.setLang = applyLanguage;
 
   /* ------------------------------------------------------
+     MOBILE NAV (FIX MENU 3 GẠCH)
+  ------------------------------------------------------ */
+  function initMobileNav() {
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.getElementById("navMenu");
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    // Optional: auto close when click link (mobile UX tốt hơn)
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+      });
+    });
+  }
+
+  /* ------------------------------------------------------
      SMOOTH SCROLL (SAFE)
   ------------------------------------------------------ */
   function initSmoothScroll() {
@@ -122,6 +143,7 @@
   ------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", () => {
     applyLanguage(AppState.lang);
+    initMobileNav();       // 🔥 FIX MENU
     initSmoothScroll();
     initActiveNav();
     initHeroVideoFallback();
