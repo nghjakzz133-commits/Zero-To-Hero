@@ -17,49 +17,45 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/img/logo.png" alt="Zero To Hero Logo" />
-      <span class="brand-name">Zero To Hero</span>
-    </a>
+<!-- ===== HEADER / MENU ===== -->
+<header class="site-header">
+  <nav class="nav">
 
-    <nav class="nav">
-      <a class="nav-link" href="index.html" data-i18n="nav_home"></a>
-      <a class="nav-link active" href="about.html" data-i18n="nav_about"></a>
-      <a class="nav-link" href="partnership.html" data-i18n="nav_partnership"></a>
-      <a class="nav-link" href="team.html" data-i18n="nav_team"></a>
-      <a class="nav-link" href="market.html" data-i18n="nav_market"></a>
-      <a class="nav-link" href="media.html" data-i18n="nav_media"></a>
-      <a class="nav-link" href="contact.html" data-i18n="nav_contact"></a>
-    </nav>
+    <!-- Brand -->
+    <div class="nav-left">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="Zero To Hero Logo">
+        <strong>Zero To Hero</strong>
+      </a>
+    </div>
 
-    <div class="header-right">
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btnEN">EN</button>
-        <button class="lang-btn" id="btnVI">VI</button>
+    <!-- Hamburger -->
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html" class="nav-link">Trang chủ</a>
+      <a href="about.html" class="nav-link">Giới thiệu</a>
+      <a href="offerings.html" class="nav-link">Sản phẩm & Dịch vụ</a>
+      <a href="partnership.html" class="nav-link">Hợp tác</a>
+      <a href="market.html" class="nav-link">Thị trường</a>
+      <a href="contact.html" class="nav-link">Liên hệ</a>
+
+      <div class="nav-actions">
+        <div class="lang">
+          <button class="active" onclick="setLang('vi')">VI</button>
+          <button onclick="setLang('en')">EN</button>
+        </div>
+
+        <a href="contact.html" class="cta-btn">Bắt đầu</a>
       </div>
-      <button class="menu-btn" id="menuBtn">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </div>
 
-  <div class="nav-drawer" id="navDrawer">
-    <div class="drawer-lang">
-      <button class="lang-btn active" id="btnEN2">EN</button>
-      <button class="lang-btn" id="btnVI2">VI</button>
-    </div>
-    <a class="drawer-link" href="index.html" data-i18n="nav_home"></a>
-    <a class="drawer-link active" href="about.html" data-i18n="nav_about"></a>
-    <a class="drawer-link" href="partnership.html" data-i18n="nav_partnership"></a>
-    <a class="drawer-link" href="team.html" data-i18n="nav_team"></a>
-    <a class="drawer-link" href="market.html" data-i18n="nav_market"></a>
-    <a class="drawer-link" href="media.html" data-i18n="nav_media"></a>
-    <a class="drawer-link" href="contact.html" data-i18n="nav_contact"></a>
-  </div>
+  </nav>
 </header>
+
 
 <!-- ================= PAGE HERO ================= -->
 <section class="page-hero">
