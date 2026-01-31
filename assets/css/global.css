@@ -445,3 +445,19 @@ footer > p {
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
 }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .hero-video {
+    object-fit: contain;
+    transform: scale(1);
+    background: #000;
+  }
+}
