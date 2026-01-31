@@ -3,100 +3,85 @@
    Layout & Components
 ========================================================= */
 
-/* ===== HEADER / NAV ===== */
+/* ===============================
+   HEADER – DARK ENTERPRISE STYLE
+   =============================== */
 
-/* ===== HEADER ===== */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #fff;
-  border-bottom: 1px solid #eee;
+
+  background: rgba(11, 15, 20, 0.85); /* dark glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 24px;
+/* NAV WRAPPER */
+header nav {
+  padding: 16px 8%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
-/* Brand */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* LOGO + BRAND */
+header nav strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
 }
 
-.brand img {
+header nav img {
   height: 32px;
 }
 
-.brand strong {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* Menu */
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-menu a {
+/* MENU LINKS */
+header nav a {
   font-size: 14px;
   font-weight: 500;
-  color: #222;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
 }
 
-/* Language */
-.lang button {
+header nav a:hover {
+  color: #ffffff;
+}
+
+/* LANGUAGE BUTTONS */
+header nav button {
   padding: 6px 10px;
-  border: 1px solid #ddd;
-  background: #f9f9f9;
-  border-radius: 4px;
+  border-radius: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #ffffff;
 }
 
-/* Hamburger */
-.nav-toggle {
-  display: none;
-  font-size: 22px;
-  background: none;
-  border: none;
+header nav button:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* ===== MOBILE ===== */
+/* ===============================
+   MOBILE
+   =============================== */
+
 @media (max-width: 768px) {
-  .nav {
-    padding: 16px 20px;
+  header nav {
+    padding: 14px 16px;
   }
 
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 16px;
-    display: none;
-    border-bottom: 1px solid #eee;
-  }
-
-  .nav-menu.show {
-    display: flex;
+  /* Hamburger icon (3 gạch) */
+  .menu-toggle {
+    font-size: 22px;
+    color: #ffffff;
+    cursor: pointer;
   }
 }
-
 
 /* ===== MAIN SECTIONS ===== */
 main section {
