@@ -5,148 +5,97 @@
 
 /* ===== HEADER / NAV ===== */
 
+/* ===== HEADER ===== */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  background: #ffffff;
-  border-bottom: 1px solid #eaeaea;
-
-  /* cảm giác chắc + sang */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
-/* ===== NAV WRAPPER ===== */
-header nav {
-  max-width: 1440px;
+.nav {
+  max-width: 1200px;
   margin: 0 auto;
-
-  padding: 14px 8%;
+  padding: 20px 24px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-/* ===== LOGO + BRAND ===== */
-header nav a:first-child {
+/* Brand */
+.brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
-  margin-right: 16px;
 }
 
-header nav img {
-  height: 34px;
-  width: auto;
+.brand img {
+  height: 32px;
 }
 
-header nav strong {
+.brand strong {
   font-size: 16px;
   font-weight: 600;
-  color: #111;
-  letter-spacing: 0.2px;
 }
 
-/* ===== MENU LINKS ===== */
-header nav a {
+/* Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-menu a {
   font-size: 14px;
   font-weight: 500;
   color: #222;
-  text-decoration: none;
-  padding: 6px 0;
-  position: relative;
 }
 
-/* hover underline tinh tế */
-header nav a:not(:first-child)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background: #000;
-  transition: width 0.25s ease;
-}
-
-header nav a:not(:first-child):hover::after {
-  width: 100%;
-}
-
-/* ===== SEPARATORS "|" ===== */
-header nav {
-  column-gap: 12px;
-}
-
-header nav a + span,
-header nav a + a {
-  margin-left: 4px;
-}
-
-/* ===== LANGUAGE SWITCH ===== */
-header nav button {
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 500;
-
+/* Language */
+.lang button {
+  padding: 6px 10px;
   border: 1px solid #ddd;
-  border-radius: 6px;
-
-  background: #fafafa;
-  color: #111;
-
-  cursor: pointer;
-  transition: all 0.2s ease;
+  background: #f9f9f9;
+  border-radius: 4px;
 }
 
-header nav button:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  header nav {
-    padding: 12px 6%;
-    gap: 14px;
+  .nav {
+    padding: 16px 20px;
   }
 
-  header nav strong {
-    font-size: 15px;
+  .nav-toggle {
+    display: block;
   }
 
-  header nav a {
-    font-size: 13px;
-  }
-}
-/* ===== MOBILE HEADER OPTIMIZATION ===== */
-@media (max-width: 768px) {
-
-  header nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  header nav::-webkit-scrollbar {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 16px;
     display: none;
+    border-bottom: 1px solid #eee;
   }
 
-  header nav a {
-    white-space: nowrap;
-    font-size: 13px;
-  }
-
-  header nav button {
-    font-size: 12px;
-    padding: 6px 10px;
+  .nav-menu.show {
+    display: flex;
   }
 }
-
 
 /* ===== HERO ===== */
 #hero {
