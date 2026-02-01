@@ -33,7 +33,11 @@ p{color:#9aa4b2;line-height:1.7}
 .green{color:#4caf50}
 .red{color:#ef5350}
 
-canvas{background:#0f131a;border-radius:12px;padding:12px}
+canvas{
+  background:#0f131a;
+  border-radius:12px;
+  padding:12px
+}
 
 table{width:100%;border-collapse:collapse;margin-top:40px}
 th,td{border:1px solid #1e2329;padding:12px;text-align:center}
@@ -64,7 +68,7 @@ td{color:#fff}
   </div>
   <div class="nav-menu">
     <a href="index.html">Trang chủ</a>
-    <a href="offerings.html" class="active">Performance</a>
+    <a href="#" class="active">Performance</a>
     <a href="contact.html">Liên hệ</a>
   </div>
 </nav>
@@ -73,20 +77,24 @@ td{color:#fff}
 <!-- ================= HERO ================= -->
 <section>
 <h1>📈 Live Trading Bot Performance</h1>
-<p>Toàn bộ số liệu bên dưới được tổng hợp trực tiếp từ file giao dịch CSV (MT4 / MT5). Không chỉnh tay – không demo.</p>
+<p>Dữ liệu lấy trực tiếp từ file CSV (MT4 / MT5). Không demo – không chỉnh tay.</p>
 <span class="badge">Myfxbook-style Analytics</span>
 </section>
 
 <!-- ================= BOT MT4 ================= -->
 <section>
 <h2>🤖 Bot MT4 – Live Account</h2>
-<p>CSV → Equity Curve → Drawdown → Winrate</p>
 
 <div class="stats-grid">
+  <div class="stat-box"><span>Initial Balance</span><strong>$<span id="mt4_initial">--</span></strong></div>
   <div class="stat-box"><span>Total Trades</span><strong id="mt4_trades">--</strong></div>
   <div class="stat-box"><span>Win Rate</span><strong id="mt4_winrate">--%</strong></div>
   <div class="stat-box"><span>Total Profit</span><strong class="green">$<span id="mt4_profit">--</span></strong></div>
+  <div class="stat-box"><span>Growth</span><strong class="green"><span id="mt4_growth">--</span>%</strong></div>
+  <div class="stat-box"><span>Profit Factor</span><strong id="mt4_pf">--</strong></div>
   <div class="stat-box"><span>Max Drawdown</span><strong class="red"><span id="mt4_dd">--</span>%</strong></div>
+  <div class="stat-box"><span>Best Trade</span><strong class="green">$<span id="mt4_best">--</span></strong></div>
+  <div class="stat-box"><span>Worst Trade</span><strong class="red">$<span id="mt4_worst">--</span></strong></div>
   <div class="stat-box"><span>Final Equity</span><strong>$<span id="mt4_equity">--</span></strong></div>
 </div>
 
@@ -111,9 +119,12 @@ td{color:#fff}
 <h2>🤖 Bot MT5 – Live Account</h2>
 
 <div class="stats-grid">
+  <div class="stat-box"><span>Initial Balance</span><strong>$<span id="mt5_initial">--</span></strong></div>
   <div class="stat-box"><span>Total Trades</span><strong id="mt5_trades">--</strong></div>
   <div class="stat-box"><span>Win Rate</span><strong id="mt5_winrate">--%</strong></div>
   <div class="stat-box"><span>Total Profit</span><strong class="green">$<span id="mt5_profit">--</span></strong></div>
+  <div class="stat-box"><span>Growth</span><strong class="green"><span id="mt5_growth">--</span>%</strong></div>
+  <div class="stat-box"><span>Profit Factor</span><strong id="mt5_pf">--</strong></div>
   <div class="stat-box"><span>Max Drawdown</span><strong class="red"><span id="mt5_dd">--</span>%</strong></div>
   <div class="stat-box"><span>Final Equity</span><strong>$<span id="mt5_equity">--</span></strong></div>
 </div>
@@ -124,7 +135,7 @@ td{color:#fff}
 <!-- ================= FOOTER ================= -->
 <section>
 <p style="text-align:center;color:#666">
-© Zero To Hero · Live Performance Analytics · No Fake Stats
+© Zero To Hero · Live Performance Analytics · CSV Verified
 </p>
 </section>
 
@@ -135,53 +146,97 @@ td{color:#fff}
 <!-- ================= ENGINE ================= -->
 <script>
 function parseCSV(url, prefix, chartId, tableId){
+  const INITIAL_BALANCE = 10000;
+
   Papa.parse(url,{
     download:true,
     header:true,
     dynamicTyping:true,
     complete(res){
-      const rows=res.data.filter(r=>r.Profit!=null);
-      let equity=0,maxEq=0,maxDD=0,wins=0;
-      const curve=[];
+      const rows = res.data.filter(r => r.Profit != null);
+      let equity = INITIAL_BALANCE;
+      let maxEq = equity;
+      let maxDD = 0;
+      let wins = 0;
+      let grossProfit = 0;
+      let grossLoss = 0;
+      let best = -Infinity;
+      let worst = Infinity;
+      const curve = [];
 
       rows.forEach((r,i)=>{
-        equity+=r.Profit;
-        if(equity>maxEq) maxEq=equity;
-        maxDD=Math.max(maxDD,maxEq-equity);
-        if(r.Profit>0) wins++;
+        equity += r.Profit;
+
+        if(equity > maxEq) maxEq = equity;
+        maxDD = Math.max(maxDD, maxEq - equity);
+
+        if(r.Profit > 0){
+          wins++;
+          grossProfit += r.Profit;
+        } else {
+          grossLoss += Math.abs(r.Profit);
+        }
+
+        best = Math.max(best, r.Profit);
+        worst = Math.min(worst, r.Profit);
 
         curve.push(equity);
 
-        if(tableId && i<50){
-          document.getElementById(tableId).innerHTML+=`
+        if(tableId && i < 50){
+          document.getElementById(tableId).innerHTML += `
           <tr>
             <td>${i+1}</td>
-            <td>${r["Close Date"]||""}</td>
-            <td>${r.Type||""}</td>
-            <td>${r.Volume||""}</td>
-            <td class="${r.Profit>=0?'green':'red'}">${r.Profit.toFixed(2)}</td>
+            <td>${r["Close Date"] || ""}</td>
+            <td>${r.Type || ""}</td>
+            <td>${r.Volume || ""}</td>
+            <td class="${r.Profit >= 0 ? 'green' : 'red'}">${r.Profit.toFixed(2)}</td>
           </tr>`;
         }
       });
 
-      document.getElementById(prefix+"_trades").textContent=rows.length;
-      document.getElementById(prefix+"_winrate").textContent=(wins/rows.length*100).toFixed(2);
-      document.getElementById(prefix+"_profit").textContent=equity.toFixed(2);
-      document.getElementById(prefix+"_equity").textContent=equity.toFixed(2);
-      document.getElementById(prefix+"_dd").textContent=(maxDD/maxEq*100).toFixed(2);
+      const profit = equity - INITIAL_BALANCE;
+      const growth = (profit / INITIAL_BALANCE * 100).toFixed(2);
+      const pf = grossLoss === 0 ? "∞" : (grossProfit / grossLoss).toFixed(2);
+      const ddPercent = maxEq === 0 ? 0 : (maxDD / maxEq * 100).toFixed(2);
+
+      document.getElementById(prefix+"_initial").textContent = INITIAL_BALANCE.toFixed(2);
+      document.getElementById(prefix+"_trades").textContent = rows.length;
+      document.getElementById(prefix+"_winrate").textContent = (wins / rows.length * 100).toFixed(2);
+      document.getElementById(prefix+"_profit").textContent = profit.toFixed(2);
+      document.getElementById(prefix+"_growth").textContent = growth;
+      document.getElementById(prefix+"_pf").textContent = pf;
+      document.getElementById(prefix+"_dd").textContent = ddPercent;
+      document.getElementById(prefix+"_equity").textContent = equity.toFixed(2);
+
+      if(document.getElementById(prefix+"_best"))
+        document.getElementById(prefix+"_best").textContent = best.toFixed(2);
+      if(document.getElementById(prefix+"_worst"))
+        document.getElementById(prefix+"_worst").textContent = worst.toFixed(2);
 
       new Chart(document.getElementById(chartId),{
         type:"line",
-        data:{labels:curve.map((_,i)=>i+1),datasets:[{
-          label:"Equity Curve",
-          data:curve,
-          borderWidth:2,
-          tension:0.3
-        }]},
-        options:{plugins:{legend:{display:false}}}
+        data:{
+          labels:curve.map((_,i)=>i+1),
+          datasets:[{
+            label:"Equity Curve",
+            data:curve,
+            borderWidth:2,
+            borderColor:"#4caf50",
+            backgroundColor:"rgba(76,175,80,0.1)",
+            tension:0.3,
+            fill:true
+          }]
+        },
+        options:{
+          plugins:{legend:{display:false}},
+          scales:{
+            x:{display:false},
+            y:{ticks:{color:"#9aa4b2"}}
+          }
+        }
       });
     }
-  })
+  });
 }
 
 parseCSV("data/mt4.csv","mt4","chartMT4","mt4_trades_table");
