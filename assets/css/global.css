@@ -622,3 +622,75 @@ footer > p {
   }
 
 }
+/* ===== PARTNERSHIP PAGE – RESPONSIVE ===== */
+
+.partner-section{
+  padding:80px 8%;
+}
+
+.partner-dark{
+  background:#0b0e11;
+  color:#eaecef;
+}
+
+.partner-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:center;
+}
+
+.partner-card{
+  background:#131722;
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .partner-section{
+    padding:56px 20px;
+  }
+
+  .partner-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .partner-grid > div:first-child{
+    order:1;
+  }
+
+  .partner-grid > div:last-child{
+    order:2;
+  }
+
+  .partner-card{
+    padding:18px;
+  }
+
+  #tickmill-profile table{
+    font-size:14px;
+  }
+
+  #tickmill-profile td,
+  #tickmill-profile th{
+    padding:8px 6px !important;
+    word-break:break-word;
+  }
+
+  #tickmill-profile a{
+    word-break:break-all;
+  }
+
+  .hero{
+    padding:90px 20px !important;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+}
