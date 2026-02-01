@@ -1,10 +1,20 @@
 {
   "weekly": [
-    { "label": "W01", "equity": 3050, "growth": 1.6 },
-    { "label": "W02", "equity": 3600, "growth": 20.0 },
-    { "label": "W03", "equity": 3759, "growth": 25.31 }
+    { "label": "W01", "equity": 3020, "growth": 0.7 },
+    { "label": "W02", "equity": 3050, "growth": 1.6 },
+
+    { "label": "W03", "equity": 3180, "growth": 6.0 },
+    { "label": "W04", "equity": 3300, "growth": 10.0 },
+
+    { "label": "W05", "equity": 3450, "growth": 15.0 },
+    { "label": "W06", "equity": 3600, "growth": 20.0 },
+
+    { "label": "W07", "equity": 3700, "growth": 23.3 },
+    { "label": "W08", "equity": 3759.16, "growth": 25.31 }
   ],
+
   "monthly": [
-    { "label": "Jan", "equity": 3759, "growth": 25.31 }
+    { "label": "Dec 25", "equity": 3300, "growth": 10.0 },
+    { "label": "Jan 26", "equity": 3759.16, "growth": 25.31 }
   ]
 }
