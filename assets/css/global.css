@@ -765,3 +765,15 @@ footer > p {
     padding-bottom:140px;
   }
 }
+/* ===== CTA BOTTOM SPACE FIX ===== */
+
+.partner-section:last-of-type{
+  padding-bottom:140px;
+}
+
+/* iOS safe area */
+@supports (padding: max(0px)) {
+  .partner-section:last-of-type{
+    padding-bottom: max(140px, env(safe-area-inset-bottom));
+  }
+}
