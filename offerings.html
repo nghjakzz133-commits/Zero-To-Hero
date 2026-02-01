@@ -25,11 +25,9 @@
         <strong>Zero To Hero</strong>
       </a>
     </div>
-
     <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
-
     <div class="nav-menu" id="navMenu">
       <a href="index.html" class="nav-link">Trang chủ</a>
       <a href="about.html" class="nav-link">Giới thiệu</a>
@@ -37,7 +35,6 @@
       <a href="partnership.html" class="nav-link">Hợp tác</a>
       <a href="market.html" class="nav-link">Thị trường</a>
       <a href="contact.html" class="nav-link">Liên hệ</a>
-
       <div class="nav-actions">
         <div class="lang">
           <button class="active">VI</button>
@@ -59,7 +56,6 @@
     Hệ thống bot giao dịch<br>
     <span style="color:#4da3ff;">đã vận hành thực tế & có kỷ luật</span>
   </h1>
-
   <p style="margin-top:20px; max-width:760px; color:#aaa; line-height:1.7;">
     Zero To Hero phát triển và vận hành các hệ thống giao dịch tự động (trading bot)
     đã chạy ổn định trên thị trường trong thời gian dài, tập trung vào quản trị rủi ro,
@@ -71,61 +67,39 @@
 
 <!-- ================= BOT STATS ================= -->
 <section style="padding:100px 8%; background:#0b0e11; color:#fff;">
-  <div style="max-width:1000px;margin:auto;">
+  <div style="max-width:1100px;margin:auto;">
 
-    <h2 style="font-size:28px;">📊 Bot Performance Snapshot</h2>
-    <p style="color:#9aa4b2;max-width:760px;margin-bottom:40px;">
+    <h2>📊 Bot Performance Snapshot</h2>
+    <p style="color:#9aa4b2;margin-bottom:30px;">
       Dữ liệu tổng hợp theo tuần / tháng từ hệ thống giao dịch.
     </p>
 
-    <!-- STAT BOX -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
-      <div class="stat-box">Nhận được<br><b id="received"></b>%</div>
-      <div class="stat-box">Hàng ngày<br><b id="daily"></b>%</div>
-      <div class="stat-box">Hàng tháng<br><b id="monthly"></b>%</div>
-      <div class="stat-box">Mức giảm<br><b id="drawdown"></b>%</div>
-      <div class="stat-box">Equity<br><b>$<span id="equity"></span></b></div>
-      <div class="stat-box">Lợi nhuận<br><b style="color:#4caf50;">$<span id="profit"></span></b></div>
-      <div class="stat-box">Tiền gửi<br>$<span id="deposit"></span></div>
-      <div class="stat-box">Rút tiền<br>$<span id="withdrawal"></span></div>
+    <!-- STAT GRID -->
+    <div class="stats-grid">
+      <div class="stat-box"><span>Nhận được</span><strong id="received">--%</strong></div>
+      <div class="stat-box"><span>Hàng ngày</span><strong id="daily">--%</strong></div>
+      <div class="stat-box"><span>Hàng tháng</span><strong id="monthly">--%</strong></div>
+      <div class="stat-box"><span>Mức giảm</span><strong id="drawdown">--%</strong></div>
+
+      <div class="stat-box"><span>Equity</span><strong>$<span id="equity">--</span></strong></div>
+      <div class="stat-box"><span>Lợi nhuận</span><strong class="green">$<span id="profit">--</span></strong></div>
+      <div class="stat-box"><span>Tiền gửi</span><strong>$<span id="deposit">--</span></strong></div>
+      <div class="stat-box"><span>Rút tiền</span><strong>$<span id="withdrawal">--</span></strong></div>
     </div>
 
-    <!-- BUTTON -->
-    <div style="margin:30px 0;">
-      <button onclick="loadPeriod('daily')">Ngày</button>
+    <div style="margin:25px 0;">
       <button onclick="loadPeriod('weekly')">Tuần</button>
       <button onclick="loadPeriod('monthly')">Tháng</button>
     </div>
 
-    <!-- CHART -->
     <canvas id="growthChart" height="120"></canvas>
 
     <!-- SUMMARY -->
-    <table class="summary-table">
-      <tr>
-        <th>Period</th>
-        <th>Growth</th>
-        <th>Profit</th>
-        <th>Drawdown</th>
-      </tr>
-      <tr>
-        <td>This Week</td>
-        <td>+3.2%</td>
-        <td>$120</td>
-        <td>1.4%</td>
-      </tr>
-      <tr>
-        <td>This Month</td>
-        <td>+10.7%</td>
-        <td>$420</td>
-        <td>4.6%</td>
-      </tr>
-      <tr>
-        <td>YTD</td>
-        <td>+25.31%</td>
-        <td>$759.16</td>
-        <td>8.8%</td>
-      </tr>
+    <table class="summary">
+      <tr><th>Period</th><th>Growth</th><th>Profit</th><th>Drawdown</th></tr>
+      <tr><td>This Week</td><td>+3.2%</td><td>$120</td><td>1.4%</td></tr>
+      <tr><td>This Month</td><td>+10.7%</td><td>$420</td><td>4.6%</td></tr>
+      <tr><td>YTD</td><td>+25.31%</td><td>$759.16</td><td>8.8%</td></tr>
     </table>
 
   </div>
@@ -133,121 +107,56 @@
 
 </main>
 
-<footer>
-  <hr>
-  <p style="text-align:center;">© 2026 Zero To Hero. All rights reserved.</p>
-</footer>
-
-<script src="assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const received   = document.getElementById("received");
-const daily      = document.getElementById("daily");
-const monthly    = document.getElementById("monthly");
-const drawdown   = document.getElementById("drawdown");
-const equity     = document.getElementById("equity");
-const profit     = document.getElementById("profit");
-const deposit    = document.getElementById("deposit");
-const withdrawal = document.getElementById("withdrawal");
-
 fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats.json")
-  .then(r => r.json())
-  .then(d => {
-    received.textContent   = d.received;
-    daily.textContent      = d.daily;
-    monthly.textContent    = d.monthly;
-    drawdown.textContent   = d.drawdown;
-    equity.textContent     = d.equity;
-    profit.textContent     = d.profit;
-    deposit.textContent    = d.deposit;
-    withdrawal.textContent = d.withdrawal;
-  });
+.then(r=>r.json())
+.then(d=>{
+  received.textContent = d.received.toFixed(2) + "%";
+  monthly.textContent = d.monthly.toFixed(2) + "%";
+  daily.textContent   = (d.monthly/30).toFixed(2) + "%";
+  drawdown.textContent = d.drawdown.toFixed(2) + "%";
+
+  equity.textContent = d.equity.toLocaleString();
+  profit.textContent = d.profit.toLocaleString();
+  deposit.textContent = d.deposit.toLocaleString();
+  withdrawal.textContent = d.withdrawal.toLocaleString();
+});
 </script>
 
 <script>
-let chart, historyData;
+let chart, history;
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
+.then(r=>r.json()).then(d=>{
+  history=d; loadPeriod("weekly");
+});
 
-function drawChart(labels, equityData, growthData){
+function loadPeriod(p){
+  const r=history[p];
   if(chart) chart.destroy();
-
-  chart = new Chart(document.getElementById("growthChart"), {
-    data: {
-      labels,
-      datasets: [
-        {
-          type: "bar",
-          label: "Equity ($)",
-          data: equityData,
-          backgroundColor: "rgba(76,175,80,0.6)",
-          borderRadius: 4
-        },
-        {
-          type: "line",
-          label: "Growth (%)",
-          data: growthData,
-          borderColor: "#ff9800",
-          tension: 0.35,
-          yAxisID: "y1"
-        }
+  chart=new Chart(growthChart,{
+    data:{
+      labels:r.map(x=>x.label),
+      datasets:[
+        {type:"bar",label:"Equity ($)",data:r.map(x=>x.equity),backgroundColor:"#2e7d32"},
+        {type:"line",label:"Growth (%)",data:r.map(x=>x.growth),borderColor:"#ff9800",yAxisID:"y1"}
       ]
     },
-    options: {
-      interaction: { mode: "index", intersect: false },
-      scales: {
-        y: { beginAtZero: true },
-        y1: { beginAtZero: true, position: "right", grid:{drawOnChartArea:false} }
-      }
-    }
+    options:{scales:{y:{beginAtZero:true},y1:{position:"right"}}}
   });
-}
-
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
-  .then(r => r.json())
-  .then(d => {
-    historyData = d;
-    loadPeriod("weekly");
-  });
-
-function loadPeriod(type){
-  const rows = historyData[type];
-  drawChart(
-    rows.map(r => r.label),
-    rows.map(r => r.equity),
-    rows.map(r => r.growth)
-  );
 }
 </script>
 
 <style>
-.stat-box{
-  background:#131722;
-  border:1px solid #1e2329;
-  padding:20px;
-  border-radius:10px;
-  font-size:14px;
-  color:#9aa4b2;
-}
-.stat-box b{
-  display:block;
-  font-size:22px;
-  margin-top:6px;
-  color:#fff;
-}
-.summary-table{
-  width:100%;
-  margin-top:40px;
-  border-collapse:collapse;
-  background:#131722;
-}
-.summary-table th,
-.summary-table td{
-  padding:14px;
-  border:1px solid #1e2329;
-  text-align:center;
-}
-.summary-table th{ color:#9aa4b2; }
-.summary-table td{ color:#fff; }
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.stat-box{background:#121722;border:1px solid #1e2329;padding:18px;border-radius:10px}
+.stat-box span{font-size:13px;color:#9aa4b2}
+.stat-box strong{display:block;font-size:22px;margin-top:6px}
+.green{color:#4caf50}
+.summary{width:100%;margin-top:40px;border-collapse:collapse}
+.summary th,.summary td{border:1px solid #1e2329;padding:14px;text-align:center}
+.summary th{color:#9aa4b2}
 </style>
 
 </body>
