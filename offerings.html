@@ -91,9 +91,8 @@
     </h2>
 
     <p style="color:#9aa4b2; max-width:760px; line-height:1.7;">
-      Toàn bộ kết quả giao dịch được theo dõi bởi hệ thống bên thứ ba (Myfxbook).
-      Không chỉnh sửa dữ liệu — không báo cáo nội bộ — không làm đẹp số liệu.
-      Nhà đầu tư có thể kiểm tra trực tiếp lịch sử lệnh, tăng trưởng và mức sụt giảm.
+      Kết quả được theo dõi bởi Myfxbook — nền tảng thống kê giao dịch độc lập.
+      Dữ liệu lấy trực tiếp từ server broker, không chỉnh sửa, không báo cáo nội bộ.
     </p>
 
     <!-- TRUST GRID -->
@@ -106,60 +105,74 @@
 
       <div style="background:#131722;padding:22px;border-radius:12px;">
         <h4 style="color:#58a6ff;">Theo dõi độc lập</h4>
-        <p style="color:#b7bdc6;">Dữ liệu lấy trực tiếp từ server broker.</p>
+        <p style="color:#b7bdc6;">Sync trực tiếp từ tài khoản giao dịch.</p>
       </div>
 
       <div style="background:#131722;padding:22px;border-radius:12px;">
-        <h4 style="color:#58a6ff;">Lịch sử lệnh đầy đủ</h4>
-        <p style="color:#b7bdc6;">Không ẩn lệnh thua — hiển thị toàn bộ.</p>
+        <h4 style="color:#58a6ff;">Full lịch sử lệnh</h4>
+        <p style="color:#b7bdc6;">Không ẩn lệnh thua.</p>
       </div>
 
       <div style="background:#131722;padding:22px;border-radius:12px;">
-        <h4 style="color:#58a6ff;">Biểu đồ tăng trưởng</h4>
-        <p style="color:#b7bdc6;">Theo dõi equity & balance theo thời gian.</p>
+        <h4 style="color:#58a6ff;">Chart tăng trưởng</h4>
+        <p style="color:#b7bdc6;">Balance & Equity realtime.</p>
       </div>
 
       <div style="background:#131722;padding:22px;border-radius:12px;">
-        <h4 style="color:#58a6ff;">Kiểm soát rủi ro</h4>
-        <p style="color:#b7bdc6;">Có thống kê drawdown minh bạch.</p>
+        <h4 style="color:#58a6ff;">Drawdown rõ ràng</h4>
+        <p style="color:#b7bdc6;">Có thống kê rủi ro.</p>
       </div>
 
     </div>
 
-    <!-- EMBED -->
+    <!-- MYFXBOOK WIDGET CARD -->
     <div style="
       margin-top:44px;
       background:#131722;
       border-radius:16px;
-      padding:24px;
+      padding:28px;
       box-shadow:0 18px 50px rgba(0,0,0,.55);
       border:1px solid rgba(255,255,255,.06);
     ">
 
-      <iframe
-        src="https://www.myfxbook.com/portfolio/51000983/11910760"
-        width="100%"
-        height="900"
-        loading="lazy"
-        style="border:0;border-radius:12px;background:#0b0e11;">
-      </iframe>
+      <h3 style="color:#fff; margin-bottom:18px;">
+        Thống kê tài khoản (Live)
+      </h3>
+
+      <!-- ===== MYFXBOOK WIDGET ===== -->
+      <div id="myfxbook_widget_11910760"></div>
+
+      <script type="text/javascript">
+        (function() {
+          var mf = document.createElement("script");
+          mf.type = "text/javascript";
+          mf.async = true;
+          mf.src = "https://widgets.myfxbook.com/scripts/fx.js";
+          document.getElementsByTagName("head")[0].appendChild(mf);
+        })();
+      </script>
+
+      <script type="text/javascript">
+        window.addEventListener("load", function(){
+          if (typeof MyfxbookWidget !== "undefined") {
+            MyfxbookWidget.init({
+              widget_id: "11910760",
+              type: "advanced",
+              width: "100%",
+              height: "800",
+              color: "dark"
+            });
+          }
+        });
+      </script>
 
     </div>
 
-    <!-- ACTION ROW -->
+    <!-- ACTION -->
     <div style="
-      margin-top:26px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      align-items:center;
-      justify-content:space-between;
+      margin-top:24px;
+      text-align:right;
     ">
-
-      <p style="color:#6b7280; font-size:14px;">
-        Nếu iframe không hiển thị trên thiết bị của bạn, vui lòng mở trực tiếp.
-      </p>
-
       <a href="https://www.myfxbook.com/portfolio/51000983/11910760"
          target="_blank"
          style="
@@ -170,9 +183,8 @@
            text-decoration:none;
            font-weight:600;
          ">
-         Mở Myfxbook trực tiếp →
+         Xem bản gốc Myfxbook →
       </a>
-
     </div>
 
   </div>
