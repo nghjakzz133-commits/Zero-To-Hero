@@ -16,12 +16,9 @@
 
 <body>
 
-<!-- ================= HEADER (GIỮ NGUYÊN) ================= -->
-<!-- ===== HEADER / MENU ===== -->
+<!-- ================= HEADER ================= -->
 <header class="site-header">
   <nav class="nav">
-
-    <!-- Brand -->
     <div class="nav-left">
       <a href="index.html" class="brand">
         <img src="assets/img/logo.png" alt="Zero To Hero Logo">
@@ -29,12 +26,10 @@
       </a>
     </div>
 
-    <!-- Hamburger -->
     <button class="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
-    <!-- Menu -->
     <div class="nav-menu" id="navMenu">
       <a href="index.html" class="nav-link">Trang chủ</a>
       <a href="about.html" class="nav-link">Giới thiệu</a>
@@ -48,22 +43,17 @@
           <button class="active" onclick="setLang('vi')">VI</button>
           <button onclick="setLang('en')">EN</button>
         </div>
-
         <a href="contact.html" class="cta-btn">Bắt đầu</a>
       </div>
     </div>
-
   </nav>
 </header>
 
-
-
 <hr>
-
 
 <main>
 
-<!-- ================= HERO (GIỮ NGUYÊN) ================= -->
+<!-- ================= HERO ================= -->
 <section style="padding:100px 8%; background:#0b0e11; color:#fff;">
   <h1 style="font-size:38px; max-width:820px;"
       data-vi="Hệ thống bot giao dịch<br><span style='color:#4da3ff;'>đã vận hành thực tế & có kỷ luật</span>"
@@ -73,24 +63,19 @@
   </h1>
 
   <p style="margin-top:20px; max-width:760px; color:#aaa; line-height:1.7;"
-     data-vi="Zero To Hero phát triển và vận hành các hệ thống giao dịch tự động (trading bot) đã chạy ổn định trên thị trường trong thời gian dài, tập trung vào quản trị rủi ro, kỷ luật vốn và hiệu suất bền vững."
-     data-en="Zero To Hero develops and operates automated trading systems that have been running live for a long time, focusing on risk control, capital discipline, and sustainable performance.">
+     data-vi="Zero To Hero phát triển và vận hành các hệ thống giao dịch tự động..."
+     data-en="Zero To Hero develops and operates automated trading systems...">
     Zero To Hero phát triển và vận hành các hệ thống giao dịch tự động (trading bot)
-    đã chạy ổn định trên thị trường trong thời gian dài, tập trung vào quản trị rủi ro,
-    kỷ luật vốn và hiệu suất bền vững.
+    đã chạy ổn định trên thị trường trong thời gian dài.
   </p>
 </section>
 
 <hr>
 
-<!-- ================= BOT 1 ================= -->
+<!-- ================= BOT SNAPSHOT ================= -->
 <section style="padding:100px 8%; background:#0b0e11; color:#fff;">
   <div style="max-width:1100px;margin:auto;">
-
     <h2>📊 Bot Performance Snapshot</h2>
-    <p style="color:#9aa4b2;margin-bottom:30px;">
-      Dữ liệu tổng hợp theo tuần / tháng từ hệ thống giao dịch.
-    </p>
 
     <div class="stats-grid">
       <div class="stat-box"><span>Nhận được</span><strong id="received">--%</strong></div>
@@ -104,20 +89,7 @@
       <div class="stat-box"><span>Rút tiền</span><strong>$<span id="withdrawal">--</span></strong></div>
     </div>
 
-    <div style="margin:25px 0;">
-      <button onclick="loadBot1('weekly')">Tuần</button>
-      <button onclick="loadBot1('monthly')">Tháng</button>
-    </div>
-
     <canvas id="chartBot1" height="120"></canvas>
-
-    <table class="summary">
-      <tr><th>Period</th><th>Growth</th><th>Profit</th><th>Drawdown</th></tr>
-      <tr><td>This Week</td><td>+3.2%</td><td>$120</td><td>1.4%</td></tr>
-      <tr><td>This Month</td><td>+10.7%</td><td>$420</td><td>4.6%</td></tr>
-      <tr><td>YTD</td><td>+25.31%</td><td>$759.16</td><td>8.8%</td></tr>
-    </table>
-
   </div>
 </section>
 
@@ -126,11 +98,7 @@
 <!-- ================= BOT MT5 ================= -->
 <section style="padding:100px 8%; background:#0b0e11; color:#fff;">
   <div style="max-width:1100px;margin:auto;">
-
     <h2>🤖 Bot MT5 – Live Account</h2>
-    <p style="color:#9aa4b2;margin-bottom:30px;">
-      MetaTrader 5 · Broker OEXN · Leverage 1:1000
-    </p>
 
     <div class="stats-grid">
       <div class="stat-box"><span>Nhận được</span><strong id="mt5_received">--%</strong></div>
@@ -144,27 +112,17 @@
       <div class="stat-box"><span>Rút tiền</span><strong>$<span id="mt5_withdrawal">--</span></strong></div>
     </div>
 
-    <div style="margin:25px 0;">
-      <button onclick="loadMT5('weekly')">Tuần</button>
-      <button onclick="loadMT5('monthly')">Tháng</button>
-    </div>
-
     <canvas id="chartMT5" height="120"></canvas>
-
-    <table class="summary">
-      <tr><th>Period</th><th>Growth</th><th>Profit</th><th>Drawdown</th></tr>
-      <tr><td>This Week</td><td>+3.45%</td><td>$61.50</td><td>1.67%</td></tr>
-      <tr><td>This Month</td><td>+10.71%</td><td>$420</td><td>8.8%</td></tr>
-      <tr><td>YTD</td><td>+46.71%</td><td>$978.89</td><td>8.8%</td></tr>
-    </table>
-
   </div>
 </section>
 
 </main>
 
+<!-- ================= LIBS ================= -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
+<!-- ================= LANGUAGE ================= -->
 <script>
 function setLang(lang){
   document.documentElement.lang = lang;
@@ -174,88 +132,7 @@ function setLang(lang){
 }
 </script>
 
-<!-- ===== JS FETCH DATA (GIỮ NGUYÊN LOGIC) ===== -->
-<script>
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats.json")
-.then(r=>r.json())
-.then(d=>{
-  const u=d.ui_snapshot;
-  received.textContent=u.received+"%";
-  daily.textContent=u.daily+"%";
-  monthly.textContent=u.monthly+"%";
-  drawdown.textContent=u.drawdown+"%";
-  equity.textContent=u.equity.toLocaleString();
-  profit.textContent=u.profit.toLocaleString();
-  deposit.textContent=u.deposit.toLocaleString();
-  withdrawal.textContent=u.withdrawal.toLocaleString();
-});
-</script>
-
-<script>
-let bot1Chart, bot1History;
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
-.then(r=>r.json()).then(d=>{bot1History=d;loadBot1("weekly");});
-
-function loadBot1(p){
-  const r=bot1History[p];
-  if(bot1Chart) bot1Chart.destroy();
-  bot1Chart=new Chart(chartBot1,{
-    data:{labels:r.map(x=>x.label),datasets:[
-      {type:"bar",label:"Equity",data:r.map(x=>x.equity),backgroundColor:"#2e7d32"},
-      {type:"line",label:"Growth %",data:r.map(x=>x.growth),borderColor:"#ff9800",yAxisID:"y1"}
-    ]},
-    options:{scales:{y:{beginAtZero:true},y1:{position:"right"}}}
-  });
-}
-</script>
-
-<script>
-let mt5Chart, mt5History;
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/mt5_stats.json")
-.then(r=>r.json()).then(d=>{
-  const u=d.ui_snapshot;
-  mt5_received.textContent=u.received+"%";
-  mt5_daily.textContent=u.daily+"%";
-  mt5_monthly.textContent=u.monthly+"%";
-  mt5_drawdown.textContent=u.drawdown+"%";
-  mt5_equity.textContent=u.equity.toLocaleString();
-  mt5_profit.textContent=u.profit.toLocaleString();
-  mt5_deposit.textContent=u.deposit.toLocaleString();
-  mt5_withdrawal.textContent=u.withdrawal.toLocaleString();
-});
-
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/mt5_history.json")
-.then(r=>r.json()).then(d=>{mt5History=d;loadMT5("weekly");});
-
-function loadMT5(p){
-  const r=mt5History[p];
-  if(mt5Chart) mt5Chart.destroy();
-  mt5Chart=new Chart(chartMT5,{
-    data:{labels:r.map(x=>x.label),datasets:[
-      {type:"bar",label:"Equity",data:r.map(x=>x.equity),backgroundColor:"#2e7d32"},
-      {type:"line",label:"Growth %",data:r.map(x=>x.growth),borderColor:"#ff9800",yAxisID:"y1"}
-    ]},
-    options:{scales:{y:{beginAtZero:true},y1:{position:"right"}}}
-  });
-}
-</script>
-
-<style>
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.stat-box{background:#121722;border:1px solid #1e2329;padding:18px;border-radius:10px}
-.stat-box span{font-size:13px;color:#9aa4b2}
-.stat-box strong{display:block;font-size:22px;margin-top:6px;color:#fff}
-.green{color:#4caf50}
-.summary{width:100%;margin-top:40px;border-collapse:collapse}
-.summary th,.summary td{border:1px solid #1e2329;padding:14px;text-align:center}
-.summary th{color:#9aa4b2;background:#0f131a}
-.summary td{color:#fff}
-</style>
-
-
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-
+<!-- ================= CSV PARSER ================= -->
 <script>
 function parseBotCSV(url, onDone) {
   Papa.parse(url, {
@@ -264,38 +141,24 @@ function parseBotCSV(url, onDone) {
     dynamicTyping: true,
     complete: function (res) {
       const trades = res.data.filter(t => t.Profit !== null);
-
-      let profit = 0;
-      let equity = 0;
-      let wins = 0;
-      let maxEquity = 0;
-      let maxDD = 0;
-
+      let equity = 0, profit = 0, wins = 0, maxEquity = 0, maxDD = 0;
       const curve = [];
 
       trades.forEach(t => {
         profit += t.Profit;
         equity += t.Profit;
         if (t.Profit > 0) wins++;
-
         if (equity > maxEquity) maxEquity = equity;
-        const dd = maxEquity - equity;
-        if (dd > maxDD) maxDD = dd;
-
-        curve.push({
-          date: t["Close Date"],
-          equity: equity.toFixed(2)
-        });
+        maxDD = Math.max(maxDD, maxEquity - equity);
+        curve.push({ date: t["Close Date"] || t["Time"], equity });
       });
 
       onDone({
         trades: trades.length,
-        winRate: (wins / trades.length * 100).toFixed(2),
+        winRate: ((wins / trades.length) * 100).toFixed(2),
         profit: profit.toFixed(2),
         equity: equity.toFixed(2),
-        drawdown: maxEquity
-          ? (maxDD / maxEquity * 100).toFixed(2)
-          : "0.00",
+        drawdown: maxEquity ? (maxDD / maxEquity * 100).toFixed(2) : "0.00",
         curve
       });
     }
@@ -303,6 +166,16 @@ function parseBotCSV(url, onDone) {
 }
 </script>
 
-  <script src="assets/js/main.js"></script>
+<!-- ================= MAIN ================= -->
+<script src="assets/js/main.js"></script>
+
+<style>
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.stat-box{background:#121722;border:1px solid #1e2329;padding:18px;border-radius:10px}
+.stat-box span{font-size:13px;color:#9aa4b2}
+.stat-box strong{display:block;font-size:22px;margin-top:6px;color:#fff}
+.green{color:#4caf50}
+</style>
+
 </body>
 </html>
