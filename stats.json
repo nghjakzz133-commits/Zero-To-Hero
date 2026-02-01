@@ -1,10 +1,50 @@
 {
-  "received": 25.31,
-  "daily": 4.62,
-  "monthly": 25.31,
-  "drawdown": 13.16,
-  "equity": 3759.16,
-  "profit": 759.16,
-  "deposit": 3000,
-  "withdrawal": 0
+  "updated_at": "2026-01-30",
+
+  "performance": {
+    "received_percent": 25.31,
+    "daily_percent": 4.62,
+    "monthly_percent": 25.31,
+    "drawdown_percent": 13.16
+  },
+
+  "capital": {
+    "deposit": 3000,
+    "withdrawal": 0,
+    "equity": 3759.16,
+    "profit": 759.16
+  },
+
+  "account": {
+    "currency": "USD",
+    "broker": "OEXN",
+    "platform": "MetaTrader 5",
+    "leverage": "1:1000"
+  },
+
+  "stats": {
+    "balance": 3759.16,
+    "highest_equity": 3764.80,
+    "highest_equity_date": "2026-01-30",
+    "interest": 0,
+    "floating": 0
+  },
+
+  "trading_summary": {
+    "total_trades": 413,
+    "win_rate_percent": 45,
+    "pips": 11194,
+    "lots": 21.01
+  },
+
+  "ui_snapshot": {
+    "received": 25.31,
+    "daily": 4.62,
+    "monthly": 25.31,
+    "drawdown": 13.16,
+    "equity": 3759.16,
+    "profit": 759.16,
+    "deposit": 3000,
+    "withdrawal": 0
+  }
 }
