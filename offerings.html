@@ -89,6 +89,13 @@
       <div class="stat-box">Tiền gửi<br>$<span id="deposit"></span></div>
       <div class="stat-box">Rút tiền<br>$<span id="withdrawal"></span></div>
     </div>
+<div style="margin-bottom:15px;">
+  <button onclick="loadPeriod('weekly')">Tuần</button>
+  <button onclick="loadPeriod('monthly')">Tháng</button>
+</div>
+<div style="margin-top:60px;">
+  <canvas id="growthChart" height="120"></canvas>
+</div>
 
   </div>
 </section>
@@ -137,6 +144,64 @@ fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/s
   color:#fff;
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+let chart;
+
+function drawChart(labels, equity, growth){
+  if(chart) chart.destroy();
+
+  chart = new Chart(document.getElementById("growthChart"), {
+    data: {
+      labels,
+      datasets: [
+        {
+          type: "bar",
+          label: "Equity",
+          data: equity
+        },
+        {
+          type: "line",
+          label: "Growth %",
+          data: growth,
+          yAxisID: "y1"
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+        y1: {
+          beginAtZero: true,
+          position: "right",
+          grid: { drawOnChartArea: false }
+        }
+      }
+    }
+  });
+}
+</script>
+<script>
+let historyData;
+
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
+  .then(r => r.json())
+  .then(d => {
+    historyData = d;
+    loadPeriod("weekly"); // mặc định
+  });
+
+function loadPeriod(type){
+  const rows = historyData[type];
+  drawChart(
+    rows.map(r => r.label),
+    rows.map(r => r.equity),
+    rows.map(r => r.growth)
+  );
+}
+</script>
 
 </body>
 </html>
