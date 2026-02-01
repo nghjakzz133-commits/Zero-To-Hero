@@ -79,13 +79,7 @@
 </section>
 
 <hr>
-<section id="bot-data" style="padding:40px">
-  <h2>📊 Bot Live Data</h2>
-  <table id="dataTable" border="1" cellpadding="8" cellspacing="0">
-    <thead></thead>
-    <tbody></tbody>
-  </table>
-</section>
+
 
 <!-- ===== VERIFIED PERFORMANCE — FULL TRUST BLOCK ===== -->
 <section style="padding:100px 8%; background:#0b0e11; color:#eaecef;">
@@ -292,5 +286,38 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<section id="bot-data" style="padding:40px">
+  <h2>📊 Bot Live Data</h2>
+  <table id="dataTable" border="1" cellpadding="8" cellspacing="0">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+</section>
+<script>
+fetch("data/tracking_data.csv")
+  .then(res => res.text())
+  .then(text => {
+    const lines = text.trim().split("\n");
+    const headers = lines[0].split(";");
+
+    const thead = document.querySelector("#dataTable thead");
+    const tbody = document.querySelector("#dataTable tbody");
+
+    // Header
+    let h = "<tr>";
+    headers.forEach(col => h += `<th>${col}</th>`);
+    h += "</tr>";
+    thead.innerHTML = h;
+
+    // Rows
+    for (let i = 1; i < lines.length; i++) {
+      const cols = lines[i].split(";");
+      let row = "<tr>";
+      cols.forEach(c => row += `<td>${c}</td>`);
+      row += "</tr>";
+      tbody.innerHTML += row;
+    }
+  });
+</script>
 </body>
 </html>
