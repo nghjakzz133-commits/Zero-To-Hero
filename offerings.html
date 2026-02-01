@@ -4,138 +4,228 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zero To Hero | Live Trading Bot Performance</title>
-<meta name="description" content="Live trading bot performance – equity curve, drawdown, winrate theo chuẩn Myfxbook">
+<title>Zero To Hero | Live Trading Performance Dashboard</title>
+<meta name="description" content="All-in-one trading performance dashboard. Equity, drawdown, CAGR, Sharpe, Myfxbook-style analytics.">
 
-<link rel="stylesheet" href="assets/css/core.css">
-<link rel="stylesheet" href="assets/css/global.css">
-
+<!-- ================= RESET + BASE ================= -->
 <style>
-body{background:#0b0e11;color:#fff;font-family:Inter,Arial}
-section{padding:80px 8%}
-h1,h2{margin-bottom:12px}
-p{color:#9aa4b2;line-height:1.7}
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:16px;margin:30px 0
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#0b0e11;
+  color:#fff;
+  font-family:Inter,Arial,sans-serif;
 }
-.stat-box{
-  background:#121722;
-  border:1px solid #1e2329;
-  border-radius:12px;
-  padding:18px
-}
-.stat-box span{font-size:13px;color:#9aa4b2}
-.stat-box strong{display:block;font-size:22px;margin-top:6px}
-
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+button{cursor:pointer}
+.hidden{display:none}
 .green{color:#4caf50}
 .red{color:#ef5350}
+.gray{color:#9aa4b2}
+</style>
 
-canvas{
+<!-- ================= LAYOUT ================= -->
+<style>
+header{
+  position:sticky;top:0;z-index:100;
   background:#0f131a;
-  border-radius:12px;
-  padding:12px
+  border-bottom:1px solid #1e2329;
 }
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 8%;
+}
+.nav .brand{display:flex;gap:10px;align-items:center;font-weight:600}
+.nav-menu a{margin-left:20px;font-size:14px;color:#9aa4b2}
+.nav-menu a.active,.nav-menu a:hover{color:#fff}
 
-table{width:100%;border-collapse:collapse;margin-top:40px}
-th,td{border:1px solid #1e2329;padding:12px;text-align:center}
-th{background:#0f131a;color:#9aa4b2}
-td{color:#fff}
+section{padding:70px 8%}
+h1{font-size:34px;margin-bottom:12px}
+h2{font-size:24px;margin-bottom:10px}
+p{color:#9aa4b2;line-height:1.7}
 
 .badge{
   display:inline-block;
   background:#1e2329;
-  padding:6px 12px;
+  padding:6px 14px;
   border-radius:999px;
   font-size:12px;
-  color:#9aa4b2
+  margin-top:10px;
 }
 </style>
-</head>
 
+<!-- ================= STATS ================= -->
+<style>
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+  margin:30px 0;
+}
+.stat-box{
+  background:#121722;
+  border:1px solid #1e2329;
+  border-radius:14px;
+  padding:18px;
+}
+.stat-box span{font-size:12px;color:#9aa4b2}
+.stat-box strong{
+  display:block;
+  font-size:22px;
+  margin-top:6px;
+}
+</style>
+
+<!-- ================= CHART + TABLE ================= -->
+<style>
+canvas{
+  background:#0f131a;
+  border-radius:14px;
+  padding:12px;
+  margin-top:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:40px;
+  font-size:14px;
+}
+th,td{
+  border:1px solid #1e2329;
+  padding:12px;
+  text-align:center;
+}
+th{
+  background:#0f131a;
+  color:#9aa4b2;
+}
+</style>
+
+<!-- ================= CONTROLS ================= -->
+<style>
+.controls{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:20px 0;
+}
+.controls button{
+  background:#121722;
+  border:1px solid #1e2329;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+}
+.controls button.active{
+  background:#4caf50;
+  border-color:#4caf50;
+}
+.upload{
+  border:2px dashed #1e2329;
+  padding:30px;
+  border-radius:14px;
+  text-align:center;
+  color:#9aa4b2;
+}
+</style>
+
+</head>
 <body>
 
 <!-- ================= HEADER ================= -->
-<header class="site-header">
-<nav class="nav">
-  <div class="nav-left">
-    <a href="index.html" class="brand">
-      <img src="assets/img/logo.png">
-      <strong>Zero To Hero</strong>
-    </a>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <strong>🚀 Zero To Hero</strong>
+    </div>
+    <div class="nav-menu">
+      <a class="active">Performance</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
   </div>
-  <div class="nav-menu">
-    <a href="index.html">Trang chủ</a>
-    <a href="#" class="active">Performance</a>
-    <a href="contact.html">Liên hệ</a>
-  </div>
-</nav>
 </header>
 
 <!-- ================= HERO ================= -->
 <section>
-<h1>📈 Live Trading Bot Performance</h1>
-<p>Dữ liệu lấy trực tiếp từ file CSV (MT4 / MT5). Không demo – không chỉnh tay.</p>
-<span class="badge">Myfxbook-style Analytics</span>
+<h1>📈 Live Trading Performance Dashboard</h1>
+<p>Dữ liệu CSV trực tiếp từ MT4 / MT5. Không demo. Không chỉnh tay. Chuẩn Myfxbook & Fund Analytics.</p>
+<span class="badge">CSV Verified · Real Trading Data</span>
 </section>
 
-<!-- ================= BOT MT4 ================= -->
+<!-- ================= UPLOAD ================= -->
 <section>
-<h2>🤖 Bot MT4 – Live Account</h2>
+<h2>📂 Upload CSV (MT4 / MT5)</h2>
+<div class="upload">
+  <input type="file" id="csvInput" accept=".csv"><br><br>
+  <small>Chọn file CSV export từ MT4 / MT5</small>
+</div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section>
+<h2>📊 Account Statistics</h2>
 
 <div class="stats-grid">
-  <div class="stat-box"><span>Initial Balance</span><strong>$<span id="mt4_initial">--</span></strong></div>
-  <div class="stat-box"><span>Total Trades</span><strong id="mt4_trades">--</strong></div>
-  <div class="stat-box"><span>Win Rate</span><strong id="mt4_winrate">--%</strong></div>
-  <div class="stat-box"><span>Total Profit</span><strong class="green">$<span id="mt4_profit">--</span></strong></div>
-  <div class="stat-box"><span>Growth</span><strong class="green"><span id="mt4_growth">--</span>%</strong></div>
-  <div class="stat-box"><span>Profit Factor</span><strong id="mt4_pf">--</strong></div>
-  <div class="stat-box"><span>Max Drawdown</span><strong class="red"><span id="mt4_dd">--</span>%</strong></div>
-  <div class="stat-box"><span>Best Trade</span><strong class="green">$<span id="mt4_best">--</span></strong></div>
-  <div class="stat-box"><span>Worst Trade</span><strong class="red">$<span id="mt4_worst">--</span></strong></div>
-  <div class="stat-box"><span>Final Equity</span><strong>$<span id="mt4_equity">--</span></strong></div>
+  <div class="stat-box"><span>Initial Balance</span><strong>$<span id="initial">0</span></strong></div>
+  <div class="stat-box"><span>Final Equity</span><strong>$<span id="equity">0</span></strong></div>
+  <div class="stat-box"><span>Total Trades</span><strong id="trades">0</strong></div>
+  <div class="stat-box"><span>Win Rate</span><strong id="winrate">0%</strong></div>
+  <div class="stat-box"><span>Total Profit</span><strong class="green">$<span id="profit">0</span></strong></div>
+  <div class="stat-box"><span>Max Drawdown</span><strong class="red"><span id="dd">0</span>%</strong></div>
+  <div class="stat-box"><span>Profit Factor</span><strong id="pf">0</strong></div>
+  <div class="stat-box"><span>Recovery Factor</span><strong id="recovery">0</strong></div>
+  <div class="stat-box"><span>CAGR</span><strong id="cagr">0%</strong></div>
+  <div class="stat-box"><span>Sharpe Ratio</span><strong id="sharpe">0</strong></div>
+  <div class="stat-box"><span>Best Trade</span><strong class="green">$<span id="best">0</span></strong></div>
+  <div class="stat-box"><span>Worst Trade</span><strong class="red">$<span id="worst">0</span></strong></div>
 </div>
 
-<canvas id="chartMT4" height="120"></canvas>
+<div class="controls">
+  <button id="btnEquity" class="active">Equity Curve</button>
+  <button id="btnBalance">Balance Curve</button>
+</div>
 
+<canvas id="chart" height="140"></canvas>
+</section>
+
+<!-- ================= MONTHLY ================= -->
+<section>
+<h2>📅 Monthly Performance</h2>
+<table>
+<thead>
+<tr>
+  <th>Month</th>
+  <th>Trades</th>
+  <th>Profit ($)</th>
+</tr>
+</thead>
+<tbody id="monthly"></tbody>
+</table>
+</section>
+
+<!-- ================= TRADES ================= -->
+<section>
+<h2>📜 Trade History (Latest 100)</h2>
 <table>
 <thead>
 <tr>
   <th>#</th>
-  <th>Close Time</th>
+  <th>Date</th>
   <th>Type</th>
   <th>Volume</th>
   <th>Profit ($)</th>
 </tr>
 </thead>
-<tbody id="mt4_trades_table"></tbody>
+<tbody id="tradesTable"></tbody>
 </table>
-</section>
-
-<!-- ================= BOT MT5 ================= -->
-<section>
-<h2>🤖 Bot MT5 – Live Account</h2>
-
-<div class="stats-grid">
-  <div class="stat-box"><span>Initial Balance</span><strong>$<span id="mt5_initial">--</span></strong></div>
-  <div class="stat-box"><span>Total Trades</span><strong id="mt5_trades">--</strong></div>
-  <div class="stat-box"><span>Win Rate</span><strong id="mt5_winrate">--%</strong></div>
-  <div class="stat-box"><span>Total Profit</span><strong class="green">$<span id="mt5_profit">--</span></strong></div>
-  <div class="stat-box"><span>Growth</span><strong class="green"><span id="mt5_growth">--</span>%</strong></div>
-  <div class="stat-box"><span>Profit Factor</span><strong id="mt5_pf">--</strong></div>
-  <div class="stat-box"><span>Max Drawdown</span><strong class="red"><span id="mt5_dd">--</span>%</strong></div>
-  <div class="stat-box"><span>Final Equity</span><strong>$<span id="mt5_equity">--</span></strong></div>
-</div>
-
-<canvas id="chartMT5" height="120"></canvas>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <section>
 <p style="text-align:center;color:#666">
-© Zero To Hero · Live Performance Analytics · CSV Verified
+© Zero To Hero · All-in-One Trading Analytics · No Fake Stats
 </p>
 </section>
 
@@ -143,104 +233,133 @@ td{color:#fff}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
-<!-- ================= ENGINE ================= -->
+<!-- ================= ENGINE (CORE LOGIC) ================= -->
 <script>
-function parseCSV(url, prefix, chartId, tableId){
-  const INITIAL_BALANCE = 10000;
+const INITIAL_BALANCE = 10000;
+let currentChart;
+let equityCurve=[], balanceCurve=[];
 
-  Papa.parse(url,{
-    download:true,
+document.getElementById("csvInput").addEventListener("change", e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+
+  Papa.parse(file,{
     header:true,
     dynamicTyping:true,
-    complete(res){
-      const rows = res.data.filter(r => r.Profit != null);
-      let equity = INITIAL_BALANCE;
-      let maxEq = equity;
-      let maxDD = 0;
-      let wins = 0;
-      let grossProfit = 0;
-      let grossLoss = 0;
-      let best = -Infinity;
-      let worst = Infinity;
-      const curve = [];
+    complete(res){processCSV(res.data)}
+  });
+});
 
-      rows.forEach((r,i)=>{
-        equity += r.Profit;
+function processCSV(rows){
+  let equity=INITIAL_BALANCE;
+  let balance=INITIAL_BALANCE;
+  let maxEq=equity, maxDD=0;
+  let wins=0, grossProfit=0, grossLoss=0;
+  let best=-Infinity, worst=Infinity;
+  let returns=[];
+  equityCurve=[]; balanceCurve=[];
+  let monthly={};
 
-        if(equity > maxEq) maxEq = equity;
-        maxDD = Math.max(maxDD, maxEq - equity);
+  rows.forEach((r,i)=>{
+    if(r.Profit==null) return;
 
-        if(r.Profit > 0){
-          wins++;
-          grossProfit += r.Profit;
-        } else {
-          grossLoss += Math.abs(r.Profit);
-        }
+    equity+=r.Profit;
+    balance+=r.Profit;
 
-        best = Math.max(best, r.Profit);
-        worst = Math.min(worst, r.Profit);
+    equityCurve.push(equity);
+    balanceCurve.push(balance);
 
-        curve.push(equity);
+    if(equity>maxEq) maxEq=equity;
+    maxDD=Math.max(maxDD,maxEq-equity);
 
-        if(tableId && i < 50){
-          document.getElementById(tableId).innerHTML += `
-          <tr>
-            <td>${i+1}</td>
-            <td>${r["Close Date"] || ""}</td>
-            <td>${r.Type || ""}</td>
-            <td>${r.Volume || ""}</td>
-            <td class="${r.Profit >= 0 ? 'green' : 'red'}">${r.Profit.toFixed(2)}</td>
-          </tr>`;
-        }
-      });
+    if(r.Profit>0){wins++;grossProfit+=r.Profit}
+    else grossLoss+=Math.abs(r.Profit);
 
-      const profit = equity - INITIAL_BALANCE;
-      const growth = (profit / INITIAL_BALANCE * 100).toFixed(2);
-      const pf = grossLoss === 0 ? "∞" : (grossProfit / grossLoss).toFixed(2);
-      const ddPercent = maxEq === 0 ? 0 : (maxDD / maxEq * 100).toFixed(2);
+    best=Math.max(best,r.Profit);
+    worst=Math.min(worst,r.Profit);
 
-      document.getElementById(prefix+"_initial").textContent = INITIAL_BALANCE.toFixed(2);
-      document.getElementById(prefix+"_trades").textContent = rows.length;
-      document.getElementById(prefix+"_winrate").textContent = (wins / rows.length * 100).toFixed(2);
-      document.getElementById(prefix+"_profit").textContent = profit.toFixed(2);
-      document.getElementById(prefix+"_growth").textContent = growth;
-      document.getElementById(prefix+"_pf").textContent = pf;
-      document.getElementById(prefix+"_dd").textContent = ddPercent;
-      document.getElementById(prefix+"_equity").textContent = equity.toFixed(2);
+    returns.push(r.Profit/INITIAL_BALANCE);
 
-      if(document.getElementById(prefix+"_best"))
-        document.getElementById(prefix+"_best").textContent = best.toFixed(2);
-      if(document.getElementById(prefix+"_worst"))
-        document.getElementById(prefix+"_worst").textContent = worst.toFixed(2);
+    const m=(r["Close Date"]||"").slice(0,7);
+    if(!monthly[m]) monthly[m]={trades:0,profit:0};
+    monthly[m].trades++;
+    monthly[m].profit+=r.Profit;
 
-      new Chart(document.getElementById(chartId),{
-        type:"line",
-        data:{
-          labels:curve.map((_,i)=>i+1),
-          datasets:[{
-            label:"Equity Curve",
-            data:curve,
-            borderWidth:2,
-            borderColor:"#4caf50",
-            backgroundColor:"rgba(76,175,80,0.1)",
-            tension:0.3,
-            fill:true
-          }]
-        },
-        options:{
-          plugins:{legend:{display:false}},
-          scales:{
-            x:{display:false},
-            y:{ticks:{color:"#9aa4b2"}}
-          }
-        }
-      });
+    if(i<100){
+      document.getElementById("tradesTable").innerHTML+=`
+      <tr>
+        <td>${i+1}</td>
+        <td>${r["Close Date"]||""}</td>
+        <td>${r.Type||""}</td>
+        <td>${r.Volume||""}</td>
+        <td class="${r.Profit>=0?'green':'red'}">${r.Profit.toFixed(2)}</td>
+      </tr>`;
     }
+  });
+
+  const profit=equity-INITIAL_BALANCE;
+  const winrate=(wins/rows.length*100).toFixed(2);
+  const pf=grossLoss===0?"∞":(grossProfit/grossLoss).toFixed(2);
+  const dd=(maxDD/maxEq*100).toFixed(2);
+  const recovery=(profit/maxDD).toFixed(2);
+
+  const avg=returns.reduce((a,b)=>a+b,0)/returns.length;
+  const std=Math.sqrt(returns.map(x=>(x-avg)**2).reduce((a,b)=>a+b,0)/returns.length);
+  const sharpe=std===0?0:(avg/std).toFixed(2);
+
+  const years=rows.length/250;
+  const cagr=(((equity/INITIAL_BALANCE)**(1/years)-1)*100).toFixed(2);
+
+  document.getElementById("initial").textContent=INITIAL_BALANCE.toFixed(2);
+  document.getElementById("equity").textContent=equity.toFixed(2);
+  document.getElementById("trades").textContent=rows.length;
+  document.getElementById("winrate").textContent=winrate+"%";
+  document.getElementById("profit").textContent=profit.toFixed(2);
+  document.getElementById("dd").textContent=dd;
+  document.getElementById("pf").textContent=pf;
+  document.getElementById("recovery").textContent=recovery;
+  document.getElementById("cagr").textContent=cagr+"%";
+  document.getElementById("sharpe").textContent=sharpe;
+  document.getElementById("best").textContent=best.toFixed(2);
+  document.getElementById("worst").textContent=worst.toFixed(2);
+
+  Object.keys(monthly).forEach(m=>{
+    document.getElementById("monthly").innerHTML+=`
+    <tr>
+      <td>${m}</td>
+      <td>${monthly[m].trades}</td>
+      <td class="${monthly[m].profit>=0?'green':'red'}">
+        ${monthly[m].profit.toFixed(2)}
+      </td>
+    </tr>`;
+  });
+
+  drawChart(equityCurve);
+}
+
+function drawChart(data){
+  if(currentChart) currentChart.destroy();
+  currentChart=new Chart(document.getElementById("chart"),{
+    type:"line",
+    data:{labels:data.map((_,i)=>i+1),
+      datasets:[{
+        data:data,
+        borderColor:"#4caf50",
+        backgroundColor:"rgba(76,175,80,0.15)",
+        tension:0.3,
+        fill:true
+      }]
+    },
+    options:{plugins:{legend:{display:false}},scales:{x:{display:false}}}
   });
 }
 
-parseCSV("data/mt4.csv","mt4","chartMT4","mt4_trades_table");
-parseCSV("data/mt5.csv","mt5","chartMT5");
+document.getElementById("btnEquity").onclick=()=>{
+  drawChart(equityCurve);
+};
+document.getElementById("btnBalance").onclick=()=>{
+  drawChart(balanceCurve);
+};
 </script>
 
 </body>
