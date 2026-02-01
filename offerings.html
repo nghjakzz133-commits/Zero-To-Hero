@@ -110,54 +110,142 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+/* ================= SNAPSHOT ================= */
 fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats.json")
-.then(r=>r.json())
-.then(d=>{
-  received.textContent = d.received.toFixed(2) + "%";
-  monthly.textContent = d.monthly.toFixed(2) + "%";
-  daily.textContent   = (d.monthly/30).toFixed(2) + "%";
-  drawdown.textContent = d.drawdown.toFixed(2) + "%";
+.then(r => r.json())
+.then(d => {
+  const ui = d.ui_snapshot;
 
-  equity.textContent = d.equity.toLocaleString();
-  profit.textContent = d.profit.toLocaleString();
-  deposit.textContent = d.deposit.toLocaleString();
-  withdrawal.textContent = d.withdrawal.toLocaleString();
+  received.textContent  = ui.received.toFixed(2) + "%";
+  daily.textContent     = ui.daily.toFixed(2) + "%";
+  monthly.textContent   = ui.monthly.toFixed(2) + "%";
+  drawdown.textContent  = ui.drawdown.toFixed(2) + "%";
+
+  equity.textContent    = ui.equity.toLocaleString();
+  profit.textContent    = ui.profit.toLocaleString();
+  deposit.textContent   = ui.deposit.toLocaleString();
+  withdrawal.textContent = ui.withdrawal.toLocaleString();
+})
+.catch(err => {
+  console.error(err);
 });
 </script>
 
 <script>
+/* ================= CHART ================= */
 let chart, history;
+
 fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
-.then(r=>r.json()).then(d=>{
-  history=d; loadPeriod("weekly");
+.then(r => r.json())
+.then(d => {
+  history = d;
+  loadPeriod("weekly");
 });
 
 function loadPeriod(p){
-  const r=history[p];
+  const r = history[p];
+  if(!r) return;
+
   if(chart) chart.destroy();
-  chart=new Chart(growthChart,{
-    data:{
-      labels:r.map(x=>x.label),
-      datasets:[
-        {type:"bar",label:"Equity ($)",data:r.map(x=>x.equity),backgroundColor:"#2e7d32"},
-        {type:"line",label:"Growth (%)",data:r.map(x=>x.growth),borderColor:"#ff9800",yAxisID:"y1"}
+
+  chart = new Chart(growthChart, {
+    data: {
+      labels: r.map(x => x.label),
+      datasets: [
+        {
+          type: "bar",
+          label: "Equity ($)",
+          data: r.map(x => x.equity),
+          backgroundColor: "#2e7d32"
+        },
+        {
+          type: "line",
+          label: "Growth (%)",
+          data: r.map(x => x.growth),
+          borderColor: "#ff9800",
+          borderWidth: 2,
+          tension: 0.35,
+          pointRadius: 3,
+          yAxisID: "y1"
+        }
       ]
     },
-    options:{scales:{y:{beginAtZero:true},y1:{position:"right"}}}
+    options: {
+      responsive: true,
+      plugins: {
+        tooltip: {
+          mode: "index",
+          intersect: false
+        },
+        legend: {
+          labels: { color: "#9aa4b2" }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: "#9aa4b2" }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { color: "#9aa4b2" }
+        },
+        y1: {
+          position: "right",
+          beginAtZero: true,
+          grid: { drawOnChartArea: false },
+          ticks: { color: "#ff9800" }
+        }
+      }
+    }
   });
 }
 </script>
 
 <style>
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.stat-box{background:#121722;border:1px solid #1e2329;padding:18px;border-radius:10px}
-.stat-box span{font-size:13px;color:#9aa4b2}
-.stat-box strong{display:block;font-size:22px;margin-top:6px}
+/* ================= SNAPSHOT ================= */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px
+}
+.stat-box{
+  background:#121722;
+  border:1px solid #1e2329;
+  padding:18px;
+  border-radius:10px
+}
+.stat-box span{
+  font-size:13px;
+  color:#9aa4b2
+}
+.stat-box strong{
+  display:block;
+  font-size:22px;
+  margin-top:6px;
+  color:#fff
+}
 .green{color:#4caf50}
-.summary{width:100%;margin-top:40px;border-collapse:collapse}
-.summary th,.summary td{border:1px solid #1e2329;padding:14px;text-align:center}
-.summary th{color:#9aa4b2}
+
+/* ================= SUMMARY TABLE ================= */
+.summary{
+  width:100%;
+  margin-top:40px;
+  border-collapse:collapse
+}
+.summary th,.summary td{
+  border:1px solid #1e2329;
+  padding:14px;
+  text-align:center
+}
+.summary th{
+  color:#9aa4b2;
+  background:#0f131a
+}
+.summary td{
+  color:#fff
+}
 </style>
+
 
 </body>
 </html>
