@@ -228,6 +228,55 @@ function loadPeriod(p){
 }
 .summary td{color:#fff}
 </style>
+<hr>
+
+<!-- ================= BOT MT5 ================= -->
+<section style="padding:100px 8%; background:#0b0e11; color:#fff;">
+  <div style="max-width:1100px;margin:auto;">
+
+    <h2>🤖 Bot MT5 – Live Account</h2>
+    <p style="color:#9aa4b2;margin-bottom:30px;">
+      Bot giao dịch MetaTrader 5 · Broker OEXN · Đòn bẩy 1:1000
+    </p>
+
+    <!-- SNAPSHOT -->
+    <div class="stats-grid">
+      <div class="stat-box"><span>Nhận được</span><strong id="mt5_received">--%</strong></div>
+      <div class="stat-box"><span>Hàng ngày</span><strong id="mt5_daily">--%</strong></div>
+      <div class="stat-box"><span>Hàng tháng</span><strong id="mt5_monthly">--%</strong></div>
+      <div class="stat-box"><span>Mức giảm</span><strong id="mt5_drawdown">--%</strong></div>
+
+      <div class="stat-box"><span>Equity</span><strong>$<span id="mt5_equity">--</span></strong></div>
+      <div class="stat-box"><span>Lợi nhuận</span><strong class="green">$<span id="mt5_profit">--</span></strong></div>
+      <div class="stat-box"><span>Tiền gửi</span><strong>$<span id="mt5_deposit">--</span></strong></div>
+      <div class="stat-box"><span>Rút tiền</span><strong>$<span id="mt5_withdrawal">--</span></strong></div>
+    </div>
+
+    <div style="margin:25px 0;">
+      <button onclick="loadMT5('weekly')">Tuần</button>
+      <button onclick="loadMT5('monthly')">Tháng</button>
+    </div>
+
+    <canvas id="mt5Chart" height="120"></canvas>
+
+    <!-- SUMMARY -->
+    <table class="summary">
+      <tr>
+        <th>Period</th><th>Growth</th><th>Profit</th><th>Drawdown</th>
+      </tr>
+      <tr>
+        <td>This Week</td><td>+3.45%</td><td>$61.50</td><td>1.67%</td>
+      </tr>
+      <tr>
+        <td>This Month</td><td>+10.71%</td><td>$420</td><td>8.8%</td>
+      </tr>
+      <tr>
+        <td>YTD</td><td>+46.71%</td><td>$978.89</td><td>8.8%</td>
+      </tr>
+    </table>
+
+  </div>
+</section>
 
 </body>
 </html>
