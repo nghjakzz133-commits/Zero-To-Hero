@@ -65,7 +65,7 @@
 
 <hr>
 
-<!-- ================= BOT STATS ================= -->
+<!-- ================= BOT 1 ================= -->
 <section style="padding:100px 8%; background:#0b0e11; color:#fff;">
   <div style="max-width:1100px;margin:auto;">
 
@@ -74,7 +74,6 @@
       Dữ liệu tổng hợp theo tuần / tháng từ hệ thống giao dịch.
     </p>
 
-    <!-- STAT GRID -->
     <div class="stats-grid">
       <div class="stat-box"><span>Nhận được</span><strong id="received">--%</strong></div>
       <div class="stat-box"><span>Hàng ngày</span><strong id="daily">--%</strong></div>
@@ -88,13 +87,12 @@
     </div>
 
     <div style="margin:25px 0;">
-      <button onclick="loadPeriod('weekly')">Tuần</button>
-      <button onclick="loadPeriod('monthly')">Tháng</button>
+      <button onclick="loadBot1('weekly')">Tuần</button>
+      <button onclick="loadBot1('monthly')">Tháng</button>
     </div>
 
-    <canvas id="growthChart" height="120"></canvas>
+    <canvas id="chartBot1" height="120"></canvas>
 
-    <!-- SUMMARY -->
     <table class="summary">
       <tr><th>Period</th><th>Growth</th><th>Profit</th><th>Drawdown</th></tr>
       <tr><td>This Week</td><td>+3.2%</td><td>$120</td><td>1.4%</td></tr>
@@ -105,129 +103,6 @@
   </div>
 </section>
 
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-/* ================= SNAPSHOT ================= */
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats.json")
-.then(r => r.json())
-.then(d => {
-  const ui = d.ui_snapshot;
-
-  received.textContent   = ui.received.toFixed(2) + "%";
-  daily.textContent      = ui.daily.toFixed(2) + "%";
-  monthly.textContent    = ui.monthly.toFixed(2) + "%";
-  drawdown.textContent   = ui.drawdown.toFixed(2) + "%";
-
-  equity.textContent     = ui.equity.toLocaleString();
-  profit.textContent     = ui.profit.toLocaleString();
-  deposit.textContent    = ui.deposit.toLocaleString();
-  withdrawal.textContent = ui.withdrawal.toLocaleString();
-})
-.catch(console.error);
-</script>
-
-<script>
-/* ================= CHART ================= */
-let chart, history;
-
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
-.then(r => r.json())
-.then(d => {
-  history = d;
-  loadPeriod("weekly");
-});
-
-function loadPeriod(p){
-  const r = history[p];
-  if(!r) return;
-
-  if(chart) chart.destroy();
-
-  chart = new Chart(growthChart, {
-    data: {
-      labels: r.map(x => x.label),
-      datasets: [
-        {
-          type: "bar",
-          label: "Equity ($)",
-          data: r.map(x => x.equity),
-          backgroundColor: "#2e7d32"
-        },
-        {
-          type: "line",
-          label: "Growth (%)",
-          data: r.map(x => x.growth),
-          borderColor: "#ff9800",
-          borderWidth: 2,
-          tension: 0.35,
-          pointRadius: 3,
-          yAxisID: "y1"
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { labels: { color: "#9aa4b2" } }
-      },
-      scales: {
-        x: { ticks: { color: "#9aa4b2" } },
-        y: { beginAtZero: true, ticks: { color: "#9aa4b2" } },
-        y1: {
-          position: "right",
-          beginAtZero: true,
-          grid: { drawOnChartArea: false },
-          ticks: { color: "#ff9800" }
-        }
-      }
-    }
-  });
-}
-</script>
-
-<style>
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px
-}
-.stat-box{
-  background:#121722;
-  border:1px solid #1e2329;
-  padding:18px;
-  border-radius:10px
-}
-.stat-box span{
-  font-size:13px;
-  color:#9aa4b2
-}
-.stat-box strong{
-  display:block;
-  font-size:22px;
-  margin-top:6px;
-  color:#fff
-}
-.green{color:#4caf50}
-
-.summary{
-  width:100%;
-  margin-top:40px;
-  border-collapse:collapse
-}
-.summary th commanded th td{
-  border:1px solid #1e2329;
-  padding:14px;
-  text-align:center
-}
-.summary th{
-  color:#9aa4b2;
-  background:#0f131a
-}
-.summary td{color:#fff}
-</style>
 <hr>
 
 <!-- ================= BOT MT5 ================= -->
@@ -236,10 +111,9 @@ function loadPeriod(p){
 
     <h2>🤖 Bot MT5 – Live Account</h2>
     <p style="color:#9aa4b2;margin-bottom:30px;">
-      Bot giao dịch MetaTrader 5 · Broker OEXN · Đòn bẩy 1:1000
+      MetaTrader 5 · Broker OEXN · Leverage 1:1000
     </p>
 
-    <!-- SNAPSHOT -->
     <div class="stats-grid">
       <div class="stat-box"><span>Nhận được</span><strong id="mt5_received">--%</strong></div>
       <div class="stat-box"><span>Hàng ngày</span><strong id="mt5_daily">--%</strong></div>
@@ -257,26 +131,101 @@ function loadPeriod(p){
       <button onclick="loadMT5('monthly')">Tháng</button>
     </div>
 
-    <canvas id="mt5Chart" height="120"></canvas>
+    <canvas id="chartMT5" height="120"></canvas>
 
-    <!-- SUMMARY -->
     <table class="summary">
-      <tr>
-        <th>Period</th><th>Growth</th><th>Profit</th><th>Drawdown</th>
-      </tr>
-      <tr>
-        <td>This Week</td><td>+3.45%</td><td>$61.50</td><td>1.67%</td>
-      </tr>
-      <tr>
-        <td>This Month</td><td>+10.71%</td><td>$420</td><td>8.8%</td>
-      </tr>
-      <tr>
-        <td>YTD</td><td>+46.71%</td><td>$978.89</td><td>8.8%</td>
-      </tr>
+      <tr><th>Period</th><th>Growth</th><th>Profit</th><th>Drawdown</th></tr>
+      <tr><td>This Week</td><td>+3.45%</td><td>$61.50</td><td>1.67%</td></tr>
+      <tr><td>This Month</td><td>+10.71%</td><td>$420</td><td>8.8%</td></tr>
+      <tr><td>YTD</td><td>+46.71%</td><td>$978.89</td><td>8.8%</td></tr>
     </table>
 
   </div>
 </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+/* ===== BOT 1 SNAPSHOT ===== */
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats.json")
+.then(r=>r.json())
+.then(d=>{
+  const u=d.ui_snapshot;
+  received.textContent=u.received+"%";
+  daily.textContent=u.daily+"%";
+  monthly.textContent=u.monthly+"%";
+  drawdown.textContent=u.drawdown+"%";
+  equity.textContent=u.equity.toLocaleString();
+  profit.textContent=u.profit.toLocaleString();
+  deposit.textContent=u.deposit.toLocaleString();
+  withdrawal.textContent=u.withdrawal.toLocaleString();
+});
+</script>
+
+<script>
+let bot1Chart, bot1History;
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
+.then(r=>r.json()).then(d=>{bot1History=d;loadBot1("weekly");});
+
+function loadBot1(p){
+  const r=bot1History[p];
+  if(bot1Chart) bot1Chart.destroy();
+  bot1Chart=new Chart(chartBot1,{
+    data:{labels:r.map(x=>x.label),datasets:[
+      {type:"bar",label:"Equity",data:r.map(x=>x.equity),backgroundColor:"#2e7d32"},
+      {type:"line",label:"Growth %",data:r.map(x=>x.growth),borderColor:"#ff9800",yAxisID:"y1"}
+    ]},
+    options:{scales:{y:{beginAtZero:true},y1:{position:"right"}}}
+  });
+}
+</script>
+
+<script>
+/* ===== BOT MT5 ===== */
+let mt5Chart, mt5History;
+
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/mt5_stats.json")
+.then(r=>r.json()).then(d=>{
+  const u=d.ui_snapshot;
+  mt5_received.textContent=u.received+"%";
+  mt5_daily.textContent=u.daily+"%";
+  mt5_monthly.textContent=u.monthly+"%";
+  mt5_drawdown.textContent=u.drawdown+"%";
+  mt5_equity.textContent=u.equity.toLocaleString();
+  mt5_profit.textContent=u.profit.toLocaleString();
+  mt5_deposit.textContent=u.deposit.toLocaleString();
+  mt5_withdrawal.textContent=u.withdrawal.toLocaleString();
+});
+
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/mt5_history.json")
+.then(r=>r.json()).then(d=>{mt5History=d;loadMT5("weekly");});
+
+function loadMT5(p){
+  const r=mt5History[p];
+  if(mt5Chart) mt5Chart.destroy();
+  mt5Chart=new Chart(chartMT5,{
+    data:{labels:r.map(x=>x.label),datasets:[
+      {type:"bar",label:"Equity",data:r.map(x=>x.equity),backgroundColor:"#2e7d32"},
+      {type:"line",label:"Growth %",data:r.map(x=>x.growth),borderColor:"#ff9800",yAxisID:"y1"}
+    ]},
+    options:{scales:{y:{beginAtZero:true},y1:{position:"right"}}}
+  });
+}
+</script>
+
+<style>
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.stat-box{background:#121722;border:1px solid #1e2329;padding:18px;border-radius:10px}
+.stat-box span{font-size:13px;color:#9aa4b2}
+.stat-box strong{display:block;font-size:22px;margin-top:6px;color:#fff}
+.green{color:#4caf50}
+.summary{width:100%;margin-top:40px;border-collapse:collapse}
+.summary th,.summary td{border:1px solid #1e2329;padding:14px;text-align:center}
+.summary th{color:#9aa4b2;background:#0f131a}
+.summary td{color:#fff}
+</style>
 
 </body>
 </html>
