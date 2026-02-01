@@ -1,12 +1,15 @@
 {
-  "ui_snapshot": {
-    "received": 46.71,
-    "daily": 0.33,
-    "monthly": 10.71,
-    "drawdown": 8.8,
-    "equity": 3478.89,
-    "profit": 978.89,
-    "deposit": 2500,
-    "withdrawal": 2000
-  }
+  "weekly": [
+    { "label": "Mon", "equity": 1410, "growth": 0.5 },
+    { "label": "Tue", "equity": 1422, "growth": 1.1 },
+    { "label": "Wed", "equity": 1440, "growth": 2.0 },
+    { "label": "Thu", "equity": 1462, "growth": 2.8 },
+    { "label": "Fri", "equity": 1478.89, "growth": 3.45 }
+  ],
+  "monthly": [
+    { "label": "W1", "equity": 1320, "growth": 2.1 },
+    { "label": "W2", "equity": 1385, "growth": 5.4 },
+    { "label": "W3", "equity": 1432, "growth": 8.2 },
+    { "label": "W4", "equity": 1478.89, "growth": 10.71 }
+  ]
 }
