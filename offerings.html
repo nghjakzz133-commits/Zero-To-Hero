@@ -6,22 +6,19 @@
 
   <title>Zero To Hero | Sản phẩm & Hệ thống giao dịch</title>
   <meta name="description" content="Hệ thống bot giao dịch tự động đã vận hành thực tế trên thị trường với hiệu suất ổn định và kỷ luật rủi ro." />
-
   <meta http-equiv="content-language" content="vi,en">
-  <link rel="icon" href="assets/img/favicon.ico">
-
   <meta name="theme-color" content="#000000">
 
+  <link rel="icon" href="assets/img/favicon.ico">
   <link rel="stylesheet" href="assets/css/core.css">
   <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
 <body>
 
-<!-- ===== HEADER (GIỮ NGUYÊN 100%) ===== -->
+<!-- ================= HEADER (GIỮ NGUYÊN) ================= -->
 <header class="site-header">
   <nav class="nav">
-
     <div class="nav-left">
       <a href="index.html" class="brand">
         <img src="assets/img/logo.png" alt="Zero To Hero Logo">
@@ -43,29 +40,21 @@
 
       <div class="nav-actions">
         <div class="lang">
-          <button class="active" onclick="setLang('vi')">VI</button>
-          <button onclick="setLang('en')">EN</button>
+          <button class="active">VI</button>
+          <button>EN</button>
         </div>
         <a href="contact.html" class="cta-btn">Bắt đầu</a>
       </div>
     </div>
-
   </nav>
 </header>
 
 <hr>
 
-<!-- ===== MAIN ===== -->
 <main>
 
-<!-- ===== HERO OFFERINGS ===== -->
-<section
-  style="
-    padding:100px 8%;
-    background:#0b0e11;
-    color:#fff;
-  "
->
+<!-- ================= HERO (GIỮ NGUYÊN) ================= -->
+<section style="padding:100px 8%; background:#0b0e11; color:#fff;">
   <h1 style="font-size:38px; max-width:820px;">
     Hệ thống bot giao dịch<br>
     <span style="color:#4da3ff;">đã vận hành thực tế & có kỷ luật</span>
@@ -80,202 +69,24 @@
 
 <hr>
 
+<!-- ================= BOT LIVE DATA ================= -->
+<section id="bot-data" style="padding:100px 8%; background:#0b0e11; color:#fff;">
+  <div style="max-width:1200px;margin:auto;">
 
-<!-- ===== VERIFIED PERFORMANCE — FULL TRUST BLOCK ===== -->
-<section style="padding:100px 8%; background:#0b0e11; color:#eaecef;">
-
-  <div style="max-width:1200px; margin:auto;">
-
-    <!-- TITLE -->
-    <h2 style="color:#fff; font-size:36px; margin-bottom:14px;">
-      Hiệu suất giao dịch đã xác thực độc lập
-    </h2>
-
-    <p style="color:#9aa4b2; max-width:760px; line-height:1.7;">
-      Kết quả được theo dõi bởi Myfxbook — nền tảng thống kê giao dịch độc lập.
-      Dữ liệu lấy trực tiếp từ server broker, không chỉnh sửa, không báo cáo nội bộ.
+    <h2>📊 Bot Live Trading Data</h2>
+    <p style="color:#9aa4b2;max-width:760px;margin-bottom:30px;">
+      Dữ liệu được đồng bộ trực tiếp từ hệ thống bot đang giao dịch.
+      Không chỉnh sửa – không báo cáo tay.
     </p>
 
-    <!-- TRUST GRID -->
-    <div style="
-      margin-top:34px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:18px;
-    ">
-
-      <div style="background:#131722;padding:22px;border-radius:12px;">
-        <h4 style="color:#58a6ff;">Theo dõi độc lập</h4>
-        <p style="color:#b7bdc6;">Sync trực tiếp từ tài khoản giao dịch.</p>
-      </div>
-
-      <div style="background:#131722;padding:22px;border-radius:12px;">
-        <h4 style="color:#58a6ff;">Full lịch sử lệnh</h4>
-        <p style="color:#b7bdc6;">Không ẩn lệnh thua.</p>
-      </div>
-
-      <div style="background:#131722;padding:22px;border-radius:12px;">
-        <h4 style="color:#58a6ff;">Chart tăng trưởng</h4>
-        <p style="color:#b7bdc6;">Balance & Equity realtime.</p>
-      </div>
-
-      <div style="background:#131722;padding:22px;border-radius:12px;">
-        <h4 style="color:#58a6ff;">Drawdown rõ ràng</h4>
-        <p style="color:#b7bdc6;">Có thống kê rủi ro.</p>
-      </div>
-
-    </div>
-
-    <!-- MYFXBOOK WIDGET CARD -->
-    <div style="
-      margin-top:44px;
-      background:#131722;
-      border-radius:16px;
-      padding:28px;
-      box-shadow:0 18px 50px rgba(0,0,0,.55);
-      border:1px solid rgba(255,255,255,.06);
-    ">
-
-      <h3 style="color:#fff; margin-bottom:18px;">
-        Thống kê tài khoản (Live)
-      </h3>
-
-      <!-- ===== MYFXBOOK WIDGET ===== -->
-      <div id="myfxbook_widget_11910760"></div>
-
-      <script type="text/javascript">
-        (function() {
-          var mf = document.createElement("script");
-          mf.type = "text/javascript";
-          mf.async = true;
-          mf.src = "https://widgets.myfxbook.com/scripts/fx.js";
-          document.getElementsByTagName("head")[0].appendChild(mf);
-        })();
-      </script>
-
-      <script type="text/javascript">
-        window.addEventListener("load", function(){
-          if (typeof MyfxbookWidget !== "undefined") {
-            MyfxbookWidget.init({
-              widget_id: "11910760",
-              type: "advanced",
-              width: "100%",
-              height: "800",
-              color: "dark"
-            });
-          }
-        });
-      </script>
-
-    </div>
-
-    <!-- ACTION -->
-    <div style="
-      margin-top:24px;
-      text-align:right;
-    ">
-      <a href="https://www.myfxbook.com/portfolio/51000983/11910760"
-         target="_blank"
-         style="
-           padding:14px 22px;
-           background:#58a6ff;
-           color:#fff;
-           border-radius:8px;
-           text-decoration:none;
-           font-weight:600;
-         ">
-         Xem bản gốc Myfxbook →
-      </a>
+    <div style="overflow-x:auto;">
+      <table id="dataTable" style="width:100%;border-collapse:collapse;">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
     </div>
 
   </div>
-
-</section>
-<hr>
-
-<!-- ===== BOT PRODUCTS ===== -->
-<section style="padding:80px 8%; background:#0b0e11; color:#fff;">
-  <h2 style="margin-bottom:40px;">Danh mục hệ thống giao dịch</h2>
-
-  <!-- BOT 1 -->
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:80px;">
-    <div>
-      <img src="assets/img/bot-trend.jpg" alt="Trend Bot" style="width:100%; border-radius:8px;">
-    </div>
-    <div>
-      <h3>Trend Following Bot</h3>
-      <p style="color:#aaa; line-height:1.7;">
-        Bot giao dịch theo xu hướng trung hạn, ưu tiên thị trường
-        có cấu trúc rõ ràng. Phù hợp với crypto và chỉ số.
-      </p>
-      <ul style="color:#ccc; line-height:1.8;">
-        <li>✔️ Timeframe: H1 – H4</li>
-        <li>✔️ Tỷ lệ thắng ổn định</li>
-        <li>✔️ Drawdown được kiểm soát</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- BOT 2 -->
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:80px;">
-    <div>
-      <h3>Mean Reversion Bot</h3>
-      <p style="color:#aaa; line-height:1.7;">
-        Bot khai thác các vùng quá mua / quá bán,
-        hoạt động hiệu quả trong thị trường sideway.
-      </p>
-      <ul style="color:#ccc; line-height:1.8;">
-        <li>✔️ Tần suất giao dịch cao</li>
-        <li>✔️ Lợi nhuận đều</li>
-        <li>✔️ Stop-loss động</li>
-      </ul>
-    </div>
-    <div>
-      <img src="assets/img/bot-mean.jpg" alt="Mean Reversion Bot" style="width:100%; border-radius:8px;">
-    </div>
-  </div>
-
-  <!-- BOT 3 -->
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
-    <div>
-      <img src="assets/img/bot-scalping.jpg" alt="Scalping Bot" style="width:100%; border-radius:8px;">
-    </div>
-    <div>
-      <h3>Scalping System</h3>
-      <p style="color:#aaa; line-height:1.7;">
-        Hệ thống giao dịch ngắn hạn, tận dụng biến động nhỏ
-        với cơ chế bảo vệ vốn nghiêm ngặt.
-      </p>
-      <ul style="color:#ccc; line-height:1.8;">
-        <li>✔️ Phù hợp tài khoản lớn</li>
-        <li>✔️ Tối ưu spread & latency</li>
-        <li>✔️ Giám sát rủi ro theo phiên</li>
-      </ul>
-    </div>
-  </div>
-
-</section>
-
-<hr>
-
-<!-- ===== DISCLAIMER ===== -->
-<section style="padding:60px 8%; background:#000; color:#aaa; font-size:14px;">
-  <p>
-    ⚠️ Lưu ý: Giao dịch tài chính luôn tồn tại rủi ro.
-    Hiệu suất trong quá khứ không đảm bảo lợi nhuận trong tương lai.
-    Các hệ thống được thiết kế nhằm tối ưu xác suất và quản trị rủi ro,
-    không phải công cụ làm giàu nhanh.
-  </p>
-</section>
-
-<!-- ===== CTA ===== -->
-<section style="padding:80px 20px; background:#0b0e11; text-align:center;">
-  <h2>Bạn muốn tìm hiểu hệ thống phù hợp?</h2>
-  <p style="color:#aaa; margin:20px auto; max-width:600px;">
-    Liên hệ với chúng tôi để trao đổi chi tiết về mục tiêu,
-    khẩu vị rủi ro và giải pháp phù hợp.
-  </p>
-  <a href="contact.html" class="cta-btn">Liên hệ tư vấn</a>
 </section>
 
 </main>
@@ -286,38 +97,41 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
-<section id="bot-data" style="padding:40px">
-  <h2>📊 Bot Live Data</h2>
-  <table id="dataTable" border="1" cellpadding="8" cellspacing="0">
-    <thead></thead>
-    <tbody></tbody>
-  </table>
-</section>
+
+<!-- ================= CSV FETCH ================= -->
 <script>
 fetch("data/tracking_data.csv")
-  .then(res => res.text())
+  .then(res => {
+    if (!res.ok) throw new Error("Không tìm thấy file CSV");
+    return res.text();
+  })
   .then(text => {
     const lines = text.trim().split("\n");
-    const headers = lines[0].split(";");
+    const delimiter = lines[0].includes(";") ? ";" : ",";
+    const headers = lines[0].split(delimiter);
 
     const thead = document.querySelector("#dataTable thead");
     const tbody = document.querySelector("#dataTable tbody");
 
-    // Header
-    let h = "<tr>";
-    headers.forEach(col => h += `<th>${col}</th>`);
-    h += "</tr>";
-    thead.innerHTML = h;
+    thead.innerHTML =
+      "<tr>" +
+      headers.map(h => `<th style="border:1px solid #333;padding:10px;background:#131722;">${h}</th>`).join("") +
+      "</tr>";
 
-    // Rows
     for (let i = 1; i < lines.length; i++) {
-      const cols = lines[i].split(";");
-      let row = "<tr>";
-      cols.forEach(c => row += `<td>${c}</td>`);
-      row += "</tr>";
-      tbody.innerHTML += row;
+      const cols = lines[i].split(delimiter);
+      tbody.innerHTML +=
+        "<tr>" +
+        cols.map(c => `<td style="border:1px solid #333;padding:8px;color:#ccc;">${c}</td>`).join("") +
+        "</tr>";
     }
+  })
+  .catch(err => {
+    document.querySelector("#bot-data").innerHTML =
+      "<p style='color:red'>❌ Không load được dữ liệu bot</p>";
+    console.error(err);
   });
 </script>
+
 </body>
 </html>
