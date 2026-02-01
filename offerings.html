@@ -252,6 +252,57 @@ function loadMT5(p){
 .summary td{color:#fff}
 </style>
 
-<script src="assets/js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<script>
+function parseBotCSV(url, onDone) {
+  Papa.parse(url, {
+    download: true,
+    header: true,
+    dynamicTyping: true,
+    complete: function (res) {
+      const trades = res.data.filter(t => t.Profit !== null);
+
+      let profit = 0;
+      let equity = 0;
+      let wins = 0;
+      let maxEquity = 0;
+      let maxDD = 0;
+
+      const curve = [];
+
+      trades.forEach(t => {
+        profit += t.Profit;
+        equity += t.Profit;
+        if (t.Profit > 0) wins++;
+
+        if (equity > maxEquity) maxEquity = equity;
+        const dd = maxEquity - equity;
+        if (dd > maxDD) maxDD = dd;
+
+        curve.push({
+          date: t["Close Date"],
+          equity: equity.toFixed(2)
+        });
+      });
+
+      onDone({
+        trades: trades.length,
+        winRate: (wins / trades.length * 100).toFixed(2),
+        profit: profit.toFixed(2),
+        equity: equity.toFixed(2),
+        drawdown: maxEquity
+          ? (maxDD / maxEquity * 100).toFixed(2)
+          : "0.00",
+        curve
+      });
+    }
+  });
+}
+</script>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
