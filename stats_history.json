@@ -1,0 +1,10 @@
+{
+  "weekly": [
+    { "label": "W01", "equity": 3050, "growth": 1.6 },
+    { "label": "W02", "equity": 3600, "growth": 20.0 },
+    { "label": "W03", "equity": 3759, "growth": 25.31 }
+  ],
+  "monthly": [
+    { "label": "Jan", "equity": 3759, "growth": 25.31 }
+  ]
+}
