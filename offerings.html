@@ -78,6 +78,7 @@
       Dữ liệu tổng hợp theo tuần / tháng từ hệ thống giao dịch.
     </p>
 
+    <!-- STAT BOX -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
       <div class="stat-box">Nhận được<br><b id="received"></b>%</div>
       <div class="stat-box">Hàng ngày<br><b id="daily"></b>%</div>
@@ -89,12 +90,43 @@
       <div class="stat-box">Rút tiền<br>$<span id="withdrawal"></span></div>
     </div>
 
+    <!-- BUTTON -->
     <div style="margin:30px 0;">
+      <button onclick="loadPeriod('daily')">Ngày</button>
       <button onclick="loadPeriod('weekly')">Tuần</button>
       <button onclick="loadPeriod('monthly')">Tháng</button>
     </div>
 
+    <!-- CHART -->
     <canvas id="growthChart" height="120"></canvas>
+
+    <!-- SUMMARY -->
+    <table class="summary-table">
+      <tr>
+        <th>Period</th>
+        <th>Growth</th>
+        <th>Profit</th>
+        <th>Drawdown</th>
+      </tr>
+      <tr>
+        <td>This Week</td>
+        <td>+3.2%</td>
+        <td>$120</td>
+        <td>1.4%</td>
+      </tr>
+      <tr>
+        <td>This Month</td>
+        <td>+10.7%</td>
+        <td>$420</td>
+        <td>4.6%</td>
+      </tr>
+      <tr>
+        <td>YTD</td>
+        <td>+25.31%</td>
+        <td>$759.16</td>
+        <td>8.8%</td>
+      </tr>
+    </table>
 
   </div>
 </section>
@@ -109,7 +141,6 @@
 <script src="assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- ================= STATS CORE ================= -->
 <script>
 const received   = document.getElementById("received");
 const daily      = document.getElementById("daily");
@@ -131,30 +162,41 @@ fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/s
     profit.textContent     = d.profit;
     deposit.textContent    = d.deposit;
     withdrawal.textContent = d.withdrawal;
-  })
-  .catch(() => {
-    alert("Không load được stats.json");
   });
 </script>
 
 <script>
 let chart, historyData;
 
-function drawChart(labels, equity, growth){
+function drawChart(labels, equityData, growthData){
   if(chart) chart.destroy();
 
   chart = new Chart(document.getElementById("growthChart"), {
     data: {
       labels,
       datasets: [
-        { type: "bar", label: "Equity", data: equity },
-        { type: "line", label: "Growth %", data: growth, yAxisID: "y1" }
+        {
+          type: "bar",
+          label: "Equity ($)",
+          data: equityData,
+          backgroundColor: "rgba(76,175,80,0.6)",
+          borderRadius: 4
+        },
+        {
+          type: "line",
+          label: "Growth (%)",
+          data: growthData,
+          borderColor: "#ff9800",
+          tension: 0.35,
+          yAxisID: "y1"
+        }
       ]
     },
     options: {
+      interaction: { mode: "index", intersect: false },
       scales: {
         y: { beginAtZero: true },
-        y1: { position: "right", beginAtZero: true }
+        y1: { beginAtZero: true, position: "right", grid:{drawOnChartArea:false} }
       }
     }
   });
@@ -165,10 +207,6 @@ fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/s
   .then(d => {
     historyData = d;
     loadPeriod("weekly");
-  })
-  .catch(() => {
-    document.getElementById("growthChart").outerHTML =
-      "<p style='color:#777'>Chưa có dữ liệu lịch sử</p>";
   });
 
 function loadPeriod(type){
@@ -196,6 +234,20 @@ function loadPeriod(type){
   margin-top:6px;
   color:#fff;
 }
+.summary-table{
+  width:100%;
+  margin-top:40px;
+  border-collapse:collapse;
+  background:#131722;
+}
+.summary-table th,
+.summary-table td{
+  padding:14px;
+  border:1px solid #1e2329;
+  text-align:center;
+}
+.summary-table th{ color:#9aa4b2; }
+.summary-table td{ color:#fff; }
 </style>
 
 </body>
