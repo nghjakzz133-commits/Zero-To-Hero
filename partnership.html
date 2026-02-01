@@ -14,7 +14,6 @@
 
 <body>
 
-<!-- ===== HEADER / MENU ===== -->
 <header class="site-header">
   <nav class="nav">
 
@@ -31,17 +30,13 @@
 
     <div class="nav-menu" id="navMenu">
       <a href="index.html" class="nav-link">Trang chủ</a>
-      <a href="about.html" class="nav-link active">Giới thiệu</a>
+      <a href="about.html" class="nav-link">Giới thiệu</a>
       <a href="offerings.html" class="nav-link">Sản phẩm & Dịch vụ</a>
-      <a href="partnership.html" class="nav-link">Hợp tác</a>
+      <a href="partnership.html" class="nav-link active">Hợp tác</a>
       <a href="market.html" class="nav-link">Thị trường</a>
       <a href="contact.html" class="nav-link">Liên hệ</a>
 
       <div class="nav-actions">
-        <div class="lang">
-          <button class="active" onclick="setLang('vi')">VI</button>
-          <button onclick="setLang('en')">EN</button>
-        </div>
         <a href="contact.html" class="cta-btn">Bắt đầu</a>
       </div>
     </div>
@@ -49,8 +44,8 @@
   </nav>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero" style="background:#0b0e11; padding:120px 8%; color:#fff;">
+<!-- HERO -->
+<section class="hero partner-dark">
   <div style="max-width:800px;">
     <h1>Hợp tác chiến lược</h1>
     <p style="color:#aaa; line-height:1.6;">
@@ -60,15 +55,13 @@
   </div>
 </section>
 
-<!-- ===== WHY PARTNERSHIP ===== -->
-<section style="padding:80px 8%;">
-  <div class="grid-2">
+<!-- WHY PARTNER -->
+<section class="partner-section">
+  <div class="partner-grid">
+
     <div>
       <h2>Vì sao hợp tác cùng chúng tôi?</h2>
-      <p>
-        Chúng tôi không chạy mô hình ngắn hạn.
-        Zero To Hero xây dựng hệ sinh thái dựa trên:
-      </p>
+      <p>Zero To Hero xây dựng hệ sinh thái dựa trên:</p>
       <ul>
         <li>✔ Minh bạch & tuân thủ</li>
         <li>✔ Hệ thống vận hành rõ ràng</li>
@@ -76,19 +69,24 @@
         <li>✔ Tập khách hàng có chọn lọc</li>
       </ul>
     </div>
+
     <div>
-      <img src="assets/img/partnership/2DBAD84E-4F66-485F-B505-3BBE29A2C167.png" alt="Strategy" style="width:100%; border-radius:8px;">
+      <img src="assets/img/partnership/2DBAD84E-4F66-485F-B505-3BBE29A2C167.png"
+           style="width:100%; border-radius:12px;">
     </div>
+
   </div>
 </section>
 
 <hr>
 
-<!-- ===== PARTNER: TICKMILL ===== -->
-<section style="padding:80px 8%; background:#0b0e11; color:#eaecef;">
-  <h2 style="color:#fff;">Đối tác tài chính: Tickmill</h2>
+<!-- PARTNER TICKMILL -->
+<section class="partner-section partner-dark">
 
-  <div class="grid-2" style="margin-top:32px;">
+  <h2>Đối tác tài chính: Tickmill</h2>
+
+  <div class="partner-grid" style="margin-top:32px;">
+
     <div>
       <p style="color:#b7bdc6;">
         Tickmill là nhà môi giới quốc tế với hơn 10 năm hoạt động,
@@ -96,214 +94,94 @@
       </p>
 
       <img src="assets/img/partnership/80BE536D-A3E7-40F2-A736-81A30D941939.png"
-           alt="Tickmill"
            style="max-width:220px; margin-top:16px;">
     </div>
 
     <div>
       <img src="assets/img/partnership/wikifx-tickmill.png"
-           alt="WikiFX Tickmill"
-           style="width:100%; border-radius:8px;">
+           style="width:100%; border-radius:12px;">
     </div>
+
   </div>
+
 </section>
 
-<!-- ===== WIKIFX TABLE ===== -->
-<section id="tickmill-profile" style="padding:80px 8%; background:#0b0e11; color:#eaecef;">
+<!-- PROFILE -->
+<section id="tickmill-profile" class="partner-section partner-dark">
 
-  <h2 style="color:#fff;">Hồ sơ đối tác: Tickmill (Theo WikiFX)</h2>
+  <h2>Hồ sơ đối tác: Tickmill</h2>
 
-  <!-- ===== OVERVIEW ===== -->
-  <div style="
-    display:grid;
-    grid-template-columns: 1fr 2fr;
-    gap:24px;
-    margin-top:32px;
-  ">
+  <div class="partner-grid" style="margin-top:32px;">
 
     <!-- SCORE -->
-    <div style="
-      background:#131722;
-      border-radius:8px;
-      padding:24px;
-      text-align:center;
-      box-shadow:0 8px 24px rgba(0,0,0,.4);
-    ">
-      <p style="margin:0; color:#9aa4b2;">Điểm WikiFX</p>
-      <h1 style="margin:12px 0; font-size:48px; color:#58a6ff;">7.62</h1>
+    <div class="partner-card" style="text-align:center;">
+      <p style="color:#9aa4b2;">Điểm WikiFX</p>
+      <h1 style="font-size:48px; color:#58a6ff;">7.62</h1>
       <p style="color:#6b7280;">/ 10</p>
-
-      <span style="
-        display:inline-block;
-        margin-top:12px;
-        padding:6px 12px;
-        background:rgba(46,204,113,.15);
-        color:#2ecc71;
-        font-size:14px;
-        border-radius:20px;
-      ">
-        Có giám sát quản lý
-      </span>
+      <span class="badge-success">Có giám sát quản lý</span>
     </div>
 
-    <!-- BASIC INFO -->
-    <div style="
-      background:#131722;
-      border-radius:8px;
-      padding:24px;
-      box-shadow:0 8px 24px rgba(0,0,0,.4);
-    ">
-      <table style="width:100%; border-collapse:collapse; color:#eaecef;">
-        <tbody>
-          <tr>
-            <td style="padding:8px 0;"><strong>Tên broker</strong></td>
-            <td>Tickmill</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;"><strong>Khu vực đăng ký</strong></td>
-            <td>Vương quốc Anh</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;"><strong>Thời gian hoạt động</strong></td>
-            <td>10 – 15 năm</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;"><strong>Website</strong></td>
-            <td>
-              <a href="https://tickmill.group/" target="_blank" style="color:#58a6ff;">
-                https://tickmill.group/
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;"><strong>Tên pháp nhân</strong></td>
-            <td>Tickmill UK Ltd</td>
-          </tr>
-        </tbody>
+    <!-- BASIC -->
+    <div class="partner-card">
+      <table style="width:100%;">
+        <tr><td><strong>Tên broker</strong></td><td>Tickmill</td></tr>
+        <tr><td><strong>Khu vực</strong></td><td>Vương quốc Anh</td></tr>
+        <tr><td><strong>Thời gian</strong></td><td>10–15 năm</td></tr>
+        <tr><td><strong>Website</strong></td>
+            <td><a href="https://tickmill.group/" target="_blank">tickmill.group</a></td></tr>
+        <tr><td><strong>Pháp nhân</strong></td><td>Tickmill UK Ltd</td></tr>
       </table>
     </div>
 
   </div>
 
-  <!-- ===== TRADING CONDITIONS ===== -->
-  <div style="
-    background:#131722;
-    border-radius:8px;
-    padding:24px;
-    margin-top:32px;
-    box-shadow:0 8px 24px rgba(0,0,0,.4);
-  ">
-
-    <h3 style="color:#fff;">Điều kiện giao dịch</h3>
-
-    <table style="width:100%; border-collapse:collapse; margin-top:16px; color:#eaecef;">
-      <thead>
-        <tr style="background:#1f2937; color:#fff;">
-          <th style="padding:12px;">Tiêu chí</th>
-          <th style="padding:12px;">Thông tin</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Điều kiện giao dịch</td>
-          <td>
-            <span style="
-              padding:4px 10px;
-              background:rgba(88,166,255,.15);
-              color:#58a6ff;
-              border-radius:12px;
-            ">
-              AAA
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>Tốc độ giao dịch trung bình</td>
-          <td>233 ms (Perfect)</td>
-        </tr>
-        <tr>
-          <td>Nền tảng</td>
-          <td>MT4 / MT5 (Chính thức)</td>
-        </tr>
-        <tr>
-          <td>Loại tài khoản</td>
-          <td>ECN</td>
-        </tr>
-        <tr>
-          <td>Máy chủ</td>
-          <td>TickmillUK-Live03</td>
-        </tr>
-      </tbody>
+  <!-- CONDITIONS -->
+  <div class="partner-card" style="margin-top:32px;">
+    <h3>Điều kiện giao dịch</h3>
+    <table style="width:100%; margin-top:12px;">
+      <tr><td>Điều kiện</td><td><span class="badge-info">AAA</span></td></tr>
+      <tr><td>Tốc độ</td><td>233 ms</td></tr>
+      <tr><td>Nền tảng</td><td>MT4 / MT5</td></tr>
+      <tr><td>Tài khoản</td><td>ECN</td></tr>
+      <tr><td>Máy chủ</td><td>TickmillUK-Live03</td></tr>
     </table>
-
   </div>
 
-  <!-- ===== REGULATION ===== -->
-  <div style="
-    background:#131722;
-    border-radius:8px;
-    padding:24px;
-    margin-top:32px;
-    box-shadow:0 8px 24px rgba(0,0,0,.4);
-  ">
-
-    <h3 style="color:#fff;">Cơ quan quản lý</h3>
-
-    <table style="width:100%; border-collapse:collapse; margin-top:16px; color:#eaecef;">
-      <tbody>
-        <tr>
-          <td><strong>FCA (UK)</strong></td>
-          <td style="color:#2ecc71;">Có giám sát quản lý</td>
-        </tr>
-        <tr>
-          <td><strong>CYSEC (EU)</strong></td>
-          <td style="color:#2ecc71;">Có giám sát quản lý</td>
-        </tr>
-      </tbody>
+  <!-- REGULATION -->
+  <div class="partner-card" style="margin-top:32px;">
+    <h3>Cơ quan quản lý</h3>
+    <table style="width:100%; margin-top:12px;">
+      <tr><td>FCA (UK)</td><td style="color:#2ecc71;">Giám sát</td></tr>
+      <tr><td>CYSEC (EU)</td><td style="color:#2ecc71;">Giám sát</td></tr>
     </table>
-
-  </div>
-
-  <!-- ===== RISK WARNING ===== -->
-  <div style="
-    margin-top:32px;
-    padding:16px 20px;
-    border-left:4px solid #f85149;
-    background:rgba(248,81,73,.12);
-    color:#fca5a5;
-    border-radius:4px;
-  ">
-    <strong>WikiFX Cảnh báo rủi ro:</strong><br>
-    WikiFX đã nhận được tổng cộng <strong>46 khiếu nại</strong> từ người dùng
-    về sàn môi giới này. Nhà đầu tư cần cân nhắc rủi ro trước khi tham gia giao dịch.
   </div>
 
 </section>
 
 <hr>
 
-<!-- ===== PROCESS ===== -->
-<section style="padding:80px 8%; background:#0b0e11; color:#fff;">
+<!-- PROCESS -->
+<section class="partner-section partner-dark">
   <h2>Quy trình hợp tác</h2>
 
   <div class="grid-3" style="margin-top:32px;">
-    <div class="card">1️⃣ Trao đổi & đánh giá</div>
-    <div class="card">2️⃣ Ký kết & triển khai</div>
-    <div class="card">3️⃣ Mở rộng & tối ưu</div>
+    <div class="card">Trao đổi & đánh giá</div>
+    <div class="card">Ký kết & triển khai</div>
+    <div class="card">Mở rộng & tối ưu</div>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section style="padding:80px 8%; text-align:center;">
+<!-- CTA -->
+<section class="partner-section" style="text-align:center;">
   <h2>Bắt đầu hợp tác</h2>
-  <p>Liên hệ để trao đổi chi tiết về mô hình hợp tác phù hợp.</p>
-  <a href="contact.html" class="btn btn-primary">Liên hệ ngay</a>
+  <p>Liên hệ để trao đổi chi tiết về mô hình phù hợp.</p>
+  <a href="contact.html" class="cta-btn">Liên hệ ngay</a>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
-  <p>© 2026 Zero To Hero. All rights reserved.</p>
+  <p>© 2026 Zero To Hero</p>
 </footer>
 
+<script src="assets/js/main.js"></script>
 </body>
 </html>
