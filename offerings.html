@@ -69,21 +69,25 @@
 
 <hr>
 
-<!-- ================= BOT LIVE DATA ================= -->
-<section id="bot-data" style="padding:100px 8%; background:#0b0e11; color:#fff;">
-  <div style="max-width:1200px;margin:auto;">
+<!-- ================= BOT STATS (XÂY LẠI) ================= -->
+<section style="padding:100px 8%; background:#0b0e11; color:#fff;">
+  <div style="max-width:1000px;margin:auto;">
 
-    <h2>📊 Bot Live Trading Data</h2>
-    <p style="color:#9aa4b2;max-width:760px;margin-bottom:30px;">
-      Dữ liệu được đồng bộ trực tiếp từ hệ thống bot đang giao dịch.
-      Không chỉnh sửa – không báo cáo tay.
+    <h2 style="font-size:28px;">📊 Bot Performance Snapshot</h2>
+    <p style="color:#9aa4b2;max-width:760px;margin-bottom:40px;">
+      Dữ liệu tổng hợp theo tuần từ hệ thống giao dịch.
+      Cập nhật định kỳ – không chỉnh số liệu.
     </p>
 
-    <div style="overflow-x:auto;">
-      <table id="dataTable" style="width:100%;border-collapse:collapse;">
-        <thead></thead>
-        <tbody></tbody>
-      </table>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+      <div class="stat-box">Nhận được<br><b id="received"></b>%</div>
+      <div class="stat-box">Hàng ngày<br><b id="daily"></b>%</div>
+      <div class="stat-box">Hàng tháng<br><b id="monthly"></b>%</div>
+      <div class="stat-box">Mức giảm<br><b id="drawdown"></b>%</div>
+      <div class="stat-box">Equity<br><b>$<span id="equity"></span></b></div>
+      <div class="stat-box">Lợi nhuận<br><b style="color:#4caf50;">$<span id="profit"></span></b></div>
+      <div class="stat-box">Tiền gửi<br>$<span id="deposit"></span></div>
+      <div class="stat-box">Rút tiền<br>$<span id="withdrawal"></span></div>
     </div>
 
   </div>
@@ -98,40 +102,41 @@
 
 <script src="assets/js/main.js"></script>
 
-<!-- ================= CSV FETCH ================= -->
+<!-- ================= STATS JSON FETCH ================= -->
 <script>
-fetch("data/tracking_data.csv")
-  .then(res => {
-    if (!res.ok) throw new Error("Không tìm thấy file CSV");
-    return res.text();
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats.json")
+  .then(res => res.json())
+  .then(d => {
+    received.textContent   = d.received;
+    daily.textContent      = d.daily;
+    monthly.textContent    = d.monthly;
+    drawdown.textContent   = d.drawdown;
+    equity.textContent     = d.equity;
+    profit.textContent     = d.profit;
+    deposit.textContent    = d.deposit;
+    withdrawal.textContent = d.withdrawal;
   })
-  .then(text => {
-    const lines = text.trim().split("\n");
-    const delimiter = lines[0].includes(";") ? ";" : ",";
-    const headers = lines[0].split(delimiter);
-
-    const thead = document.querySelector("#dataTable thead");
-    const tbody = document.querySelector("#dataTable tbody");
-
-    thead.innerHTML =
-      "<tr>" +
-      headers.map(h => `<th style="border:1px solid #333;padding:10px;background:#131722;">${h}</th>`).join("") +
-      "</tr>";
-
-    for (let i = 1; i < lines.length; i++) {
-      const cols = lines[i].split(delimiter);
-      tbody.innerHTML +=
-        "<tr>" +
-        cols.map(c => `<td style="border:1px solid #333;padding:8px;color:#ccc;">${c}</td>`).join("") +
-        "</tr>";
-    }
-  })
-  .catch(err => {
-    document.querySelector("#bot-data").innerHTML =
-      "<p style='color:red'>❌ Không load được dữ liệu bot</p>";
-    console.error(err);
+  .catch(() => {
+    alert("Không load được dữ liệu bot");
   });
 </script>
+
+<style>
+.stat-box{
+  background:#131722;
+  border:1px solid #1e2329;
+  padding:20px;
+  border-radius:10px;
+  font-size:14px;
+  color:#9aa4b2;
+}
+.stat-box b{
+  display:block;
+  font-size:22px;
+  margin-top:6px;
+  color:#fff;
+}
+</style>
 
 </body>
 </html>
