@@ -748,3 +748,20 @@ footer > p {
   }
 
 }
+/* ===== PARTNERSHIP CTA FIX ===== */
+
+.partner-cta{
+  text-align:center;
+  padding-bottom:120px;
+}
+
+.partner-cta p{
+  margin:12px 0 28px;
+  color:var(--muted);
+}
+
+@media (max-width:768px){
+  .partner-cta{
+    padding-bottom:140px;
+  }
+}
