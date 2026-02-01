@@ -16,7 +16,7 @@
 
 <body>
 
-<!-- ================= HEADER (GIỮ NGUYÊN) ================= -->
+<!-- ================= HEADER (GIỮ NGUYÊN – KHÔNG SỬA) ================= -->
 <header class="site-header">
   <nav class="nav">
     <div class="nav-left">
@@ -53,7 +53,7 @@
 
 <main>
 
-<!-- ================= HERO (GIỮ NGUYÊN) ================= -->
+<!-- ================= HERO (GIỮ NGUYÊN – KHÔNG SỬA) ================= -->
 <section style="padding:100px 8%; background:#0b0e11; color:#fff;">
   <h1 style="font-size:38px; max-width:820px;">
     Hệ thống bot giao dịch<br>
@@ -69,14 +69,13 @@
 
 <hr>
 
-<!-- ================= BOT STATS (XÂY LẠI) ================= -->
+<!-- ================= BOT STATS ================= -->
 <section style="padding:100px 8%; background:#0b0e11; color:#fff;">
   <div style="max-width:1000px;margin:auto;">
 
     <h2 style="font-size:28px;">📊 Bot Performance Snapshot</h2>
     <p style="color:#9aa4b2;max-width:760px;margin-bottom:40px;">
-      Dữ liệu tổng hợp theo tuần từ hệ thống giao dịch.
-      Cập nhật định kỳ – không chỉnh số liệu.
+      Dữ liệu tổng hợp theo tuần / tháng từ hệ thống giao dịch.
     </p>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
@@ -89,13 +88,13 @@
       <div class="stat-box">Tiền gửi<br>$<span id="deposit"></span></div>
       <div class="stat-box">Rút tiền<br>$<span id="withdrawal"></span></div>
     </div>
-<div style="margin-bottom:15px;">
-  <button onclick="loadPeriod('weekly')">Tuần</button>
-  <button onclick="loadPeriod('monthly')">Tháng</button>
-</div>
-<div style="margin-top:60px;">
-  <canvas id="growthChart" height="120"></canvas>
-</div>
+
+    <div style="margin:30px 0;">
+      <button onclick="loadPeriod('weekly')">Tuần</button>
+      <button onclick="loadPeriod('monthly')">Tháng</button>
+    </div>
+
+    <canvas id="growthChart" height="120"></canvas>
 
   </div>
 </section>
@@ -108,11 +107,21 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- ================= STATS JSON FETCH ================= -->
+<!-- ================= STATS CORE ================= -->
 <script>
+const received   = document.getElementById("received");
+const daily      = document.getElementById("daily");
+const monthly    = document.getElementById("monthly");
+const drawdown   = document.getElementById("drawdown");
+const equity     = document.getElementById("equity");
+const profit     = document.getElementById("profit");
+const deposit    = document.getElementById("deposit");
+const withdrawal = document.getElementById("withdrawal");
+
 fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats.json")
-  .then(res => res.json())
+  .then(r => r.json())
   .then(d => {
     received.textContent   = d.received;
     daily.textContent      = d.daily;
@@ -124,8 +133,52 @@ fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/s
     withdrawal.textContent = d.withdrawal;
   })
   .catch(() => {
-    alert("Không load được dữ liệu bot");
+    alert("Không load được stats.json");
   });
+</script>
+
+<script>
+let chart, historyData;
+
+function drawChart(labels, equity, growth){
+  if(chart) chart.destroy();
+
+  chart = new Chart(document.getElementById("growthChart"), {
+    data: {
+      labels,
+      datasets: [
+        { type: "bar", label: "Equity", data: equity },
+        { type: "line", label: "Growth %", data: growth, yAxisID: "y1" }
+      ]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true },
+        y1: { position: "right", beginAtZero: true }
+      }
+    }
+  });
+}
+
+fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
+  .then(r => r.json())
+  .then(d => {
+    historyData = d;
+    loadPeriod("weekly");
+  })
+  .catch(() => {
+    document.getElementById("growthChart").outerHTML =
+      "<p style='color:#777'>Chưa có dữ liệu lịch sử</p>";
+  });
+
+function loadPeriod(type){
+  const rows = historyData[type];
+  drawChart(
+    rows.map(r => r.label),
+    rows.map(r => r.equity),
+    rows.map(r => r.growth)
+  );
+}
 </script>
 
 <style>
@@ -144,64 +197,6 @@ fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/s
   color:#fff;
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-let chart;
-
-function drawChart(labels, equity, growth){
-  if(chart) chart.destroy();
-
-  chart = new Chart(document.getElementById("growthChart"), {
-    data: {
-      labels,
-      datasets: [
-        {
-          type: "bar",
-          label: "Equity",
-          data: equity
-        },
-        {
-          type: "line",
-          label: "Growth %",
-          data: growth,
-          yAxisID: "y1"
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: { beginAtZero: true },
-        y1: {
-          beginAtZero: true,
-          position: "right",
-          grid: { drawOnChartArea: false }
-        }
-      }
-    }
-  });
-}
-</script>
-<script>
-let historyData;
-
-fetch("https://raw.githubusercontent.com/nghjakzz133-commits/Zero-To-Hero/main/stats_history.json")
-  .then(r => r.json())
-  .then(d => {
-    historyData = d;
-    loadPeriod("weekly"); // mặc định
-  });
-
-function loadPeriod(type){
-  const rows = historyData[type];
-  drawChart(
-    rows.map(r => r.label),
-    rows.map(r => r.equity),
-    rows.map(r => r.growth)
-  );
-}
-</script>
 
 </body>
 </html>
