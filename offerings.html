@@ -4,21 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Zero To Hero | Sản phẩm & Hệ thống giao dịch</title>
-  <meta name="description" content="Hệ thống bot giao dịch tự động đã vận hành thực tế trên thị trường với hiệu suất ổn định và kỷ luật rủi ro." />
-  <meta http-equiv="content-language" content="vi,en">
-  <meta name="theme-color" content="#000000">
+  <title>Zero To Hero | Products & Services</title>
+  <meta name="description" content="Zero To Hero cung cấp sản phẩm và dịch vụ giúp doanh nghiệp tăng trưởng bền vững." />
 
+  <!-- Language -->
+  <meta http-equiv="content-language" content="vi,en">
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zero To Hero | Products & Services">
+  <meta property="og:description" content="Giải pháp và dịch vụ hỗ trợ doanh nghiệp tăng trưởng bền vững.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#000000">
+<!-- CSS -->
   <link rel="stylesheet" href="assets/css/core.css">
   <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ===== HEADER / MENU ===== -->
 <header class="site-header">
   <nav class="nav">
+
+    <!-- Brand -->
     <div class="nav-left">
       <a href="index.html" class="brand">
         <img src="assets/img/logo.png" alt="Zero To Hero Logo">
@@ -26,10 +41,12 @@
       </a>
     </div>
 
+    <!-- Hamburger -->
     <button class="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
+    <!-- Menu -->
     <div class="nav-menu" id="navMenu">
       <a href="index.html" class="nav-link">Trang chủ</a>
       <a href="about.html" class="nav-link">Giới thiệu</a>
@@ -43,139 +60,133 @@
           <button class="active" onclick="setLang('vi')">VI</button>
           <button onclick="setLang('en')">EN</button>
         </div>
+
         <a href="contact.html" class="cta-btn">Bắt đầu</a>
       </div>
     </div>
+
   </nav>
 </header>
 
-<hr>
 
-<main>
 
 <!-- ================= HERO ================= -->
-<section style="padding:100px 8%; background:#0b0e11; color:#fff;">
-  <h1 style="font-size:38px; max-width:820px;"
-      data-vi="Hệ thống bot giao dịch<br><span style='color:#4da3ff;'>đã vận hành thực tế & có kỷ luật</span>"
-      data-en="Automated trading systems<br><span style='color:#4da3ff;'>running live with strict discipline</span>">
-    Hệ thống bot giao dịch<br>
-    <span style="color:#4da3ff;">đã vận hành thực tế & có kỷ luật</span>
-  </h1>
-
-  <p style="margin-top:20px; max-width:760px; color:#aaa; line-height:1.7;"
-     data-vi="Zero To Hero phát triển và vận hành các hệ thống giao dịch tự động..."
-     data-en="Zero To Hero develops and operates automated trading systems...">
-    Zero To Hero phát triển và vận hành các hệ thống giao dịch tự động (trading bot)
-    đã chạy ổn định trên thị trường trong thời gian dài.
-  </p>
+<section>
+<h1>📈 Live Trading Bot Performance</h1>
+<p>Toàn bộ số liệu bên dưới được tổng hợp trực tiếp từ file giao dịch CSV (MT4 / MT5). Không chỉnh tay – không demo.</p>
+<span class="badge">Myfxbook-style Analytics</span>
 </section>
 
-<hr>
+<!-- ================= BOT MT4 ================= -->
+<section>
+<h2>🤖 Bot MT4 – Live Account</h2>
+<p>CSV → Equity Curve → Drawdown → Winrate</p>
 
-<!-- ================= BOT SNAPSHOT ================= -->
-<section style="padding:100px 8%; background:#0b0e11; color:#fff;">
-  <div style="max-width:1100px;margin:auto;">
-    <h2>📊 Bot Performance Snapshot</h2>
+<div class="stats-grid">
+  <div class="stat-box"><span>Total Trades</span><strong id="mt4_trades">--</strong></div>
+  <div class="stat-box"><span>Win Rate</span><strong id="mt4_winrate">--%</strong></div>
+  <div class="stat-box"><span>Total Profit</span><strong class="green">$<span id="mt4_profit">--</span></strong></div>
+  <div class="stat-box"><span>Max Drawdown</span><strong class="red"><span id="mt4_dd">--</span>%</strong></div>
+  <div class="stat-box"><span>Final Equity</span><strong>$<span id="mt4_equity">--</span></strong></div>
+</div>
 
-    <div class="stats-grid">
-      <div class="stat-box"><span>Nhận được</span><strong id="received">--%</strong></div>
-      <div class="stat-box"><span>Hàng ngày</span><strong id="daily">--%</strong></div>
-      <div class="stat-box"><span>Hàng tháng</span><strong id="monthly">--%</strong></div>
-      <div class="stat-box"><span>Mức giảm</span><strong id="drawdown">--%</strong></div>
+<canvas id="chartMT4" height="120"></canvas>
 
-      <div class="stat-box"><span>Equity</span><strong>$<span id="equity">--</span></strong></div>
-      <div class="stat-box"><span>Lợi nhuận</span><strong class="green">$<span id="profit">--</span></strong></div>
-      <div class="stat-box"><span>Tiền gửi</span><strong>$<span id="deposit">--</span></strong></div>
-      <div class="stat-box"><span>Rút tiền</span><strong>$<span id="withdrawal">--</span></strong></div>
-    </div>
-
-    <canvas id="chartBot1" height="120"></canvas>
-  </div>
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Close Time</th>
+  <th>Type</th>
+  <th>Volume</th>
+  <th>Profit ($)</th>
+</tr>
+</thead>
+<tbody id="mt4_trades_table"></tbody>
+</table>
 </section>
-
-<hr>
 
 <!-- ================= BOT MT5 ================= -->
-<section style="padding:100px 8%; background:#0b0e11; color:#fff;">
-  <div style="max-width:1100px;margin:auto;">
-    <h2>🤖 Bot MT5 – Live Account</h2>
+<section>
+<h2>🤖 Bot MT5 – Live Account</h2>
 
-    <div class="stats-grid">
-      <div class="stat-box"><span>Nhận được</span><strong id="mt5_received">--%</strong></div>
-      <div class="stat-box"><span>Hàng ngày</span><strong id="mt5_daily">--%</strong></div>
-      <div class="stat-box"><span>Hàng tháng</span><strong id="mt5_monthly">--%</strong></div>
-      <div class="stat-box"><span>Mức giảm</span><strong id="mt5_drawdown">--%</strong></div>
+<div class="stats-grid">
+  <div class="stat-box"><span>Total Trades</span><strong id="mt5_trades">--</strong></div>
+  <div class="stat-box"><span>Win Rate</span><strong id="mt5_winrate">--%</strong></div>
+  <div class="stat-box"><span>Total Profit</span><strong class="green">$<span id="mt5_profit">--</span></strong></div>
+  <div class="stat-box"><span>Max Drawdown</span><strong class="red"><span id="mt5_dd">--</span>%</strong></div>
+  <div class="stat-box"><span>Final Equity</span><strong>$<span id="mt5_equity">--</span></strong></div>
+</div>
 
-      <div class="stat-box"><span>Equity</span><strong>$<span id="mt5_equity">--</span></strong></div>
-      <div class="stat-box"><span>Lợi nhuận</span><strong class="green">$<span id="mt5_profit">--</span></strong></div>
-      <div class="stat-box"><span>Tiền gửi</span><strong>$<span id="mt5_deposit">--</span></strong></div>
-      <div class="stat-box"><span>Rút tiền</span><strong>$<span id="mt5_withdrawal">--</span></strong></div>
-    </div>
-
-    <canvas id="chartMT5" height="120"></canvas>
-  </div>
+<canvas id="chartMT5" height="120"></canvas>
 </section>
 
-</main>
+<!-- ================= FOOTER ================= -->
+<section>
+<p style="text-align:center;color:#666">
+© Zero To Hero · Live Performance Analytics · No Fake Stats
+</p>
+</section>
 
-<!-- ================= LIBS ================= -->
+<!-- ================= LIB ================= -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
-<!-- ================= LANGUAGE ================= -->
+<!-- ================= ENGINE ================= -->
 <script>
-function setLang(lang){
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-vi]").forEach(el=>{
-    el.innerHTML = el.dataset[lang];
-  });
-}
-</script>
+function parseCSV(url, prefix, chartId, tableId){
+  Papa.parse(url,{
+    download:true,
+    header:true,
+    dynamicTyping:true,
+    complete(res){
+      const rows=res.data.filter(r=>r.Profit!=null);
+      let equity=0,maxEq=0,maxDD=0,wins=0;
+      const curve=[];
 
-<!-- ================= CSV PARSER ================= -->
-<script>
-function parseBotCSV(url, onDone) {
-  Papa.parse(url, {
-    download: true,
-    header: true,
-    dynamicTyping: true,
-    complete: function (res) {
-      const trades = res.data.filter(t => t.Profit !== null);
-      let equity = 0, profit = 0, wins = 0, maxEquity = 0, maxDD = 0;
-      const curve = [];
+      rows.forEach((r,i)=>{
+        equity+=r.Profit;
+        if(equity>maxEq) maxEq=equity;
+        maxDD=Math.max(maxDD,maxEq-equity);
+        if(r.Profit>0) wins++;
 
-      trades.forEach(t => {
-        profit += t.Profit;
-        equity += t.Profit;
-        if (t.Profit > 0) wins++;
-        if (equity > maxEquity) maxEquity = equity;
-        maxDD = Math.max(maxDD, maxEquity - equity);
-        curve.push({ date: t["Close Date"] || t["Time"], equity });
+        curve.push(equity);
+
+        if(tableId && i<50){
+          document.getElementById(tableId).innerHTML+=`
+          <tr>
+            <td>${i+1}</td>
+            <td>${r["Close Date"]||""}</td>
+            <td>${r.Type||""}</td>
+            <td>${r.Volume||""}</td>
+            <td class="${r.Profit>=0?'green':'red'}">${r.Profit.toFixed(2)}</td>
+          </tr>`;
+        }
       });
 
-      onDone({
-        trades: trades.length,
-        winRate: ((wins / trades.length) * 100).toFixed(2),
-        profit: profit.toFixed(2),
-        equity: equity.toFixed(2),
-        drawdown: maxEquity ? (maxDD / maxEquity * 100).toFixed(2) : "0.00",
-        curve
+      document.getElementById(prefix+"_trades").textContent=rows.length;
+      document.getElementById(prefix+"_winrate").textContent=(wins/rows.length*100).toFixed(2);
+      document.getElementById(prefix+"_profit").textContent=equity.toFixed(2);
+      document.getElementById(prefix+"_equity").textContent=equity.toFixed(2);
+      document.getElementById(prefix+"_dd").textContent=(maxDD/maxEq*100).toFixed(2);
+
+      new Chart(document.getElementById(chartId),{
+        type:"line",
+        data:{labels:curve.map((_,i)=>i+1),datasets:[{
+          label:"Equity Curve",
+          data:curve,
+          borderWidth:2,
+          tension:0.3
+        }]},
+        options:{plugins:{legend:{display:false}}}
       });
     }
-  });
+  })
 }
+
+parseCSV("data/mt4.csv","mt4","chartMT4","mt4_trades_table");
+parseCSV("data/mt5.csv","mt5","chartMT5");
 </script>
-
-<!-- ================= MAIN ================= -->
-<script src="assets/js/main.js"></script>
-
-<style>
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.stat-box{background:#121722;border:1px solid #1e2329;padding:18px;border-radius:10px}
-.stat-box span{font-size:13px;color:#9aa4b2}
-.stat-box strong{display:block;font-size:22px;margin-top:6px;color:#fff}
-.green{color:#4caf50}
-</style>
 
 </body>
 </html>
