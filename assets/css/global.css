@@ -694,3 +694,57 @@ footer > p {
   }
 
 }
+/* ===== PARTNERSHIP MOBILE POLISH ===== */
+
+@media (max-width:768px){
+
+  /* hero gọn lại */
+  .hero.partner-dark{
+    padding:84px 20px 56px !important;
+  }
+
+  .hero.partner-dark h1{
+    font-size:30px;
+    line-height:1.2;
+    margin-bottom:12px;
+  }
+
+  .hero.partner-dark p{
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  /* section spacing nhịp đẹp hơn */
+  .partner-section{
+    padding:56px 20px;
+  }
+
+  /* list checkmark dễ đọc */
+  .partner-section ul{
+    margin-top:12px;
+    padding-left:18px;
+    line-height:1.7;
+    font-size:15px;
+  }
+
+  /* ảnh partnership */
+  .partner-section img{
+    border-radius:14px;
+    display:block;
+    margin-top:16px;
+  }
+
+  /* process block */
+  .grid-3 .card{
+    padding:18px;
+    font-size:15px;
+    text-align:left;
+  }
+
+  /* CTA */
+  .partner-section h2{
+    font-size:26px;
+    line-height:1.25;
+  }
+
+}
