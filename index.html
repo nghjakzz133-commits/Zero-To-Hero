@@ -662,6 +662,49 @@ footer{
    UTILITY
 ════════════════════════════════════════ */
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+/* Container chứa 2 nút dưới */
+.bottom-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 999;
+}
+
+/* Nút chung */
+.bottom-actions a,
+.bottom-actions button {
+  flex: 1;
+  text-align: center;
+  padding: 14px 10px;
+  font-size: 14px;
+  border: none;
+}
+
+/* Nút gọi ngay */
+.btn-call {
+  background: #0b0b0b;
+  color: #fff;
+}
+
+/* Nút bên phải (nếu có) */
+.btn-other {
+  background: #d4af37; /* màu vàng */
+  color: #000;
+}
+
+/* Fix lỗi tràn/ lệch trên mobile */
+@media (max-width: 768px) {
+  .bottom-actions {
+    flex-direction: row;
+  }
+
+  .bottom-actions a {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
 </style>
 </head>
 <body>
