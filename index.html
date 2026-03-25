@@ -1,436 +1,1156 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Zero To Hero | Products & Services</title>
-  <meta name="description" content="Zero To Hero cung cấp sản phẩm và dịch vụ giúp doanh nghiệp tăng trưởng bền vững." />
-
-  <!-- Language -->
-  <meta http-equiv="content-language" content="vi,en">
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/img/favicon.ico">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Zero To Hero | Products & Services">
-  <meta property="og:description" content="Giải pháp và dịch vụ hỗ trợ doanh nghiệp tăng trưởng bền vững.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/og-image.jpg">
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#000000">
-<!-- CSS -->
-  <link rel="stylesheet" href="assets/css/core.css">
-  <link rel="stylesheet" href="assets/css/global.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Zero To Hero | Hệ Thống Hoá Để Tăng Trưởng</title>
+<meta name="description" content="Bot Trader AI · Tín hiệu Forex · Phân tích thị trường hàng ngày"/>
+<meta name="theme-color" content="#080a0c"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+ 
+<style>
+/* ════════════════════════════════════════
+   TOKENS
+════════════════════════════════════════ */
+:root{
+  --ink:#080a0c;
+  --ink2:#111418;
+  --ink3:#181c22;
+  --smoke:#e8e4dc;
+  --smoke2:rgba(232,228,220,.65);
+  --smoke3:rgba(232,228,220,.35);
+  --gold:#c8a96e;
+  --gold2:#e2c98a;
+  --gold3:rgba(200,169,110,.15);
+  --gold4:rgba(200,169,110,.06);
+  --red:#c0392b;
+  --green:#27ae60;
+  --ff-serif:'Cormorant Garamond',serif;
+  --ff-sans:'Syne',sans-serif;
+  --ff-mono:'DM Mono',monospace;
+  --ease:cubic-bezier(.22,.68,0,1.2);
+  --ease2:cubic-bezier(.25,.46,.45,.94);
+  --r:2px;
+}
+ 
+/* ════════════════════════════════════════
+   BASE
+════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;}
+body{
+  font-family:var(--ff-sans);
+  background:var(--ink);
+  color:var(--smoke);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%;height:100%;object-fit:cover;}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;}
+ 
+/* ════════════════════════════════════════
+   GRAIN  
+════════════════════════════════════════ */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.8;
+}
+ 
+/* ════════════════════════════════════════
+   SCROLLBAR
+════════════════════════════════════════ */
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--ink);}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+ 
+/* ════════════════════════════════════════
+   HEADER / NAV
+════════════════════════════════════════ */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:env(safe-area-inset-top,0) 0 0;
+}
+.hdr-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 5vw;
+  background:rgba(8,10,12,.82);
+  backdrop-filter:blur(24px) saturate(1.4);
+  -webkit-backdrop-filter:blur(24px) saturate(1.4);
+  border-bottom:1px solid rgba(200,169,110,.1);
+  transition:padding .4s var(--ease2);
+}
+.hdr.scrolled .hdr-inner{padding:12px 5vw;}
+.logo{
+  font-family:var(--ff-sans);font-weight:800;
+  font-size:17px;letter-spacing:.12em;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  white-space:nowrap;
+}
+.logo span{font-weight:400;font-style:italic;font-family:var(--ff-serif);font-size:19px;}
+ 
+/* burger */
+.burger{
+  background:none;border:none;padding:4px;
+  display:flex;flex-direction:column;gap:5px;align-items:flex-end;
+}
+.burger i{
+  display:block;height:1.5px;background:var(--gold);
+  transition:all .35s var(--ease2);border-radius:2px;
+}
+.burger i:nth-child(1){width:24px;}
+.burger i:nth-child(2){width:16px;}
+.burger i:nth-child(3){width:20px;}
+.burger.open i:nth-child(1){transform:translateY(6.5px) rotate(45deg);width:24px;}
+.burger.open i:nth-child(2){opacity:0;transform:scaleX(0);}
+.burger.open i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);width:24px;}
+ 
+/* mobile nav drawer */
+.nav-drawer{
+  position:fixed;inset:0;z-index:800;
+  background:rgba(8,10,12,.97);
+  backdrop-filter:blur(30px);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 8vw 40px;
+  clip-path:inset(0 0 100% 0);
+  transition:clip-path .55s var(--ease2);
+}
+.nav-drawer.open{clip-path:inset(0 0 0% 0);}
+.nav-drawer a{
+  font-family:var(--ff-serif);font-size:clamp(36px,9vw,64px);
+  font-weight:300;letter-spacing:.04em;
+  color:var(--smoke3);
+  display:block;padding:10px 0;
+  border-bottom:1px solid rgba(200,169,110,.08);
+  transition:color .3s,padding-left .3s;
+}
+.nav-drawer a:hover{color:var(--smoke);padding-left:12px;}
+.nav-lang{
+  display:flex;gap:12px;margin-top:32px;
+}
+.nav-lang button{
+  background:none;border:1px solid rgba(200,169,110,.25);
+  color:var(--smoke3);padding:6px 18px;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.15em;
+  transition:all .3s;
+}
+.nav-lang button.on{background:rgba(200,169,110,.1);color:var(--gold);border-color:var(--gold);}
+.nav-cta{
+  margin-top:28px;
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:var(--ink);padding:14px 32px;
+  font-family:var(--ff-sans);font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+  width:fit-content;
+}
+ 
+/* ════════════════════════════════════════
+   TICKER
+════════════════════════════════════════ */
+.ticker{
+  position:relative;overflow:hidden;
+  background:rgba(200,169,110,.05);
+  border-top:1px solid rgba(200,169,110,.12);
+  border-bottom:1px solid rgba(200,169,110,.12);
+  padding:10px 0;height:40px;
+}
+.ticker-track{
+  display:flex;gap:48px;width:max-content;
+  animation:tick 35s linear infinite;
+  align-items:center;height:20px;
+}
+.ticker-item{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.08em;white-space:nowrap;
+}
+.t-sym{color:var(--smoke3);}
+.t-val{color:var(--smoke);}
+.t-up{color:var(--green);}
+.t-dn{color:var(--red);}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+ 
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+#hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:flex-end;
+  padding-bottom:clamp(60px,10vw,100px);
+  overflow:hidden;
+}
+.hero-media{
+  position:absolute;inset:0;
+}
+.hero-media img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.45) saturate(.7);
+  transform-origin:center center;
+  animation:heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.hero-vignette{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 100%,rgba(8,10,12,.95) 0%,transparent 70%),
+    linear-gradient(to bottom, rgba(8,10,12,.6) 0%, transparent 40%, rgba(8,10,12,.5) 100%);
+}
+.hero-gold-line{
+  position:absolute;left:5vw;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,rgba(200,169,110,.4) 30%,rgba(200,169,110,.4) 70%,transparent);
+}
+.hero-body{
+  position:relative;z-index:2;
+  padding:0 5vw;width:100%;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+  opacity:0;animation:fadeUp .8s .4s var(--ease2) forwards;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.hero-h1{
+  font-family:var(--ff-serif);
+  font-size:clamp(62px,17vw,160px);
+  font-weight:300;line-height:.88;letter-spacing:-.01em;
+  opacity:0;animation:fadeUp .9s .6s var(--ease2) forwards;
+}
+.hero-h1 em{font-style:italic;color:var(--gold2);}
+.hero-sub{
+  margin-top:24px;max-width:440px;
+  font-size:clamp(13px,3.5vw,16px);font-weight:400;line-height:1.7;
+  color:var(--smoke2);
+  opacity:0;animation:fadeUp .8s .85s var(--ease2) forwards;
+}
+.hero-actions{
+  display:flex;flex-direction:column;gap:12px;margin-top:36px;
+  opacity:0;animation:fadeUp .8s 1.1s var(--ease2) forwards;
+}
+@media(min-width:480px){.hero-actions{flex-direction:row;flex-wrap:wrap;}}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:var(--ink);padding:15px 28px;
+  font-family:var(--ff-sans);font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  border:none;transition:transform .3s var(--ease),box-shadow .3s;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-gold:active{transform:scale(.97);}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  border:1px solid rgba(200,169,110,.35);
+  color:var(--gold);padding:14px 28px;
+  font-family:var(--ff-sans);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  background:rgba(200,169,110,.04);transition:background .3s,border-color .3s;
+  touch-action:manipulation;
+}
+.btn-outline:active{background:rgba(200,169,110,.1);}
+.hero-scroll{
+  position:absolute;bottom:clamp(24px,5vw,40px);right:5vw;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeUp .8s 1.4s var(--ease2) forwards;
+}
+.hero-scroll span{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--smoke3);writing-mode:vertical-rl;
+}
+.hero-scroll-line{
+  width:1px;height:40px;overflow:hidden;
+  background:rgba(200,169,110,.2);position:relative;
+}
+.hero-scroll-line::after{
+  content:'';position:absolute;top:-100%;left:0;right:0;bottom:0;
+  background:var(--gold);animation:scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine{0%{top:-100%}100%{top:100%}}
+ 
+/* ════════════════════════════════════════
+   SECTION BASE
+════════════════════════════════════════ */
+.sec{position:relative;overflow:hidden;}
+.sec-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform 12s ease;
+  will-change:transform;
+}
+.sec:hover .sec-bg{transform:scale(1.03);}
+.sec-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(8,10,12,.92) 0%,rgba(8,10,12,.78) 50%,rgba(8,10,12,.94) 100%);
+}
+.sec-ov-strong{
+  position:absolute;inset:0;
+  background:rgba(8,10,12,.88);
+}
+.sec-in{
+  position:relative;z-index:2;
+  padding:clamp(72px,12vw,120px) 5vw;
+}
+ 
+/* section label */
+.sec-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--gold);}
+ 
+/* section heading */
+.sec-h{
+  font-family:var(--ff-serif);
+  font-size:clamp(44px,10vw,80px);
+  font-weight:300;line-height:.92;
+  margin-bottom:20px;
+  letter-spacing:-.01em;
+}
+.sec-h em{font-style:italic;color:var(--gold2);}
+.sec-p{
+  font-size:clamp(13px,3.5vw,15px);font-weight:400;line-height:1.75;
+  color:var(--smoke2);max-width:480px;
+}
+ 
+/* ════════════════════════════════════════
+   OFFERINGS — card grid
+════════════════════════════════════════ */
+#offerings .sec-in{display:flex;flex-direction:column;gap:clamp(48px,8vw,72px);}
+.off-head{max-width:600px;}
+ 
+.off-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2px;
+}
+@media(min-width:640px){.off-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1024px){.off-grid{grid-template-columns:repeat(3,1fr);}}
+ 
+.off-card{
+  background:var(--ink2);
+  border:1px solid rgba(200,169,110,.08);
+  overflow:hidden;position:relative;
+  transition:transform .4s var(--ease2),border-color .4s;
+}
+.off-card:active{transform:scale(.99);}
+@media(hover:hover){.off-card:hover{transform:translateY(-6px);border-color:rgba(200,169,110,.3);}}
+@media(hover:hover){.off-card:hover .off-img{transform:scale(1.06);filter:brightness(.75) saturate(.9);}}
+ 
+.off-img-wrap{height:clamp(180px,45vw,240px);overflow:hidden;}
+.off-img{
+  transition:transform .7s var(--ease2),filter .7s;
+  filter:brightness(.6) saturate(.75);
+}
+.off-num{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.3em;
+  color:var(--gold);padding:20px 24px 0;
+}
+.off-title{
+  font-family:var(--ff-serif);font-size:clamp(22px,5vw,28px);
+  font-weight:400;letter-spacing:.02em;
+  padding:10px 24px 0;
+}
+.off-rule{width:36px;height:1.5px;background:linear-gradient(to right,var(--gold),transparent);margin:14px 24px;}
+.off-body{
+  padding:0 24px 28px;
+  font-size:13px;font-weight:400;line-height:1.7;color:var(--smoke2);
+}
+ 
+/* ════════════════════════════════════════
+   TRADING — feature list + visual
+════════════════════════════════════════ */
+#trading{
+  background:var(--ink2);
+}
+.trading-wrap{
+  display:flex;flex-direction:column;gap:clamp(48px,8vw,72px);
+}
+@media(min-width:900px){.trading-wrap{flex-direction:row;gap:80px;align-items:flex-start;}}
+.trading-left{flex:1;}
+.trading-right{
+  flex:1;position:relative;
+}
+ 
+.feat-list{display:flex;flex-direction:column;margin-top:36px;}
+.feat{
+  display:flex;gap:18px;
+  padding:clamp(18px,4vw,24px) 0;
+  border-bottom:1px solid rgba(200,169,110,.08);
+  transition:padding-left .3s var(--ease2);
+}
+.feat:first-child{border-top:1px solid rgba(200,169,110,.08);}
+@media(hover:hover){.feat:hover{padding-left:10px;}}
+.feat-icon{
+  flex-shrink:0;
+  width:44px;height:44px;
+  background:var(--gold4);
+  border:1px solid rgba(200,169,110,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  transition:background .3s,border-color .3s;
+}
+@media(hover:hover){.feat:hover .feat-icon{background:rgba(200,169,110,.12);border-color:var(--gold);}}
+.feat-txt h4{
+  font-family:var(--ff-serif);font-size:clamp(18px,4.5vw,22px);
+  font-weight:400;letter-spacing:.02em;margin-bottom:4px;
+}
+.feat-txt p{font-size:13px;font-weight:400;line-height:1.65;color:var(--smoke2);}
+ 
+/* trading visual */
+.trading-visual-wrap{
+  position:relative;
+}
+.trading-img-frame{
+  border:1px solid rgba(200,169,110,.12);
+  overflow:hidden;
+  position:relative;
+}
+.trading-img-frame img{
+  height:clamp(280px,60vw,480px);
+  filter:brightness(.65) saturate(.7);
+  transition:transform .7s var(--ease2);
+}
+@media(hover:hover){.trading-img-frame:hover img{transform:scale(1.04);}}
+.trading-img-frame::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);z-index:1;
+}
+.t-badge{
+  position:absolute;bottom:20px;left:20px;right:20px;
+  background:rgba(8,10,12,.92);border:1px solid rgba(200,169,110,.2);
+  padding:16px 20px;
+  backdrop-filter:blur(10px);
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;flex-wrap:wrap;
+}
+.t-badge-item{text-align:center;}
+.t-badge-label{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;
+}
+.t-badge-val{
+  font-family:var(--ff-serif);font-size:clamp(24px,5vw,32px);
+  font-weight:400;color:var(--smoke);
+}
+.t-badge-divider{width:1px;height:40px;background:rgba(200,169,110,.15);}
+ 
+.ai-tag{
+  position:absolute;top:-14px;right:20px;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:var(--ink);
+  font-family:var(--ff-mono);font-size:9px;font-weight:600;letter-spacing:.25em;
+  text-transform:uppercase;padding:6px 16px;
+}
+ 
+/* ════════════════════════════════════════
+   STATS BAR
+════════════════════════════════════════ */
+.stats-bar{
+  background:var(--ink3);
+  border-top:1px solid rgba(200,169,110,.1);
+  border-bottom:1px solid rgba(200,169,110,.1);
+  padding:clamp(32px,6vw,48px) 5vw;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2px;
+}
+@media(min-width:640px){.stats-bar{grid-template-columns:repeat(4,1fr);}}
+.stat-cell{
+  padding:clamp(20px,4vw,32px) 24px;
+  border:1px solid rgba(200,169,110,.06);
+  text-align:center;
+  background:rgba(8,10,12,.6);
+}
+.stat-num{
+  font-family:var(--ff-serif);font-size:clamp(36px,8vw,52px);
+  font-weight:300;color:var(--gold2);display:block;
+  line-height:1;
+}
+.stat-label{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--smoke3);margin-top:6px;display:block;line-height:1.5;
+}
+ 
+/* ════════════════════════════════════════
+   LIVE MARKET
+════════════════════════════════════════ */
+.market-controls{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:36px;margin-bottom:20px;
+}
+.market-controls select,
+.market-controls button{
+  padding:11px 16px;
+  background:rgba(200,169,110,.04);
+  color:var(--smoke);
+  border:1px solid rgba(200,169,110,.18);
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.08em;
+  transition:border-color .3s,background .3s;
+  -webkit-appearance:none;
+  border-radius:0;
+}
+.market-controls select{min-width:160px;}
+.market-controls select:focus,
+.market-controls button:active{border-color:var(--gold);background:rgba(200,169,110,.08);outline:none;}
+.market-controls select option{background:var(--ink2);}
+.chart-shell{
+  border:1px solid rgba(200,169,110,.1);
+  position:relative;overflow:hidden;
+}
+.chart-shell::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1.5px;
+  background:linear-gradient(to right,transparent,var(--gold) 50%,transparent);
+  z-index:1;
+}
+#tvChart{width:100%;height:clamp(340px,60vw,560px);border:none;display:block;}
+ 
+/* ════════════════════════════════════════
+   CONTACT
+════════════════════════════════════════ */
+#contact .sec-in{
+  text-align:center;display:flex;flex-direction:column;align-items:center;
+}
+.contact-card{
+  margin-top:clamp(36px,7vw,56px);
+  display:inline-flex;flex-direction:column;align-items:center;gap:6px;
+  padding:clamp(24px,5vw,40px) clamp(32px,8vw,64px);
+  border:1px solid rgba(200,169,110,.22);
+  background:rgba(200,169,110,.04);
+  transition:background .4s,border-color .4s,transform .3s var(--ease);
+  width:100%;max-width:420px;
+}
+.contact-card:active{transform:scale(.98);}
+@media(hover:hover){.contact-card:hover{background:rgba(200,169,110,.08);border-color:rgba(200,169,110,.45);transform:translateY(-4px);box-shadow:0 20px 60px rgba(200,169,110,.1);}}
+.contact-card .c-label{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);
+}
+.contact-card .c-num{
+  font-family:var(--ff-serif);font-size:clamp(34px,9vw,52px);
+  font-weight:300;letter-spacing:.04em;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1.1;
+}
+.contact-card .c-sub{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.2em;
+  color:var(--smoke3);text-transform:uppercase;margin-top:4px;
+}
+.contact-pill{
+  margin-top:20px;
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold3);
+  border:1px solid rgba(200,169,110,.2);
+  padding:8px 20px;
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.2em;color:var(--gold);
+}
+ 
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer{
+  background:var(--ink2);
+  border-top:1px solid rgba(200,169,110,.08);
+  padding:clamp(48px,8vw,80px) 5vw clamp(24px,5vw,40px);
+  padding-bottom:calc(env(safe-area-inset-bottom,0px) + clamp(24px,5vw,40px));
+}
+.foot-grid{
+  display:grid;grid-template-columns:1fr;gap:40px;
+  margin-bottom:40px;
+}
+@media(min-width:640px){.foot-grid{grid-template-columns:1.8fr 1fr 1fr;gap:48px;}}
+.foot-brand strong{
+  font-family:var(--ff-sans);font-size:18px;font-weight:800;letter-spacing:.12em;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  display:block;margin-bottom:12px;
+}
+.foot-brand p{font-size:13px;font-weight:400;line-height:1.7;color:var(--smoke3);max-width:260px;}
+.foot-brand .foot-email{
+  margin-top:16px;font-family:var(--ff-mono);font-size:11px;
+  letter-spacing:.08em;color:var(--gold);
+}
+.foot-col h5{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+}
+.foot-col a{
+  display:block;font-size:13px;font-weight:400;
+  color:var(--smoke3);margin-bottom:10px;
+  transition:color .25s,padding-left .25s;
+}
+@media(hover:hover){.foot-col a:hover{color:var(--smoke);padding-left:6px;}}
+.foot-bottom{
+  padding-top:28px;border-top:1px solid rgba(200,169,110,.07);
+  display:flex;flex-direction:column;gap:8px;
+}
+@media(min-width:640px){.foot-bottom{flex-direction:row;justify-content:space-between;align-items:center;}}
+.foot-copy{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;color:rgba(232,228,220,.2);}
+.foot-tag{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;color:var(--gold);opacity:.5;}
+ 
+/* ════════════════════════════════════════
+   DIVIDER
+════════════════════════════════════════ */
+.hr-gold{
+  border:none;height:1px;
+  background:linear-gradient(to right,transparent,rgba(200,169,110,.2) 30%,rgba(200,169,110,.2) 70%,transparent);
+  margin:0;
+}
+.hr-label{
+  display:flex;align-items:center;justify-content:center;
+  gap:16px;height:40px;
+  background:var(--ink);
+}
+.hr-label span{
+  font-family:var(--ff-mono);font-size:8px;letter-spacing:.4em;text-transform:uppercase;
+  color:rgba(200,169,110,.4);
+}
+.hr-label::before,.hr-label::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(to right,transparent,rgba(200,169,110,.12));
+}
+.hr-label::after{transform:scaleX(-1);}
+ 
+/* ════════════════════════════════════════
+   REVEAL ANIMATIONS
+════════════════════════════════════════ */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.rv{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .75s var(--ease2),transform .75s var(--ease2);
+}
+.rv.in{opacity:1;transform:none;}
+.rv1{transition-delay:.1s}
+.rv2{transition-delay:.2s}
+.rv3{transition-delay:.3s}
+.rv4{transition-delay:.4s}
+.rv5{transition-delay:.5s}
+ 
+/* ════════════════════════════════════════
+   FLOATING MOBILE CTA
+════════════════════════════════════════ */
+.mob-cta{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  z-index:800;
+  display:flex;align-items:center;gap:0;
+  background:rgba(8,10,12,.95);
+  border:1px solid rgba(200,169,110,.25);
+  backdrop-filter:blur(20px);
+  box-shadow:0 8px 40px rgba(0,0,0,.5),0 0 0 1px rgba(200,169,110,.06);
+  animation:fadeUp .8s 1.8s var(--ease2) both;
+  max-width:320px;width:calc(100% - 40px);
+}
+.mob-cta a{
+  flex:1;text-align:center;
+  padding:13px 12px;
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  transition:background .3s,color .3s;
+}
+.mob-cta .mc-call{color:var(--gold);border-right:1px solid rgba(200,169,110,.15);}
+.mob-cta .mc-start{
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:var(--ink);font-weight:700;
+}
+@media(min-width:768px){.mob-cta{display:none;}}
+ 
+/* ════════════════════════════════════════
+   UTILITY
+════════════════════════════════════════ */
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+</style>
 </head>
-
-
 <body>
-
-<!-- ===== HEADER / MENU ===== -->
-<header class="site-header">
-  <nav class="nav">
-
-    <!-- Brand -->
-    <div class="nav-left">
-      <a href="index.html" class="brand">
-        <img src="assets/img/logo.png" alt="Zero To Hero Logo">
-        <strong>Zero To Hero</strong>
-      </a>
-    </div>
-
-    <!-- Hamburger -->
-    <button class="nav-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
+ 
+<!-- ══ FLOATING MOBILE CTA ══════════════════════════ -->
+<div class="mob-cta">
+  <a href="tel:0899996977" class="mc-call">📞 Gọi ngay</a>
+  <a href="#contact" class="mc-start" data-vi="Bắt đầu →" data-en="Start →">Bắt đầu →</a>
+</div>
+ 
+<!-- ══ HEADER ════════════════════════════════════════ -->
+<header class="hdr" id="hdr">
+  <div class="hdr-inner">
+    <a href="#hero" class="logo">Zero <span>To</span> Hero</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <i></i><i></i><i></i>
     </button>
-
-    <!-- Menu -->
-    <div class="nav-menu" id="navMenu">
-      <a href="index.html" class="nav-link">Trang chủ</a>
-      <a href="about.html" class="nav-link">Giới thiệu</a>
-      <a href="offerings.html" class="nav-link">Sản phẩm & Dịch vụ</a>
-      <a href="partnership.html" class="nav-link">Hợp tác</a>
-      <a href="market.html" class="nav-link">Thị trường</a>
-      <a href="contact.html" class="nav-link">Liên hệ</a>
-
-      <div class="nav-actions">
-        <div class="lang">
-          <button class="active" onclick="setLang('vi')">VI</button>
-          <button onclick="setLang('en')">EN</button>
-        </div>
-
-        <a href="contact.html" class="cta-btn">Bắt đầu</a>
-      </div>
-    </div>
-
-  </nav>
+  </div>
 </header>
-
-
-
-<hr>
-
-
-
-<!-- ===== MAIN ===== -->
-<main id="home">
-
-<!-- ===== HERO ===== -->
+ 
+<!-- ══ NAV DRAWER ════════════════════════════════════ -->
+<nav class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <a href="#hero" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+  <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Products & Services">Sản phẩm & Dịch vụ</a>
+  <a href="#trading" data-vi="Bot Trader AI" data-en="AI Bot Trader">Bot Trader AI</a>
+  <a href="#live-market" data-vi="Thị trường" data-en="Live Market">Thị trường</a>
+  <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+  <div class="nav-lang">
+    <button class="on" onclick="setLang('vi')">VI</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+  <a href="tel:0899996977" class="nav-cta">📞 0899 996 977</a>
+</nav>
+ 
+<!-- ══ HERO ══════════════════════════════════════════ -->
 <section id="hero">
-  <video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-  >
-    <source src="assets/video/hero.mp4" type="video/mp4" />
-  </video>
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <div class="hero-inner">
-
-      <span class="hero-eyebrow"
-        data-vi="Hệ thống hoá để tăng trưởng bền vững"
-        data-en="Systemize to scale sustainably">
-        Hệ thống hoá để tăng trưởng bền vững
-      </span>
-
-      <h1 data-vi="Zero To Hero" data-en="Zero To Hero">
-        Zero To Hero
-      </h1>
-
-      <p class="hero-desc"
-        data-vi="Chúng tôi giúp doanh nghiệp thoát khỏi vận hành thủ công, xây dựng hệ thống và mở rộng quy mô mà không đánh đổi kiểm soát."
-        data-en="We help businesses escape manual operations, build scalable systems, and grow without losing control.">
-        Chúng tôi giúp doanh nghiệp thoát khỏi vận hành thủ công, xây dựng hệ thống và mở rộng quy mô mà không đánh đổi kiểm soát.
+  <div class="hero-media">
+    <img
+      src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1400&q=75&auto=format&fit=crop"
+      alt="Trading floor"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero-vignette"></div>
+  <div class="hero-gold-line"></div>
+ 
+  <div class="hero-body">
+    <p class="hero-eyebrow" data-vi="Hệ thống hoá · Tăng trưởng · Bot AI" data-en="Systemize · Scale · AI Bot">
+      Hệ thống hoá · Tăng trưởng · Bot AI
+    </p>
+    <h1 class="hero-h1">
+      <em data-vi="Zero" data-en="Zero">Zero</em><br>
+      <span data-vi="To Hero" data-en="To Hero">To Hero</span>
+    </h1>
+    <p class="hero-sub"
+      data-vi="Chúng tôi giúp doanh nghiệp thoát khỏi vận hành thủ công, xây dựng hệ thống và mở rộng quy mô mà không đánh đổi kiểm soát."
+      data-en="We help businesses escape manual operations, build scalable systems, and grow without losing control.">
+      Chúng tôi giúp doanh nghiệp thoát khỏi vận hành thủ công, xây dựng hệ thống và mở rộng quy mô mà không đánh đổi kiểm soát.
+    </p>
+    <div class="hero-actions">
+      <a href="#trading" class="btn-gold" data-vi="🤖 Bot Trader AI" data-en="🤖 Bot Trader AI">🤖 Bot Trader AI</a>
+      <a href="#offerings" class="btn-outline" data-vi="Xem dịch vụ" data-en="View Services">Xem dịch vụ</a>
+    </div>
+  </div>
+ 
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+ 
+<!-- ══ TICKER ════════════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="t-sym">BTC/USDT</span><span class="t-val">$83,420</span><span class="t-up">▲ +2.4%</span></span>
+    <span class="ticker-item"><span class="t-sym">ETH/USDT</span><span class="t-val">$3,218</span><span class="t-up">▲ +1.8%</span></span>
+    <span class="ticker-item"><span class="t-sym">XAU/USD</span><span class="t-val">$2,185</span><span class="t-up">▲ +1.1%</span></span>
+    <span class="ticker-item"><span class="t-sym">EUR/USD</span><span class="t-val">1.0842</span><span class="t-dn">▼ −0.3%</span></span>
+    <span class="ticker-item"><span class="t-sym">VN-INDEX</span><span class="t-val">1,287.4</span><span class="t-up">▲ +0.9%</span></span>
+    <span class="ticker-item"><span class="t-sym">S&P 500</span><span class="t-val">5,612</span><span class="t-up">▲ +0.6%</span></span>
+    <span class="ticker-item"><span class="t-sym">GBP/USD</span><span class="t-val">1.2634</span><span class="t-dn">▼ −0.1%</span></span>
+    <!-- dup for loop -->
+    <span class="ticker-item"><span class="t-sym">BTC/USDT</span><span class="t-val">$83,420</span><span class="t-up">▲ +2.4%</span></span>
+    <span class="ticker-item"><span class="t-sym">ETH/USDT</span><span class="t-val">$3,218</span><span class="t-up">▲ +1.8%</span></span>
+    <span class="ticker-item"><span class="t-sym">XAU/USD</span><span class="t-val">$2,185</span><span class="t-up">▲ +1.1%</span></span>
+    <span class="ticker-item"><span class="t-sym">EUR/USD</span><span class="t-val">1.0842</span><span class="t-dn">▼ −0.3%</span></span>
+    <span class="ticker-item"><span class="t-sym">VN-INDEX</span><span class="t-val">1,287.4</span><span class="t-up">▲ +0.9%</span></span>
+    <span class="ticker-item"><span class="t-sym">S&P 500</span><span class="t-val">5,612</span><span class="t-up">▲ +0.6%</span></span>
+    <span class="ticker-item"><span class="t-sym">GBP/USD</span><span class="t-val">1.2634</span><span class="t-dn">▼ −0.1%</span></span>
+  </div>
+</div>
+ 
+<!-- ══ STATS ══════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat-cell rv rv1">
+    <span class="stat-num">87.4<small style="font-size:.5em">%</small></span>
+    <span class="stat-label" data-vi="Độ chính xác AI" data-en="AI Accuracy">Độ chính xác AI</span>
+  </div>
+  <div class="stat-cell rv rv2">
+    <span class="stat-num">18<small style="font-size:.4em;font-family:var(--ff-mono)">/ngày</small></span>
+    <span class="stat-label" data-vi="Tín hiệu giao dịch" data-en="Trade Signals">Tín hiệu giao dịch</span>
+  </div>
+  <div class="stat-cell rv rv3">
+    <span class="stat-num">24<small style="font-size:.4em;font-family:var(--ff-mono)">h</small></span>
+    <span class="stat-label" data-vi="Bot hoạt động liên tục" data-en="Bot Always Active">Bot hoạt động liên tục</span>
+  </div>
+  <div class="stat-cell rv rv4">
+    <span class="stat-num">2<small style="font-size:.4em;font-family:var(--ff-mono)">ttg</small></span>
+    <span class="stat-label" data-vi="Forex & Crypto" data-en="Forex & Crypto">Forex & Crypto</span>
+  </div>
+</div>
+ 
+<!-- ══ OFFERINGS ═════════════════════════════════════ -->
+<section id="offerings" class="sec">
+  <div class="sec-bg" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=70&auto=format&fit=crop')"></div>
+  <div class="sec-ov"></div>
+  <div class="sec-in">
+ 
+    <div class="off-head rv">
+      <p class="sec-label" data-vi="Giải pháp" data-en="Solutions">Giải pháp</p>
+      <h2 class="sec-h" data-vi="Sản phẩm &amp;<br><em>Dịch vụ</em>" data-en="Products &amp;<br><em>Services</em>">
+        Sản phẩm &amp;<br><em>Dịch vụ</em>
+      </h2>
+      <p class="sec-p"
+        data-vi="Giải pháp toàn diện cho doanh nghiệp trong hành trình tăng trưởng và mở rộng toàn cầu."
+        data-en="Comprehensive solutions for businesses on their growth and global expansion journey.">
+        Giải pháp toàn diện cho doanh nghiệp trong hành trình tăng trưởng và mở rộng toàn cầu.
       </p>
-
-      <div class="hero-actions">
-        <a href="#audit" class="btn btn-primary">
-          🚀 Đánh giá doanh nghiệp
-        </a>
-        <a href="#framework" class="btn btn-secondary">
-          📊 Xem framework
-        </a>
+    </div>
+ 
+    <div class="off-grid">
+ 
+      <div class="off-card rv rv1">
+        <div class="off-img-wrap">
+          <img class="off-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=75&auto=format&fit=crop" alt="Business Growth" loading="lazy"/>
+        </div>
+        <p class="off-num">01 / 03</p>
+        <h3 class="off-title" data-vi="Giải pháp tăng trưởng" data-en="Growth Solutions">Giải pháp tăng trưởng</h3>
+        <div class="off-rule"></div>
+        <p class="off-body"
+          data-vi="Mô hình và hệ thống giúp doanh nghiệp mở rộng quy mô, tối ưu hiệu suất vận hành một cách bền vững."
+          data-en="Models and systems that help businesses scale and optimize operational performance sustainably.">
+          Mô hình và hệ thống giúp doanh nghiệp mở rộng quy mô, tối ưu hiệu suất vận hành một cách bền vững.
+        </p>
       </div>
-
+ 
+      <div class="off-card rv rv2">
+        <div class="off-img-wrap">
+          <img class="off-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=75&auto=format&fit=crop" alt="Consulting" loading="lazy"/>
+        </div>
+        <p class="off-num">02 / 03</p>
+        <h3 class="off-title" data-vi="Tư vấn & triển khai" data-en="Consulting & Impl.">Tư vấn & triển khai</h3>
+        <div class="off-rule"></div>
+        <p class="off-body"
+          data-vi="Đồng hành từ chiến lược đến thực thi, phù hợp với từng giai đoạn phát triển của doanh nghiệp."
+          data-en="From strategy to execution, tailored to each stage of your business development.">
+          Đồng hành từ chiến lược đến thực thi, phù hợp với từng giai đoạn phát triển của doanh nghiệp.
+        </p>
+      </div>
+ 
+      <div class="off-card rv rv3">
+        <div class="off-img-wrap">
+          <img class="off-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=75&auto=format&fit=crop" alt="Partnership" loading="lazy"/>
+        </div>
+        <p class="off-num">03 / 03</p>
+        <h3 class="off-title" data-vi="Hợp tác & mở rộng" data-en="Partnership & Expansion">Hợp tác & mở rộng</h3>
+        <div class="off-rule"></div>
+        <p class="off-body"
+          data-vi="Kết nối doanh nghiệp với mạng lưới đối tác trong và ngoài nước để mở rộng thị trường."
+          data-en="Connecting businesses with domestic and international partner networks for market expansion.">
+          Kết nối doanh nghiệp với mạng lưới đối tác trong và ngoài nước để mở rộng thị trường.
+        </p>
+      </div>
+ 
     </div>
   </div>
 </section>
-
-
-
- <hr>
-
-  
- <!-- ===== PRODUCTS & SERVICES ===== -->
-  <section id="offerings">
-
-    <h2
-      data-vi="Sản phẩm & Dịch vụ"
-      data-en="Products & Services">
-      Sản phẩm & Dịch vụ
-    </h2>
-
-    <p
-      data-vi="Giải pháp toàn diện cho doanh nghiệp trong hành trình tăng trưởng và mở rộng toàn cầu."
-      data-en="Comprehensive solutions for businesses on their growth and global expansion journey.">
-      Giải pháp toàn diện cho doanh nghiệp trong hành trình tăng trưởng và mở rộng toàn cầu.
-    </p>
-
-    <h3
-      data-vi="Giải pháp tăng trưởng doanh nghiệp"
-      data-en="Business Growth Solutions">
-      Giải pháp tăng trưởng doanh nghiệp
-    </h3>
-    <p
-      data-vi="Các sản phẩm và mô hình giúp doanh nghiệp mở rộng quy mô và tối ưu hiệu suất."
-      data-en="Products and frameworks that help businesses scale and improve performance.">
-      Các sản phẩm và mô hình giúp doanh nghiệp mở rộng quy mô và tối ưu hiệu suất.
-    </p>
-
-    <h3
-      data-vi="Tư vấn & triển khai"
-      data-en="Consulting & Implementation">
-      Tư vấn & triển khai
-    </h3>
-    <p
-      data-vi="Đồng hành từ chiến lược đến thực thi, phù hợp với từng giai đoạn doanh nghiệp."
-      data-en="From strategy to execution, tailored to each stage of the business.">
-      Đồng hành từ chiến lược đến thực thi, phù hợp với từng giai đoạn doanh nghiệp.
-    </p>
-
-    <h3
-      data-vi="Hợp tác & phát triển thị trường"
-      data-en="Partnership & Market Expansion">
-      Hợp tác & phát triển thị trường
-    </h3>
-    <p
-      data-vi="Kết nối doanh nghiệp với mạng lưới đối tác trong và ngoài nước."
-      data-en="Connecting businesses with local and global partner networks.">
-      Kết nối doanh nghiệp với mạng lưới đối tác trong và ngoài nước.
-    </p>
-
-  </section>
-
-  <hr>
  
-<!-- ===== LIVE MARKET ADVANCED ===== -->
-<section
-  id="live-market"
-  style="
-    padding: 80px 8%;
-    background:#0b0e11;
-    color:#fff;
-  "
->
-
-  <!-- Header -->
-  <header style="max-width: 720px; margin-bottom: 24px;">
-    <h2
-      data-vi="Thị trường trực tuyến"
-      data-en="Live Market"
-      style="font-size: 32px; margin-bottom: 12px; color:#fff;">
-      Thị trường trực tuyến
-    </h2>
-
-    <p
-      data-vi="Công cụ theo dõi thị trường phục vụ cho phân tích tài chính và chiến lược kinh doanh."
-      data-en="A live market tool supporting financial analysis and strategic planning."
-      style="color:#aaa; line-height:1.6;">
-      Công cụ theo dõi thị trường phục vụ cho phân tích tài chính và chiến lược kinh doanh.
-    </p>
-  </header>
-
-  <!-- Controls -->
-  <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px;">
-
-    <!-- Market dropdown -->
-    <select
-      id="marketSelect"
-      style="padding:10px; background:#111; color:#fff; border:1px solid #333;">
-      <option value="BINANCE:BTCUSDT">Bitcoin (BTC)</option>
-      <option value="BINANCE:ETHUSDT">Ethereum (ETH)</option>
-      <option value="FX:EURUSD">EUR / USD</option>
-      <option value="HOSE:VNINDEX">VN-Index</option>
-      <option value="SP:SPX">S&P 500</option>
-    </select>
-
-    <!-- Service dropdown -->
-    <select
-      id="serviceSelect"
-      style="padding:10px; background:#111; color:#fff; border:1px solid #333;">
-      <option value="finance">Dịch vụ tài chính</option>
-      <option value="strategy">Chiến lược thị trường</option>
-    </select>
-
-    <!-- Theme toggle -->
-    <button
-      id="themeToggle"
-      style="
-        padding:10px 16px;
-        cursor:pointer;
-        background:#111;
-        color:#fff;
-        border:1px solid #333;
-      ">
-      Light mode
-    </button>
-
+<!-- ══ HR ══════════════════════════════════════════════ -->
+<div class="hr-label"><span>◆ BOT TRADER ◆</span></div>
+ 
+<!-- ══ TRADING ════════════════════════════════════════ -->
+<section id="trading" class="sec">
+  <div class="sec-bg" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=70&auto=format&fit=crop')"></div>
+  <div class="sec-ov"></div>
+  <div class="sec-in">
+    <div class="trading-wrap">
+ 
+      <!-- LEFT -->
+      <div class="trading-left">
+        <div class="rv">
+          <p class="sec-label" data-vi="Công nghệ AI" data-en="AI Technology">Công nghệ AI</p>
+          <h2 class="sec-h" data-vi="Bot Trader &amp;<br><em>Tín hiệu AI</em>" data-en="AI Bot &amp;<br><em>Signals</em>">
+            Bot Trader &amp;<br><em>Tín hiệu AI</em>
+          </h2>
+          <p class="sec-p"
+            data-vi="Hệ thống giao dịch thông minh — kết hợp thuật toán AI và phân tích kỹ thuật để tối đa hoá lợi nhuận."
+            data-en="An intelligent trading system combining AI algorithms and technical analysis to maximize profits.">
+            Hệ thống giao dịch thông minh — kết hợp thuật toán AI và phân tích kỹ thuật để tối đa hoá lợi nhuận.
+          </p>
+        </div>
+ 
+        <div class="feat-list">
+ 
+          <div class="feat rv rv1">
+            <div class="feat-icon">〽️</div>
+            <div class="feat-txt">
+              <h4 data-vi="Bot Trader AI chính xác" data-en="Precision AI Bot Trader">Bot Trader AI chính xác</h4>
+              <p data-vi="Cung cấp Bot Trader kết hợp phân tích kỹ thuật toán AI chính xác, tự động hoá giao dịch 24/7." data-en="AI-powered trading bot with technical analysis, automating trades 24/7 with high precision.">
+                Cung cấp Bot Trader kết hợp phân tích kỹ thuật toán AI chính xác, tự động hoá giao dịch 24/7.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="feat rv rv2">
+            <div class="feat-icon">📊</div>
+            <div class="feat-txt">
+              <h4 data-vi="Phân tích thị trường hàng ngày" data-en="Daily Market Analysis">Phân tích thị trường hàng ngày</h4>
+              <p data-vi="Báo cáo chuyên sâu về xu hướng, hỗ trợ/kháng cự, dòng tiền lớn — cập nhật mỗi ngày." data-en="In-depth daily reports on trends, support/resistance, and institutional money flow.">
+                Báo cáo chuyên sâu về xu hướng, hỗ trợ/kháng cự, dòng tiền lớn — cập nhật mỗi ngày.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="feat rv rv3">
+            <div class="feat-icon">📈</div>
+            <div class="feat-txt">
+              <h4 data-vi="Tín hiệu Scalping & Swing" data-en="Scalping & Swing Signals">Tín hiệu Scalping & Swing</h4>
+              <p data-vi="Tín hiệu SCALPING & SWING realtime — entry, stop loss, take profit rõ ràng và cụ thể." data-en="Real-time SCALPING & SWING signals with clear entry, stop loss, and take profit levels.">
+                Tín hiệu SCALPING & SWING realtime — entry, stop loss, take profit rõ ràng và cụ thể.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="feat rv rv4">
+            <div class="feat-icon">🎓</div>
+            <div class="feat-txt">
+              <h4 data-vi="Kiến thức Forex toàn diện" data-en="Full Forex Education">Kiến thức Forex toàn diện</h4>
+              <p data-vi="Từ cơ bản đến nâng cao — phân tích kỹ thuật, quản lý vốn, tâm lý giao dịch chuyên nghiệp." data-en="From basics to advanced — technical analysis, capital management, professional trading psychology.">
+                Từ cơ bản đến nâng cao — phân tích kỹ thuật, quản lý vốn, tâm lý giao dịch chuyên nghiệp.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="feat rv rv5">
+            <div class="feat-icon">📌</div>
+            <div class="feat-txt">
+              <h4 data-vi="Hướng dẫn người mới bắt đầu" data-en="Beginner Step-by-Step Guide">Hướng dẫn người mới bắt đầu</h4>
+              <p data-vi="Lộ trình từng bước rõ ràng từ tạo tài khoản đến đặt lệnh giao dịch thực chiến đầu tiên." data-en="Clear step-by-step roadmap from account creation to placing your first real trade.">
+                Lộ trình từng bước rõ ràng từ tạo tài khoản đến đặt lệnh giao dịch thực chiến đầu tiên.
+              </p>
+            </div>
+          </div>
+ 
+        </div>
+ 
+        <div style="margin-top:32px" class="rv">
+          <a href="#contact" class="btn-gold" data-vi="🚀 Bắt đầu ngay" data-en="🚀 Start Now">🚀 Bắt đầu ngay</a>
+        </div>
+      </div>
+ 
+      <!-- RIGHT VISUAL -->
+      <div class="trading-right rv rv2">
+        <div class="ai-tag">AI Powered</div>
+        <div class="trading-img-frame">
+          <img src="https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=900&q=75&auto=format&fit=crop" alt="AI Trading Dashboard" loading="lazy"/>
+          <div class="t-badge">
+            <div class="t-badge-item">
+              <span class="t-badge-label" data-vi="Chính xác" data-en="Accuracy">Chính xác</span>
+              <span class="t-badge-val">87.4%</span>
+            </div>
+            <div class="t-badge-divider"></div>
+            <div class="t-badge-item">
+              <span class="t-badge-label" data-vi="Tín hiệu / ngày" data-en="Signals/Day">Tín hiệu / ngày</span>
+              <span class="t-badge-val">12–18</span>
+            </div>
+            <div class="t-badge-divider"></div>
+            <div class="t-badge-item">
+              <span class="t-badge-label">Uptime</span>
+              <span class="t-badge-val">24/7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
   </div>
-
-  <!-- Chart wrapper -->
-  <div
-    style="
-      background:#0b0e11;
-      border-radius:8px;
-      overflow:hidden;
-    "
-  >
-    <iframe
-      id="tvChart"
-      src=""
-      style="width:100%; height:600px; border:none;"
-      allowfullscreen>
-    </iframe>
-  </div>
-
 </section>
-
-<script>
-  const chart = document.getElementById("tvChart");
-  const marketSelect = document.getElementById("marketSelect");
-  const serviceSelect = document.getElementById("serviceSelect");
-  const themeToggle = document.getElementById("themeToggle");
-
-  // Mặc định DARK
-  let theme = "dark";
-
-  function loadChart() {
-    const symbol = marketSelect.value;
-    const service = serviceSelect.value;
-    const interval = service === "finance" ? "15" : "D";
-
-    const toolbarBg = theme === "dark" ? "0b0e11" : "ffffff";
-
-    chart.src =
-      "https://www.tradingview.com/widgetembed/?" +
-      "symbol=" + symbol +
-      "&interval=" + interval +
-      "&theme=" + theme +
-      "&timezone=Asia/Ho_Chi_Minh" +
-      "&locale=vi" +
-      "&toolbarbg=" + toolbarBg +
-      "&backgroundColor=" + (theme === "dark" ? "0b0e11" : "ffffff") +
-      "&gridColor=" + (theme === "dark" ? "2A2E39" : "E6E6E6") +
-      "&hidesidetoolbar=0" +
-      "&saveimage=1" +
-      "&symboledit=1";
-  }
-
-  marketSelect.addEventListener("change", loadChart);
-  serviceSelect.addEventListener("change", loadChart);
-
-  themeToggle.addEventListener("click", () => {
-    theme = theme === "dark" ? "light" : "dark";
-    themeToggle.textContent = theme === "dark" ? "Light mode" : "Dark mode";
-
-    document.getElementById("live-market").style.background =
-      theme === "dark" ? "#0b0e11" : "#fff";
-
-    loadChart();
-  });
-
-  // Init
-  loadChart();
-</script>
-
-
- <!-- ===== CONTACT ===== -->
-<section
-  id="contact"
-  style="
-    background-color:#0b0b0b;
-    color:#eaeaea;
-    padding:80px 20px;
-    text-align:center;
-  "
->
-
-  <h2
-    style="color:#ffffff; margin-bottom:24px;"
-    data-vi="Liên hệ"
-    data-en="Contact">
-    Liên hệ
-  </h2>
-
-  <p
-    style="color:#cfcfcf; margin-bottom:16px;"
-    data-vi="Chúng tôi sẵn sàng trao đổi để tìm ra giải pháp phù hợp với nhu cầu của doanh nghiệp."
-    data-en="We are available to discuss and identify solutions that fit your business needs.">
-    Chúng tôi sẵn sàng trao đổi để tìm ra giải pháp phù hợp với nhu cầu của doanh nghiệp.
-  </p>
-
-  <p
-    style="color:#cfcfcf; margin-bottom:16px;"
-    data-vi="Vui lòng liên hệ trực tiếp qua số điện thoại hoặc Zalo để bắt đầu trao đổi."
-    data-en="Please contact us directly via phone or Zalo to start the conversation.">
-    Vui lòng liên hệ trực tiếp qua số điện thoại hoặc Zalo để bắt đầu trao đổi.
-  </p>
-
-  <p style="color:#ffffff;">
-    📞 / Zalo:
-    <a
-      href="tel:0899996977"
-      style="color:#4da3ff; text-decoration:none; font-weight:500;"
-    >
-      0899 996 977
+ 
+<!-- ══ HR ══════════════════════════════════════════════ -->
+<div class="hr-label" style="background:var(--ink2)"><span>◆ LIVE MARKET ◆</span></div>
+ 
+<!-- ══ LIVE MARKET ════════════════════════════════════ -->
+<section id="live-market" class="sec">
+  <div class="sec-bg" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=70&auto=format&fit=crop');opacity:.3;"></div>
+  <div class="sec-ov-strong"></div>
+  <div class="sec-in">
+ 
+    <div class="rv">
+      <p class="sec-label" data-vi="Dữ liệu trực tiếp" data-en="Live Data">Dữ liệu trực tiếp</p>
+      <h2 class="sec-h" data-vi="Thị trường<br><em>Trực tuyến</em>" data-en="Live<br><em>Market</em>">
+        Thị trường<br><em>Trực tuyến</em>
+      </h2>
+      <p class="sec-p"
+        data-vi="Công cụ theo dõi thị trường phục vụ phân tích tài chính và chiến lược kinh doanh."
+        data-en="A live market tool supporting financial analysis and strategic planning.">
+        Công cụ theo dõi thị trường phục vụ phân tích tài chính và chiến lược kinh doanh.
+      </p>
+    </div>
+ 
+    <div class="market-controls rv">
+      <select id="marketSelect">
+        <option value="BINANCE:BTCUSDT">Bitcoin (BTC)</option>
+        <option value="BINANCE:ETHUSDT">Ethereum (ETH)</option>
+        <option value="FX:EURUSD">EUR / USD</option>
+        <option value="OANDA:XAUUSD">Gold (XAU)</option>
+        <option value="HOSE:VNINDEX">VN-Index</option>
+        <option value="SP:SPX">S&P 500</option>
+      </select>
+      <select id="intervalSelect">
+        <option value="15" data-vi="Scalping (15p)" data-en="Scalping (15m)">Scalping (15p)</option>
+        <option value="60" data-vi="Swing (1h)" data-en="Swing (1h)">Swing (1h)</option>
+        <option value="D" data-vi="Dài hạn (1D)" data-en="Long term (1D)">Dài hạn (1D)</option>
+      </select>
+      <button id="themeBtn">☀️ Light</button>
+    </div>
+ 
+    <div class="chart-shell rv">
+      <iframe id="tvChart" src="" allowfullscreen></iframe>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- ══ HR ══════════════════════════════════════════════ -->
+<div class="hr-label"><span>◆ LIÊN HỆ ◆</span></div>
+ 
+<!-- ══ CONTACT ═══════════════════════════════════════ -->
+<section id="contact" class="sec">
+  <div class="sec-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=70&auto=format&fit=crop')"></div>
+  <div class="sec-ov"></div>
+  <div class="sec-in">
+ 
+    <div class="rv">
+      <p class="sec-label" style="justify-content:center" data-vi="Kết nối ngay" data-en="Get in Touch">Kết nối ngay</p>
+      <h2 class="sec-h" style="text-align:center" data-vi="<em>Liên hệ</em>" data-en="<em>Contact</em>"><em>Liên hệ</em></h2>
+      <p class="sec-p" style="margin:0 auto 0;text-align:center;max-width:380px;"
+        data-vi="Sẵn sàng trao đổi để tìm giải pháp phù hợp với nhu cầu của bạn."
+        data-en="Ready to discuss and find the right solution for your needs.">
+        Sẵn sàng trao đổi để tìm giải pháp phù hợp với nhu cầu của bạn.
+      </p>
+    </div>
+ 
+    <a href="tel:0899996977" class="contact-card rv rv1">
+      <span class="c-label">📞 Zalo / Call / SMS</span>
+      <span class="c-num">0899 996 977</span>
+      <span class="c-sub" data-vi="Nhấn để gọi ngay" data-en="Tap to call now">Nhấn để gọi ngay</span>
     </a>
-  </p>
-
-</section>
-
-
-
-</main>
-
-
-
-<!-- ===== FOOTER ===== -->
-<footer>
-
  
-
-  <section>
-
-    <strong>Zero To Hero</strong>
-
-    <p
-      data-vi="Nền tảng cung cấp sản phẩm và dịch vụ hỗ trợ doanh nghiệp tăng trưởng và mở rộng thị trường."
-      data-en="A platform providing products and services that support business growth and market expansion.">
-      Nền tảng cung cấp sản phẩm và dịch vụ hỗ trợ doanh nghiệp tăng trưởng và mở rộng thị trường.
+    <p class="contact-pill rv rv2">
+      <span>✉️</span>
+      <span>contact@zerotohero.vn</span>
     </p>
-
-  </section>
-
-  <section>
-
-    <p>
-      <a href="#home" data-vi="Trang chủ" data-en="Home">Trang chủ</a> |
-      <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Products & Services">Sản phẩm & Dịch vụ</a> |
-    <a href="#live-market" data-vi="Thị trường" data-en="Markets">Thị trường</a>
+ 
+    <p style="margin-top:40px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.25em;color:var(--smoke3);text-align:center;" class="rv rv3"
+      data-vi="Minh bạch · Tuân thủ · Tăng trưởng bền vững"
+      data-en="Transparent · Compliant · Sustainable Growth">
+      Minh bạch · Tuân thủ · Tăng trưởng bền vững
+    </p>
+ 
+  </div>
+</section>
+ 
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand rv">
+      <strong>Zero To Hero</strong>
+      <p data-vi="Nền tảng cung cấp sản phẩm và dịch vụ hỗ trợ doanh nghiệp tăng trưởng và mở rộng thị trường toàn cầu." data-en="A platform of products and services supporting business growth and global market expansion.">
+        Nền tảng cung cấp sản phẩm và dịch vụ hỗ trợ doanh nghiệp tăng trưởng và mở rộng thị trường toàn cầu.
+      </p>
+      <p class="foot-email">contact@zerotohero.vn</p>
+    </div>
+    <div class="foot-col rv rv1">
+      <h5 data-vi="Điều hướng" data-en="Navigation">Điều hướng</h5>
+      <a href="#hero" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="#offerings" data-vi="Sản phẩm & Dịch vụ" data-en="Services">Sản phẩm & Dịch vụ</a>
+      <a href="#trading" data-vi="Bot Trader AI" data-en="AI Bot">Bot Trader AI</a>
+      <a href="#live-market" data-vi="Thị trường" data-en="Market">Thị trường</a>
       <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
-    </p>
-
-  </section>
-
-  <section>
-
-    <p>Email: contact@zerotohero.vn</p>
-
-    <p
-      data-vi="Hoạt động minh bạch – Tuân thủ pháp luật – Hướng tới tăng trưởng bền vững"
-      data-en="Transparent operations – Legal compliance – Sustainable growth focus">
-      Hoạt động minh bạch – Tuân thủ pháp luật – Hướng tới tăng trưởng bền vững
-    </p>
-
-  </section>
-
-  <hr>
-
-  <p>© 2026 Zero To Hero. All rights reserved.</p>
-
+    </div>
+    <div class="foot-col rv rv2">
+      <h5 data-vi="Liên hệ" data-en="Contact">Liên hệ</h5>
+      <a href="tel:0899996977">0899 996 977</a>
+      <a href="mailto:contact@zerotohero.vn">contact@zerotohero.vn</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p class="foot-copy">© 2026 Zero To Hero. All rights reserved.</p>
+    <p class="foot-tag" data-vi="Minh bạch · Tuân thủ · Bền vững" data-en="Transparent · Compliant · Sustainable">Minh bạch · Tuân thủ · Bền vững</p>
+  </div>
 </footer>
-
-<!-- ===== LANGUAGE SCRIPT ===== -->
+ 
+<!-- ══ SCRIPTS ════════════════════════════════════════ -->
 <script>
-  function setLang(lang) {
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll('[data-vi]').forEach(el => {
-      const text = el.getAttribute('data-' + lang);
-      if (text) el.textContent = text;
-    });
-
-    // Lưu lựa chọn
-    localStorage.setItem('lang', lang);
-  }
-
-  // Load ngôn ngữ khi mở trang
-  (function () {
-    const savedLang = localStorage.getItem('lang') || 'vi';
-    setLang(savedLang);
-  })();
+/* ── Burger / Drawer ── */
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('navDrawer');
+burger.addEventListener('click', () => {
+  const open = burger.classList.toggle('open');
+  drawer.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+  drawer.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+drawer.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    drawer.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+    drawer.setAttribute('aria-hidden', true);
+    document.body.style.overflow = '';
+  });
+});
+ 
+/* ── Header scroll ── */
+const hdr = document.getElementById('hdr');
+let lastY = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  hdr.classList.toggle('scrolled', y > 60);
+  lastY = y;
+}, {passive: true});
+ 
+/* ── Scroll reveal ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }});
+}, {threshold: 0.1, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+ 
+/* ── TradingView chart ── */
+const tvChart = document.getElementById('tvChart');
+const mktSel = document.getElementById('marketSelect');
+const intSel = document.getElementById('intervalSelect');
+const tBtn   = document.getElementById('themeBtn');
+let tvTheme = 'dark';
+ 
+function loadChart() {
+  const sym = mktSel.value;
+  const int = intSel.value;
+  const bg  = tvTheme === 'dark' ? '080a0c' : 'ffffff';
+  const grid= tvTheme === 'dark' ? '111418' : 'e8e4dc';
+  tvChart.src = `https://www.tradingview.com/widgetembed/?symbol=${sym}&interval=${int}&theme=${tvTheme}&timezone=Asia/Ho_Chi_Minh&locale=vi&toolbarbg=${bg}&backgroundColor=${bg}&gridColor=${grid}&hidesidetoolbar=0&saveimage=1&symboledit=1`;
+}
+mktSel.addEventListener('change', loadChart);
+intSel.addEventListener('change', loadChart);
+tBtn.addEventListener('click', () => {
+  tvTheme = tvTheme === 'dark' ? 'light' : 'dark';
+  tBtn.textContent = tvTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+  loadChart();
+});
+loadChart();
+ 
+/* ── Language ── */
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-vi]').forEach(el => {
+    const txt = el.getAttribute('data-' + lang);
+    if (!txt) return;
+    const isHTML = txt.includes('<');
+    if (isHTML) el.innerHTML = txt;
+    else el.textContent = txt;
+  });
+  document.querySelectorAll('.nav-lang button').forEach((b, i) => {
+    b.classList.toggle('on', (lang === 'vi' && i === 0) || (lang === 'en' && i === 1));
+  });
+  localStorage.setItem('lang', lang);
+}
+window.setLang = setLang;
+setLang(localStorage.getItem('lang') || 'vi');
+ 
+/* ── Floating CTA hide on contact ── */
+const mobCta = document.querySelector('.mob-cta');
+const contactSec = document.getElementById('contact');
+const ctaObs = new IntersectionObserver(entries => {
+  mobCta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+  mobCta.style.pointerEvents = entries[0].isIntersecting ? 'none' : '';
+}, {threshold: 0.3});
+ctaObs.observe(contactSec);
 </script>
-
-<script src="assets/js/main.js"></script>
-<script src="assets/js/tradingview.js"></script>
-
 </body>
 </html>
